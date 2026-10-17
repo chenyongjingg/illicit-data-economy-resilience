@@ -1,0 +1,1080 @@
+{
+  "generated": "2026-09-24T01:20:33",
+  "what": "full-document OCR of the five issues with no usable text layer",
+  "instrument": "rapidocr_onnxruntime, fitz get_pixmap(dpi=200)",
+  "issues": {
+    "2025-06": {
+      "pdf": "dwcon_2025-06.pdf",
+      "n_pages": 32,
+      "total_chars": 26130,
+      "seconds": 294.6,
+      "pages_with_keyword": [
+        5,
+        6,
+        19,
+        27
+      ],
+      "n_pages_with_zero_chars": 0,
+      "pages": [
+        {
+          "page": 1,
+          "chars": 317,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 2,
+          "chars": 79,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 3,
+          "chars": 669,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 4,
+          "chars": 435,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 5,
+          "chars": 349,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 6,
+          "chars": 297,
+          "key_count": 5,
+          "error": null
+        },
+        {
+          "page": 7,
+          "chars": 355,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 8,
+          "chars": 323,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 9,
+          "chars": 797,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 10,
+          "chars": 926,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 11,
+          "chars": 306,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 12,
+          "chars": 846,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 13,
+          "chars": 611,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 14,
+          "chars": 1483,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 15,
+          "chars": 377,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 16,
+          "chars": 2195,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 17,
+          "chars": 339,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 18,
+          "chars": 885,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 19,
+          "chars": 528,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 20,
+          "chars": 917,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 21,
+          "chars": 823,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 22,
+          "chars": 731,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 23,
+          "chars": 772,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 24,
+          "chars": 808,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 25,
+          "chars": 622,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 26,
+          "chars": 515,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 27,
+          "chars": 2077,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 28,
+          "chars": 1192,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 29,
+          "chars": 4221,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 30,
+          "chars": 465,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 31,
+          "chars": 694,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 32,
+          "chars": 176,
+          "key_count": 0,
+          "error": null
+        }
+      ],
+      "text": "/root/cis/results/59_ocr_full_text/59_ocr_full_2025-06.txt"
+    },
+    "2025-07": {
+      "pdf": "dwcon_2025-07.pdf",
+      "n_pages": 34,
+      "total_chars": 27625,
+      "seconds": 501.1,
+      "pages_with_keyword": [
+        5,
+        6,
+        22
+      ],
+      "n_pages_with_zero_chars": 0,
+      "pages": [
+        {
+          "page": 1,
+          "chars": 226,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 2,
+          "chars": 79,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 3,
+          "chars": 669,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 4,
+          "chars": 464,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 5,
+          "chars": 349,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 6,
+          "chars": 298,
+          "key_count": 5,
+          "error": null
+        },
+        {
+          "page": 7,
+          "chars": 378,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 8,
+          "chars": 289,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 9,
+          "chars": 335,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 10,
+          "chars": 1498,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 11,
+          "chars": 666,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 12,
+          "chars": 781,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 13,
+          "chars": 601,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 14,
+          "chars": 903,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 15,
+          "chars": 953,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 16,
+          "chars": 582,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 17,
+          "chars": 432,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 18,
+          "chars": 995,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 19,
+          "chars": 1398,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 20,
+          "chars": 321,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 21,
+          "chars": 893,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 22,
+          "chars": 501,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 23,
+          "chars": 761,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 24,
+          "chars": 1226,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 25,
+          "chars": 1119,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 26,
+          "chars": 771,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 27,
+          "chars": 1096,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 28,
+          "chars": 866,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 29,
+          "chars": 1147,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 30,
+          "chars": 2552,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 31,
+          "chars": 3406,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 32,
+          "chars": 296,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 33,
+          "chars": 694,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 34,
+          "chars": 80,
+          "key_count": 0,
+          "error": null
+        }
+      ],
+      "text": "/root/cis/results/59_ocr_full_text/59_ocr_full_2025-07.txt"
+    },
+    "2025-08": {
+      "pdf": "dwcon_2025-08.pdf",
+      "n_pages": 32,
+      "total_chars": 24460,
+      "seconds": 327.2,
+      "pages_with_keyword": [
+        4,
+        5,
+        6,
+        9,
+        13,
+        22,
+        28
+      ],
+      "n_pages_with_zero_chars": 0,
+      "pages": [
+        {
+          "page": 1,
+          "chars": 201,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 2,
+          "chars": 79,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 3,
+          "chars": 669,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 4,
+          "chars": 474,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 5,
+          "chars": 349,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 6,
+          "chars": 562,
+          "key_count": 5,
+          "error": null
+        },
+        {
+          "page": 7,
+          "chars": 471,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 8,
+          "chars": 148,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 9,
+          "chars": 888,
+          "key_count": 2,
+          "error": null
+        },
+        {
+          "page": 10,
+          "chars": 792,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 11,
+          "chars": 209,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 12,
+          "chars": 872,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 13,
+          "chars": 668,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 14,
+          "chars": 1373,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 15,
+          "chars": 683,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 16,
+          "chars": 777,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 17,
+          "chars": 557,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 18,
+          "chars": 725,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 19,
+          "chars": 950,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 20,
+          "chars": 353,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 21,
+          "chars": 917,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 22,
+          "chars": 503,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 23,
+          "chars": 684,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 24,
+          "chars": 1369,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 25,
+          "chars": 1254,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 26,
+          "chars": 765,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 27,
+          "chars": 797,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 28,
+          "chars": 576,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 29,
+          "chars": 3799,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 30,
+          "chars": 1232,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 31,
+          "chars": 694,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 32,
+          "chars": 70,
+          "key_count": 0,
+          "error": null
+        }
+      ],
+      "text": "/root/cis/results/59_ocr_full_text/59_ocr_full_2025-08.txt"
+    },
+    "2025-10": {
+      "pdf": "dwcon_2025-10.pdf",
+      "n_pages": 34,
+      "total_chars": 24872,
+      "seconds": 454.7,
+      "pages_with_keyword": [
+        5,
+        6,
+        21,
+        28
+      ],
+      "n_pages_with_zero_chars": 0,
+      "pages": [
+        {
+          "page": 1,
+          "chars": 197,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 2,
+          "chars": 80,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 3,
+          "chars": 669,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 4,
+          "chars": 527,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 5,
+          "chars": 352,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 6,
+          "chars": 314,
+          "key_count": 5,
+          "error": null
+        },
+        {
+          "page": 7,
+          "chars": 498,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 8,
+          "chars": 357,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 9,
+          "chars": 461,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 10,
+          "chars": 1152,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 11,
+          "chars": 1211,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 12,
+          "chars": 1536,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 13,
+          "chars": 441,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 14,
+          "chars": 391,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 15,
+          "chars": 444,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 16,
+          "chars": 466,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 17,
+          "chars": 251,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 18,
+          "chars": 116,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 19,
+          "chars": 303,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 20,
+          "chars": 1020,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 21,
+          "chars": 575,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 22,
+          "chars": 782,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 23,
+          "chars": 1777,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 24,
+          "chars": 767,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 25,
+          "chars": 845,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 26,
+          "chars": 539,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 27,
+          "chars": 549,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 28,
+          "chars": 242,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 29,
+          "chars": 1604,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 30,
+          "chars": 2622,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 31,
+          "chars": 2789,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 32,
+          "chars": 243,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 33,
+          "chars": 694,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 34,
+          "chars": 58,
+          "key_count": 0,
+          "error": null
+        }
+      ],
+      "text": "/root/cis/results/59_ocr_full_text/59_ocr_full_2025-10.txt"
+    },
+    "2025-11": {
+      "pdf": "dwcon_2025-11.pdf",
+      "n_pages": 33,
+      "total_chars": 23741,
+      "seconds": 417.0,
+      "pages_with_keyword": [
+        5,
+        6,
+        9,
+        20,
+        28
+      ],
+      "n_pages_with_zero_chars": 0,
+      "pages": [
+        {
+          "page": 1,
+          "chars": 253,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 2,
+          "chars": 80,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 3,
+          "chars": 669,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 4,
+          "chars": 438,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 5,
+          "chars": 354,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 6,
+          "chars": 291,
+          "key_count": 5,
+          "error": null
+        },
+        {
+          "page": 7,
+          "chars": 346,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 8,
+          "chars": 347,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 9,
+          "chars": 624,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 10,
+          "chars": 648,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 11,
+          "chars": 558,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 12,
+          "chars": 527,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 13,
+          "chars": 823,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 14,
+          "chars": 756,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 15,
+          "chars": 532,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 16,
+          "chars": 486,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 17,
+          "chars": 324,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 18,
+          "chars": 332,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 19,
+          "chars": 1048,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 20,
+          "chars": 504,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 21,
+          "chars": 838,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 22,
+          "chars": 976,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 23,
+          "chars": 544,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 24,
+          "chars": 749,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 25,
+          "chars": 624,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 26,
+          "chars": 1070,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 27,
+          "chars": 566,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 28,
+          "chars": 197,
+          "key_count": 1,
+          "error": null
+        },
+        {
+          "page": 29,
+          "chars": 4473,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 30,
+          "chars": 2529,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 31,
+          "chars": 426,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 32,
+          "chars": 694,
+          "key_count": 0,
+          "error": null
+        },
+        {
+          "page": 33,
+          "chars": 115,
+          "key_count": 0,
+          "error": null
+        }
+      ],
+      "text": "/root/cis/results/59_ocr_full_text/59_ocr_full_2025-11.txt"
+    }
+  }
+}

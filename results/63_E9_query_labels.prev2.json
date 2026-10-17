@@ -1,0 +1,200 @@
+{
+  "generated": "2026-09-24T01:22:52",
+  "per_month": {
+    "2025-01": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "风险报告",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "数据泄露情报": null,
+        "Telegram情报": "0",
+        "风险报告": null,
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": "96082",
+      "bullet_effective": "96,082",
+      "bullet_high_value": "4,749",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-01_p06.txt"
+    },
+    "2025-02": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "140,800",
+      "bullet_high_value": "4,955",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-02_p06.txt"
+    },
+    "2025-03": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "356,323",
+      "bullet_high_value": "5，880",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-03_p06.txt"
+    },
+    "2025-04": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "509,880",
+      "bullet_high_value": "3，999",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-04_p06.txt"
+    },
+    "2025-06": {
+      "categories_present": [
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "1,140,767",
+      "bullet_high_value": "5,232",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-06_p06.txt"
+    },
+    "2025-07": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "1,140,767",
+      "bullet_high_value": "5,822",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-07_p06.txt"
+    },
+    "2025-08": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "风险报告",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "暗网情报": null,
+        "Telegram情报": null,
+        "风险报告": null,
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": "6826",
+      "bullet_effective": "68,904",
+      "bullet_high_value": "6,826",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-08_p06.txt"
+    },
+    "2025-10": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "336,661",
+      "bullet_high_value": "6,176",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-10_p06.txt"
+    },
+    "2025-11": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "tab_counts": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "match_result_line": null,
+      "bullet_effective": "436,427",
+      "bullet_high_value": "6,889",
+      "which_category_matches_bullet": [],
+      "sidecar": "/root/cis/results/57_ocr_2025-11_p06.txt"
+    }
+  }
+}

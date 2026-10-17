@@ -1,0 +1,7 @@
+# NEVER NORMALISE LINE ENDINGS. Several artefacts in this project are sha256
+# manifests consumed by POSIX tools on data produced elsewhere, and a manifest's
+# line endings are part of the manifest: a CRLF manifest makes `sha256sum -c` read
+# a carriage return into every filename and fail on all of them, while a checker
+# written in Python -- which reads in universal-newline mode -- reports success.
+# The checker and the checked sharing a blind spot is not a passing test.
+* -text

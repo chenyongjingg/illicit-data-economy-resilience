@@ -1,0 +1,38 @@
+==============================================================================
+39  Does E1 v3's substitution effect survive matching? (robustness)
+==============================================================================
+
+==============================================================================
+1. ★ DiD under EVERY matched covariate set (38_ reported only set D)
+==============================================================================
+  design                    pairs     b(s+w)        p     b(+sw)        p
+  B minus n_markets            77
+  C activity + quality         74
+  D size + quality            121
+
+  unmatched                   489    +3.8819   0.0048    +3.6365   0.0118
+  B minus n_markets            77    +1.4199   0.4798    +3.6376   0.1192
+  C activity + quality         74    +2.4426   0.2432    +4.4911   0.0602
+  D size + quality            121    +1.0424   0.3619    +1.3435   0.2281
+
+==============================================================================
+2. ★ 500 placebos under EACH design (each beta in its OWN null)
+==============================================================================
+  The matched seller list is held fixed; only the fake event date
+  moves, so the null varies the event and nothing else.
+
+  design                     n_null null_mean   null_sd      real    pctile    p_plac
+  unmatched                     500   +1.2929    0.3617   +3.8819    100.0%    0.0000
+  B minus n_markets             500   +0.2748    0.6794   +1.4199     96.8%    0.0320
+  C activity + quality          500   +0.0111    0.9340   +2.4426    100.0%    0.0000
+  D size + quality              500   -0.0694    0.6404   +1.0424     97.8%    0.0220
+
+==============================================================================
+3. Reading
+==============================================================================
+  A design whose real beta sits at the null's median has produced no
+  evidence of an event effect: the same estimator, on pre-period data
+  with no event, returns that number routinely. A design whose real
+  beta sits in the tail has produced evidence, provided the null's own
+  mean is reported -- a null mean far from 0 means the contrast carries
+  a drift that must be explained rather than assumed away.

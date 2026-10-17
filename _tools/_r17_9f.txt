@@ -1,0 +1,125 @@
+
+### §9(f) — 落地前预注册：`feature_filter_verification_exact`（C-173）
+
+**为什么单开一节写它。** 这个量与 §9(a)–(e) 讨论的 within-t0 修法是**两回事**，
+而 `run_pipeline.py` 的 `ev_require` **要求它为真**。若它仍为假，驱动器会把 E5p
+判为 FAIL——**该 FAIL 与 within-t0 的六个 GAP 毫无关系**。不事先分开，
+落地时会把一个**验证器缺陷**读成**泄漏证据**，或把「修法奏效」读成「整轮失败」。
+
+**旧产物的读数（回源逐项，非转述）** —
+`results/53_E5p_result.oldwriter_55d7d8f8.json`：
+
+- `feature_filter_verification.n_mismatch = 6`（`n_compared = 300`，`n_exact_match = 294`）
+- `first_mismatches` 6 条**全是同一列、同一方向**：`c_self_loops`
+  stored `1.0` vs recomputed(`<= t0`) `0.0`
+- `n_where_leq_differs_from_gt = 294`、`frac = 0.98` ⇒ **惰性对照不空**
+- **★该 294 与 `n_exact_match` 的 294 数值相同**——见下面的③，这一点必须单独处理
+
+**机制：★按「佐证」登记，不按「已测」登记。**
+`_server/53_E5p_temporal_gnn.py:630-638` 的说明是**写入器自己的注释**，
+即**一份自述**，不是测量：
+
+> SELF-LOOPS ARE CAPTURED BEFORE THEY ARE FILTERED OUT. … on the filtered frame
+> the conjunction is identically False, so `c_self_loops` recomputed as 0 for
+> every address in the population — including the 8,707 that genuinely carry
+> one (measured on the real join: 2,868,964 rows, 45,981 self-loop rows).
+> The landed artefact's 6 non-exact rows were that defect and not a leak;
+> for the five it recorded, the stored value equalled the count on this
+> unfiltered join exactly.
+
+**产出该产物的那一版写入器未被保存**，所以**注释里的机制无法由产物验证**。
+产物能支持的是两件较弱的事：① 6 条失配**同列同向**（stored 1 / recomputed 0），
+② 它们**集中在一列**。**⇒ 这与「重算侧在已过滤帧上做 `is_src & is_dst`、
+该合取恒为假」一致，且排除泄漏；但不等于验证了该机制。**
+**与 §9(a)、§9(i) 同一纪律：自述是待核断言，不是测量。**
+（可核的是那条 join 的规模：本轮 rc4 日志自报
+`n_join_rows 2868964, n_self_loop_rows 45981` —— 与注释中的两个数**逐位相同**。）
+
+### ① 预言（在产物存在之前写下，可证伪、具体到四个读数）
+
+| # | 量 | 预言 | 若不然，则 |
+|---|---|---|---|
+| P1 | `n_exact_match` | **294 → 300** | 修法未命中真因（真因在别处，须重查；**不得**改判为泄漏） |
+| P2 | `n_mismatch` | **6 → 0** | 同上；且驱动器 `ev_require` 会硬判 E5p FAIL |
+| P3 | `summary.feature_filter_verification_exact` | **False → True** | 同 P2 |
+| **P4** | **`n_where_leq_differs_from_gt`** | **必须仍是 `294`，只准到 300 那一侧——见②** | 见② |
+
+### ② ★P4 是 P1–P3 的守卫，且**旧值不可判**（同侪提出，我更正后采纳）
+
+**先立一个否命题**：修法若让**重算侧不再工作**，两边都算 0 ⇒ `n_mismatch` 同样变 0。
+**「相等」既可以是「修好了」，也可以是「都不算了」。** 所以 P2/P3 单独立不起来。
+
+**但「≈0.98，不塌到 0」这个写法不够**：`n_where_leq_differs_from_gt = 294` 与
+`n_exact_match = 294` **数值相同**，而**产物里没有存** `<= t0` 与 `> t0` 相异那一组的
+**行身份**（只存了失配组的 `first_mismatches`）。**⇒ 从记录上无法区分**
+「真值 294」与「该字段被接成了 `n_exact_match`」。`300` 也满足 `> 0`，
+会被读成 `not_inert = True` 而**什么都没量**。
+
+**⇒ 因此预注册的是「解耦」，不是一个区间：**
+
+- `n_exact_match` **294 → 300**
+- `n_mismatch` **6 → 0**
+- **`n_where_leq_differs_from_gt` 必须仍为 294，不得变成 300**
+
+**并附一条阳性对照要求**（写入器本轮的 checker 应能通过它）：
+**喂给该检查一行「已知在 `<= t0` 与 `> t0` 两帧上相异」的样本，要求它被计数。**
+没有这条，`not_inert` 这个正对照自己**从未被证明能返回非零**——
+与本项目已登记的「排除 `Time step` 使 `n_varying == 0` 恒真」是同一缺陷形态
+（写入器 `:581-585` 已就该形态自陈过一次）。
+
+### ③ 分离记录（落地时须分开写，不得合并）
+
+- **驱动器 FAIL**（若发生）＝ `ev_require` 未满足 ⇒ 与 within-t0 的六个 GAP **无关**；
+- **六个 GAP 关闭**（预期）＝ 修法奏效 ⇒ 与驱动器是否 FAIL **无关**；
+- 二者**可以同时成立**（GAP 全关而驱动器仍 FAIL）——那是**协调缺陷**，
+  不是矛盾：**判据与它判的对象不同步**。**本轮不改 `run_pipeline.py`**（改门＝改判据）。
+
+
+---
+
+### ④ ★落地前修正（C-178，**写于 rc4 仍在训练时**）：
+### **P4 的数值是我从「孤儿字段」转抄的，不是基线**；
+### 并且 **P1（294→300）带一个我没写出来的前提**
+
+**读的是当前写入器的源码**（`_server/53_E5p_temporal_gnn.py:616-715`），**不是产物**。
+
+#### ① P4 作废为「值预言」，替换为两条更硬的
+
+| # | 事实 |
+|---|---|
+| 1 | `:692-693` `n_exact` 由 **`np.allclose(stored[i], by_le[True])`** 计 |
+| 2 | `:704-705` `n_leq_ne_gt` 由 **`np.array_equal(by_le[True], by_le[False])`** 计 |
+| 3 | **两个操作数集、两个比较，互不相同** ⇒ **「该计数被接成 `n_exact_match`」的接线假设，由源码直接排除**，不必再由数值证 |
+| 4 | `:699-703` 写入器自陈：**上一版把 `stored` 与 `gt` 重算比较的结果，用这个名字返回** ⇒ **旧字段是另一个量** |
+| **5** | **回源旧产物本身**：旧产物**没有 `n_stored_equals_gt` 这个键**，而当前写入器在 `:713` **会输出它** ⇒ **旧 294 对新字段的值没有基线效力。** |
+
+**⇒ 原 P4（「必须仍为 294」）作废，换为：**
+
+- **新 P4a（结构）**：新产物**必须含 `n_stored_equals_gt`**（旧产物无此键）。
+  **缺失 ⇒ 跑的不是我改过的那个写入器。**
+- **新 P4b（方向）**：`n_stored_equals_gt` **必须小**。
+  stored 携 `<= t0` 窗 ⇒ 它**不应**等于 `> t0` 重算。
+  **若它接近 300，那是泄漏信号，须查，不得读成通过。**
+- **原 P4 的意图**（计数不得与 `n_exact_match` 同源）**由第 3 条源码事实承担**，比数值更硬。
+
+**★这正是预注册该有的用法**：读源码**在读数之前**
+推翻了我自己的一条预言。**若等产物落地再改，那就成了事后调参。**
+
+#### ② P1（294→300）的未声明前提：**被跳过的行会计进 `n_mismatch`**
+
+```
+:675-676   if len(r) == 0 and len(r_sl) == 0: continue     # 该行不计入 n_exact
+:708       n = len(addrs)                                  # 但 n 恒为 300
+:710       n_mismatch = n - n_exact                        # ⇒ 被跳行落在 mismatch 里
+```
+
+⇒ **若抽到任一「两帧都无边」的地址，`n_exact_match`
+无论修得多好都到不了 300。**
+
+**可判的鉴别器（先写下）**：
+若落地后读到 **`n_exact_match == 299` 且 `n_mismatch == 1`**，
+**则查 `first_mismatches` 是否为空**：
+- **空 ⇒ 那一条是被跳过的行（不是缺陷）**，修法完全成功；
+- **非空 ⇒ 是真失配，修法未命中真因。**
+
+**★不得把 299 直接读成失败**，也**不得把 300 当成唯一的成功形式**。

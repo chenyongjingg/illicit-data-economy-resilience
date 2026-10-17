@@ -1,0 +1,29 @@
+{
+  "rows": 58310,
+  "cohort_start": "2025-03-01",
+  "cohort": 56708,
+  "offline": 42272,
+  "missing_lo": 8391,
+  "hosts": 17400,
+  "treatments": {
+    "zero": {
+      "n": 56708,
+      "events": 42272,
+      "median": 1.1017708333333334
+    },
+    "drop": {
+      "n": 48317,
+      "events": 33881,
+      "median": 2.0204050925925925
+    },
+    "censor": {
+      "n": 56708,
+      "events": 33881,
+      "median": 4.522858796296297
+    }
+  },
+  "logrank_real": 0.0,
+  "logrank_placebo": 0.25812875742895547,
+  "reconstitution_events": 20999,
+  "reconstitution_after": 3980
+}

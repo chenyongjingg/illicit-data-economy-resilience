@@ -1,0 +1,75 @@
+==============================================================================
+Per-cell verification: rows(address, step) == sender_edges + receiver_edges
+==============================================================================
+  txId -> Time step map: 203769 entries, steps 1..49
+
+==============================================================================
+0. Change addresses -- an address that is both input and output
+==============================================================================
+  txs with both input and output edges: 202804
+  (tx, address) pairs where the address is BOTH input and output: 45981
+  -> these would be counted once per role by the edge lists
+
+==============================================================================
+1. Build per-cell counts from the edge lists
+==============================================================================
+  distinct (address, txId, step, role) rows: 1314241
+  distinct (address, step) cells from edges: 920691
+  sum(edge_n) = 1314241
+
+==============================================================================
+2. Compare against the wallets_features cells
+==============================================================================
+  distinct (address, step) cells from wallets_features: 920691
+  sum(row_n) = 1268260
+
+  cells present in both: 920691
+  cells only in wallets_features: 0
+  cells only in edges:            0
+
+  ★ cells where row_n == edge_n: 910528 / 920691 (98.8962%)
+  difference (rows - edges): mean=-0.049942 median=0.0 min=-568 max=0
+  exact-zero difference: 910528 (98.8962%)
+
+  distribution of |difference| (head):
+ad
+0    910528
+1      6424
+2      1368
+3       665
+4       347
+5       222
+6       184
+7       125
+8       100
+9        65
+
+==============================================================================
+3. Where they disagree, how badly?
+==============================================================================
+  disagreeing cells: 10163 (1.1038%)
+  share of total participation volume in those cells: 4.9148%
+  head:
+                                              row_n  edge_n
+address                            Time step               
+112oYTSLvAgCTbrKhC7K3biN4vKY2PVsHr 41             1       2
+112yvNNetRbSE8cLEyCtXEffrapKPAjp2M 1              2       3
+113JvGZXwnCfNeTVnn2ySdLeddWSwV9SXg 2              3       6
+113NxnDuwq5YU1BArvHTZzq52aCfoWKhom 3              3       6
+113jLZqsRwRiwRH9hAVnVFfvgtRcB8M5Ff 6              2       3
+113vhuuD27j7UpSPEV8Rj5Tfcbfzrp35BK 48             3       4
+11444KZ7PjnskVHVPVDd5oJPNiGFZiLubk 40             1       2
+1144TwpoN2ZveaP72uTj5DEZHo9TmN6Xtg 40             1       2
+114BrL246nh223YynesSifigEeGViB1C8n 9              2       3
+114d2so2U4SzozApHuEKsgwGrSWuYy8S8F 17             1       2
+
+  concentration: the top 20 disagreeing cells hold 9.02% of the
+  disagreement volume.
+
+==============================================================================
+4. Verdict input
+==============================================================================
+  A high exact-match rate means the row count IS the per-step
+  transaction count and a cell-level intensity panel is defensible.
+  The address-level panel is unaffected either way: 21_ already
+  established it on an independent object.

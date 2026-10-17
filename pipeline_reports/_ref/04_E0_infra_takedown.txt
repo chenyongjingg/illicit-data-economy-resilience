@@ -1,0 +1,217 @@
+==============================================================================
+E0 -- INFRASTRUCTURE TAKEDOWN LATENCY (URLhaus)  2026-09-23T16:53:26
+==============================================================================
+
+==============================================================================
+0. Columns as read
+==============================================================================
+  ['id', 'dateadded', 'url', 'url_status', 'last_online', 'threat', 'tags', 'urlhaus_link', 'reporter', 'date_added', 'last_online_date', 'observed_to', 'censored']
+  rows: 58310
+
+==============================================================================
+1. Analysable cohort, censoring, and the rows that cannot be timed
+==============================================================================
+  window 2026-06-25 .. 2026-09-23  (89 days)
+  rows added inside the window: n=44630 (76.5% of feed)
+
+  ROWS THAT CANNOT BE TIMED -- reported, not silently dropped:
+    offline with NO last_online (takedown known, time unobserved): 8368
+    offline with last_online BEFORE date_added (inconsistent):     0
+    share of the cohort affected: 18.7%
+    These are EVENTS whose time we do not know. Dropping them removes
+    events, which biases survival UP. Their feasible interval is
+    [0, t_cens], so section 2 brackets the median with them placed at
+    both ends of it.
+
+  timing-analysable cohort n=36262  events=33786  censored=2476  event rate=93.2%
+
+==============================================================================
+2. Overall survival: how long does a listed URL stay online?
+==============================================================================
+  estimator: lifelines
+    S(  0.5 d) = 0.8610
+    S(  1.0 d) = 0.6064
+    S(  2.0 d) = 0.3868
+    S(  7.0 d) = 0.1575
+    S( 14.0 d) = 0.1001
+    S( 30.0 d) = 0.0497
+  median time online after listing: 1.36 days (32.7 h)
+
+  BRACKET for the 8368 untimed events, placed at both ends of [0, t_cens]:
+    all at t=0 (fastest)     n=44630  median=0.96 d  S(7d)=0.1279
+    all at t_cens (slowest)  n=44630  median=1.94 d  S(7d)=0.3097
+
+  Read carefully: every duration is a LOWER BOUND on survival, because
+  `last_online` is the last sighting, not the takedown instant.
+
+==============================================================================
+3. Building URL-, payload- and infrastructure-level covariates
+==============================================================================
+  distinct hosts in cohort: 13469 ; distinct infrastructure blocks: 9303
+  IP-literal URLs: 31527 (86.9%) -- so the host co-location analysis is
+  predominantly an IP-block analysis, which is the right operator unit.
+
+  `threat` values in the cohort: {'malware_download': np.int64(36262)}
+  -> 1 distinct value(s).
+
+  top 20 tags: {'elf': 19797, 'mozi': 15830, 'mirai': 15022, '32-bit': 10683, 'ua-wget': 8257, 'mips': 8248, 'none': 3696, 'arm': 3197, 'botnetdomain': 1981, 'opendir': 1376, 'censys': 893, 'exe': 731, 'sh': 524, 'geofenced': 435, 'connectwise': 416, 'rat': 415, 'remcosrat': 385, 'deu': 335, 'gafgyt': 332, 'dropped-by-amadey': 303}
+  payload (stated rule: first tag in the payload vocabulary):
+    {'(none)': np.int64(14728), '32-bit': np.int64(10683), 'elf': np.int64(8619), 'exe': np.int64(729), 'sh': np.int64(522), 'arm': np.int64(483), 'powershell': np.int64(109), 'jar': np.int64(84), 'zip': np.int64(60), 'hta': np.int64(53)}
+  family (stated rule: first tag outside it):
+    {'mozi': np.int64(13023), 'mirai': np.int64(9922), 'none': np.int64(3696), 'botnetdomain': np.int64(1864), 'censys': np.int64(819), 'opendir': np.int64(260), 'ascii': np.int64(256), 'gafgyt': np.int64(233), 'rat': np.int64(224), 'ua-wget': np.int64(145)}
+
+  URLs per block (window):  median=6 p90=465 max=2083
+  URLs per block (feed):    median=7 p90=660 max=5384
+
+  reporters: 114 distinct ; top 8: {'geenensp': np.int64(10722), 'cesnet_certs': np.int64(6084), 'BlinkzSec': np.int64(4050), 'GAYINT_DOT_ORG': np.int64(3193), 'abuse_ch': np.int64(2289), 'botnetkiller': np.int64(2089), 'adliwahid': np.int64(1539), 'NDA0E': np.int64(1215)}
+  top 5 reporters filed 72.6% of the cohort
+  tags per URL: {1: np.int64(12835), 4: np.int64(11538), 5: np.int64(4870), 3: np.int64(4816), 2: np.int64(1958), 6: np.int64(180), 7: np.int64(55), 9: np.int64(5)}
+
+==============================================================================
+4. Does survival differ by payload type or malware family?
+==============================================================================
+
+  by payload:
+ group     n  median_days   S_1d   S_7d
+(none) 14728        1.369 0.6058 0.1252
+32-bit 10683        1.240 0.6000 0.0561
+   elf  8619        1.688 0.6125 0.2983
+   exe   729        1.006 0.5041 0.2818
+    sh   522        4.540 0.7835 0.4272
+ other   498        1.089 0.5915 0.2181
+   arm   483        1.641 0.6398 0.2692
+  omnibus log-rank (payload): chi2=1844.0  dof=6  p=0
+
+  by family:
+       group     n  median_days   S_1d   S_7d
+        mozi 13023        1.084 0.5561 0.0394
+       mirai  9922        1.672 0.6359 0.1929
+       other  6678        2.340 0.6638 0.3242
+        none  3696        2.121 0.6779 0.1313
+botnetdomain  1864        0.675 0.4099 0.0778
+      censys   819        6.393 0.6752 0.4933
+     opendir   260        1.572 0.7127 0.2867
+  omnibus log-rank (family): chi2=3834.6  dof=6  p=0
+
+==============================================================================
+5. Does sharing an infrastructure block buy survival?
+==============================================================================
+  Direction is NOT assumed. A block carrying many URLs can go either way:
+  one takedown removes all of them at once (faster per URL), or a large
+  footprint indicates an operator who defends uptime (slower). Two-sided.
+
+urls_in_block    n  median_days   S_1d   S_7d
+            1 2583        1.058 0.5237 0.1576
+            2 7886        1.580 0.6767 0.0953
+          3-5 6513        1.232 0.5927 0.0824
+         6-20 8795        1.312 0.5983 0.1319
+       21-100 4472        1.541 0.5758 0.2807
+         100+ 6013        1.602 0.5988 0.2698
+  omnibus log-rank (block_size): chi2=856.3  dof=5  p=7.6e-183
+
+==============================================================================
+6. Does functional multiplicity (tag count) buy survival?
+==============================================================================
+ n_tags     n  median_days   S_7d
+      1 12835        1.354 0.1094
+      2  1958        1.330 0.2398
+      3 21469        1.370 0.1763
+  omnibus log-rank (n_tags): chi2=178.7  dof=2  p=1.53e-39
+
+==============================================================================
+7. Is takedown getting faster or slower across the window?
+==============================================================================
+  A naive median-by-week is confounded: later cohorts have shorter
+  follow-up. This uses a FIXED 14-day horizon and only cohorts with a
+  full 14 days of follow-up, which removes the confound by construction.
+  eligible cohorts: n=30015 (82.8% of cohort)
+       n  down14  rate_pct
+wk                        
+0   2607    2330      89.4
+1   3049    2803      91.9
+2   2161    1959      90.7
+3   2244    2034      90.6
+4   2935    2575      87.7
+5   3289    3028      92.1
+6   4009    3368      84.0
+7   2593    2387      92.1
+8   2136    1957      91.6
+9   2755    2515      91.3
+10  2237    2097      93.7
+  logistic trend on days-since-window-start:
+    OR per day = 1.0016  95% CI [0.9999, 1.0034]  p=0.0698
+    OR>1 => takedown became MORE likely over the window (faster)
+
+==============================================================================
+8. Cox proportional hazards: which features matter jointly?
+==============================================================================
+
+  --- co-location measured over: window ---
+  n=30026  events=27608  concordance=0.5445
+                  exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                                    
+log_block            0.9059               0.8935               0.9184  0.0000
+n_tags_c             0.9441               0.9319               0.9565  0.0000
+log_reporter_vol     1.2145               1.1958               1.2335  0.0000
+ip_based_i           0.9052               0.8939               0.9167  0.0000
+reporter_anon_i      1.0390               1.0267               1.0515  0.0000
+family_censys        0.9871               0.9736               1.0008  0.0642
+family_mirai         1.0315               1.0042               1.0596  0.0235
+family_mozi          1.0471               1.0148               1.0803  0.0039
+family_none          1.0064               0.9844               1.0290  0.5709
+family_opendir       1.0006               0.9878               1.0136  0.9257
+family_other         1.0246               1.0007               1.0490  0.0433
+payload_32-bit       1.0054               0.9908               1.0203  0.4709
+payload_arm          1.0183               1.0064               1.0303  0.0024
+payload_elf          1.0034               0.9871               1.0199  0.6859
+payload_exe          1.0238               1.0109               1.0369  0.0003
+payload_other        0.9938               0.9812               1.0067  0.3461
+payload_sh           1.0181               1.0059               1.0305  0.0037
+  PH assumption (rank) min p=0.0000 ; violations at p<0.05: 12
+    violated: ['family_censys', 'family_mirai', 'family_mozi', 'family_none', 'family_opendir', 'family_other', 'ip_based_i', 'log_reporter_vol', 'n_tags_c', 'payload_32-bit', 'payload_other', 'reporter_anon_i']
+
+  --- co-location measured over: whole_feed ---
+  n=30026  events=27608  concordance=0.5457
+                  exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                                    
+log_block_full       0.8982               0.8860               0.9106  0.0000
+n_tags_c             0.9459               0.9337               0.9582  0.0000
+log_reporter_vol     1.2112               1.1926               1.2301  0.0000
+ip_based_i           0.9018               0.8905               0.9133  0.0000
+reporter_anon_i      1.0383               1.0259               1.0508  0.0000
+family_censys        0.9877               0.9742               1.0014  0.0788
+family_mirai         1.0318               1.0044               1.0599  0.0224
+family_mozi          1.0465               1.0143               1.0797  0.0043
+family_none          1.0059               0.9839               1.0285  0.6005
+family_opendir       1.0010               0.9883               1.0140  0.8736
+family_other         1.0251               1.0013               1.0496  0.0388
+payload_32-bit       1.0060               0.9914               1.0209  0.4232
+payload_arm          1.0178               1.0060               1.0298  0.0031
+payload_elf          1.0026               0.9863               1.0192  0.7548
+payload_exe          1.0234               1.0105               1.0365  0.0003
+payload_other        0.9935               0.9808               1.0063  0.3161
+payload_sh           1.0186               1.0063               1.0310  0.0029
+  PH assumption (rank) min p=0.0000 ; violations at p<0.05: 14
+    violated: ['family_censys', 'family_mirai', 'family_mozi', 'family_none', 'family_opendir', 'family_other', 'ip_based_i', 'log_block_full', 'log_reporter_vol', 'n_tags_c', 'payload_32-bit', 'payload_arm', 'payload_other', 'reporter_anon_i']
+
+==============================================================================
+9. Figure
+==============================================================================
+  wrote /root/cis/results/figs/E0_infra_takedown.png
+  wrote /root/cis/results/figs/E0_infra_takedown.pdf
+
+==============================================================================
+10. VERDICT -- what E0 establishes, and what it does not
+==============================================================================
+  ESTABLISHED (within the observation window, with n stated):
+    * median time online after listing: 1.36 days (32.7 h), n=36262, 93.2% events
+    * S(1d)=0.606  S(7d)=0.157  S(30d)=0.050 -- fast for most, a long tail
+    * group contrasts are tested above by log-rank and jointly by Cox,
+      with the proportional-hazards assumption checked rather than assumed.
+  NOT ESTABLISHED:
+    * absolute survival -- durations are lower bounds (last sighting, not
+      takedown).
+    * long-run persistence -- the feed's retention window forbids it (C-29).
+    * causality -- these are associations among co-observed URL features.
+    * `threat`-type contrasts -- the cohort holds 1 threat value(s), so
+      payload and family are substituted via a stated tag rule.

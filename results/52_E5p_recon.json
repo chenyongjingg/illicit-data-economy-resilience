@@ -1,0 +1,30 @@
+{
+  "wallets_classes_cols": [
+    "address",
+    "class"
+  ],
+  "n_addresses": 822942,
+  "class_counts": {
+    "3": 557588,
+    "2": 251088,
+    "1": 14266
+  },
+  "n_labelled": 265354,
+  "n_wallet_rows": 1268260,
+  "step_min": 1,
+  "step_max": 49,
+  "n_steps": 49,
+  "addresses_in_wallets_features": 822942,
+  "labelled_with_any_step": 265354,
+  "labelled_recur_rate": 0.055823541382455134,
+  "labelled_onestep_rate": 0.9441764586175448,
+  "all_recur_rate": 0.07471607962651074,
+  "addr_addr_cols": [
+    "input_address",
+    "output_address"
+  ],
+  "n_aa_edges": 2868964,
+  "labelled_subgraph_edges": 1118222,
+  "labelled_subgraph_nodes": 248143,
+  "seconds": 7.6
+}

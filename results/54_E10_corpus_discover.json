@@ -1,0 +1,46 @@
+{
+  "doi": "10.57760/sciencedb.j00133.00466",
+  "uuid": "a8675d31c70545ebaa54fe47f951cdb9",
+  "probes": [
+    {
+      "url": "https://doi.org/10.57760/sciencedb.j00133.00466",
+      "transmitted": true,
+      "status": 200,
+      "bytes": 784557,
+      "error": null,
+      "final_url": "https://www.scidb.cn/detail?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "content_type": "text/html; charset=utf-8",
+      "candidate_urls": []
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/detail?id=a8675d31c70545ebaa54fe47f951cdb9",
+      "transmitted": true,
+      "status": 404,
+      "bytes": null,
+      "error": null,
+      "final_url": null,
+      "content_type": null,
+      "candidate_urls": []
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/detail?doi=10.57760/sciencedb.j00133.00466",
+      "transmitted": true,
+      "status": 404,
+      "bytes": null,
+      "error": null,
+      "final_url": null,
+      "content_type": null,
+      "candidate_urls": []
+    },
+    {
+      "url": "https://www.scidb.cn/en/detail?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "transmitted": true,
+      "status": 200,
+      "bytes": 784557,
+      "error": null,
+      "final_url": "https://www.scidb.cn/detail?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "content_type": "text/html; charset=utf-8",
+      "candidate_urls": []
+    }
+  ]
+}

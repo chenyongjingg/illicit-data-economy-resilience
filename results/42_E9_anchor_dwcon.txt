@@ -1,0 +1,6 @@
+E9 anchor acquisition -- 2025
+
+period   ok    bytes       declared     effective     high_value   sha256
+2025-02  False None        None         None          None         
+
+issues found: 1 | verified: 0 | series extracted: 0

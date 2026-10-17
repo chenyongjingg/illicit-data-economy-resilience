@@ -1,0 +1,84 @@
+==============================================================================
+E1 follow-up -- WHAT SEPARATES THE SELLERS WHO MOVED FROM THOSE WHO DID NOT
+==============================================================================
+
+==============================================================================
+1. Price distributions -- do Cannazon's prices sit in Apollon's range?
+==============================================================================
+  median / IQR of positive prices, per market (same units as the dump):
+    Empire      n=82853   median=0.0010417  IQR=0.0002279..0.006262  p90=0.0193457
+    Cannazon    n=55615   median=0.010957  IQR=0.00653974..0.018519  p90=0.0315179
+    Apollon     n=41417   median=0.00481727  IQR=0.00181335..0.0114859  p90=0.0253639
+    Cryptonia   n=35160   median=0.0111  IQR=0.0046..0.0275  p90=0.1038
+
+  Apollon's 5th-95th percentile band: 0.000218618 .. 0.0398545
+    Cryptonia   share of reviews inside that band: 80.7%
+    Cannazon    share of reviews inside that band: 93.4%
+
+  If both markets overlap Apollon's band about equally, price range does
+  NOT explain why one population moved and the other did not.
+
+==============================================================================
+2. Among Apollon-naive sellers, does entry track price or rating?
+==============================================================================
+
+  Cryptonia-only sellers naive to Apollon: 87 entered, 328 did not
+    median price among entrants : 0.0112 (n=8205)
+    median price among non-entr.: 0.0136 (n=16913)
+    pre-period reviews in Cryptonia, entrants : median 25 (n=87)
+    pre-period reviews in Cryptonia, non-entr.: median 20 (n=328)
+    mean f3 (rating proxy), entrants 1.000 vs non-entrants 1.000
+    -> if entrants and non-entrants are the same size and the same
+       price, non-entry is not a size or quality effect.
+
+  Cannazon-only sellers naive to Apollon: 10 entered, 130 did not
+    median price among entrants : 0.0100541 (n=3823)
+    median price among non-entr.: 0.0112566 (n=39130)
+    pre-period reviews in Cannazon, entrants : median 52 (n=10)
+    pre-period reviews in Cannazon, non-entr.: median 92 (n=130)
+    mean f3 (rating proxy), entrants 0.987 vs non-entrants 0.978
+    -> if entrants and non-entrants are the same size and the same
+       price, non-entry is not a size or quality effect.
+
+==============================================================================
+3. What happened to the sellers who did NOT enter Apollon?
+==============================================================================
+  Total reviews written in ANY of the five markets, pre vs post, among
+  sellers who were Apollon-naive and active in one dead market.
+
+   source           group   n  pre_reviews  post_reviews  pre_per_seller  post_per_seller  still_active_pct                            post_markets
+Cryptonia entered Apollon  87        10389          3639      119.413793        41.827586        100.000000 Apollon:2834, Empire:590, CannaHome:215
+Cryptonia   did NOT enter 328        28843          2670       87.935976         8.140244          5.792683  CannaHome:1926, Empire:741, Cannazon:3
+ Cannazon entered Apollon  10         3457           221      345.700000        22.100000        100.000000                 Apollon:220, Cannazon:1
+ Cannazon   did NOT enter 130        34148            35      262.676923         0.269231         10.769231                             Cannazon:35
+
+  The column that answers the question is `still_active_pct`: the share of
+  each group still writing reviews anywhere in the ecosystem afterwards.
+  If Cannazon's non-entrants went quiet entirely while Cryptonia's stayed
+  active in Apollon, then the difference between the two markets is not
+  that one population was more mobile -- it is that one had somewhere to
+  go and the other did not.
+
+==============================================================================
+4. What is f3?
+==============================================================================
+  f3 values overall: {1.0: np.int64(211332), -1.0: np.int64(7175), 0.0: np.int64(6602)}
+  f3 == 1 share by market:
+    Empire      n=82892   mean=0.782  share(==1)=85.7%  share(==-1)=7.5%
+    Cannazon    n=55675   mean=0.977  share(==1)=98.2%  share(==-1)=0.5%
+    Apollon     n=41424   mean=0.966  share(==1)=98.2%  share(==-1)=1.7%
+    Cryptonia   n=35160   mean=1.000  share(==1)=100.0%  share(==-1)=0.0%
+    CannaHome   n=9958    mean=0.980  share(==1)=98.4%  share(==-1)=0.3%
+  -> treated as a rating proxy only if the polarity is defensible; it is
+     reported, not relied on.
+
+==============================================================================
+5. What this did NOT test
+==============================================================================
+  The product-overlap explanation -- Cryptonia was a general market and
+  Apollon was general, so its sellers could redeploy, while Cannazon was a
+  cannabis specialist with nowhere comparable to go -- is consistent with
+  everything above and is NOT tested by any of it. The Kilos table has no
+  category column; `price` is a weak and confounded stand-in for product
+  type, and a price band that both markets share says only that both sold
+  things at similar prices.

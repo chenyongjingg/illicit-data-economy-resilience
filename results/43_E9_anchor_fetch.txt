@@ -1,0 +1,14 @@
+E9 anchor -- 2025  (verified = bytes match declared AND real trailer)
+
+period   ok   bytes       declared     effective    high_value   sha256
+2025-01  True 32776528    32776528     96082        None         be89a970a789a9e8
+2025-02  True 31248720    31248720     140800       None         259be72ffbcd4dff
+2025-03  True 31921548    31921548     356323       5880         bf2cfadc073cab28
+2025-04  True 32041727    32041727     None         None         0ab85f3137dcdabb
+2025-06  True 2672255     2672255      None         None         a35908bef140c46b
+2025-07  True 3213019     3213019      None         None         0c97723a21dc0c5d
+2025-08  True 2657297     2657297      None         None         b76237293ac37931
+2025-10  True 2574478     2574478      None         None         ee2dacc6b0c05204
+2025-11  True 2585685     2585685      None         None         5296d00cb461d2b7
+
+resolved 9 | verified 9 | series 3

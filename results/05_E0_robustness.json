@@ -1,0 +1,588 @@
+{
+  "n": 36262,
+  "events": 33786,
+  "independence": {
+    "hosts_ge2": 8755,
+    "urls_in_them": 31548,
+    "pct_share_last_online": 0.95,
+    "pct_share_date_added": 72.0,
+    "pct_share_duration": 3.52
+  },
+  "effective_n": {
+    "rows": 36262,
+    "blocks": 9303,
+    "block_time_pairs": 34903,
+    "design_effect": 1.04
+  },
+  "reporter_block_crosstab": {
+    "1": {
+      "BlinkzSec": 69,
+      "GAYINT_DOT_ORG": 274,
+      "NDA0E": 57,
+      "abuse_ch": 255,
+      "adliwahid": 173,
+      "botnetkiller": 10,
+      "cesnet_certs": 563,
+      "geenensp": 774,
+      "other": 408
+    },
+    "2": {
+      "BlinkzSec": 92,
+      "GAYINT_DOT_ORG": 1024,
+      "NDA0E": 7,
+      "abuse_ch": 210,
+      "adliwahid": 513,
+      "botnetkiller": 59,
+      "cesnet_certs": 2103,
+      "geenensp": 3740,
+      "other": 138
+    },
+    "3-5": {
+      "BlinkzSec": 133,
+      "GAYINT_DOT_ORG": 878,
+      "NDA0E": 82,
+      "abuse_ch": 203,
+      "adliwahid": 384,
+      "botnetkiller": 53,
+      "cesnet_certs": 1626,
+      "geenensp": 2954,
+      "other": 200
+    },
+    "6-20": {
+      "BlinkzSec": 757,
+      "GAYINT_DOT_ORG": 894,
+      "NDA0E": 238,
+      "abuse_ch": 585,
+      "adliwahid": 363,
+      "botnetkiller": 545,
+      "cesnet_certs": 1468,
+      "geenensp": 2865,
+      "other": 1080
+    },
+    "21-100": {
+      "BlinkzSec": 1108,
+      "GAYINT_DOT_ORG": 88,
+      "NDA0E": 344,
+      "abuse_ch": 541,
+      "adliwahid": 82,
+      "botnetkiller": 720,
+      "cesnet_certs": 175,
+      "geenensp": 306,
+      "other": 1108
+    },
+    "100+": {
+      "BlinkzSec": 1891,
+      "GAYINT_DOT_ORG": 35,
+      "NDA0E": 487,
+      "abuse_ch": 495,
+      "adliwahid": 24,
+      "botnetkiller": 702,
+      "cesnet_certs": 149,
+      "geenensp": 83,
+      "other": 2147
+    }
+  },
+  "top_reporter": {
+    "name": "geenensp",
+    "n": 10722,
+    "pct_cohort": 29.57,
+    "pct_of_100plus_bin": 1.38
+  },
+  "within_top_reporter": {
+    "reporter": "geenensp",
+    "table": [
+      {
+        "urls_in_block": "1",
+        "n": 774,
+        "median_days": 0.921,
+        "S_7d": 0.0486
+      },
+      {
+        "urls_in_block": "2",
+        "n": 3740,
+        "median_days": 1.433,
+        "S_7d": 0.0794
+      },
+      {
+        "urls_in_block": "3-5",
+        "n": 2954,
+        "median_days": 1.134,
+        "S_7d": 0.0433
+      },
+      {
+        "urls_in_block": "6-20",
+        "n": 2865,
+        "median_days": 1.092,
+        "S_7d": 0.0372
+      },
+      {
+        "urls_in_block": "21-100",
+        "n": 306,
+        "median_days": 1.578,
+        "S_7d": 0.1175
+      },
+      {
+        "urls_in_block": "100+",
+        "n": 83,
+        "median_days": 5.418,
+        "S_7d": 0.0686
+      }
+    ],
+    "logrank": {
+      "chi2": 321.8378967172704,
+      "dof": 5,
+      "p": 2.014212121877392e-67
+    }
+  },
+  "se_inflation_block": {
+    "log_block": 14.443,
+    "n_tags_c": 4.713,
+    "log_reporter_vol": 3.871,
+    "has_elf": 4.844,
+    "has_mozi": 3.058,
+    "has_mirai": 3.419,
+    "has_censys": 5.583,
+    "has_opendir": 6.753,
+    "has_botnetdomain": 8.787
+  },
+  "cox": {
+    "IID SEs (as E0 first reported)": {
+      "n": 36262,
+      "events": 33786,
+      "concordance": 0.5799,
+      "hr_per_sd": {
+        "log_block": 1.0572,
+        "n_tags_c": 0.8573,
+        "log_reporter_vol": 1.0208,
+        "has_elf": 1.0115,
+        "has_mozi": 1.4506,
+        "has_mirai": 0.9901,
+        "has_censys": 0.9494,
+        "has_opendir": 1.0335,
+        "has_botnetdomain": 1.1673
+      },
+      "se": {
+        "log_block": 0.0073,
+        "n_tags_c": 0.01148,
+        "log_reporter_vol": 0.00709,
+        "has_elf": 0.01115,
+        "has_mozi": 0.00837,
+        "has_mirai": 0.00687,
+        "has_censys": 0.00598,
+        "has_opendir": 0.00581,
+        "has_botnetdomain": 0.00574
+      },
+      "p": {
+        "log_block": 0.0,
+        "n_tags_c": 0.0,
+        "log_reporter_vol": 0.003784,
+        "has_elf": 0.303284,
+        "has_mozi": 0.0,
+        "has_mirai": 0.145765,
+        "has_censys": 0.0,
+        "has_opendir": 0.0,
+        "has_botnetdomain": 0.0
+      }
+    },
+    "clustered by infrastructure block": {
+      "n": 36262,
+      "events": 33786,
+      "concordance": 0.5799,
+      "hr_per_sd": {
+        "log_block": 1.0572,
+        "n_tags_c": 0.8573,
+        "log_reporter_vol": 1.0208,
+        "has_elf": 1.0115,
+        "has_mozi": 1.4506,
+        "has_mirai": 0.9901,
+        "has_censys": 0.9494,
+        "has_opendir": 1.0335,
+        "has_botnetdomain": 1.1673
+      },
+      "se": {
+        "log_block": 0.10539,
+        "n_tags_c": 0.05409,
+        "log_reporter_vol": 0.02745,
+        "has_elf": 0.054,
+        "has_mozi": 0.02558,
+        "has_mirai": 0.0235,
+        "has_censys": 0.0334,
+        "has_opendir": 0.03921,
+        "has_botnetdomain": 0.0504
+      },
+      "p": {
+        "log_block": 0.597821,
+        "n_tags_c": 0.004431,
+        "log_reporter_vol": 0.454417,
+        "has_elf": 0.831704,
+        "has_mozi": 0.0,
+        "has_mirai": 0.670525,
+        "has_censys": 0.120377,
+        "has_opendir": 0.400669,
+        "has_botnetdomain": 0.002149
+      }
+    },
+    "clustered by reporter": {
+      "n": 36262,
+      "events": 33786,
+      "concordance": 0.5799,
+      "hr_per_sd": {
+        "log_block": 1.0572,
+        "n_tags_c": 0.8573,
+        "log_reporter_vol": 1.0208,
+        "has_elf": 1.0115,
+        "has_mozi": 1.4506,
+        "has_mirai": 0.9901,
+        "has_censys": 0.9494,
+        "has_opendir": 1.0335,
+        "has_botnetdomain": 1.1673
+      },
+      "se": {
+        "log_block": 0.04086,
+        "n_tags_c": 0.06745,
+        "log_reporter_vol": 0.03791,
+        "has_elf": 0.08885,
+        "has_mozi": 0.0309,
+        "has_mirai": 0.04412,
+        "has_censys": 0.00976,
+        "has_opendir": 0.01769,
+        "has_botnetdomain": 0.01928
+      },
+      "p": {
+        "log_block": 0.173611,
+        "n_tags_c": 0.022479,
+        "log_reporter_vol": 0.588001,
+        "has_elf": 0.897224,
+        "has_mozi": 0.0,
+        "has_mirai": 0.820722,
+        "has_censys": 0.0,
+        "has_opendir": 0.062508,
+        "has_botnetdomain": 0.0
+      }
+    },
+    "stratified by reporter (submitter absorbed)": {
+      "n": 36262,
+      "events": 33786,
+      "concordance": 0.5516,
+      "hr_per_sd": {
+        "log_block": 1.0672,
+        "n_tags_c": 0.918,
+        "log_reporter_vol": 1.0683,
+        "has_elf": 1.0175,
+        "has_mozi": 1.4074,
+        "has_mirai": 0.9689,
+        "has_censys": 0.996,
+        "has_opendir": 1.0614,
+        "has_botnetdomain": 1.1401
+      },
+      "se": {
+        "log_block": 0.00824,
+        "n_tags_c": 0.01731,
+        "log_reporter_vol": 0.01665,
+        "has_elf": 0.01237,
+        "has_mozi": 0.01045,
+        "has_mirai": 0.00751,
+        "has_censys": 0.01068,
+        "has_opendir": 0.00768,
+        "has_botnetdomain": 0.00704
+      },
+      "p": {
+        "log_block": 0.0,
+        "n_tags_c": 1e-06,
+        "log_reporter_vol": 7.3e-05,
+        "has_elf": 0.160409,
+        "has_mozi": 0.0,
+        "has_mirai": 2.5e-05,
+        "has_censys": 0.710561,
+        "has_opendir": 0.0,
+        "has_botnetdomain": 0.0
+      }
+    }
+  },
+  "tag_roles": {
+    "table": [
+      {
+        "tag": "elf",
+        "n": 19797,
+        "role": "payload"
+      },
+      {
+        "tag": "mozi",
+        "n": 15830,
+        "role": "family"
+      },
+      {
+        "tag": "mirai",
+        "n": 15022,
+        "role": "family"
+      },
+      {
+        "tag": "32-bit",
+        "n": 10683,
+        "role": "arch"
+      },
+      {
+        "tag": "ua-wget",
+        "n": 8257,
+        "role": "submitter"
+      },
+      {
+        "tag": "mips",
+        "n": 8248,
+        "role": "arch"
+      },
+      {
+        "tag": "none",
+        "n": 3696,
+        "role": "placeholder"
+      },
+      {
+        "tag": "arm",
+        "n": 3197,
+        "role": "arch"
+      },
+      {
+        "tag": "botnetdomain",
+        "n": 1981,
+        "role": "url_character"
+      },
+      {
+        "tag": "opendir",
+        "n": 1376,
+        "role": "url_character"
+      },
+      {
+        "tag": "censys",
+        "n": 893,
+        "role": "provenance"
+      },
+      {
+        "tag": "exe",
+        "n": 731,
+        "role": "payload"
+      },
+      {
+        "tag": "sh",
+        "n": 524,
+        "role": "payload"
+      },
+      {
+        "tag": "geofenced",
+        "n": 435,
+        "role": "url_character"
+      },
+      {
+        "tag": "connectwise",
+        "n": 416,
+        "role": "family"
+      },
+      {
+        "tag": "rat",
+        "n": 415,
+        "role": "family"
+      },
+      {
+        "tag": "remcosrat",
+        "n": 385,
+        "role": "family"
+      },
+      {
+        "tag": "deu",
+        "n": 335,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "gafgyt",
+        "n": 332,
+        "role": "family"
+      },
+      {
+        "tag": "dropped-by-amadey",
+        "n": 303,
+        "role": "family"
+      },
+      {
+        "tag": "ascii",
+        "n": 288,
+        "role": "payload"
+      },
+      {
+        "tag": "x86",
+        "n": 279,
+        "role": "arch"
+      },
+      {
+        "tag": "guloader",
+        "n": 187,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "stego",
+        "n": 173,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "xworm",
+        "n": 154,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "iot",
+        "n": 138,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "agenttesla",
+        "n": 137,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "c2-monitor-auto",
+        "n": 137,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "encoded",
+        "n": 132,
+        "role": "(unclassified)"
+      },
+      {
+        "tag": "tsunami",
+        "n": 126,
+        "role": "family"
+      }
+    ],
+    "unclassified": [
+      "deu",
+      "guloader",
+      "stego",
+      "xworm",
+      "iot",
+      "agenttesla",
+      "c2-monitor-auto",
+      "encoded"
+    ]
+  },
+  "tag_binary": [
+    {
+      "tag": "elf",
+      "role": "payload",
+      "n_with": 19797,
+      "median_with": 1.351,
+      "median_without": 1.382,
+      "S7_with": 0.1663,
+      "S7_without": 0.1461,
+      "chi2": 1.4
+    },
+    {
+      "tag": "mozi",
+      "role": "family",
+      "n_with": 15830,
+      "median_with": 1.128,
+      "median_without": 1.812,
+      "S7_with": 0.0507,
+      "S7_without": 0.242,
+      "chi2": 2786.6
+    },
+    {
+      "tag": "mirai",
+      "role": "family",
+      "n_with": 15022,
+      "median_with": 1.656,
+      "median_without": 1.257,
+      "S7_with": 0.2147,
+      "S7_without": 0.1169,
+      "chi2": 481.7
+    },
+    {
+      "tag": "32-bit",
+      "role": "arch",
+      "n_with": 10683,
+      "median_with": 1.24,
+      "median_without": 1.457,
+      "S7_with": 0.0561,
+      "S7_without": 0.2015,
+      "chi2": 1135.6
+    },
+    {
+      "tag": "ua-wget",
+      "role": "submitter",
+      "n_with": 8257,
+      "median_with": 2.352,
+      "median_without": 1.297,
+      "S7_with": 0.324,
+      "S7_without": 0.1071,
+      "chi2": 1427.4
+    },
+    {
+      "tag": "mips",
+      "role": "arch",
+      "n_with": 8248,
+      "median_with": 1.133,
+      "median_without": 1.487,
+      "S7_with": 0.0506,
+      "S7_without": 0.1901,
+      "chi2": 1056.4
+    },
+    {
+      "tag": "none",
+      "role": "placeholder",
+      "n_with": 3696,
+      "median_with": 2.121,
+      "median_without": 1.326,
+      "S7_with": 0.1313,
+      "S7_without": 0.1597,
+      "chi2": 48.0
+    },
+    {
+      "tag": "arm",
+      "role": "arch",
+      "n_with": 3197,
+      "median_with": 1.593,
+      "median_without": 1.345,
+      "S7_with": 0.1244,
+      "S7_without": 0.1609,
+      "chi2": 11.2
+    },
+    {
+      "tag": "botnetdomain",
+      "role": "url_character",
+      "n_with": 1981,
+      "median_with": 0.677,
+      "median_without": 1.391,
+      "S7_with": 0.0873,
+      "S7_without": 0.1617,
+      "chi2": 152.6
+    },
+    {
+      "tag": "opendir",
+      "role": "url_character",
+      "n_with": 1376,
+      "median_with": 1.795,
+      "median_without": 1.35,
+      "S7_with": 0.2976,
+      "S7_without": 0.1517,
+      "chi2": 77.7
+    },
+    {
+      "tag": "censys",
+      "role": "provenance",
+      "n_with": 893,
+      "median_with": 3.839,
+      "median_without": 1.353,
+      "S7_with": 0.4524,
+      "S7_without": 0.1495,
+      "chi2": 371.0
+    },
+    {
+      "tag": "exe",
+      "role": "payload",
+      "n_with": 731,
+      "median_with": 1.006,
+      "median_without": 1.366,
+      "S7_with": 0.2824,
+      "S7_without": 0.1548,
+      "chi2": 31.5
+    }
+  ]
+}

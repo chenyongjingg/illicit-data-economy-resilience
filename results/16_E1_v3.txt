@@ -1,0 +1,61 @@
+==============================================================================
+E1 v3 -- DIRECTED MIGRATION, OR JUST MOBILE SELLERS?
+==============================================================================
+
+==============================================================================
+A. Is entry DIRECTED at the market that grew, or general?
+==============================================================================
+  Outcome: among sellers with no history in the target market, who
+  appears there after the shock. Same definition for every target, so the
+  rows are comparable to each other.
+
+  target         exp n    exp %    ctl n    ctl %         OR        p
+  Apollon          539    17.8%      231     7.4%      2.728 0.000136
+  CannaHome        684     0.1%      533     0.2%      0.779        1
+  Empire           638     0.0%      342     0.0%        nan        1
+
+  Apollon and CannaHome are the markets that GREW (+836%, +358%).
+  Empire is the market that SHRANK (-62%). If the exposed sellers enter
+  all three at the same elevated rate, the effect is seller mobility and
+  not substitution.
+
+  entry-rate gap (exposed - control):  Apollon +10.5 pp ; Empire +0.0 pp
+
+==============================================================================
+B. Entry into Apollon, split by which dead market the seller was on
+==============================================================================
+  Cryptonia -only sellers: 87/415 (21.0%) vs control 17/231 (7.4%)  OR=3.339 p=3.512e-06
+  Cannazon  -only sellers: 10/140 (7.1%) vs control 17/231 (7.4%)  OR=0.968 p=1
+
+==============================================================================
+C. Intensive DiD -- candidate set corrected (all Apollon-active sellers)
+==============================================================================
+  sellers Apollon-active pre-event: 489
+
+  baseline-Apollon stratum x treatment (this is the table whose previous
+  version showed the imbalance: 3/11, 1/31, 4/40, 8/76):
+         control  treated
+stratum                  
+s1            56       11
+s2            50       31
+s3            88       40
+s4           137       76
+
+  panel: 489 sellers x 32 weeks = 15648 rows
+
+  (i)  seller + week FE    : beta=+3.8819 se=1.3703 t=2.83 p=0.004804  95% CI [+1.189, +6.574]
+  (ii) + stratum x week FE : beta=+3.6365 se=1.4396 t=2.53 p=0.01185  95% CI [+0.808, +6.465]
+
+  treated pre-period mean: %.2f reviews/week; the CI above is in the same
+  units, so compare its width to that level, not to zero.
+
+  PLACEBO on model (ii), pre-period data only:
+    2019-08-05: beta=+0.4648 p=0.04216  95% CI [+0.017, +0.913]
+    2019-09-02: beta=+0.5076 p=0.08746  95% CI [-0.075, +1.090]
+    2019-10-07: beta=+0.7610 p=0.1277  95% CI [-0.219, +1.741]
+
+==============================================================================
+D. Figure
+==============================================================================
+  wrote /root/cis/results/figs/E1_social_substitution_v3.png
+  wrote /root/cis/results/figs/E1_social_substitution_v3.pdf

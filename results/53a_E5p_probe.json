@@ -1,0 +1,519 @@
+{
+  "wf_shape": [
+    1268260,
+    57
+  ],
+  "wf_cols": [
+    "address",
+    "Time step",
+    "num_txs_as_sender",
+    "num_txs_as receiver",
+    "first_block_appeared_in",
+    "last_block_appeared_in",
+    "lifetime_in_blocks",
+    "total_txs",
+    "first_sent_block",
+    "first_received_block",
+    "num_timesteps_appeared_in",
+    "btc_transacted_total",
+    "btc_transacted_min",
+    "btc_transacted_max",
+    "btc_transacted_mean",
+    "btc_transacted_median",
+    "btc_sent_total",
+    "btc_sent_min",
+    "btc_sent_max",
+    "btc_sent_mean",
+    "btc_sent_median",
+    "btc_received_total",
+    "btc_received_min",
+    "btc_received_max",
+    "btc_received_mean",
+    "btc_received_median",
+    "fees_total",
+    "fees_min",
+    "fees_max",
+    "fees_mean",
+    "fees_median",
+    "fees_as_share_total",
+    "fees_as_share_min",
+    "fees_as_share_max",
+    "fees_as_share_mean",
+    "fees_as_share_median",
+    "blocks_btwn_txs_total",
+    "blocks_btwn_txs_min",
+    "blocks_btwn_txs_max",
+    "blocks_btwn_txs_mean",
+    "blocks_btwn_txs_median",
+    "blocks_btwn_input_txs_total",
+    "blocks_btwn_input_txs_min",
+    "blocks_btwn_input_txs_max",
+    "blocks_btwn_input_txs_mean",
+    "blocks_btwn_input_txs_median",
+    "blocks_btwn_output_txs_total",
+    "blocks_btwn_output_txs_min",
+    "blocks_btwn_output_txs_max",
+    "blocks_btwn_output_txs_mean",
+    "blocks_btwn_output_txs_median",
+    "num_addr_transacted_multiple",
+    "transacted_w_address_total",
+    "transacted_w_address_min",
+    "transacted_w_address_max",
+    "transacted_w_address_mean",
+    "transacted_w_address_median"
+  ],
+  "frac_addresses_col_varies": {
+    "num_txs_as_sender": 0.0,
+    "num_txs_as receiver": 0.0,
+    "first_block_appeared_in": 0.0,
+    "last_block_appeared_in": 0.0,
+    "lifetime_in_blocks": 0.0,
+    "total_txs": 0.0,
+    "first_sent_block": 0.0,
+    "first_received_block": 0.0,
+    "num_timesteps_appeared_in": 0.0,
+    "btc_transacted_total": 0.0,
+    "btc_transacted_min": 0.0,
+    "btc_transacted_max": 0.0,
+    "btc_transacted_mean": 0.0,
+    "btc_transacted_median": 0.0,
+    "btc_sent_total": 0.0,
+    "btc_sent_min": 0.0,
+    "btc_sent_max": 0.0,
+    "btc_sent_mean": 0.0,
+    "btc_sent_median": 0.0,
+    "btc_received_total": 0.0,
+    "btc_received_min": 0.0,
+    "btc_received_max": 0.0,
+    "btc_received_mean": 0.0,
+    "btc_received_median": 0.0,
+    "fees_total": 0.0,
+    "fees_min": 0.0,
+    "fees_max": 0.0,
+    "fees_mean": 0.0,
+    "fees_median": 0.0,
+    "fees_as_share_total": 0.0,
+    "fees_as_share_min": 0.0,
+    "fees_as_share_max": 0.0,
+    "fees_as_share_mean": 0.0,
+    "fees_as_share_median": 0.0,
+    "blocks_btwn_txs_total": 0.0,
+    "blocks_btwn_txs_min": 0.0,
+    "blocks_btwn_txs_max": 0.0,
+    "blocks_btwn_txs_mean": 0.0,
+    "blocks_btwn_txs_median": 0.0,
+    "blocks_btwn_input_txs_total": 0.0,
+    "blocks_btwn_input_txs_min": 0.0,
+    "blocks_btwn_input_txs_max": 0.0,
+    "blocks_btwn_input_txs_mean": 0.0,
+    "blocks_btwn_input_txs_median": 0.0,
+    "blocks_btwn_output_txs_total": 0.0,
+    "blocks_btwn_output_txs_min": 0.0,
+    "blocks_btwn_output_txs_max": 0.0,
+    "blocks_btwn_output_txs_mean": 0.0,
+    "blocks_btwn_output_txs_median": 0.0,
+    "num_addr_transacted_multiple": 0.0,
+    "transacted_w_address_total": 0.0,
+    "transacted_w_address_min": 0.0,
+    "transacted_w_address_max": 0.0,
+    "transacted_w_address_mean": 0.0,
+    "transacted_w_address_median": 0.0
+  },
+  "cols_constant_within_address": [
+    "blocks_btwn_input_txs_max",
+    "blocks_btwn_input_txs_mean",
+    "blocks_btwn_input_txs_median",
+    "blocks_btwn_input_txs_min",
+    "blocks_btwn_input_txs_total",
+    "blocks_btwn_output_txs_max",
+    "blocks_btwn_output_txs_mean",
+    "blocks_btwn_output_txs_median",
+    "blocks_btwn_output_txs_min",
+    "blocks_btwn_output_txs_total",
+    "blocks_btwn_txs_max",
+    "blocks_btwn_txs_mean",
+    "blocks_btwn_txs_median",
+    "blocks_btwn_txs_min",
+    "blocks_btwn_txs_total",
+    "btc_received_max",
+    "btc_received_mean",
+    "btc_received_median",
+    "btc_received_min",
+    "btc_received_total",
+    "btc_sent_max",
+    "btc_sent_mean",
+    "btc_sent_median",
+    "btc_sent_min",
+    "btc_sent_total",
+    "btc_transacted_max",
+    "btc_transacted_mean",
+    "btc_transacted_median",
+    "btc_transacted_min",
+    "btc_transacted_total",
+    "fees_as_share_max",
+    "fees_as_share_mean",
+    "fees_as_share_median",
+    "fees_as_share_min",
+    "fees_as_share_total",
+    "fees_max",
+    "fees_mean",
+    "fees_median",
+    "fees_min",
+    "fees_total",
+    "first_block_appeared_in",
+    "first_received_block",
+    "first_sent_block",
+    "last_block_appeared_in",
+    "lifetime_in_blocks",
+    "num_addr_transacted_multiple",
+    "num_timesteps_appeared_in",
+    "num_txs_as receiver",
+    "num_txs_as_sender",
+    "total_txs",
+    "transacted_w_address_max",
+    "transacted_w_address_mean",
+    "transacted_w_address_median",
+    "transacted_w_address_min",
+    "transacted_w_address_total"
+  ],
+  "cols_varying_within_address": [],
+  "n_addr_step_cells": 920691,
+  "rows_per_cell_max": 568,
+  "rows_per_cell_mean": 1.3775088493316432,
+  "cohort_n": 265354,
+  "cohort_recur_rate": 0.055823541382455134,
+  "cohort_by_class": {
+    "1": {
+      "n": 14266,
+      "recur_rate": 0.01815505397448479
+    },
+    "2": {
+      "n": 251088,
+      "recur_rate": 0.05796374179570509
+    }
+  },
+  "t0_hist": {
+    "1": 19540,
+    "2": 14682,
+    "3": 3353,
+    "4": 5905,
+    "5": 7894,
+    "6": 1436,
+    "7": 6026,
+    "8": 13419,
+    "9": 3208,
+    "10": 4568,
+    "11": 7656,
+    "12": 2027,
+    "13": 2645,
+    "14": 1482,
+    "15": 5525,
+    "16": 1984,
+    "17": 2913,
+    "18": 1226,
+    "19": 2215,
+    "20": 4950,
+    "21": 14894,
+    "22": 5959,
+    "23": 3886,
+    "24": 2557,
+    "25": 5908,
+    "26": 2326,
+    "27": 621,
+    "28": 725,
+    "29": 3083,
+    "30": 2517,
+    "31": 4284,
+    "32": 4487,
+    "33": 5430,
+    "34": 3572,
+    "35": 5172,
+    "36": 8755,
+    "37": 3268,
+    "38": 3376,
+    "39": 3646,
+    "40": 8257,
+    "41": 5642,
+    "42": 9188,
+    "43": 5928,
+    "44": 7877,
+    "45": 8871,
+    "46": 4335,
+    "47": 6724,
+    "48": 7089,
+    "49": 4323
+  },
+  "recur_by_t0": {
+    "1": [
+      19540,
+      0.15281
+    ],
+    "2": [
+      14682,
+      0.05149
+    ],
+    "3": [
+      3353,
+      0.05189
+    ],
+    "4": [
+      5905,
+      0.05114
+    ],
+    "5": [
+      7894,
+      0.0242
+    ],
+    "6": [
+      1436,
+      0.07591
+    ],
+    "7": [
+      6026,
+      0.04265
+    ],
+    "8": [
+      13419,
+      0.08235
+    ],
+    "9": [
+      3208,
+      0.19264
+    ],
+    "10": [
+      4568,
+      0.19133
+    ],
+    "11": [
+      7656,
+      0.07001
+    ],
+    "12": [
+      2027,
+      0.09423
+    ],
+    "13": [
+      2645,
+      0.04272
+    ],
+    "14": [
+      1482,
+      0.03846
+    ],
+    "15": [
+      5525,
+      0.05792
+    ],
+    "16": [
+      1984,
+      0.03679
+    ],
+    "17": [
+      2913,
+      0.06969
+    ],
+    "18": [
+      1226,
+      0.05628
+    ],
+    "19": [
+      2215,
+      0.04921
+    ],
+    "20": [
+      4950,
+      0.09111
+    ],
+    "21": [
+      14894,
+      0.01168
+    ],
+    "22": [
+      5959,
+      0.17016
+    ],
+    "23": [
+      3886,
+      0.0404
+    ],
+    "24": [
+      2557,
+      0.03442
+    ],
+    "25": [
+      5908,
+      0.2263
+    ],
+    "26": [
+      2326,
+      0.03224
+    ],
+    "27": [
+      621,
+      0.02415
+    ],
+    "28": [
+      725,
+      0.05517
+    ],
+    "29": [
+      3083,
+      0.03763
+    ],
+    "30": [
+      2517,
+      0.02304
+    ],
+    "31": [
+      4284,
+      0.02124
+    ],
+    "32": [
+      4487,
+      0.02296
+    ],
+    "33": [
+      5430,
+      0.02026
+    ],
+    "34": [
+      3572,
+      0.14194
+    ],
+    "35": [
+      5172,
+      0.02784
+    ],
+    "36": [
+      8755,
+      0.01496
+    ],
+    "37": [
+      3268,
+      0.01652
+    ],
+    "38": [
+      3376,
+      0.01807
+    ],
+    "39": [
+      3646,
+      0.02057
+    ],
+    "40": [
+      8257,
+      0.01974
+    ],
+    "41": [
+      5642,
+      0.01542
+    ],
+    "42": [
+      9188,
+      0.01284
+    ],
+    "43": [
+      5928,
+      0.03593
+    ],
+    "44": [
+      7877,
+      0.016
+    ],
+    "45": [
+      8871,
+      0.01725
+    ],
+    "46": [
+      4335,
+      0.0083
+    ],
+    "47": [
+      6724,
+      0.00863
+    ],
+    "48": [
+      7089,
+      0.00212
+    ],
+    "49": [
+      4323,
+      0.0
+    ]
+  },
+  "n_addrtx": 477117,
+  "n_txaddr": 837124,
+  "n_txs_features": 203769,
+  "addrtx_txid_unique": 202804,
+  "txaddr_txid_unique": 202804,
+  "txs_features_txid_unique": 203769,
+  "txs_step_min": 1,
+  "txs_step_max": 49,
+  "txid_in_addrtx_not_features": 0,
+  "txid_in_txaddr_not_features": 0,
+  "txid_in_both_edges": 202804,
+  "txid_in_both_and_features": 202804,
+  "join_rows_naive": 2868964,
+  "join_rows_with_time": 2868964,
+  "self_loop_rows": 45981,
+  "edges_after_dropping_self_loops": 2822983,
+  "step_min": 1,
+  "step_max": 49,
+  "events_per_step": {
+    "1": 64325,
+    "2": 130970,
+    "3": 63594,
+    "4": 66420,
+    "5": 66950,
+    "6": 36285,
+    "7": 55025,
+    "8": 84581,
+    "9": 58770,
+    "10": 61710,
+    "11": 60359,
+    "12": 25189,
+    "13": 48045,
+    "14": 9768,
+    "15": 84442,
+    "16": 16102,
+    "17": 26943,
+    "18": 10352,
+    "19": 16264,
+    "20": 74597,
+    "21": 146390,
+    "22": 68912,
+    "23": 23440,
+    "24": 28703,
+    "25": 73312,
+    "26": 26403,
+    "27": 12166,
+    "28": 9349,
+    "29": 30160,
+    "30": 14021,
+    "31": 27040,
+    "32": 42746,
+    "33": 189130,
+    "34": 22345,
+    "35": 49007,
+    "36": 75399,
+    "37": 29747,
+    "38": 24609,
+    "39": 18700,
+    "40": 72315,
+    "41": 54340,
+    "42": 75616,
+    "43": 99243,
+    "44": 70461,
+    "45": 164781,
+    "46": 60058,
+    "47": 120608,
+    "48": 63916,
+    "49": 69375
+  },
+  "events_per_step_mean": 57611.897959183676,
+  "timed_graph_nodes": 822942,
+  "edges_within_cohort": 1110448,
+  "frac_edges_within_cohort": 0.3933597899810236,
+  "edges_touching_cohort": 1654142,
+  "seconds": 18.8
+}

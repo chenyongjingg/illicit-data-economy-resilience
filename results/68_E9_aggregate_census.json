@@ -1,0 +1,899 @@
+{
+  "instrument": "regex over results/59_ocr_full_text/*.txt",
+  "issues": {
+    "2025-06": {
+      "headline_figures": [
+        {
+          "context": "全球DWM（DarkWeb Market）情报： 深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,232份。",
+          "page": 6,
+          "unit": "份",
+          "value": "1,140,767"
+        },
+        {
+          "context": "深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,232份。 release_time<=2025-0",
+          "page": 6,
+          "unit": "份",
+          "value": "5,232"
+        }
+      ],
+      "n_aggregates": 34,
+      "n_headline_figures": 2,
+      "n_pages": 32,
+      "n_pages_without_any": 22,
+      "pages_with_aggregates": 10,
+      "per_page": [
+        {
+          "hits": [
+            {
+              "context": "全球DWM（DarkWeb Market）情报： 深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,232份。",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "1,140,767"
+            },
+            {
+              "context": "深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,232份。 release_time<=2025-0",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "5,232"
+            },
+            {
+              "context": "1 录入时间小 1、国家分类 其中美国是数据泄露第一大国，共泄露数据892份，其他数据泄露较多的国 家还包括中国、印度、",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "892"
+            }
+          ],
+          "n": 3,
+          "page": 6,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "据交易平台有人宣称正在售卖一份玻利维亚海军 数据。卖家称此份数据涉及4,662份现役军人个人记录，其中包含详细的医疗 评估和",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "4,662"
+            }
+          ],
+          "n": 1,
+          "page": 9,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "哥伦比亚武装 部队总司令部数据，卖家称此份数据大小为25GB，共有超350000个文件， 数据字段包含姓名、电话、邮箱、地址、",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "350000"
+            }
+          ],
+          "n": 1,
+          "page": 10,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "据交易平台有人宣称正在售卖一份埃及飞行员 数据。卖家称此份数据共包含1300条埃及飞行员数据，包括全名、电话号 码、职业道",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "1300"
+            }
+          ],
+          "n": 1,
+          "page": 12,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "数量：4,991 售卖/发布人：Panda 户数据。卖家称此份数据共4991条，数据字段包含电话、地址、运营商等， 此份数",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "4991"
+            }
+          ],
+          "n": 1,
+          "page": 14,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "姓名 身份证号码 参保性质文化程度 婚姻状况 联系地址 保险 20 97701161517 个人参 中专 2000-3000元 客988号",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "97701161517"
+            },
+            {
+              "context": "中专 2000-3000元 客988号B楼 太 保险 1 321 959054 个人参保 大学及以上3000-6000元 己",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "959054"
+            },
+            {
+              "context": "吉 皇城大厦 1-103办 保险 1 353 410. 65041 10 个人参保 中专 3000-6000元 道西城量",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "10"
+            },
+            {
+              "context": "000元 道西城量 20米孟 兴复 保险 78 6501 7312 18 个人参保 大学及以上2000-3000元 已婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "18"
+            },
+            {
+              "context": "已婚 木齐 山区中环 号东13 1单元 太 保险 62 320: 6704 个人多保 中专 2000-3000元 未 乌兰",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "6704"
+            },
+            {
+              "context": "0-3000元 未 乌兰 方明珠D 孕婴 太 保险 208 372 20192 个人参保 大学及以上3000-6000元 未婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "20192"
+            },
+            {
+              "context": "00元 市城 仑路26号 23室 本 采险 丹 7322 2105 7306 个人多保 中 2000-3000元 己婚 省",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "7306"
+            },
+            {
+              "context": "省 自治县柜 江北路 -3 13 本 保险 178100 7411 14 个人参保 大学及以上3000-6000元 已婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "14"
+            },
+            {
+              "context": "已婚 省色 镇有集 2号 团 家险 96016 1290 7608 34 个人参 大学及以上3000-6000元 米婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "34"
+            },
+            {
+              "context": "0-6000元 米婚 省石 大街163 保险 91542 6706 21 个人参案 大学及以上2000-3000元 区吴",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "21"
+            },
+            {
+              "context": "省全多 河乡候李 街八专 保险 358927 3205 7907 14 个人参保 中专 2000-3000元 已婚 省",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "14"
+            },
+            {
+              "context": "省左权 儿镇路家上 大街00 保险 史 5568 1404 750 37 个人参保 中 2000-3000元 已婚 省长",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "37"
+            },
+            {
+              "context": "00元 已婚 省旬阳 乡庙子列 组20号 保险 0001 140E 21 个人参课 高中 2000-3000元 已婚 省",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "21"
+            },
+            {
+              "context": "己 省靖江 家新村北区 04室 保险 069 3506 5601 66 个人参 大学及以上3000-6000元 集己",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "66"
+            },
+            {
+              "context": "000-6000元 集己 省泉州 由X工 村大新居 保险 3606 770 个人参保 大学及以上3000-6000元 已婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "770"
+            },
+            {
+              "context": "00元 已婚 区站前 华北眼镜 2号石家 羊保险 2301 911 127 个人参保 中专 2000-3000元 已婚 省",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "127"
+            },
+            {
+              "context": "元 已婚 省青岛 北区同安三 号1单元76 羊保险 3604 71 10 个人参 中 3000-6000元 已婚 市崇明",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "10"
+            },
+            {
+              "context": "00-6000元 已婚 市崇明 镇有解桥 号 险 16 3210. 310 个人参保 大学及以上3000-6000元 半",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "310"
+            },
+            {
+              "context": "大学及以上3000-6000元 半 省宝座 水镇韦镇型 险 31 1509 个人参案 中 3000-6000元 未婚 区大",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "1509"
+            },
+            {
+              "context": "6000元 未婚 区大 51号长风 号门客服剂 516 22011 1010 个人参保 大学及以上3000-6000元 已婚",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "1010"
+            },
+            {
+              "context": "3000-6000元 已婚 古兴安 兰浩特市兴 珞兴安市场 161 605 个人参保 中专 3000-6000元 己 省常",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "605"
+            },
+            {
+              "context": "客组织综述 2025年6月全球活跃的商业黑客组织（有勒索发布行为）共48个，公开 的勒索事件共502件，TOP10的黑",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "48"
+            }
+          ],
+          "n": 22,
+          "page": 16,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "黑客组织行动数量庞大，无法在报告中枚举全部事件，分析员随机 抽取展示10个典型样例事件，并对其中部分代表性事件进行细节",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "10"
+            }
+          ],
+          "n": 1,
+          "page": 20,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "025.6.16 公布了中*****油美国被勒索的信息并 勒索赎金 20个比特币。中*****油美国并未按照黑客麦 R",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "20"
+            }
+          ],
+          "n": 1,
+          "page": 22,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "单 以色列警察 四、匿名社交社群 6月份监控到匿名社交社群情报总数量78,705,352条，提供的有效数据泄 露样例下载9,037份。",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "78,705,352"
+            },
+            {
+              "context": "交社群情报总数量78,705,352条，提供的有效数据泄 露样例下载9,037份。涉及到我国数据泄露的内容包括：网购信息、保",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "9,037"
+            }
+          ],
+          "n": 2,
+          "page": 27,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "名社交软件的活跃用户中，以“86（我国区号）” 开头的手机号共发信息177,899条。使用匿名社交软件的用户，不会受到实名监 管",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "177,899"
+            }
+          ],
+          "n": 1,
+          "page": 30,
+          "with_total_wording": 1
+        }
+      ],
+      "text": "results/59_ocr_full_text/59_ocr_full_2025-06.txt"
+    },
+    "2025-07": {
+      "headline_figures": [
+        {
+          "context": "全球DWM（DarkWeb Market）情报： 深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,822份。",
+          "page": 6,
+          "unit": "份",
+          "value": "1,140,767"
+        },
+        {
+          "context": "深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,822份。 elease_time<=2025-08",
+          "page": 6,
+          "unit": "份",
+          "value": "5,822"
+        }
+      ],
+      "n_aggregates": 8,
+      "n_headline_figures": 2,
+      "n_pages": 34,
+      "n_pages_without_any": 28,
+      "pages_with_aggregates": 6,
+      "per_page": [
+        {
+          "hits": [
+            {
+              "context": "全球DWM（DarkWeb Market）情报： 深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,822份。",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "1,140,767"
+            },
+            {
+              "context": "深网和暗网有效情报1,140,767份； 泄露数据的高价值买卖情报5,822份。 elease_time<=2025-08",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "5,822"
+            },
+            {
+              "context": "X 录入时间小 1、国家分类 其中美国是数据泄露第一大国，共泄露数据983份，其他数据泄露较多的国 家还包括中国、印度、",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "983"
+            }
+          ],
+          "n": 3,
+          "page": 6,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "卖一份玻利维亚海 军数据。卖家称此份数据大小为10GB，总文件数量为63710个文件，此份数 据的价格为400美元。 7/3",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "63710"
+            }
+          ],
+          "n": 1,
+          "page": 10,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "交易平台有人宣称正在售卖一份马来西亚陆 军数据。卖家称此份数据共包含14816条马来西亚陆军成员的信息，包括姓 名、邮箱、手",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "14816"
+            }
+          ],
+          "n": 1,
+          "page": 13,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "客组织综述 2025年7月全球活跃的商业黑客组织（有勒索发布行为）共48个，公开 的勒索事件共548件，TOP10的黑",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "48"
+            }
+          ],
+          "n": 1,
+          "page": 19,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "黑客组织行动数量庞大，无法在报告中枚举全部事件，分析员随机 抽取展示10个典型样例事件，并对其中部分代表性事件进行细节",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "10"
+            }
+          ],
+          "n": 1,
+          "page": 23,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "名社交软件的活跃用户中，以“86（我国区号）” 开头的手机号共发信息145,389 条。使用匿名社交软件的用户，不会受到实名监 2",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "145,389"
+            }
+          ],
+          "n": 1,
+          "page": 31,
+          "with_total_wording": 1
+        }
+      ],
+      "text": "results/59_ocr_full_text/59_ocr_full_2025-07.txt"
+    },
+    "2025-08": {
+      "headline_figures": [
+        {
+          "context": "到全球DWM（DarkWebMarket）情报: 深网和暗网有效情报68,904份； 泄露数据的高价值买卖情报6,826份。",
+          "page": 6,
+          "unit": "份",
+          "value": "68,904"
+        },
+        {
+          "context": "情报: 深网和暗网有效情报68,904份； 泄露数据的高价值买卖情报6,826份。 (msg.release_time>=2",
+          "page": 6,
+          "unit": "份",
+          "value": "6,826"
+        }
+      ],
+      "n_aggregates": 10,
+      "n_headline_figures": 2,
+      "n_pages": 32,
+      "n_pages_without_any": 26,
+      "pages_with_aggregates": 6,
+      "per_page": [
+        {
+          "hits": [
+            {
+              "context": "到全球DWM（DarkWebMarket）情报: 深网和暗网有效情报68,904份； 泄露数据的高价值买卖情报6,826份。",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "68,904"
+            },
+            {
+              "context": "情报: 深网和暗网有效情报68,904份； 泄露数据的高价值买卖情报6,826份。 (msg.release_time>=2",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "6,826"
+            },
+            {
+              "context": "08-01 X 且 录入时间小于等于：2025-09-01 为您找到6826条匹配结果136ms ACMARK 数据泄露",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "6826"
+            },
+            {
+              "context": "会 地区 捷克 1、国家分类 其中美国是数据泄露第一大国，共泄露数据1255份，其他数据泄露较多的 国家还包括中国、印度、",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "1255"
+            }
+          ],
+          "n": 4,
+          "page": 6,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "6 售卖/发布人：DigitalGhostt 数据。卖家称此份数据共2,264,336条，数据大小为563MB，数据字段包含头 像、",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "2,264,336"
+            }
+          ],
+          "n": 1,
+          "page": 15,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "客组织综述 2025年8月全球活跃的商业黑客组织（有勒索发布行为）共50个，公开 的勒索事件共530件，TOP10的黑",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "50"
+            }
+          ],
+          "n": 1,
+          "page": 19,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "黑客组织行动数量庞大，无法在报告中枚举全部事件，分析员随机 抽取展示10个典型样例事件，并对其中部分代表性事件进行细节",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "10"
+            }
+          ],
+          "n": 1,
+          "page": 23,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "5.89GB 四、匿名社交社群 8月份监控到匿名社交社群情报总数量116,744,635条，提供的有效数据泄 露样例下载5,671份。",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "116,744,635"
+            },
+            {
+              "context": "社群情报总数量116,744,635条，提供的有效数据泄 露样例下载5,671份。涉及到我国数据泄露的内容包括：网购信息、保",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "5,671"
+            }
+          ],
+          "n": 2,
+          "page": 28,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "名社交软件的活跃用户中，以“86（我国区号）” 开头的手机号共发信息184,946条。使用匿名社交软件的用户，不会受到实名监 管",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "184,946"
+            }
+          ],
+          "n": 1,
+          "page": 30,
+          "with_total_wording": 1
+        }
+      ],
+      "text": "results/59_ocr_full_text/59_ocr_full_2025-08.txt"
+    },
+    "2025-10": {
+      "headline_figures": [
+        {
+          "context": "到全球DWM（DarkWebMarket）情报： 深网和暗网有效情报336,661份； 泄露数据的高价值买卖情报6,176份。",
+          "page": 6,
+          "unit": "份",
+          "value": "336,661"
+        },
+        {
+          "context": "报： 深网和暗网有效情报336,661份； 泄露数据的高价值买卖情报6,176份。 release_time<=2025-1",
+          "page": 6,
+          "unit": "份",
+          "value": "6,176"
+        }
+      ],
+      "n_aggregates": 14,
+      "n_headline_figures": 2,
+      "n_pages": 34,
+      "n_pages_without_any": 25,
+      "pages_with_aggregates": 9,
+      "per_page": [
+        {
+          "hits": [
+            {
+              "context": "到全球DWM（DarkWebMarket）情报： 深网和暗网有效情报336,661份； 泄露数据的高价值买卖情报6,176份。",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "336,661"
+            },
+            {
+              "context": "报： 深网和暗网有效情报336,661份； 泄露数据的高价值买卖情报6,176份。 release_time<=2025-1",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "6,176"
+            },
+            {
+              "context": "录入时间小于等 1、国家分类 其中美国是数据泄露第一大国，共泄露数据1265份，其他数据泄露较多的 国家还包括中国、印度、",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "1265"
+            }
+          ],
+          "n": 3,
+          "page": 6,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "暗网数据交易平台有人宣称正在售卖一份韩国警察数 据。卖家称此份数据共130,000条，包含的数据字段有姓名、电话、邮箱、所 属部",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "130,000"
+            }
+          ],
+          "n": 1,
+          "page": 8,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "Integrated Cooperative数据。卖家称此份数据共219486条，数 据大小为45GB，数据字段包含ID、姓",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "219486"
+            }
+          ],
+          "n": 1,
+          "page": 10,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "身份证号码 参保性质文化程度 月收入 婚期状况 联系地址 1391 1320119 个人参保中专 2000-3000元 未始 上海",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "1320119"
+            }
+          ],
+          "n": 1,
+          "page": 16,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "组织综述 2025年10月全球活跃的商业黑客组织（有勒索发布行为）共56个，公开 的勒索事件共840件，TOP10的黑",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "56"
+            }
+          ],
+          "n": 1,
+          "page": 18,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "黑客组织行动数量庞大，无法在报告中枚举全部事件，分析员随机 抽取展示10个典型样例事件，并对其中部分代表性事件进行细节",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "10"
+            }
+          ],
+          "n": 1,
+          "page": 21,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "98 pes 四、匿名社交社群 10月份监控到匿名社交社群情报总数量104,426,753条，提供的有效数据 泄露样例下载5,445份。",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "104,426,753"
+            },
+            {
+              "context": "社群情报总数量104,426,753条，提供的有效数据 泄露样例下载5,445份。涉及到我国数据泄露的内容包括：快递信息、银",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "5,445"
+            }
+          ],
+          "n": 2,
+          "page": 28,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "79刘 131 200 银行 18 10000 12 863.33 16个人消费 2025/3/2914:44 13",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "16"
+            },
+            {
+              "context": "1 吴南 51052 10000 60 196.67 银行 622 61个人消费 2025/3/29 10:06 18",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "61"
+            },
+            {
+              "context": "92563孙 141124 10000 60 196.67 银行 62 个人消费 2025/3/29 9:32 13",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "62"
+            }
+          ],
+          "n": 3,
+          "page": 30,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "名社交软件的活跃用户中，以“86(我国区号)” 开头的手机号共发信息116,006 条。使用匿名社交软件的用户，不会受到实名监 管",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "116,006"
+            }
+          ],
+          "n": 1,
+          "page": 31,
+          "with_total_wording": 1
+        }
+      ],
+      "text": "results/59_ocr_full_text/59_ocr_full_2025-10.txt"
+    },
+    "2025-11": {
+      "headline_figures": [
+        {
+          "context": "到全球DWM（DarkWebMarket）情报: 深网和暗网有效情报436,427份； 泄露数据的高价值买卖情报6,889份。",
+          "page": 6,
+          "unit": "份",
+          "value": "436,427"
+        },
+        {
+          "context": "报: 深网和暗网有效情报436,427份； 泄露数据的高价值买卖情报6,889份。 2025-12-01)&&（hot=2)",
+          "page": 6,
+          "unit": "份",
+          "value": "6,889"
+        }
+      ],
+      "n_aggregates": 17,
+      "n_headline_figures": 2,
+      "n_pages": 33,
+      "n_pages_without_any": 25,
+      "pages_with_aggregates": 8,
+      "per_page": [
+        {
+          "hits": [
+            {
+              "context": "到全球DWM（DarkWebMarket）情报: 深网和暗网有效情报436,427份； 泄露数据的高价值买卖情报6,889份。",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "436,427"
+            },
+            {
+              "context": "报: 深网和暗网有效情报436,427份； 泄露数据的高价值买卖情报6,889份。 2025-12-01)&&（hot=2)",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "6,889"
+            },
+            {
+              "context": "查看黑客组织 1、国家分类 其中美国是数据泄露第一大国，共泄露数据1489份，其他数据泄露较多的 国家还包括中国、印度、",
+              "is_total_wording": true,
+              "unit": "份",
+              "value": "1489"
+            }
+          ],
+          "n": 3,
+          "page": 6,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "暗网数据交易平台有人宣称正在售卖一份伊朗海军数 据。卖家称此份数据共1500条，包含的数据字段有姓名、邮箱、出生日期 6/",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "1500"
+            }
+          ],
+          "n": 1,
+          "page": 9,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "平台有人宣称正在售卖一份中*****银行 客户数据。卖家称此份数据共3000条，数据字段包含姓名、电话、手机号、 贷款金额",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "3000"
+            },
+            {
+              "context": "价格为50美元。 网站首页数据与信息网贷贷款中 限行网货用户身份证等28个字段3000条 商品基本信息 交易编号： 6",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "28"
+            },
+            {
+              "context": "美元。 网站首页数据与信息网贷贷款中 限行网货用户身份证等28个字段3000条 商品基本信息 交易编号： 61644 商品",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "3000"
+            },
+            {
+              "context": "交易保护期载止 资金结算 快志 打开 期 描述 行网货用户身份证等28个字段3000条50美金】拍完商品，及时下载收",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "28"
+            },
+            {
+              "context": "期载止 资金结算 快志 打开 期 描述 行网货用户身份证等28个字段3000条50美金】拍完商品，及时下载收货核实，提供国",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "3000"
+            },
+            {
+              "context": "品都是网盘秒发货！ 附件 2941 网货贷款一中 行网贷用户身份证等28个字段3000条50关金P9 11/30",
+              "is_total_wording": false,
+              "unit": "个",
+              "value": "28"
+            },
+            {
+              "context": "秒发货！ 附件 2941 网货贷款一中 行网贷用户身份证等28个字段3000条50关金P9 11/30",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "3000"
+            }
+          ],
+          "n": 7,
+          "page": 14,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "组织综述 2025年11月全球活跃的商业黑客组织（有勒索发布行为）共55个，公开 的勒索事件共723件，TOP10的黑",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "55"
+            }
+          ],
+          "n": 1,
+          "page": 17,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "黑客组织行动数量庞大，无法在报告中枚举全部事件，分析员随机 抽取展示10个典型样例事件，并对其中部分代表性事件进行细节",
+              "is_total_wording": true,
+              "unit": "个",
+              "value": "10"
+            }
+          ],
+          "n": 1,
+          "page": 21,
+          "with_total_wording": 1
+        },
+        {
+          "hits": [
+            {
+              "context": "it有相似之处。 截至2025年中，Interlock至少造成35-50起攻击，攻击数量在2025年上半年 显著增加，",
+              "is_total_wording": false,
+              "unit": "起",
+              "value": "50"
+            }
+          ],
+          "n": 1,
+          "page": 25,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "68.3MB 四、匿名社交社群 11月份监控到匿名社交社群情报总数量15,338,162条，提供的有效数据泄 露样例下载5,760份。",
+              "is_total_wording": false,
+              "unit": "条",
+              "value": "15,338,162"
+            },
+            {
+              "context": "交社群情报总数量15,338,162条，提供的有效数据泄 露样例下载5,760份。涉及到我国数据泄露的内容包括：快递信息、银",
+              "is_total_wording": false,
+              "unit": "份",
+              "value": "5,760"
+            }
+          ],
+          "n": 2,
+          "page": 28,
+          "with_total_wording": 0
+        },
+        {
+          "hits": [
+            {
+              "context": "名社交软件的活跃用户中,以“86（我国区号）” 开头的手机号共发信息29,318条。使用匿名社交软件的用户，不会受到实名监 管",
+              "is_total_wording": true,
+              "unit": "条",
+              "value": "29,318"
+            }
+          ],
+          "n": 1,
+          "page": 31,
+          "with_total_wording": 1
+        }
+      ],
+      "text": "results/59_ocr_full_text/59_ocr_full_2025-11.txt"
+    }
+  },
+  "lower_bound_note": "Counts are a LOWER BOUND: the source is OCR text, so a garbled number is a miss. This tool reports what it found, not what exists.",
+  "unit_pattern": "(?:份|条|起|次|个|人次)",
+  "what": "census of stated aggregates across every page of the five full-document OCR texts"
+}

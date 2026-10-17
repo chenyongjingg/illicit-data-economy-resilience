@@ -1,0 +1,219 @@
+数据黑产”韧性”研究 · 冲刺计划书 v5（终版，投 Complex &amp; Intelligent Systems）
+目标期刊：Complex &amp; Intelligent Systems（Springer，Q1，IF 4.5，首轮决定中位数约 20 天） 稿件形态：结构紧凑的完整研究论文（12–14 页 + 附录；该刊无 Short Communication 栏目，短稿反而吃亏） 题目（工作版）：Why Do Data Black Markets Bounce Back? Measuring, Explaining, and Suppressing the Resilience of Illicit Data Trade Ecosystems 硬约束：只用公开数据集；单卡 RTX 4090（24GB）+ 100GB 内存；2027 年 1 月 10 日前 online（结题） 本周必办：向课题管理部门书面确认结题认定标准（录用通知 / online / 检索）
+一、研究设计
+1.1 动机
+2017 年 Bayonet 行动查封 AlphaBay 并秘密接管 Hansa；2025 年 Telegram 封群行动后泄露事件量仅降 30% 即反弹，头部担保平台被打掉后数周内由替代平台补位——八年间打击手段升级，黑产生态的”快速恢复”从未改变。现有计算研究停留在”检测单个黑产节点”，缺乏对生态韧性的量化建模与对策优化。
+1.2 研究问题与课题对应
+RQ
+内容
+对应课题
+实验
+RQ1
+韧性如何度量？恢复有何规律？
+生态画像
+E0、E1、E2、E4
+RQ1.5
+能否预测节点/功能的存续？（预测层，GPU 实验）
+生态画像
+E5、E6
+RQ2
+哪些结构特征决定韧性（生成机制）？
+韧性生成机制
+E3、E7
+RQ3
+何种干预最能抑制韧性（治理对策）？
+治理对策
+E8、E9
+1.3 贡献
+首个数据黑产生态韧性多维度量套件（恢复时间、功能冗余度、结构熵、中心性再分布速率、迁移效率、连通韧性），在多层真实图上计算；
+首个多层预测框架：用时序图神经网络预测打击后节点存续与功能替代（填补韧性”预测”空白）；
+跨层因果归因：PSM + DiD + 安慰剂检验，量化去中心化、跨层桥接对韧性的因果作用；
+因果校准的 LLM-agent 仿真（QLoRA 行为模型 + ranking bootstrap），输出治理策略排序并外部验证。
+二、数据方案（全部公开，时间分层架构）
+层
+数据源
+时间窗
+承担分析
+社交层（历史回放）
+Gwern DNM Archives
+2016–2018
+Bayonet（2017.07）主自然实验；Onymous（2014.11）第二事件
+资金层
+Elliptic / Elliptic++
+2014–2019
+地址迁移、存续预测标签、跨层对齐
+基础设施层（实时）
+Abuse.ch
+2024–2026
+IOC 复活/替代生存分析
+事件链补充
+ScienceDB 电信诈骗案件集（571 起）
+静态
+角色标注 ground truth
+外部验证
+2025 年数据泄露态势报告
+2025
+仿真外推验证
+跨层实体对齐：PGP/收款地址 ↔ Elliptic 链上地址（先用规则匹配，E6 用图嵌入增强）——产出桥接节点清单，串联 E1→E3→E8。
+伦理声明（必写）：仅公开元数据；不接触原始泄露个人信息；标识哈希化；遵守许可；不与黑产主体交互。
+三、实验矩阵（11 个实验，三层递进 + 仿真闭环）
+测量层（统计，零训练）
+#
+实验
+方法
+产出
+E0
+基础设施层韧性
+Abuse.ch IOC 处置后复活时间的生存分析
+当前时态证据
+E1
+多层韧性画像
+Bayonet ±12 个月 6 项指标 + 功能冗余度 + 跨层对齐
+核心测量
+E2
+双事件对比
+Onymous vs Bayonet 指标一致性（E1 管线复用）
+回应单事件质疑
+E4
+角色存续
+Kaplan–Meier（卖家/中介/担保分层）
+功能冗余可视化
+预测层（GPU，给 RQ1 加”预测”深度）
+#
+实验
+方法
+产出
+GPU 用量
+E5
+打击后存续预测
+TGN / TGAT 时序图神经网络，预测节点在 t+Δ 是否存续（AUC 对比 GraphSAGE、MLP 特征基线）
+表：TGN vs 基线 AUC
+中高：PyG Temporal，百万边，4090 友好
+E6
+跨层对齐增强 + 消融
+图嵌入（Node2Vec / HGT 嵌入）辅助地址对齐，报告对齐率与消融
+对齐质量表
+中：嵌入训练
+E7
+韧性预测特征重要性
+GNN（HGT 多层）预测节点恢复速度，SHAP/GNNExplainer 归因结构特征（桥接度、冗余度 vs 中心性）
+机制证据图
+高：HGT 异质图训练
+机制层（因果）
+#
+实验
+方法
+产出
+E3
+机制归因
+PSM + DiD（H1–H4）+ 500 次安慰剂检验
+生成机制表
+仿真与验证层（GPU + 闭环）
+#
+实验
+方法
+产出
+GPU 用量
+E8
+因果校准 LLM-agent 仿真
+QLoRA（7B）在 E3 标注的频道/帖子行为数据上微调出角色行为模型；DiD 系数校准环境；4 情景（大节点/桥接节点 × 单层/多层打击）+ ranking bootstrap（±20%，30 次）
+策略排序表
+最高：QLoRA 训练 + 批量推理
+E9
+外部验证
+仿真外推 vs 2025 报告实测曲线
+外推性证据
+—
+假设（预注册）
+H1 去中心化 ↑ → 恢复时间 ↓　H2 跨层桥接 ↑ → 恢复时间 ↓
+H3 功能冗余 ↑ → 功能恢复 ↑　H4 单纯高中心性与韧性无显著正相关
+串联逻辑：E1 桥接节点 → E5/E7 预测验证 → E3 因果 → E8 情景设计与验证 → E9 外推。E5/E7 不只是装饰：它们证明结构特征携带可泛化的预测信号，为 E3 的因果结论提供”预测有效性”旁证——这是 C&amp;IS 审稿人喜欢的 triangulation。
+四、相关工作区隔（写作必备）
+工作
+撞车点
+区隔
+Wegberg &amp; Verburgh《Lost in the Dream》
+Bayonet 卖家迁移测量
+其单层迁移统计；本文多层韧性套件 + 预测 + 因果 + 对策
+Manzi &amp; Calderoni 2024（JASSS）
+规则式 ABM 犯罪韧性仿真
+致敬其路线；本文 LLM agent + 真实 DiD 校准 + 多层图
+ElBahrawy et al. 2020（Sci. Rep.）
+暗网市场恢复现象
+描述性单层；本文多层 + 因果 + 闭环
+Elliptic++ HGNN / IMBWatch
+非法网络图学习检测
+检测节点 vs 度量+预测+干预系统
+CaaS 韧性缺口（2025，定性）
+韧性缺口概念
+本文形式化、可计算化
+审稿预案：①韧性≠鲁棒性（恢复轨迹 vs 瞬时完整性，附录区分）；②Bayonet 现象已知但机制与对策未知；③仿真只主张排序 + 双重外部约束（E9 + bootstrap）；④预测实验旨在验证特征有效性，不主张部署级精度。
+五、时间推演与期刊链
+11 月 12 日投稿 Complex &amp; Intelligent Systems → 12 月上旬首轮 → 小修则 1 月上旬 online，卡进 1 月 10 日；
+首轮被拒 → 11 月底转 Social Network Analysis and Mining（Q1 SJR，网络韧性正对口）→ Applied Intelligence（Q2）兜底；
+投稿当日同步 arXiv（结题进度双保险）。
+六、10 周执行时间表
+周
+内容
+验收
+W1–W2
+Gwern + Elliptic 落库；多层图构建；规则跨层对齐
+图文件 + 桥接节点清单
+W3
+E0 + E1
+图 1–2
+W4
+E2 + E3（含安慰剂）
+H1–H4 表
+W5
+E4 + 标注附录实验（300 样本 few-shot，κ ≥ 0.75）
+KM 曲线 + κ
+W6–W7
+E5 + E6 + E7（GPU 密集期：TGN/HGT 训练 + 嵌入 + 解释）
+预测 AUC 表 + SHAP 图
+W8
+QLoRA 行为模型训练 + E8 仿真 + ranking bootstrap
+策略排序表
+W9
+E9 外部验证；全文合拢（12–14 页）
+可投稿稿
+W10（11 月 12 日前）
+投稿 + arXiv
+投稿回执
+GPU 排程：W6–W8 为显存高峰期（TGN/HGT/QLoRA 串行跑，单个任务均 ≤20GB，可夜间排队）；其余周 GPU 基本闲置，可并行跑长版（TGDataset 现代层 + MARL）实验作为课题后续成果。
+七、风险与预案
+风险
+预案
+TGN/HGT 训练不收敛或提升有限
+降级为 GraphSAGE + 手工时序特征（滞后活性、邻居存续率），叙事不变
+跨层对齐率低
+弱对齐兜底（文本共现即连边），写入 Limitations
+QLoRA 行为模型失真
+退化为 prompt 驱动 agent + 拒绝采样过滤，保留 ranking 结论
+仿真 ranking 不稳
+如实报告敏感区间，转”情景敏感性分析”叙事
+首轮被拒
+SNAM → Applied Intelligence 链已排，稿件改动最小
+八、硬件核对（全部单卡 4090 可承受）
+任务
+显存
+方案
+TGN / TGAT 训练（E5）
+8–16GB
+PyG Temporal，邻居采样 mini-batch
+HGT 异质图 + SHAP（E7）
+10–16GB
+mini-batch + 异质采样
+图嵌入（E6）
+&lt;8GB
+Node2Vec / HGT 嵌入
+QLoRA 7B（E8）
+~18–20GB
+4-bit + LoRA r=16
+Qwen3-32B-Q4 批量推理（标注/仿真）
+~20GB
+vLLM，KV cache offload 至 100GB 内存
+统计实验（E0–E4, E3, E9）
+&lt;4GB
+NetworkX + lifelines + DuckDB
+（v5 终版，2026-09-24。相对 v4：新增 GPU 预测层 E5/E6/E7 与 QLoRA 行为模型，稿件从”短稿”升级为紧凑完整论文，实验 7→11，时间表 8→10 周，投稿节点 11 月 12 日。）

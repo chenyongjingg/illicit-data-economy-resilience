@@ -1,0 +1,22 @@
+{
+  "social_distinct_addresses": 124,
+  "elliptic_addresses": 822942,
+  "intersection": [
+    "12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX",
+    "12o7NkLkivenB2v1aej9tSSzkB3SJ7vPXD",
+    "38ccq12hPFoiSksxUdr6SQ5VosyjY7s9AU"
+  ],
+  "control_recovered": true,
+  "control_address": "111112TykSw72ztDN2WJger4cynzWYC5w",
+  "multi_market_sellers": 1353,
+  "sellers_total": 6192,
+  "markets_per_seller": {
+    "1": 4839,
+    "2": 935,
+    "3": 313,
+    "4": 84,
+    "5": 20,
+    "6": 1
+  },
+  "agora_druglisting_shared_vendors": 2906
+}

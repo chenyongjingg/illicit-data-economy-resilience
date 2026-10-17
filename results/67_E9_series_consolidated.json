@@ -1,0 +1,283 @@
+{
+  "channels_available": [
+    "text_layer (51_, 4 periods)",
+    "ocr_p6_250 (57_, 9 periods)",
+    "ocr_p6_200 (65_, 9 periods)",
+    "pixel_read (66_, 9 periods, band 0.02-0.32, 400 dpi)"
+  ],
+  "disagreements": [],
+  "min_channels_per_period": 3,
+  "n_periods": 9,
+  "per_period": {
+    "2025-01": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read",
+        "text_layer"
+      ],
+      "n_channels": 4,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          96082,
+          4749
+        ],
+        "ocr_p6_250": [
+          96082,
+          4749
+        ],
+        "pixel_read": [
+          96082,
+          4749
+        ],
+        "text_layer": [
+          96082,
+          4749
+        ]
+      }
+    },
+    "2025-02": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read",
+        "text_layer"
+      ],
+      "n_channels": 4,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          140800,
+          4955
+        ],
+        "ocr_p6_250": [
+          140800,
+          4955
+        ],
+        "pixel_read": [
+          140800,
+          4955
+        ],
+        "text_layer": [
+          140800,
+          4955
+        ]
+      }
+    },
+    "2025-03": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read",
+        "text_layer"
+      ],
+      "n_channels": 4,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          356323,
+          5880
+        ],
+        "ocr_p6_250": [
+          356323,
+          5880
+        ],
+        "pixel_read": [
+          356323,
+          5880
+        ],
+        "text_layer": [
+          356323,
+          5880
+        ]
+      }
+    },
+    "2025-04": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read",
+        "text_layer"
+      ],
+      "n_channels": 4,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          509880,
+          3999
+        ],
+        "ocr_p6_250": [
+          509880,
+          3999
+        ],
+        "pixel_read": [
+          509880,
+          3999
+        ],
+        "text_layer": [
+          509880,
+          3999
+        ]
+      }
+    },
+    "2025-06": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read"
+      ],
+      "n_channels": 3,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          1140767,
+          5232
+        ],
+        "ocr_p6_250": [
+          1140767,
+          5232
+        ],
+        "pixel_read": [
+          1140767,
+          5232
+        ]
+      }
+    },
+    "2025-07": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read"
+      ],
+      "n_channels": 3,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          1140767,
+          5822
+        ],
+        "ocr_p6_250": [
+          1140767,
+          5822
+        ],
+        "pixel_read": [
+          1140767,
+          5822
+        ]
+      }
+    },
+    "2025-08": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read"
+      ],
+      "n_channels": 3,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          68904,
+          6826
+        ],
+        "ocr_p6_250": [
+          68904,
+          6826
+        ],
+        "pixel_read": [
+          68904,
+          6826
+        ]
+      }
+    },
+    "2025-10": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read"
+      ],
+      "n_channels": 3,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          336661,
+          6176
+        ],
+        "ocr_p6_250": [
+          336661,
+          6176
+        ],
+        "pixel_read": [
+          336661,
+          6176
+        ]
+      }
+    },
+    "2025-11": {
+      "agree": true,
+      "channels": [
+        "ocr_p6_200",
+        "ocr_p6_250",
+        "pixel_read"
+      ],
+      "n_channels": 3,
+      "values_by_channel": {
+        "ocr_p6_200": [
+          436427,
+          6889
+        ],
+        "ocr_p6_250": [
+          436427,
+          6889
+        ],
+        "pixel_read": [
+          436427,
+          6889
+        ]
+      }
+    }
+  },
+  "periods": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-10",
+    "2025-11"
+  ],
+  "reading": "All four channels agree on every period. That is four instruments, but only ONE of them is not a program reading a render (C-112): the agreement of three OCR passes is not three independent witnesses. The pixel read is what makes the OCR readings evidence rather than output. What this does NOT establish: that the publisher's two sentences mean what the plan's E9 wants them to mean, and that p.6's pair is the only aggregate in the document (it is not -- see C-112/C-113). On the C-112 disagreement itself: the per-category tab row carries a THIRD quantity, not the bullet (C-121) -- it equals effective in 01-02, high_value in 03/06/07/08/11 and NEITHER in 04 and 10. 2025-04's bullet reads 3,999 while 6663 sits in that tab row, so 6663 is another element, not a second reading of the bullet. See results/63_E9_query_labels.json.",
+  "series": {
+    "effective_items": {
+      "2025-01": 96082,
+      "2025-02": 140800,
+      "2025-03": 356323,
+      "2025-04": 509880,
+      "2025-06": 1140767,
+      "2025-07": 1140767,
+      "2025-08": 68904,
+      "2025-10": 336661,
+      "2025-11": 436427
+    },
+    "high_value_items": {
+      "2025-01": 4749,
+      "2025-02": 4955,
+      "2025-03": 5880,
+      "2025-04": 3999,
+      "2025-06": 5232,
+      "2025-07": 5822,
+      "2025-08": 6826,
+      "2025-10": 6176,
+      "2025-11": 6889
+    }
+  },
+  "source_files": [
+    "results/51_E9_series.json",
+    "results/57_E9_ocr_p6.json",
+    "results/65_E9_shot_band.json",
+    "results/66_E9_pixel_reads.json"
+  ],
+  "what": "E9 external anchor -- the consolidated per-issue series, with the channels that assert each value"
+}

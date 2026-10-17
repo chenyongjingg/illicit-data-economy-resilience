@@ -1,0 +1,147 @@
+{
+  "all_pages_with_figures_are_p6": false,
+  "instrument": "regex over 59_ full-document OCR sidecars",
+  "issues": {
+    "2025-06": {
+      "figures": {
+        "27": [
+          [
+            "露样例下载",
+            9037
+          ]
+        ],
+        "6": [
+          [
+            "深网和暗网有效情报",
+            1140767
+          ],
+          [
+            "泄露数据的高价值买卖情报",
+            5232
+          ],
+          [
+            "共泄露数据",
+            892
+          ]
+        ],
+        "9": [
+          [
+            "卖家称此份数据涉及",
+            4662
+          ]
+        ]
+      },
+      "headline_pair_only_on_p6": false,
+      "interpretation": "True  -> no figure anywhere else; p.6 carries the whole document. False -> the report states OTHER aggregates elsewhere; this says nothing about whether the two headline bullets are on p.6, which is the property p.6-only extraction actually needs.",
+      "n_pages_ocrd": 32,
+      "pages_with_figures": [
+        6,
+        9,
+        27
+      ],
+      "regex_disagreements": []
+    },
+    "2025-07": {
+      "figures": {
+        "6": [
+          [
+            "深网和暗网有效情报",
+            1140767
+          ],
+          [
+            "泄露数据的高价值买卖情报",
+            5822
+          ],
+          [
+            "共泄露数据",
+            983
+          ]
+        ]
+      },
+      "headline_pair_only_on_p6": true,
+      "interpretation": "True  -> no figure anywhere else; p.6 carries the whole document. False -> the report states OTHER aggregates elsewhere; this says nothing about whether the two headline bullets are on p.6, which is the property p.6-only extraction actually needs.",
+      "n_pages_ocrd": 34,
+      "pages_with_figures": [
+        6
+      ],
+      "regex_disagreements": []
+    },
+    "2025-08": {
+      "figures": {
+        "28": [
+          [
+            "露样例下载",
+            5671
+          ]
+        ],
+        "6": [
+          [
+            "深网和暗网有效情报",
+            68904
+          ],
+          [
+            "泄露数据的高价值买卖情报",
+            6826
+          ],
+          [
+            "共泄露数据",
+            1255
+          ]
+        ]
+      },
+      "headline_pair_only_on_p6": false,
+      "interpretation": "True  -> no figure anywhere else; p.6 carries the whole document. False -> the report states OTHER aggregates elsewhere; this says nothing about whether the two headline bullets are on p.6, which is the property p.6-only extraction actually needs.",
+      "n_pages_ocrd": 32,
+      "pages_with_figures": [
+        6,
+        28
+      ],
+      "regex_disagreements": [
+        {
+          "new": [
+            [
+              "深网和暗网有效情报",
+              68904
+            ],
+            [
+              "泄露数据的高价值买卖情报",
+              6826
+            ],
+            [
+              "共泄露数据",
+              1255
+            ]
+          ],
+          "old": [
+            [
+              "深网和暗网有效情报6",
+              8904
+            ],
+            [
+              "泄露数据的高价值买卖情报",
+              6826
+            ],
+            [
+              "共泄露数据1",
+              255
+            ]
+          ],
+          "page": 6
+        }
+      ]
+    }
+  },
+  "note": "READ THIS BEFORE USING THIS FILE. `all_pages_with_figures_are_p6` is asymmetric and neither value licenses a claim on its own (C-112, C-113). False is NOT a defect: the report carries section-level aggregates on other pages too, so a False is the expected value. But True is NOT an existence claim either -- this detector only matches `<label> <n> 份`, and 2025-07 returned True while its section 4 DOES state aggregates, phrased with 条 (C-113). So a True means 'no other page writes an aggregate with 份', not 'p.6 is the only page with figures'. What actually licenses p.6-only extraction is the narrower fact measured elsewhere: the two HEADLINE sentences appear only on p.6. Read the `figures` map rather than the flag.",
+  "positive_control_2025_06": {
+    "observed_values_on_p6": [
+      892,
+      5232,
+      1140767
+    ],
+    "passes": true,
+    "requirement": "p.6 yields both 1140767 and 5232"
+  },
+  "positive_control_passes": true,
+  "question": "which pages state a figure (<label> <n> 份)?",
+  "verdict_meaningful": true
+}

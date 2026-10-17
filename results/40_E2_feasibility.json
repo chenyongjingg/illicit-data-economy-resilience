@@ -1,0 +1,237 @@
+{
+  "verdict": {
+    "agora|Onymous": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    },
+    "agora|Bayonet": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    },
+    "alphabay_items|Onymous": {
+      "inside": false,
+      "before_days": -45,
+      "after_days": 814,
+      "margin_days": -1
+    },
+    "alphabay_items|Bayonet": {
+      "inside": false,
+      "before_days": 942,
+      "after_days": -173,
+      "margin_days": -1
+    },
+    "alphabay_feedback|Onymous": {
+      "inside": false,
+      "before_days": -58,
+      "after_days": 814,
+      "margin_days": -1
+    },
+    "alphabay_feedback|Bayonet": {
+      "inside": false,
+      "before_days": 929,
+      "after_days": -173,
+      "margin_days": -1
+    },
+    "hansa_listings|Onymous": {
+      "inside": false,
+      "before_days": -767,
+      "after_days": 768,
+      "margin_days": -1
+    },
+    "hansa_listings|Bayonet": {
+      "inside": false,
+      "before_days": 220,
+      "after_days": -219,
+      "margin_days": -1
+    },
+    "hansa_reviews|Onymous": {
+      "inside": false,
+      "before_days": -311,
+      "after_days": 768,
+      "margin_days": -1
+    },
+    "hansa_reviews|Bayonet": {
+      "inside": false,
+      "before_days": 676,
+      "after_days": -219,
+      "margin_days": -1
+    },
+    "valhalla_listings|Onymous": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    },
+    "valhalla_listings|Bayonet": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    },
+    "kilos_reviews|Onymous": {
+      "inside": false,
+      "before_days": -1202,
+      "after_days": 1893,
+      "margin_days": -1
+    },
+    "kilos_reviews|Bayonet": {
+      "inside": false,
+      "before_days": -215,
+      "after_days": 906,
+      "margin_days": -1
+    },
+    "druglisting|Onymous": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    },
+    "druglisting|Bayonet": {
+      "inside": false,
+      "before_days": null,
+      "after_days": null,
+      "margin_days": -1,
+      "note": "no date column"
+    }
+  },
+  "files": {
+    "agora": {
+      "n_rows": 109689,
+      "n_ragged": 0,
+      "cols": []
+    },
+    "alphabay_items": {
+      "n_rows": 114231,
+      "n_ragged": 0,
+      "cols": [
+        {
+          "col": "listed",
+          "idx": 4,
+          "kind": "date",
+          "sample_frac": 1.0,
+          "fmt": "inferred",
+          "frac": 1.0,
+          "lo": "2014-12-21 00:00:00",
+          "hi": "2017-01-28 00:00:00",
+          "n_parsed": 114231,
+          "n_distinct_dates": 738
+        }
+      ],
+      "union_lo": "2014-12-21 00:00:00",
+      "union_hi": "2017-01-28 00:00:00"
+    },
+    "alphabay_feedback": {
+      "n_rows": 1217388,
+      "n_ragged": 1,
+      "cols": [
+        {
+          "col": "date",
+          "idx": 0,
+          "kind": "date",
+          "sample_frac": 1.0,
+          "fmt": "inferred",
+          "frac": 0.9999983571383979,
+          "lo": "2015-01-03 00:00:00",
+          "hi": "2017-01-28 00:00:00",
+          "n_parsed": 1217386,
+          "n_distinct_dates": 687
+        }
+      ],
+      "union_lo": "2015-01-03 00:00:00",
+      "union_hi": "2017-01-28 00:00:00"
+    },
+    "hansa_listings": {
+      "n_rows": 14773,
+      "n_ragged": 5518,
+      "cols": [
+        {
+          "col": "c0",
+          "idx": 0,
+          "kind": "date",
+          "sample_frac": 1.0,
+          "fmt": "inferred",
+          "frac": 1.0,
+          "lo": "2016-12-11 15:29:34.643645495",
+          "hi": "2016-12-13 00:14:46.580630785",
+          "n_parsed": 14773,
+          "n_distinct_dates": 2
+        }
+      ],
+      "union_lo": "2016-12-11 15:29:34.643645495",
+      "union_hi": "2016-12-13 00:14:46.580630785"
+    },
+    "hansa_reviews": {
+      "n_rows": 51553,
+      "n_ragged": 0,
+      "cols": [
+        {
+          "col": "c6",
+          "idx": 6,
+          "kind": "date",
+          "sample_frac": 1.0,
+          "fmt": "inferred",
+          "frac": 1.0,
+          "lo": "2015-09-12 13:35:00",
+          "hi": "2016-12-13 18:47:00",
+          "n_parsed": 51553,
+          "n_distinct_dates": 444
+        },
+        {
+          "col": "c0",
+          "idx": 0,
+          "kind": "date",
+          "sample_frac": 1.0,
+          "fmt": "inferred",
+          "frac": 1.0,
+          "lo": "2016-12-13 02:37:18.202573553",
+          "hi": "2016-12-13 16:33:34.856382927",
+          "n_parsed": 51553,
+          "n_distinct_dates": 1
+        }
+      ],
+      "union_lo": "2015-09-12 13:35:00",
+      "union_hi": "2016-12-13 18:47:00"
+    },
+    "valhalla_listings": {
+      "n_rows": 16511,
+      "n_ragged": 0,
+      "cols": []
+    },
+    "kilos_reviews": {
+      "n_rows": 235905,
+      "n_ragged": 235904,
+      "cols": [
+        {
+          "col": "c2",
+          "idx": 2,
+          "kind": "epoch",
+          "sample_frac": 0.9555,
+          "fmt": "unix_seconds",
+          "frac": 0.9555287085903224,
+          "lo": "2018-02-19 20:07:00",
+          "hi": "2020-01-12 11:17:00",
+          "n_parsed": 225414,
+          "n_distinct_dates": 654
+        }
+      ],
+      "union_lo": "2018-02-19 20:07:00",
+      "union_hi": "2020-01-12 11:17:00"
+    },
+    "druglisting": {
+      "n_rows": 194433,
+      "n_ragged": 0,
+      "cols": []
+    }
+  },
+  "onumous": "2014-11-06",
+  "bayonet": "2017-07-20"
+}

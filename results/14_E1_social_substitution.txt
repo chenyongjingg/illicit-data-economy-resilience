@@ -1,0 +1,136 @@
+==============================================================================
+E1 -- CROSS-MARKET SUBSTITUTION AFTER A MARKET-LEVEL SHOCK
+==============================================================================
+
+==============================================================================
+1. The aggregate pattern that motivates the test
+==============================================================================
+market      Apollon  CannaHome  Cannazon  Cryptonia  Empire
+week                                                       
+2019-09-02      142          0      1989       1727    2768
+2019-09-09      226          0      1884       1830    2901
+2019-09-16      314         18      1995       1726    3194
+2019-09-23      306        140      2173       1750    3224
+2019-09-30      465        296      2036       1816    3706
+2019-10-07      776        356      2234       1774    4093
+2019-10-14     1083        499      2360       2259    4765
+2019-10-21     1283        569      2234       2531    5449
+2019-10-28     1343        673      2376       2671    6149
+2019-11-04     1590        675      2427       3138    7236
+2019-11-11     1585        717      2407       2880    4036
+2019-11-18     2120        671        20          0    1381
+2019-11-25     3171        514         0          0     975
+2019-12-02     5329        693        20          0    1347
+2019-12-09     6274        795         0          0    1561
+2019-12-16     8854        994         0          0    1586
+2019-12-23     1920        778         0          0     755
+2019-12-30     2456        879         0          0     592
+2020-01-06     1196        691         0          0     206
+
+  weekly mean, pre (2019-06-03..2019-11-11) vs post (2019-11-18..):
+    Empire        2769.2 ->   1050.4  (-62%)
+    Cannazon      1908.8 ->      5.0  (-100%)
+    Apollon        418.1 ->   3915.0  (+836%)
+    Cryptonia     1430.2 ->      0.0  (-100%)
+    CannaHome      164.3 ->    751.9  (+358%)
+
+  NOTE: Apollon/CannaHome rising while Cryptonia/Cannazon stop is
+  CONSISTENT with substitution and also with the collector re-weighting
+  coverage. The aggregate cannot tell them apart; only §2 can.
+
+==============================================================================
+2. Seller-level DiD on a surviving market (Apollon)
+==============================================================================
+
+  --- surviving market: Apollon ---
+  panel: 1028 sellers x 32 weeks = 32896 rows
+  treated sellers (>=1 review in Cryptonia/Cannazon before 2019-11-18): 697
+  control sellers (active in Apollon, never in Cryptonia/Cannazon): 331
+  DiD beta = -1.3364  (se 0.5295, t -2.52, p 0.01176)  clusters=1028
+  treated pre-period mean weekly reviews in Apollon: 0.26
+  -> effect as a share of the treated pre-period level: -511%
+
+  --- surviving market: Empire ---
+  panel: 916 sellers x 32 weeks = 29312 rows
+  treated sellers (>=1 review in Cryptonia/Cannazon before 2019-11-18): 697
+  control sellers (active in Empire, never in Cryptonia/Cannazon): 219
+  DiD beta = +4.9020  (se 0.7297, t 6.72, p 3.246e-11)  clusters=916
+  treated pre-period mean weekly reviews in Empire: 1.11
+  -> effect as a share of the treated pre-period level: +440%
+
+==============================================================================
+3. Pre-trends: is the difference already there before the event?
+==============================================================================
+  seller counts: treated=697 control=331
+
+  mean weekly Apollon reviews per seller, by group:
+            control  treated
+week                        
+2019-08-26    0.178    0.099
+2019-09-02    0.184    0.116
+2019-09-09    0.372    0.148
+2019-09-16    0.550    0.189
+2019-09-23    0.538    0.184
+2019-09-30    0.798    0.288
+2019-10-07    1.224    0.532
+2019-10-14    1.749    0.723
+2019-10-21    2.248    0.773
+2019-10-28    2.438    0.769
+2019-11-04    2.798    0.953
+2019-11-11    2.816    0.937
+
+  post weeks:
+            control  treated
+week                        
+2019-11-18    3.417    1.298
+2019-11-25    4.350    1.940
+2019-12-02    6.066    3.194
+2019-12-09    6.674    4.138
+2019-12-16    8.640    5.426
+2019-12-23    1.813    1.373
+2019-12-30    2.287    1.664
+2020-01-06    1.033    0.947
+
+  pre-period gap (treated - control): mean -0.451, sd 0.631
+  post-period gap (treated - control): mean -1.788
+  -> the DiD is the CHANGE in the gap; a pre-period gap that is
+     already large and drifting means the FE model is doing the work,
+     not the shock.
+
+==============================================================================
+4. Placebo: the same DiD at a date when nothing happened
+==============================================================================
+  placebo event 2019-08-05: beta=-1.1478 (se 0.6595, p 0.0827)
+  placebo event 2019-09-02: beta=-1.6909 (se 0.5632, p 0.002812)
+  placebo event 2019-10-07: beta=-1.6556 (se 0.5325, p 0.001953)
+
+  A real effect should be absent at these dates. If the placebo is as
+  large as the event estimate, the design is measuring trend.
+
+==============================================================================
+5. Extensive margin: do treated sellers APPEAR in Apollon at all?
+==============================================================================
+  treated  sellers active in Apollon pre: 158/697 ; post: 240/697
+           entered: 96 ; exited: 14
+  control  sellers active in Apollon pre: 331/331 ; post: 272/331
+           entered: 0 ; exited: 59
+
+  The extensive margin is the migration-relevant one: a seller who had
+  no Apollon presence before the shock and has one after can only have
+  arrived, and that is not a change in how often anyone writes reviews.
+
+==============================================================================
+6. Figure
+==============================================================================
+  wrote /root/cis/results/figs/E1_social_substitution.png
+  wrote /root/cis/results/figs/E1_social_substitution.pdf
+
+==============================================================================
+7. VERDICT
+==============================================================================
+  What the aggregate shows: Empire -62%, Cannazon -100%, Apollon +836%, Cryptonia -100%, CannaHome +358%
+  What the seller-level DiD shows on Apollon: beta=-1.3364, p=0.01176
+
+  The verdict is written into the stage report, not here, because the
+  placebo has to be read next to the estimate. What this run fixes is
+  that both numbers now exist.

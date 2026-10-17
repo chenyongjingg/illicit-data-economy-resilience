@@ -1,0 +1,64 @@
+\section{Governance Implications, Conditional on the Bounds}
+
+Every implication below is conditional on the bounds of \S4; none survives
+transposition into an unconditional policy claim.
+
+\begin{enumerate}\itemsep1pt
+\item \textbf{Targeted dismantling is the only lever that moves the structure.}
+Random removal needs about 60\% of the financial graph to halve its giant
+component whereas degree-targeted removal needs 2.5\% (E6-fin). \emph{Condition:}
+the giant component is a weak proxy at 47/49 saturated steps, so this is about
+relative leverage, not absolute effect size.
+\item \textbf{The illicit financial subgraph is a periphery, so act accordingly.}
+Removing 100\% of illicit-labelled addresses leaves the component at 98.88\%
+(E6-fin). \emph{Condition:} address-level enforcement is disruption of service
+rather than damage to the network, and expecting network-level effects from it
+is a category error our data bounds.
+\item \textbf{The fast layer is where resilience lives.} 13.88\% of darkened
+hosts return within a day at 6.2$\times$ chance (E7-inf) and median
+infrastructure lifetime is 1.36 days (E0). \emph{Condition:} takedown cadence,
+not takedown existence, is the operative variable at this layer.
+\item \textbf{Domain infrastructure is the durable substrate.} Domain-hosted
+infrastructure returns 1.31$\times$ as often as bare IP (80.77\% vs 61.49\%,
+p \textless{} 0.001). \emph{Condition:} interventions that raise the cost of
+domain re-registration attack the slower half of the churn cycle, and the feed's
+scanner admixture is not separable.
+\item \textbf{Displacement is directional: single-market seizures relocate rather
+than remove.} Exposed vendors surface on Apollon at +10.5 pp above controls and
+on Empire at +0.0, a zero-denominator cell that is unmeasurable rather than a
+measured zero (E1-v3). \emph{Condition:} the corrected figures are two
+non-significant point estimates, so the directional design and not the magnitude
+is the finding, and +10.5 pp is an upper bound on substitution.
+\end{enumerate}
+
+\section{Limitations}
+
+We consolidate, rather than disperse, the weaknesses a reviewer would find.
+
+(i) \textbf{Causal magnitudes are not identified.} E3's design failed at matching
+(overlap = 0.000), and with one ecosystem-wide shock no placebo or matching
+machinery recovers an effect size; only H4 survives, and H4's support is the
+confirmation of an absence, which is weaker evidence than a positive finding.
+This is not a null result about the mechanism; it is the demonstration that this
+data cannot support effect-size estimation in any design we could build.
+
+(ii) \textbf{Historical windows.} The dated parts of the social and financial
+layers cover roughly 2014--2017: the AlphaBay listings span 2014-12-21 to
+2017-01-28, Agora 2014--2015, and the financial layer's ordinal axis maps to
+approximately 2016-01-01 to 2017-11-03. Two social-layer panels (Kilos,
+drug-listing) carry no date column at all, so no window can be stated for them,
+and the current layer is infrastructure only.
+
+(iii) \textbf{Censoring.} The social-layer outcome is first recorded feedback
+rather than first transaction, and no seller key exists, so the event rate is a
+lower bound and the standard errors are optimistic (E4). Both defects push every
+duration estimate in the same direction, which is why the two medians are always
+reported as a pair.
+
+(vi) \textbf{Label provenance.} Elliptic++ labels are dataset-internal and
+unverifiable against external ground truth, and the E5-fin gradient is equally
+consistent with collection economics; the metrics that rest on this labelling
+layer inherit this base.
+
+Dropped limitations (metric-validity detail, external validation, novelty
+exhaustiveness) are retained in Supplementary Notes S2 and S5.

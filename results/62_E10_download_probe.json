@@ -1,0 +1,104 @@
+{
+  "uuid": "a8675d31c70545ebaa54fe47f951cdb9",
+  "doi": "10.57760/sciencedb.j00133.00466",
+  "probes": [
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "error": null,
+      "body_head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}",
+      "looks_like_files": false,
+      "content_type": "application/json;charset=UTF-8",
+      "name": "dataset_uuid"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/10.57760/sciencedb.j00133.00466",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "error": null,
+      "body_head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}",
+      "looks_like_files": false,
+      "content_type": "application/json;charset=UTF-8",
+      "name": "dataset_doi"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/info/a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 65,
+      "error": null,
+      "body_head": "{\"code\":20000,\"message\":\"成功\",\"messageEn\":\"success\",\"data\":{}}",
+      "looks_like_files": false,
+      "content_type": "application/json",
+      "name": "info_uuid"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/a8675d31c70545ebaa54fe47f951cdb9/file",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "error": null,
+      "body_head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}",
+      "looks_like_files": false,
+      "content_type": "application/json;charset=UTF-8",
+      "name": "dataset_uuid_file"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/a8675d31c70545ebaa54fe47f951cdb9/files",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "error": null,
+      "body_head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}",
+      "looks_like_files": false,
+      "content_type": "application/json;charset=UTF-8",
+      "name": "dataset_uuid_files"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/a8675d31c70545ebaa54fe47f951cdb9/download",
+      "sent": true,
+      "status": 405,
+      "bytes": null,
+      "error": null,
+      "body_head": "{\"timestamp\":1790212941436,\"status\":405,\"error\":\"Method Not Allowed\",\"message\":\"\",\"path\":\"/dataset/a8675d31c70545ebaa54fe47f951cdb9/download\"}",
+      "looks_like_files": false,
+      "name": "dataset_download"
+    },
+    {
+      "url": "https://china.scidb.cn/download?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "error": null,
+      "body_head": "{\"timestamp\":1790212942044,\"status\":404,\"error\":\"Not Found\",\"message\":\"\",\"path\":\"/download\"}",
+      "looks_like_files": false,
+      "name": "china_dl_uuid"
+    },
+    {
+      "url": "https://www.scidb.cn/download?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "error": null,
+      "body_head": "<html>\r <head><title>404 Not Found</title></head>\r <body>\r <center><h1>404 Not Found</h1></center>\r <hr><center>nginx</center>\r </body>\r </html>\r <!-- a padding to disable MSIE and Chrome friendly err",
+      "looks_like_files": false,
+      "name": "www_dl_uuid"
+    },
+    {
+      "url": "https://api.datacite.org/dois/10.57760/sciencedb.j00133.00466",
+      "sent": true,
+      "status": 200,
+      "bytes": 6281,
+      "error": null,
+      "body_head": "{\"data\":{\"id\":\"10.57760/sciencedb.j00133.00466\",\"type\":\"dois\",\"attributes\":{\"doi\":\"10.57760/sciencedb.j00133.00466\",\"prefix\":\"10.57760\",\"suffix\":\"sciencedb.j00133.00466\",\"identifiers\":[{\"identifier\":\"31253.11.sciencedb.j00133.00466\",\"identifierType\":\"CSTR\"}],\"alternateIdentifiers\":[{\"alternateIdentifierType\":\"CSTR\",\"alternateIdentifier\":\"31253.11.sciencedb.j00133.00466\"}],\"creators\":[{\"name\":\"Zhou",
+      "looks_like_files": false,
+      "content_type": "application/json; charset=utf-8",
+      "name": "datacite_api"
+    }
+  ],
+  "n_routes_describing_files": 0,
+  "conclusion": "no static GET describes files; the file list is behind the client's session (every sdb-dataset-service call answered 'User Not Login'), so obtaining the corpus needs a session, not just a URL"
+}

@@ -1,0 +1,30 @@
+==============================================================================
+32  Reconstitution vs a stratum-matched placebo
+==============================================================================
+
+  cohort 44750 rows / 16330 hosts ; usable removals 30688
+
+==============================================================================
+Stratum-matched placebo (W=7d)
+==============================================================================
+  stratum                removals     real%    floor%    excess        sd        p
+  all hosts                 30688    21.95     14.82     +7.13      0.18    0.000
+    (note: this stratum is large; placebo based on 200 shuffles)
+  hosts with <=5 URLs       18364     8.69      8.99     -0.30      0.20    0.920
+  hosts with <=2 URLs       16481     6.15      8.37     -2.22      0.23    1.000
+  singleton hosts only       3669     0.00      8.10     -8.10      0.45    1.000
+  IP-literal hosts          26383    20.32     14.60     +5.73      0.20    0.000
+    (note: this stratum is large; placebo based on 200 shuffles)
+  named hosts                4305    31.92     16.15    +15.76      0.50    0.000
+
+==============================================================================
+Verdict rule
+==============================================================================
+  A stratum is only evidence of reconstitution if its EXCESS is
+  positive and its p is small. A positive raw rate with a matching
+  floor is host size, not displacement.
+
+wrote /root/cis/results/32_E7inf_strat_placebo.{txt,json}
+STRAT_PLACEBO_DONE
+RSC_EXIT=0
+RSC_EXIT=0

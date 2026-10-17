@@ -1,0 +1,133 @@
+{
+  "instrument": "regex over the PDF text layer and results/59_ocr_full_text/",
+  "issues": {
+    "2025-01": {
+      "channels": {
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-02": {
+      "channels": {
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-03": {
+      "channels": {
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-04": {
+      "channels": {
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-06": {
+      "channels": {
+        "ocr59": {
+          "n_ge": 1,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        },
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-07": {
+      "channels": {
+        "ocr59": {
+          "n_ge": 1,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        },
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-08": {
+      "channels": {
+        "ocr59": {
+          "n_ge": 1,
+          "n_le": 1,
+          "n_windows": 1,
+          "windows": [
+            {
+              "days_inclusive": 32,
+              "ge": "2025-08-01",
+              "le": "2025-09-01"
+            }
+          ]
+        },
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-10": {
+      "channels": {
+        "ocr59": {
+          "n_ge": 1,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        },
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    },
+    "2025-11": {
+      "channels": {
+        "ocr59": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        },
+        "text_layer": {
+          "n_ge": 0,
+          "n_le": 0,
+          "n_windows": 0,
+          "windows": []
+        }
+      }
+    }
+  },
+  "note": "window LENGTH is what matters: if it varies, the headline figures are not a like-for-like monthly series",
+  "what": "the declared 录入时间 query window per issue, both channels"
+}

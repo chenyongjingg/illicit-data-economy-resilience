@@ -1,0 +1,119 @@
+
+==============================================================================
+AlphaBay active listings.csv -- FULL schema
+==============================================================================
+n cols = 18
+  [ 0] 'item number'
+  [ 1] 'sold'
+  [ 2] 'price'
+  [ 3] 'heading'
+  [ 4] 'listed'
+  [ 5] 'blurb (description)'
+  [ 6] 'shipsto'
+  [ 7] 'quantity'
+  [ 8] 'origin'
+  [ 9] 'product_class'
+  [10] 'vendor level'
+  [11] 'trust level'
+  [12] 'tags'
+  [13] 'category1'
+  [14] 'category2'
+  [15] 'category3'
+  [16] 'avg feedback rating (-1 to 1)'
+  [17] 'number of feedback supplied'
+
+  first 2 data rows:
+    [ 0] 166605
+    [ 1] 1
+    [ 2] 417.07
+    [ 3] INSTAGRAM 200x PILLS 220mg (SUPERMANCREW)
+    [ 4] Jun 13, 2016
+    [ 5] EVERYTHING WE SELL ARE 100% LAB TESTED.\nFrom the SupermanCrew.\n\nFollowers of Superman, \nMakers of Transfor
+    [ 6] Worldwide
+    [ 7] 100000
+    [ 8]  Worldwide
+    [ 9] Physical package
+    [10] 2
+    [11] 5
+    [12] XTC,PARTY,MDMA,CRYSTAL,PARTYFLOCK,INSTAGRAM,THE NORTH FACE,NORTHFACE,MASTERCARDS,SUPERMAN,SILVER,HEINEKEN,ANDR
+    [13] Drugs & Chemicals
+    [14] Ecstasy
+    [15] Pills
+    [16] -1.0
+    [17] 1
+    [ 0] 90283
+    [ 1] 1
+    [ 2] 595.0
+    [ 3] flight
+    [ 4] Jan 20, 2016
+    [ 5] !
+    [ 6] Worldwide
+    [ 7] 0
+    [ 8]  Worldwide
+    [ 9] Physical package
+    [10] 7
+    [11] 6
+    [12] travel
+    [13] Carded Items
+    [14] Other
+    [15] Other
+    [16] 1.0
+    [17] 1
+
+==============================================================================
+AlphaBay listings -- per-column distinct counts (sampled over all rows)
+==============================================================================
+  rows = 114231
+  [ 0] item number            distinct~114231  nonempty=114231  eg: '166605', '90283', '275586'
+  [ 1] sold                   distinct~1343    nonempty=114231  eg: '0', '1', '2'
+  [ 2] price                  distinct~23444   nonempty=114231  eg: '0.0', '1.0', '10.0'
+  [ 3] heading                distinct~101895  nonempty=114225  eg: 'flight', 'Custom', 'custom'
+  [ 4] listed                 distinct~738     nonempty=114231  eg: 'Jan 23, 2017', 'Jan 16, 2017', 'Nov 17, 2016'
+  [ 5] blurb (description)    distinct~74104   nonempty=114229  eg: 'amazon refund', "Try to use accounts as soon as po, '-'
+  [ 6] shipsto                distinct~557     nonempty=114223  eg: 'Worldwide', 'United States', 'Europe'
+  [ 7] quantity               distinct~103     nonempty=114231  eg: '100000', '0', '1'
+  [ 8] origin                 distinct~116     nonempty=114231  eg: 'Worldwide', 'United States', 'United Kingdom'
+  [ 9] product_class          distinct~2       nonempty=114231  eg: 'Physical package', 'Digital goods'
+  [10] vendor level           distinct~10      nonempty=114231  eg: '1', '5', '2'
+  [11] trust level            distinct~10      nonempty=114231  eg: '5', '6', '4'
+  [12] tags                   distinct~43054   nonempty=114023  eg: 'custom', 'make money online,$100,make money, 'mofos,brazzers,wicked,naughtyamer
+  [13] category1              distinct~12      nonempty=114231  eg: 'Drugs & Chemicals', 'Fraud', 'Digital Products'
+  [14] category2              distinct~48      nonempty=114230  eg: 'Cannabis & Hashish', 'Stimulants', 'Other'
+  [15] category3              distinct~92      nonempty=114230  eg: 'Other', 'Buds & Flowers', 'Pills'
+  [16] avg feedback rating (- distinct~1782    nonempty=114231  eg: '0', '1.0', '0.0'
+  [17] number of feedback sup distinct~702     nonempty=114231  eg: '0', '1', '2'
+
+  `listed` date range: 2014-12-21 .. 2017-01-28  (n=114231)
+  listed by month (first 30): [('2014-12', 32), ('2015-01', 99), ('2015-02', 85), ('2015-03', 1113), ('2015-04', 1403), ('2015-05', 2526), ('2015-06', 1941), ('2015-07', 1712), ('2015-08', 1775), ('2015-09', 3773), ('2015-10', 2838), ('2015-11', 5092), ('2015-12', 4436), ('2016-01', 4859), ('2016-02', 4576), ('2016-03', 5047), ('2016-04', 6062), ('2016-05', 6289), ('2016-06', 5649), ('2016-07', 5605), ('2016-08', 6085), ('2016-09', 5955), ('2016-10', 6775), ('2016-11', 8923), ('2016-12', 8984), ('2017-01', 12597)]
+
+==============================================================================
+Hansa reviews -- structure and the trailing date column
+==============================================================================
+  file: /root/cis/data/extracted/hansa_valhalla/dark-web-data-dumps/hansa_reviews_december_2016.csv
+   ncols=7  ['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"', ' "F***e"', ' "2016-07-28 10:29 UTC"']
+   ncols=7  ['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"', ' "F***t"', ' "2016-10-19 21:58 UTC"']
+   ncols=7  ['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"', ' "J***2"', ' "2016-11-30 22:48 UTC"']
+   ncols=7  ['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"', ' "M***7"', ' "2016-11-05 03:10 UTC"']
+  rows=51553
+  status values: {'"success"': 49698, '"default"': 1299, '"danger"': 556}
+  distinct date-like values found: 0
+
+==============================================================================
+Kilos -- true structure
+==============================================================================
+  file: /root/cis/data/extracted/kilos_6dnms_reviews/kilos_6dnms_reviews.csv
+   ncols=6  ['Samsara', 'Doubleup', '0', '1', '0.00022', 'I got the order i love this vendors poli']
+   ncols=6  ['Samsara', 'SocialPharma', '0', '1', '0.00492', 'NDD cant as for better than that ']
+   ncols=6  ['Samsara', 'REAL-monoko', '0', '1', '0.00381', 'FE TRUSTED VENDOR ALWAYS 10/10 SHIPPING ']
+   ncols=6  ['Samsara', 'druggiebearsofficial', '0', '1', '0.03159', 'Top of the line as usual']
+  rows=235905  ncols histogram={6: 235326, 1: 203, 7: 176, 8: 78, 2: 36, 9: 33}
+
+==============================================================================
+Valhalla -- structure
+==============================================================================
+   ncols=5 ['10086', 'Hacking for Profit: Credit Card Fraud A Begi', 'junkiepig666', '2.73 EUR', ' Germany']
+   ncols=5 ['10087', 'Introduction to Social Engineering', 'junkiepig666', '2.73 EUR', ' Germany']
+   ncols=5 ['10096', 'MST  Morphine sulphate tablets 100 mg =30$', 'pure12', '29.14 EUR', ' United Kingdom']
+  rows=16511 ncols histogram={5: 16511}
+
+DONE

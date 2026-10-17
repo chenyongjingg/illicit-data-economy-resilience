@@ -1,0 +1,560 @@
+{
+  "run_at": "2026-09-23T16:53:26",
+  "untimed": {
+    "no_last_online": 8368,
+    "negative": 0,
+    "pct_of_cohort": 18.75
+  },
+  "cohort": {
+    "n": 36262,
+    "events": 33786,
+    "censored": 2476,
+    "event_rate": 0.9317,
+    "window_start": "2026-06-25",
+    "window_end": "2026-09-23",
+    "window_days": 89
+  },
+  "overall": {
+    "label": "all",
+    "n": 36262,
+    "events": 33786,
+    "S_0.5": 0.8610115272185753,
+    "S_1": 0.6063804704538442,
+    "S_2": 0.38676221669273997,
+    "S_7": 0.15745419610622058,
+    "S_14": 0.10012698651255958,
+    "S_30": 0.049664947635285825,
+    "S_60": 0.01716030418673546,
+    "S_90": 0.006783286425352207,
+    "median": 1.3629976851851853,
+    "estimator": "lifelines"
+  },
+  "untimed_bracket": {
+    "all at t=0 (fastest)": {
+      "n": 44630,
+      "median": 0.959,
+      "S_7d": 0.1279
+    },
+    "all at t_cens (slowest)": {
+      "n": 44630,
+      "median": 1.938,
+      "S_7d": 0.3097
+    }
+  },
+  "ip_based_pct": 86.94,
+  "threat_levels": {
+    "malware_download": 36262
+  },
+  "tag_vocab_top": {
+    "elf": 19797,
+    "mozi": 15830,
+    "mirai": 15022,
+    "32-bit": 10683,
+    "ua-wget": 8257,
+    "mips": 8248,
+    "none": 3696,
+    "arm": 3197,
+    "botnetdomain": 1981,
+    "opendir": 1376,
+    "censys": 893,
+    "exe": 731,
+    "sh": 524,
+    "geofenced": 435,
+    "connectwise": 416,
+    "rat": 415,
+    "remcosrat": 385,
+    "deu": 335,
+    "gafgyt": 332,
+    "dropped-by-amadey": 303,
+    "ascii": 288,
+    "x86": 279,
+    "guloader": 187,
+    "stego": 173,
+    "xworm": 154,
+    "iot": 138,
+    "agenttesla": 137,
+    "c2-monitor-auto": 137,
+    "encoded": 132,
+    "tsunami": 126
+  },
+  "by_payload": {
+    "table": [
+      {
+        "group": "(none)",
+        "n": 14728,
+        "median_days": 1.369,
+        "S_1d": 0.6058,
+        "S_7d": 0.1252
+      },
+      {
+        "group": "32-bit",
+        "n": 10683,
+        "median_days": 1.24,
+        "S_1d": 0.6,
+        "S_7d": 0.0561
+      },
+      {
+        "group": "elf",
+        "n": 8619,
+        "median_days": 1.688,
+        "S_1d": 0.6125,
+        "S_7d": 0.2983
+      },
+      {
+        "group": "exe",
+        "n": 729,
+        "median_days": 1.006,
+        "S_1d": 0.5041,
+        "S_7d": 0.2818
+      },
+      {
+        "group": "sh",
+        "n": 522,
+        "median_days": 4.54,
+        "S_1d": 0.7835,
+        "S_7d": 0.4272
+      },
+      {
+        "group": "other",
+        "n": 498,
+        "median_days": 1.089,
+        "S_1d": 0.5915,
+        "S_7d": 0.2181
+      },
+      {
+        "group": "arm",
+        "n": 483,
+        "median_days": 1.641,
+        "S_1d": 0.6398,
+        "S_7d": 0.2692
+      }
+    ],
+    "logrank": {
+      "test_statistic": 1844.0477443596399,
+      "dof": 6,
+      "p": 0.0,
+      "k_groups": 7
+    }
+  },
+  "by_family": {
+    "table": [
+      {
+        "group": "mozi",
+        "n": 13023,
+        "median_days": 1.084,
+        "S_1d": 0.5561,
+        "S_7d": 0.0394
+      },
+      {
+        "group": "mirai",
+        "n": 9922,
+        "median_days": 1.672,
+        "S_1d": 0.6359,
+        "S_7d": 0.1929
+      },
+      {
+        "group": "other",
+        "n": 6678,
+        "median_days": 2.34,
+        "S_1d": 0.6638,
+        "S_7d": 0.3242
+      },
+      {
+        "group": "none",
+        "n": 3696,
+        "median_days": 2.121,
+        "S_1d": 0.6779,
+        "S_7d": 0.1313
+      },
+      {
+        "group": "botnetdomain",
+        "n": 1864,
+        "median_days": 0.675,
+        "S_1d": 0.4099,
+        "S_7d": 0.0778
+      },
+      {
+        "group": "censys",
+        "n": 819,
+        "median_days": 6.393,
+        "S_1d": 0.6752,
+        "S_7d": 0.4933
+      },
+      {
+        "group": "opendir",
+        "n": 260,
+        "median_days": 1.572,
+        "S_1d": 0.7127,
+        "S_7d": 0.2867
+      }
+    ],
+    "logrank": {
+      "test_statistic": 3834.6067558751533,
+      "dof": 6,
+      "p": 0.0,
+      "k_groups": 7
+    }
+  },
+  "by_block_size": {
+    "table": [
+      {
+        "urls_in_block": "1",
+        "n": 2583,
+        "median_days": 1.058,
+        "S_1d": 0.5237,
+        "S_7d": 0.1576
+      },
+      {
+        "urls_in_block": "2",
+        "n": 7886,
+        "median_days": 1.58,
+        "S_1d": 0.6767,
+        "S_7d": 0.0953
+      },
+      {
+        "urls_in_block": "3-5",
+        "n": 6513,
+        "median_days": 1.232,
+        "S_1d": 0.5927,
+        "S_7d": 0.0824
+      },
+      {
+        "urls_in_block": "6-20",
+        "n": 8795,
+        "median_days": 1.312,
+        "S_1d": 0.5983,
+        "S_7d": 0.1319
+      },
+      {
+        "urls_in_block": "21-100",
+        "n": 4472,
+        "median_days": 1.541,
+        "S_1d": 0.5758,
+        "S_7d": 0.2807
+      },
+      {
+        "urls_in_block": "100+",
+        "n": 6013,
+        "median_days": 1.602,
+        "S_1d": 0.5988,
+        "S_7d": 0.2698
+      }
+    ],
+    "logrank": {
+      "test_statistic": 856.3048831898999,
+      "dof": 5,
+      "p": 7.603950260189298e-183,
+      "k_groups": 6
+    }
+  },
+  "by_tags": {
+    "table": [
+      {
+        "n_tags": 1,
+        "n": 12835,
+        "median_days": 1.354,
+        "S_7d": 0.1094
+      },
+      {
+        "n_tags": 2,
+        "n": 1958,
+        "median_days": 1.33,
+        "S_7d": 0.2398
+      },
+      {
+        "n_tags": 3,
+        "n": 21469,
+        "median_days": 1.37,
+        "S_7d": 0.1763
+      }
+    ],
+    "logrank": {
+      "test_statistic": 178.74496073379262,
+      "dof": 2,
+      "p": 1.534705122334627e-39,
+      "k_groups": 3
+    }
+  },
+  "trend_14d": {
+    "table": [
+      {
+        "wk": 0,
+        "n": 2607,
+        "down14": 2330,
+        "rate_pct": 89.4
+      },
+      {
+        "wk": 1,
+        "n": 3049,
+        "down14": 2803,
+        "rate_pct": 91.9
+      },
+      {
+        "wk": 2,
+        "n": 2161,
+        "down14": 1959,
+        "rate_pct": 90.7
+      },
+      {
+        "wk": 3,
+        "n": 2244,
+        "down14": 2034,
+        "rate_pct": 90.6
+      },
+      {
+        "wk": 4,
+        "n": 2935,
+        "down14": 2575,
+        "rate_pct": 87.7
+      },
+      {
+        "wk": 5,
+        "n": 3289,
+        "down14": 3028,
+        "rate_pct": 92.1
+      },
+      {
+        "wk": 6,
+        "n": 4009,
+        "down14": 3368,
+        "rate_pct": 84.0
+      },
+      {
+        "wk": 7,
+        "n": 2593,
+        "down14": 2387,
+        "rate_pct": 92.1
+      },
+      {
+        "wk": 8,
+        "n": 2136,
+        "down14": 1957,
+        "rate_pct": 91.6
+      },
+      {
+        "wk": 9,
+        "n": 2755,
+        "down14": 2515,
+        "rate_pct": 91.3
+      },
+      {
+        "wk": 10,
+        "n": 2237,
+        "down14": 2097,
+        "rate_pct": 93.7
+      }
+    ],
+    "logit": {
+      "or_per_day": 1.0016449685980993,
+      "ci_low": 0.9998669626895452,
+      "ci_high": 1.0034261362322916,
+      "p": 0.06979718811217213,
+      "n": 30015
+    }
+  },
+  "cox": {
+    "window": {
+      "n": 30026,
+      "events": 27608,
+      "concordance": 0.5445,
+      "hr_per_sd": {
+        "log_block": 0.9059,
+        "n_tags_c": 0.9441,
+        "log_reporter_vol": 1.2145,
+        "ip_based_i": 0.9052,
+        "reporter_anon_i": 1.039,
+        "family_censys": 0.9871,
+        "family_mirai": 1.0315,
+        "family_mozi": 1.0471,
+        "family_none": 1.0064,
+        "family_opendir": 1.0006,
+        "family_other": 1.0246,
+        "payload_32-bit": 1.0054,
+        "payload_arm": 1.0183,
+        "payload_elf": 1.0034,
+        "payload_exe": 1.0238,
+        "payload_other": 0.9938,
+        "payload_sh": 1.0181
+      },
+      "ci_low": {
+        "log_block": 0.8935,
+        "n_tags_c": 0.9319,
+        "log_reporter_vol": 1.1958,
+        "ip_based_i": 0.8939,
+        "reporter_anon_i": 1.0267,
+        "family_censys": 0.9736,
+        "family_mirai": 1.0042,
+        "family_mozi": 1.0148,
+        "family_none": 0.9844,
+        "family_opendir": 0.9878,
+        "family_other": 1.0007,
+        "payload_32-bit": 0.9908,
+        "payload_arm": 1.0064,
+        "payload_elf": 0.9871,
+        "payload_exe": 1.0109,
+        "payload_other": 0.9812,
+        "payload_sh": 1.0059
+      },
+      "ci_high": {
+        "log_block": 0.9184,
+        "n_tags_c": 0.9565,
+        "log_reporter_vol": 1.2335,
+        "ip_based_i": 0.9167,
+        "reporter_anon_i": 1.0515,
+        "family_censys": 1.0008,
+        "family_mirai": 1.0596,
+        "family_mozi": 1.0803,
+        "family_none": 1.029,
+        "family_opendir": 1.0136,
+        "family_other": 1.049,
+        "payload_32-bit": 1.0203,
+        "payload_arm": 1.0303,
+        "payload_elf": 1.0199,
+        "payload_exe": 1.0369,
+        "payload_other": 1.0067,
+        "payload_sh": 1.0305
+      },
+      "p": {
+        "log_block": 0.0,
+        "n_tags_c": 0.0,
+        "log_reporter_vol": 0.0,
+        "ip_based_i": 0.0,
+        "reporter_anon_i": 0.0,
+        "family_censys": 0.064191,
+        "family_mirai": 0.023545,
+        "family_mozi": 0.003927,
+        "family_none": 0.570933,
+        "family_opendir": 0.92568,
+        "family_other": 0.043296,
+        "payload_32-bit": 0.470945,
+        "payload_arm": 0.002429,
+        "payload_elf": 0.685856,
+        "payload_exe": 0.000277,
+        "payload_other": 0.346086,
+        "payload_sh": 0.003653
+      },
+      "ph_violations": [
+        "family_censys",
+        "family_mirai",
+        "family_mozi",
+        "family_none",
+        "family_opendir",
+        "family_other",
+        "ip_based_i",
+        "log_reporter_vol",
+        "n_tags_c",
+        "payload_32-bit",
+        "payload_other",
+        "reporter_anon_i"
+      ],
+      "standardised_per_sd": true
+    },
+    "whole_feed": {
+      "n": 30026,
+      "events": 27608,
+      "concordance": 0.5457,
+      "hr_per_sd": {
+        "log_block_full": 0.8982,
+        "n_tags_c": 0.9459,
+        "log_reporter_vol": 1.2112,
+        "ip_based_i": 0.9018,
+        "reporter_anon_i": 1.0383,
+        "family_censys": 0.9877,
+        "family_mirai": 1.0318,
+        "family_mozi": 1.0465,
+        "family_none": 1.0059,
+        "family_opendir": 1.001,
+        "family_other": 1.0251,
+        "payload_32-bit": 1.006,
+        "payload_arm": 1.0178,
+        "payload_elf": 1.0026,
+        "payload_exe": 1.0234,
+        "payload_other": 0.9935,
+        "payload_sh": 1.0186
+      },
+      "ci_low": {
+        "log_block_full": 0.886,
+        "n_tags_c": 0.9337,
+        "log_reporter_vol": 1.1926,
+        "ip_based_i": 0.8905,
+        "reporter_anon_i": 1.0259,
+        "family_censys": 0.9742,
+        "family_mirai": 1.0044,
+        "family_mozi": 1.0143,
+        "family_none": 0.9839,
+        "family_opendir": 0.9883,
+        "family_other": 1.0013,
+        "payload_32-bit": 0.9914,
+        "payload_arm": 1.006,
+        "payload_elf": 0.9863,
+        "payload_exe": 1.0105,
+        "payload_other": 0.9808,
+        "payload_sh": 1.0063
+      },
+      "ci_high": {
+        "log_block_full": 0.9106,
+        "n_tags_c": 0.9582,
+        "log_reporter_vol": 1.2301,
+        "ip_based_i": 0.9133,
+        "reporter_anon_i": 1.0508,
+        "family_censys": 1.0014,
+        "family_mirai": 1.0599,
+        "family_mozi": 1.0797,
+        "family_none": 1.0285,
+        "family_opendir": 1.014,
+        "family_other": 1.0496,
+        "payload_32-bit": 1.0209,
+        "payload_arm": 1.0298,
+        "payload_elf": 1.0192,
+        "payload_exe": 1.0365,
+        "payload_other": 1.0063,
+        "payload_sh": 1.031
+      },
+      "p": {
+        "log_block_full": 0.0,
+        "n_tags_c": 0.0,
+        "log_reporter_vol": 0.0,
+        "ip_based_i": 0.0,
+        "reporter_anon_i": 0.0,
+        "family_censys": 0.078785,
+        "family_mirai": 0.02245,
+        "family_mozi": 0.004333,
+        "family_none": 0.600539,
+        "family_opendir": 0.873553,
+        "family_other": 0.038784,
+        "payload_32-bit": 0.423154,
+        "payload_arm": 0.00312,
+        "payload_elf": 0.754823,
+        "payload_exe": 0.000344,
+        "payload_other": 0.316108,
+        "payload_sh": 0.00287
+      },
+      "ph_violations": [
+        "family_censys",
+        "family_mirai",
+        "family_mozi",
+        "family_none",
+        "family_opendir",
+        "family_other",
+        "ip_based_i",
+        "log_block_full",
+        "log_reporter_vol",
+        "n_tags_c",
+        "payload_32-bit",
+        "payload_arm",
+        "payload_other",
+        "reporter_anon_i"
+      ],
+      "standardised_per_sd": true
+    }
+  },
+  "limits": [
+    "duration is a lower bound (last_online = last sighting, not takedown)",
+    "detection cadence unpublished; event-time resolution unknown",
+    "8368 untimed events bracketed, not dropped silently",
+    "co-location measured within the observation window (whole-feed sensitivity given)",
+    "date_added = blocklist entry time, not URL creation time",
+    "short-horizon only; retention window forbids long-run survival claims",
+    "threat column is degenerate; family/payload inferred from tags by stated rule"
+  ]
+}

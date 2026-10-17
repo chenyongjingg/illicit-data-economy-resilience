@@ -1,0 +1,116 @@
+==============================================================================
+E7-inf  Takedown latency and infrastructure reuse (URLhaus)
+==============================================================================
+
+  rows: 58310
+  hosts: 17400 ; rows with empty host: 0
+
+==============================================================================
+1. Monthly additions and removals -- this decides the cohort
+==============================================================================
+  month        added  offline    %off
+  2019-01         29        0     0.0
+  2021-06         32        0     0.0
+  2023-03         20        0     0.0
+  2024-01         21        0     0.0
+  2024-02         31        0     0.0
+  2024-03         29        0     0.0
+  2024-04        134        0     0.0
+  2024-05        186        0     0.0
+  2024-06         39        0     0.0
+  2024-07         32        0     0.0
+  2024-08         65        0     0.0
+  2024-09         26        0     0.0
+  2024-10        230        0     0.0
+  2024-11         95        0     0.0
+  2024-12        214        0     0.0
+  2025-01         50        0     0.0
+  2025-02         64        0     0.0
+  2025-03       1501        0     0.0
+  2025-04        139        0     0.0
+  2025-05         52        0     0.0
+  2025-06        431        0     0.0
+  2025-07         35        0     0.0
+  2025-08         61        0     0.0
+  2025-09         47        0     0.0
+  2025-10       3691        0     0.0
+  2025-11        153        0     0.0
+  2025-12         71        0     0.0
+  2026-01        134        0     0.0
+  2026-02        110        0     0.0
+  2026-03        254        0     0.0
+  2026-04        341        0     0.0
+  2026-05         81        0     0.0
+  2026-06       7293     2423    33.2
+  2026-07      15644    15451    98.8
+  2026-08      15663    15246    97.3
+  2026-09      11007     9152    83.1
+
+  ★ The removal signal is confined to the recent dense block. Older
+  months are pruned from the dump, so their surviving rows are selected
+  ON the outcome and cannot enter a latency cohort.
+  dense block starts: 2025-03-01 (first month with >= 1000 additions)
+
+==============================================================================
+2. Cohort and the three treatments (bracketing the missingness)
+==============================================================================
+  window 2025-03-01 .. snapshot 2026-09-23
+  cohort rows: 56708 (97.3% of file)
+  min follow-up: 0 days
+  offline: 42272 (74.54%) ; of those missing last_online: 8391 (19.85%)
+
+  treat           n   events   med_days       p25       p90     cens%
+  zero        56708    42272      1.102     0.000   352.904     25.5%
+  drop        48317    33881      2.020     0.331   354.465     29.9%
+  censor      56708    33881      4.523     0.467   352.904     40.3%
+
+  ★ 'zero' is the lower bound on latency and 'censor' the upper; the
+  true curve lies between them and no point estimate is claimed.
+
+  KM (treatment=zero), % offline by:
+     25%: day 0.000
+     50%: day 1.102
+     75%: day 36.205
+     90%: day nan
+
+==============================================================================
+3. ★ Infrastructure reuse -- does prior use of a host predict latency?
+==============================================================================
+  URLs per host: mean=3.35 median=2 p90=3 max=5205
+  hosts with 1 URL: 7279 (43.0%)
+  share of URLs on a host already seen (host_prior>=1): 70.18%
+
+  group                             n   events   med_days        p90
+  first URL on host             16912    15684      0.539      7.051
+  repeat URL (prior>=1)         39796    26588      2.005    356.111
+  log-rank p (first vs repeat) = 0
+
+  ★ These two groups are NOT independent: repeat URLs sit on the same
+  hosts as the first URLs by construction, so the log-rank p is
+  optimistic and is reported as a description of the curves, not a test.
+
+==============================================================================
+4. ★ Reconstitution -- does a host come back after its URLs die?
+==============================================================================
+  hosts with >=2 URLs: 9633 (57.0% of hosts) carrying 49429 URLs
+  first->last addition span (days): p25=0.00 p50=0.02 p75=0.77 p90=5.09 max=570.3
+
+  removals that have a LATER addition on the same host: 20999
+  of those, new URL came AFTER the removal: 3980 (19.0%)
+  re-registration delay (days): p25=0.003 p50=0.165 p90=12.757 max=76.4
+  within 1 day: 57.1% ; within 7 days: 82.8% ; within 30: 97.2%
+
+==============================================================================
+5. Falsification -- placebo host labels
+==============================================================================
+  real    log-rank p (host_prior>=1 vs 0) = 0
+  placebo log-rank p (random labels)      = 0.2581
+  placebo is larger than the real p -- a placebo that also rejected would
+  mean the comparison rejects on noise.
+
+wrote /root/cis/results/figs/E7inf_takedown.{png,pdf}
+
+wrote /root/cis/results/28_E7inf_takedown.{txt,json}
+E7INF_DONE
+RSC_EXIT=0
+RSC_EXIT=0

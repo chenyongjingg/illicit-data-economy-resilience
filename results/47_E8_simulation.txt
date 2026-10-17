@@ -1,0 +1,40 @@
+==============================================================================
+47  E8: causal-calibrated agent simulation
+==============================================================================
+calibration target: E3 design 'C activity + quality' beta = +2.4426
+  (unmatched beta +3.8819 recorded for reference, not used: it carries the
+   pre-trend that the stratum x week FE absorbs)
+
+live markets: ['Apollon', 'CannaHome', 'Empire']
+  size   : {'Apollon': 489, 'CannaHome': 42, 'Empire': 279}
+  bridge : {'Apollon': 0.0, 'CannaHome': 0.0, 'Empire': 0.0}
+  1259 sellers in the pre-window
+
+scenarios (large=Apollon, bridge=Apollon):
+  S1 large node, single layer      hits ['Apollon']
+  S2 bridge node, single layer     hits ['Apollon']
+  S3 large node, multi layer       hits ['Apollon', 'Empire', 'CannaHome']
+  S4 bridge node, multi layer      hits ['Apollon', 'CannaHome', 'Empire']
+
+state space: 72 distinct states
+  policy arm=stochastic (ablation)
+
+==============================================================================
+Calibration: fit the recovery rate theta to E3
+==============================================================================
+  best theta=0.950 -> simulated DiD beta=-1583.3280 (target +2.4426, residual 1585.7706)
+  the residual is reported because 'calibrated' is a claim about a fit.
+
+==============================================================================
+Scenario ranking (6 bootstrap draws)
+==============================================================================
+  S1 large node, single layer      half-life=None wk  final=0.093
+  S2 bridge node, single layer     half-life=None wk  final=0.091
+  S3 large node, multi layer       half-life=None wk  final=0.060
+  S4 bridge node, multi layer      half-life=None wk  final=0.062
+
+  scenario                            point     median             95% CI
+  S1 large node, single layer          None       None   [None, None]
+  S2 bridge node, single layer         None       None   [None, None]
+  S3 large node, multi layer           None       None   [None, None]
+  S4 bridge node, multi layer          None       None   [None, None]

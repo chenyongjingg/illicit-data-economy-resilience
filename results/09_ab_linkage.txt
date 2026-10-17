@@ -1,0 +1,90 @@
+
+==============================================================================
+0. The frame that cannot work, stated first
+==============================================================================
+  ab_items rows: 114231 ; censored=True in 114231 (100.0%) ; events: 0
+  -> `tenure_days` has NO events behind it. It is the age of a listing at
+     the scrape date, i.e. a backward recurrence time, and it is
+     length-biased: an item that lived longer is likelier to be in the
+     dump. A KM curve fitted to it would be estimating nothing.
+  `tenure_days`: {'count': np.float64(114231.0), 'mean': np.float64(247.1), 'std': np.float64(183.6), 'min': np.float64(0.0), '25%': np.float64(82.0), '50%': np.float64(223.0), '75%': np.float64(382.0), '90%': np.float64(512.0), 'max': np.float64(769.0)}
+
+==============================================================================
+1. Does `item_number` mean the same thing in both files?
+==============================================================================
+  items:    114231 rows, 114231 distinct item_number, range 20..285395
+  feedback: 1217387 rows, 52494 distinct item_number, range 31..285174
+  intersection: 52494 of 114231 items (46.0%)
+
+==============================================================================
+2. Does `n_feedback` count the feedback rows that are actually present?
+==============================================================================
+  items with n_feedback==0: 61737 ; with no feedback rows: 61737
+  (n_feedback==0) XOR (has no rows): 0  <-- must be 0 for a clean link
+  where both nonzero: exact match 52494/52494 (100.0%)
+  difference (rows - n_feedback): mean=0.000 median=0.0 p95=0.0 min=0 max=0
+  crosstab n_feedback==0 vs has rows:
+has_fb      False  True 
+n_feedback              
+False           0  52494
+True        61737      0
+
+==============================================================================
+3. Do feedback events fall after the listing date?
+==============================================================================
+  joined items: 52494
+  days from listing to FIRST feedback: {'count': np.float64(52494.0), 'mean': np.float64(38.51), 'std': np.float64(69.12), 'min': np.float64(0.0), '10%': np.float64(0.95), '25%': np.float64(2.63), '50%': np.float64(10.81), '75%': np.float64(40.21), '90%': np.float64(110.13), 'max': np.float64(749.89)}
+  NEGATIVE (feedback before listing): 0 (0.0%)
+
+==============================================================================
+4. The outcome E4 can actually use
+==============================================================================
+  definition: duration = days from `listed_date` to the FIRST feedback
+              event; items with no feedback are censored at the scrape
+              date 2017-01-28.
+  n=114231  events=52494 (46.0%)  censored=61737
+  rows with missing/negative duration: 0
+  duration (days): {'count': np.float64(114231.0), 'mean': np.float64(133.46), 'std': np.float64(166.98), 'min': np.float64(0.0), '25%': np.float64(9.05), '50%': np.float64(53.38), '75%': np.float64(214.0), '90%': np.float64(407.0), 'max': np.float64(769.0)}
+
+  `sold` is a COUNT of units, not a flag: {'count': np.float64(114231.0), 'mean': np.float64(36.4), 'std': np.float64(441.4), 'min': np.float64(0.0), '50%': np.float64(1.0), '90%': np.float64(35.0), '99%': np.float64(523.0), 'max': np.float64(43739.0)}
+  has_fb (rows) vs sold>0 (units moved) -- these need NOT agree, since a
+  buyer may receive goods without leaving feedback:
+sold    False  True 
+has_fb              
+False   43830  17907
+True        0  52494
+  -> `sold` is an outcome but it carries no timestamp, so it can inform
+     whether an item ever moved, never when.
+
+==============================================================================
+5. Do the other markets carry time at all?
+==============================================================================
+  kilos_reviews.f2 as unix seconds: parseable=235325/235326
+    plausible dates: 225109 ; span 2018-02-19 20:07:00 .. 2020-01-12 11:17:00
+    f2 values: {0.0: np.int64(10216), 1573081200.0: np.int64(1185), 1573772400.0: np.int64(1058), 1573686000.0: np.int64(1031), 1573599600.0: np.int64(1015)}
+    by market: {'Empire': np.int64(82892), 'Cannazon': np.int64(55675), 'Apollon': np.int64(41424), 'Cryptonia': np.int64(35160), 'Samsara': np.int64(10216), 'CannaHome': np.int64(9958), '\\nStealth is spot on.  Order was so overweight it was unreal.  The gear is lovely.  Had a couple of toots': np.int64(1)}
+    !! non-market labels in the market column: ['\\nStealth is spot on.  Order was so overweight it was unreal']
+    markets with a plausible date (n, span):
+      Apollon        n=41424   2019-03-31 .. 2020-01-12
+      CannaHome      n=9958    2019-09-19 .. 2020-01-10
+      Cannazon       n=55675   2018-05-03 .. 2019-12-05
+      Cryptonia      n=35160   2019-04-10 .. 2019-11-17
+      Empire         n=82892   2018-02-19 .. 2020-01-12
+      Samsara        n=10216   1970-01-01 .. 1970-01-01
+
+  hansa: review_ts span 2015-09-12 13:35:00 .. 2016-12-13 18:47:00 ; scrape_ts span 2016-12-13 02:37:18 .. 2016-12-13 16:33:34
+    distinct items: 4755 ; reviews/item median=3 max=775
+    vendor names masked in 100.0% of rows
+
+  valhalla: 16511 rows, columns ['item_id', 'title', 'vendor', 'price', 'currency', 'origin', 'title_len'] -- no date column: none
+
+==============================================================================
+6. Feedback-stream hygiene flags
+==============================================================================
+  rating values: {'good': np.int64(1181049), 'bad': np.int64(21561), 'neutral': np.int64(14776), 'rating': np.int64(1)}
+  !! the literal string 'rating' appears 1 time(s) as a value -- a
+     header row leaked into the data. Locate and exclude it:
+        ts  date  item_number  rating  comment_len  has_comment
+500000 NaT  None          NaN  rating            7         True
+  ts span: 2015-01-03 16:50:00 .. 2017-01-28 14:05:00
+  rows with ts after the scrape date 2017-01-28: 57

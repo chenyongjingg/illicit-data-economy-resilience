@@ -1,0 +1,179 @@
+{
+  "uuid": "a8675d31c70545ebaa54fe47f951cdb9",
+  "page": "https://www.scidb.cn/en/detail?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+  "api_paths": [
+    "api/fastapi-sdb-ask-md/public/preview/",
+    "api/public/dataset/getcanbot_datasets",
+    "api/public/session/create",
+    "api/sdb-dataset-service/dataset/",
+    "api/sdb-dataset-service/dataset/importlist",
+    "api/sdb-dataset-service/info/",
+    "api/sdb-dataset-service/templateInfo/",
+    "api/sdb-organization-service/dataset/",
+    "api/sdb-personal-service/dataset/",
+    "api/sdb-statistics-service/list",
+    "api/sdb-user-service//public/activateEmail",
+    "api/sdb-user-service/user/ValidationEmail/",
+    "api/sdb-user-service/user/forgotPassword",
+    "api/sdb-user-service/user/login",
+    "api/sdb-user-service/user/orcidScidb",
+    "api/sdb-user-service/user/wxLoginCallBack"
+  ],
+  "tried": [
+    {
+      "url": "https://www.scidb.cn/api/dataSet/fileList?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/fileList/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/getFileList?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/getFileList/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/download?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/download/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/file/list?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/file/list/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/files?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/dataSet/files/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/public/dataset/getcanbot_datasets?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/public/dataset/getcanbot_datasets/dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/dataset/importlist?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 71,
+      "head": "{\"code\":20001,\"message\":\"用户未登录\",\"messageEn\":\"User Not Login\"}"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/info/?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "{\"timestamp\":1790212886287,\"status\":404,\"error\":\"Not Found\",\"message\":\"\",\"path\":\"/info/\"}"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/info//dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 65,
+      "head": "{\"code\":20000,\"message\":\"成功\",\"messageEn\":\"success\",\"data\":{}}"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/templateInfo/?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "{\"timestamp\":1790212887104,\"status\":404,\"error\":\"Not Found\",\"message\":\"\",\"path\":\"/templateInfo/\"}"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-dataset-service/templateInfo//dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 200,
+      "bytes": 720,
+      "head": "{\"code\":20000,\"message\":\"成功\",\"messageEn\":\"success\",\"data\":{\"template\":{\"id\":null,\"code\":null,\"name\":\"科学数据银行\",\"nameEn\":\"Science Data Bank\",\"temName\":null,\"subTitle\":null,\"subTitleEn\":null,\"introduction\":null,\"introductionEn\":null,\"logo\":\"https://www.scidb.cn/img/logo/logo_zh.svg\",\"org\":null,\"banners\""
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-organization-service/dataset/?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-organization-service/dataset//dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-personal-service/dataset/?dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    },
+    {
+      "url": "https://www.scidb.cn/api/sdb-personal-service/dataset//dataSetId=a8675d31c70545ebaa54fe47f951cdb9",
+      "sent": true,
+      "status": 404,
+      "bytes": null,
+      "head": "Not Found"
+    }
+  ],
+  "files": []
+}

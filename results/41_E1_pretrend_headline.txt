@@ -1,0 +1,53 @@
+==============================================================================
+41  Does E1 v3's HEADLINE design (ii) carry a pre-trend?
+==============================================================================
+  Report 09's 500 placebos covered model (i) only. Model (ii) -- the
+  one report 04 reports -- rested on 3 draws. Both run here.
+  designs: unmatched(all), B minus n_markets(77), C activity + quality(74), D size + quality(121)
+
+==============================================================================
+0. CONTROL -- reproduce report 04 section 6c's three placebo betas
+==============================================================================
+  Same dates, model (ii). If these do not come back as +0.465/+0.508/
+  +0.761 then this instrument is not the one that wrote report 04 and
+  nothing below is comparable to it.
+  placebo 2019-08-05  recorded +0.465  re-run +0.4648  OK
+  placebo 2019-09-02  recorded +0.508  re-run +0.5076  OK
+  placebo 2019-10-07  recorded +0.761  re-run +0.7610  OK
+
+  CONTROL RECOVERED
+
+==============================================================================
+1. Real betas, both models (reproduces report 04 section 6c)
+==============================================================================
+  unmatched              i  seller+week       beta=  +3.8819  se= 1.3703  p=0.0048
+  unmatched              ii +stratum x week   beta=  +3.6365  se= 1.4396  p=0.0118
+  B minus n_markets      i  seller+week       beta=  +1.4199  se= 2.0047  p=0.4798
+  B minus n_markets      ii +stratum x week   beta=  +3.6376  se= 2.3214  p=0.1192
+  C activity + quality   i  seller+week       beta=  +2.4426  se= 2.0846  p=0.2432
+  C activity + quality   ii +stratum x week   beta=  +4.4911  se= 2.3716  p=0.0602
+  D size + quality       i  seller+week       beta=  +1.0424  se= 1.1410  p=0.3619
+  D size + quality       ii +stratum x week   beta=  +1.3435  se= 1.1117  p=0.2281
+
+==============================================================================
+2. 500 placebos under BOTH models (report 09 ran model (i) only)
+==============================================================================
+  design                 model                n_null  null_mean   null_sd       real   pctile    p_plac
+  unmatched              i  seller+week          500    +1.2929    0.3617    +3.8819   100.0%    0.0000
+  unmatched              ii +stratum x week      500    +1.1156    0.3205    +3.6365   100.0%    0.0000
+  B minus n_markets      i  seller+week          500    +0.2748    0.6794    +1.4199    96.8%    0.0320
+  B minus n_markets      ii +stratum x week      500    +0.6672    0.8803    +3.6376   100.0%    0.0000
+  C activity + quality   i  seller+week          500    +0.0111    0.9340    +2.4426   100.0%    0.0000
+  C activity + quality   ii +stratum x week      500    +0.6606    1.2322    +4.4911   100.0%    0.0000
+  D size + quality       i  seller+week          500    -0.0694    0.6404    +1.0424    97.8%    0.0220
+  D size + quality       ii +stratum x week      500    +0.1326    0.5419    +1.3435    97.8%    0.0220
+
+==============================================================================
+3. Reading
+==============================================================================
+  If model (ii)'s null mean is also far from 0, then stratum x week FE
+  did NOT remove the pre-trend that report 09 measured in model (i),
+  and report 04's section 6c argument -- that the design absorbs the
+  differential trend 'that is a function of baseline size' -- is not
+  supported by its own 500-draw null. If it is near 0, model (ii) does
+  what report 04 claims and the +3.64 stands on 500 draws, not 3.

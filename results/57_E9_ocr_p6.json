@@ -1,0 +1,183 @@
+{
+  "generated": "2026-09-24T01:17:55",
+  "what": "E9 headline series, p.6, via RapidOCR on rendered pages",
+  "instrument": "rapidocr_onnxruntime on fitz get_pixmap(dpi=250)",
+  "validation": {
+    "controls": {
+      "2025-01": {
+        "text_layer": [
+          96082,
+          4749
+        ],
+        "ocr": [
+          96082,
+          4749
+        ],
+        "agree": true
+      },
+      "2025-02": {
+        "text_layer": [
+          140800,
+          4955
+        ],
+        "ocr": [
+          140800,
+          4955
+        ],
+        "agree": true
+      },
+      "2025-03": {
+        "text_layer": [
+          356323,
+          5880
+        ],
+        "ocr": [
+          356323,
+          5880
+        ],
+        "agree": true
+      },
+      "2025-04": {
+        "text_layer": [
+          509880,
+          3999
+        ],
+        "ocr": [
+          509880,
+          3999
+        ],
+        "agree": true
+      }
+    },
+    "n_controls": 4,
+    "n_agree": 4,
+    "validated": true,
+    "meaning": "OCR reproduces every known value, so its readings on the issues with no text layer are evidence"
+  },
+  "n_periods": 9,
+  "series": {
+    "effective_items": {
+      "2025-01": 96082,
+      "2025-02": 140800,
+      "2025-03": 356323,
+      "2025-04": 509880,
+      "2025-06": 1140767,
+      "2025-07": 1140767,
+      "2025-08": 68904,
+      "2025-10": 336661,
+      "2025-11": 436427
+    },
+    "high_value_items": {
+      "2025-01": 4749,
+      "2025-02": 4955,
+      "2025-03": 5880,
+      "2025-04": 3999,
+      "2025-06": 5232,
+      "2025-07": 5822,
+      "2025-08": 6826,
+      "2025-10": 6176,
+      "2025-11": 6889
+    }
+  },
+  "per_report": {
+    "dwcon_2025-01.pdf": {
+      "period": "2025-01",
+      "ocr_lines": 34,
+      "ocr_chars": 464,
+      "seconds": 13.2,
+      "effective_items": 96082,
+      "high_value_items": 4749,
+      "line_effective": "深网和暗网有效情报96,082份；",
+      "line_high_value": "泄露数据的高价值买卖情报4,749份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-01_p06.txt"
+    },
+    "dwcon_2025-02.pdf": {
+      "period": "2025-02",
+      "ocr_lines": 35,
+      "ocr_chars": 427,
+      "seconds": 6.6,
+      "effective_items": 140800,
+      "high_value_items": 4955,
+      "line_effective": "深网和暗网有效情报140,800份；",
+      "line_high_value": "泄露数据的高价值买卖情报4,955份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-02_p06.txt"
+    },
+    "dwcon_2025-03.pdf": {
+      "period": "2025-03",
+      "ocr_lines": 31,
+      "ocr_chars": 316,
+      "seconds": 7.3,
+      "effective_items": 356323,
+      "high_value_items": 5880,
+      "line_effective": "深网和暗网有效情报356,323份；",
+      "line_high_value": "泄露数据的高价值买卖情报5，880份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-03_p06.txt"
+    },
+    "dwcon_2025-04.pdf": {
+      "period": "2025-04",
+      "ocr_lines": 32,
+      "ocr_chars": 375,
+      "seconds": 5.8,
+      "effective_items": 509880,
+      "high_value_items": 3999,
+      "line_effective": "深网和暗网有效情报509,880份；",
+      "line_high_value": "泄露数据的高价值买卖情报3，999份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-04_p06.txt"
+    },
+    "dwcon_2025-06.pdf": {
+      "period": "2025-06",
+      "ocr_lines": 21,
+      "ocr_chars": 302,
+      "seconds": 7.7,
+      "effective_items": 1140767,
+      "high_value_items": 5232,
+      "line_effective": "深网和暗网有效情报1,140,767份；",
+      "line_high_value": "泄露数据的高价值买卖情报5,232份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-06_p06.txt"
+    },
+    "dwcon_2025-07.pdf": {
+      "period": "2025-07",
+      "ocr_lines": 21,
+      "ocr_chars": 297,
+      "seconds": 6.3,
+      "effective_items": 1140767,
+      "high_value_items": 5822,
+      "line_effective": "深网和暗网有效情报1,140,767份；",
+      "line_high_value": "泄露数据的高价值买卖情报5,822份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-07_p06.txt"
+    },
+    "dwcon_2025-08.pdf": {
+      "period": "2025-08",
+      "ocr_lines": 45,
+      "ocr_chars": 554,
+      "seconds": 5.6,
+      "effective_items": 68904,
+      "high_value_items": 6826,
+      "line_effective": "深网和暗网有效情报68,904份；",
+      "line_high_value": "泄露数据的高价值买卖情报6,826份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-08_p06.txt"
+    },
+    "dwcon_2025-10.pdf": {
+      "period": "2025-10",
+      "ocr_lines": 26,
+      "ocr_chars": 314,
+      "seconds": 3.3,
+      "effective_items": 336661,
+      "high_value_items": 6176,
+      "line_effective": "深网和暗网有效情报336,661份；",
+      "line_high_value": "泄露数据的高价值买卖情报6,176份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-10_p06.txt"
+    },
+    "dwcon_2025-11.pdf": {
+      "period": "2025-11",
+      "ocr_lines": 26,
+      "ocr_chars": 292,
+      "seconds": 3.4,
+      "effective_items": 436427,
+      "high_value_items": 6889,
+      "line_effective": "深网和暗网有效情报436,427份；",
+      "line_high_value": "泄露数据的高价值买卖情报6,889份。",
+      "sidecar": "/root/cis/results/57_ocr_2025-11_p06.txt"
+    }
+  }
+}

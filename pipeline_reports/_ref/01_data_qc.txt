@@ -1,0 +1,92 @@
+==============================================================================
+STAGE 1 -- DATA LAYER   2026-09-23T16:46:45
+==============================================================================
+
+==============================================================================
+A. AlphaBay active listings -> ab_items
+==============================================================================
+  ab_items               rows_in=114231    rows_out=114231    cols=22
+      nulls: listed_raw=114231
+      -> work/ab_items.parquet (2.8 MB)
+
+==============================================================================
+B. AlphaBay feedback event stream -> ab_feedback
+==============================================================================
+  rating values: {'good': 1181049, 'bad': 21561, 'neutral': 14776, 'rating': 1}
+  ts span: 2015-01-03 16:50:00 .. 2017-01-28 14:05:00
+  ab_feedback            rows_in=1217387   rows_out=1217387   cols=6
+      dropped bad_date     1
+      dropped bad_time     1
+      nulls: date=1, item_number=1, ts=1
+      -> work/ab_feedback.parquet (12.3 MB)
+
+==============================================================================
+C. Hansa reviews -> hansa_reviews
+==============================================================================
+  source: extracted/hansa_valhalla/dark-web-data-dumps/hansa_reviews_december_2016.csv
+  status counts: {'success': np.int64(49698), 'default': np.int64(1299), 'danger': np.int64(556)}
+  review_ts span: 2015-09-12 13:35:00 .. 2016-12-13 13:56:00
+  vendor masked: 41324 / 51553 = 80.2%
+  unparsed review_raw examples: [' "s***e"', ' "m***2"', ' "m***9"', ' "s***r"', ' "h***t"', ' "L***7"']
+  unparsed shapes (top 6): {'"9 days"': 1341, '"Not specified"': 808, '"Next Day"': 274, '"m***9"': 118, '"t***9"': 103, '"s***9"': 94}
+  parsed-only span: 2015-09-12 13:35:00 .. 2016-12-13 13:56:00 (n=41308)
+  hansa_reviews          rows_in=51553     rows_out=51553     cols=8
+      dropped review_ts_unparsed 10245
+      nulls: review_raw=41308, review_ts=10245
+      -> work/hansa_reviews.parquet (0.9 MB)
+
+==============================================================================
+D. Kilos multi-market reviews -> kilos_reviews
+==============================================================================
+  source: extracted/kilos_6dnms_reviews/kilos_6dnms_reviews.csv
+  ncols histogram: {6: 235326, 1: 203, 7: 176, 8: 78, 2: 36, 9: 33}
+  markets: {'Empire': np.int64(82892), 'Cannazon': np.int64(55675), 'Apollon': np.int64(41424), 'Cryptonia': np.int64(35160), 'Samsara': np.int64(10216), 'CannaHome': np.int64(9958), '\\nStealth is spot on.  Order was so overweight it was unreal.  The gear is lovely.  Had a couple of toots': np.int64(1)}
+  NOTE: no date column exists in this file -> cross-sectional only.
+  kilos_reviews          rows_in=235905    rows_out=235326    cols=6
+      dropped not_6_columns 579
+      nulls: price=1
+      -> work/kilos_reviews.parquet (2.3 MB)
+
+==============================================================================
+E. Valhalla listings -> valhalla_listings
+==============================================================================
+  NOTE: no date column -> cross-sectional only.
+  valhalla_listings      rows_in=16511     rows_out=16511     cols=7
+      -> work/valhalla_listings.parquet (0.5 MB)
+
+==============================================================================
+F. ThreatFox IOCs -> ioc_threatfox
+==============================================================================
+  source: threatfox_full__full.csv
+  header(15): ['first_seen_utc', 'ioc_id', 'ioc_value', 'ioc_type', 'threat_type', 'fk_malware', 'malware_alias', 'malware_printable', 'last_seen_utc', 'confidence_level', 'is_compromised', 'reference', 'tags', 'anonymous', 'reporter']
+  last_seen window: 2026-03-23 00:00:00 .. 2026-09-23 00:00:00 (n=37366)
+  first_seen window: 2020-12-14 00:00:00 .. 2026-09-23 00:00:00
+  threat_type: {'botnet_cc': np.int64(40949), 'payload_delivery': np.int64(40274), 'payload': np.int64(24632), 'cc_skimming': np.int64(138), 'url': np.int64(3), 'https://avscan.info/': np.int64(1), 'https://www.avscan.info/': np.int64(1), 'https://example3.com/': np.int64(1)}
+  ioc_type: {'domain': np.int64(44545), 'ip:port': np.int64(25049), 'sha256_hash': np.int64(16558), 'url': np.int64(11767), 'md5_hash': np.int64(4552), 'sha1_hash': np.int64(3522), 'https://examrdsfg54ertgretgple3.com/': np.int64(2), 'https://example2.com/': np.int64(1)}
+  ioc_threatfox          rows_in=105999    rows_out=105999    cols=19
+      dropped last_seen_utc 14649
+      nulls: last_seen=68633
+      -> work/ioc_threatfox.parquet (5.2 MB)
+
+==============================================================================
+G. URLhaus URLs -> ioc_urlhaus
+==============================================================================
+  source: urlhaus_full__csv.txt
+  header(9): ['id', 'dateadded', 'url', 'url_status', 'last_online', 'threat', 'tags', 'urlhaus_link', 'reporter']
+  last_online window: 2026-06-25 16:46:29 .. 2026-09-23 15:44:51
+  url_status: {'offline': np.int64(42272), 'online': np.int64(16038)}
+  censored(online): 16038 / 58310 = 27.5%
+  ioc_urlhaus            rows_in=58310     rows_out=58310     cols=13
+      nulls: last_online=8391, last_online_date=8391
+      -> work/ioc_urlhaus.parquet (2.8 MB)
+
+==============================================================================
+WRITTEN TABLES
+==============================================================================
+  ab_feedback.parquet               12.29 MB
+  ab_items.parquet                   2.76 MB
+  hansa_reviews.parquet              0.89 MB
+  ioc_threatfox.parquet              5.15 MB
+  ioc_urlhaus.parquet                2.84 MB
+  kilos_reviews.parquet              2.32 MB
+  valhalla_listings.parquet          0.52 MB

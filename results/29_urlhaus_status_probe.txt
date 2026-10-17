@@ -1,0 +1,66 @@
+==============================================================================
+29  Is url_status a live state or a stale default?
+==============================================================================
+
+  rows: 58310
+  pre-2026-06: 8703 rows, offline=0
+  2026-06+   : 49607 rows, offline=42272
+
+==============================================================================
+1. ★ pre-2026-06 rows: what is in last_online?
+==============================================================================
+  last_online populated: 8703 / 8703 (100.00%)
+  url_status == online   n=  8703  lo populated=  8703  lo min=2026-09-23 06:54:37  lo max=2026-09-23 15:44:49
+  url_status == offline  n=0
+
+==============================================================================
+2. ★ THE DECISIVE TABLE -- added year x last_online year
+==============================================================================
+ly    -1      2026
+ay                
+2018      0     45
+2019      0     82
+2020      0     43
+2021      0    115
+2022      0     40
+2023      0     61
+2024      0   1102
+2025      0   6295
+2026   8391  42136
+
+  (column -1 = last_online is NaT)
+
+  ★ Read this way: if the OLD added-years' last_online sits in their own
+  year, the crawler simply has not touched them since and `online` is a
+  default, not an observation. If it sits in 2026, they really were seen
+  live recently.
+
+==============================================================================
+3. How stale is last_online, for rows flagged online?
+==============================================================================
+  rows flagged online with a parseable last_online: 16038
+  days between last_online and the snapshot:
+    min=-0.00 p10=0.14 p50=0.18 p90=0.23 max=0.4
+    within 1 day of snapshot    16038 (100.00%)
+    within 7 days               16038 (100.00%)
+    within 30 days              16038 (100.00%)
+    within 1 year               16038 (100.00%)
+
+  by added-year, share flagged online whose last_online is within 30d
+  of the snapshot (a live-check) vs older (a stale default):
+    added 2018  n=    45  <=30d: 100.00%   >30d:   0.00%
+    added 2019  n=    82  <=30d: 100.00%   >30d:   0.00%
+    added 2020  n=    43  <=30d: 100.00%   >30d:   0.00%
+    added 2021  n=   115  <=30d: 100.00%   >30d:   0.00%
+    added 2022  n=    40  <=30d: 100.00%   >30d:   0.00%
+    added 2023  n=    61  <=30d: 100.00%   >30d:   0.00%
+    added 2024  n=  1102  <=30d: 100.00%   >30d:   0.00%
+    added 2025  n=  6295  <=30d: 100.00%   >30d:   0.00%
+    added 2026  n=  8255  <=30d: 100.00%   >30d:   0.00%
+
+==============================================================================
+4. Consequence for the cohort
+==============================================================================
+  rows flagged online AND re-checked within 7d of snapshot: 16038
+  => these are the only rows where `online` is an observation.
+  every other row must leave the risk set or be re-coded.

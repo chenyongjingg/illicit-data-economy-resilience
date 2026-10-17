@@ -1,0 +1,14 @@
+E9 external anchor -- consolidated series
+
+2025-01  effective=96082  high_value=4749  channels=4 ocr_p6_200,ocr_p6_250,pixel_read,text_layer
+2025-02  effective=140800  high_value=4955  channels=4 ocr_p6_200,ocr_p6_250,pixel_read,text_layer
+2025-03  effective=356323  high_value=5880  channels=4 ocr_p6_200,ocr_p6_250,pixel_read,text_layer
+2025-04  effective=509880  high_value=3999  channels=4 ocr_p6_200,ocr_p6_250,pixel_read,text_layer
+2025-06  effective=1140767  high_value=5232  channels=3 ocr_p6_200,ocr_p6_250,pixel_read
+2025-07  effective=1140767  high_value=5822  channels=3 ocr_p6_200,ocr_p6_250,pixel_read
+2025-08  effective=68904  high_value=6826  channels=3 ocr_p6_200,ocr_p6_250,pixel_read
+2025-10  effective=336661  high_value=6176  channels=3 ocr_p6_200,ocr_p6_250,pixel_read
+2025-11  effective=436427  high_value=6889  channels=3 ocr_p6_200,ocr_p6_250,pixel_read
+
+disagreements: 0
+min_channels_per_period: 3

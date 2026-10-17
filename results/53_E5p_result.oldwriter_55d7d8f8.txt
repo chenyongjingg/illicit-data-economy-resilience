@@ -1,0 +1,139 @@
+E5p -- temporal GNN persistence prediction on Elliptic++
+==============================================================================
+label : label_D = 1[ t1 - t0 >= D ], t0/t1 = first/last observed step.
+        D = 1  <=>  'observed in >= 2 distinct steps' = E5-fin's
+        recurrence label. D is a pre-registered free parameter: [1, 3, 5]
+anchor: every feature is computed from step <= t0 only.
+
+POPULATION  all addresses with >= 1 observed step: 822942
+            by class: {'1': 14266, '2': 251088, '3': 557588}
+            (class 1=illicit 2=licit 3=unknown; the model is CLASS-BLIND)
+
+D=1 identity check: 61487 positives vs 61487 addresses with n_steps>=2 -- identical=True
+
+CENSORING  (an address can satisfy t1-t0>=D only if t0 <= 49-D; those
+that cannot are EXCLUDED from that Delta, never relabelled 0)
+  D    eligible   excluded   excl.share  pos_rate    pos_n
+  1    811269     11673      0.0142      0.07579     61487
+  3    775403     47539      0.0578      0.06124     47485
+  5    738194     84748      0.1030      0.05119     37785
+  10   620835     202107     0.2456      0.03884     24114
+  20   474120     348822     0.4239      0.02196     10410
+
+  eligible survival rate by class:
+    D=1   illicit 1.9000% (n=13635)   licit 5.8830%   unknown 8.4830%   class12 5.6750%
+    D=3   illicit 1.4400% (n=13058)   licit 5.2580%   unknown 6.6240%   class12 5.0560%
+    D=5   illicit 1.1260% (n=12523)   licit 4.7950%   unknown 5.3600%   class12 4.5980%
+
+STRUCTURAL ZERO: 11673 addresses enter at t0=49, 73075 more at t0=45..48.
+  an address first seen at t0 can satisfy t1 - t0 >= D only if t0 <= 49 - D. At t0 = 49 the D = 1 label is a structural zero, not a low rate; at D = 5 it is a structural zero for all t0 >= 45. Any statement that persistence 'falls with Delta' partly restates this window effect.
+
+SPLIT by address, seed 20260924: train=576059 val=123441 test=123442 (test class1/2=39765)
+      overlap train/val/test = 0 / 0 / 0
+GRAPH  2822983 edges with multiplicity -> 2801409 distinct (src,dst,step) -> 5602818
+       822942 nodes; dedup shrink 0.0076
+
+ARMS  (test set, eligible for that Delta; multi-task, one head per Delta)
+------------------------------------------------------------------------------
+
+mlp_feature_only   [20 epochs, 9859 params, 45s]
+  features: own activity at step <= t0 only (no graph structure)
+  best mean val AUC 0.8488
+  D    n         pos      AUC [95% CI]               acc        degen      within-t0
+  1    121716    9311     0.8462 [0.8418, 0.8503]   0.7732     0.9235     0.7645
+        illicit  n=2097    pos_rate=0.0138  AUC 0.7594
+        licit    n=37021   pos_rate=0.0596  AUC 0.8218
+        unknown  n=82598   pos_rate=0.0857  AUC 0.8602
+        class1/2 subset n=39118  AUC 0.8246961293226583  (E5-fin-comparable)
+  3    116398    7258     0.8647 [0.8602, 0.8686]   0.7812     0.9376     0.7626
+        illicit  n=2001    pos_rate=0.0120  AUC 0.7923
+        licit    n=35068   pos_rate=0.0532  AUC 0.8451
+        unknown  n=79329   pos_rate=0.0677  AUC 0.8782
+        class1/2 subset n=37069  AUC 0.8475726710594054  (E5-fin-comparable)
+  5    110841    5748     0.8682 [0.8637, 0.8727]   0.7687     0.9481     0.7644
+        illicit  n=1924    pos_rate=0.0094  AUC 0.8399
+        licit    n=33186   pos_rate=0.0481  AUC 0.8537
+        unknown  n=75731   pos_rate=0.0546  AUC 0.8800
+        class1/2 subset n=35110  AUC 0.8569843565210278  (E5-fin-comparable)
+
+graphsage   [6 epochs, 15363 params, 999s]
+  features: own features + graph structure (edges <= t0) + a 2-layer SAGEConv embedding on the cumulative snapshot graph
+  best mean val AUC 0.8171
+  D    n         pos      AUC [95% CI]               acc        degen      within-t0
+  1    121716    9311     0.8037 [0.7993, 0.8081]   0.7063     0.9235     0.7285
+        illicit  n=2097    pos_rate=0.0138  AUC 0.7984
+        licit    n=37021   pos_rate=0.0596  AUC 0.7780
+        unknown  n=82598   pos_rate=0.0857  AUC 0.8243
+        class1/2 subset n=39118  AUC 0.7835318175540394  (E5-fin-comparable)
+  3    116398    7258     0.8212 [0.8161, 0.8259]   0.7219     0.9376     0.7293
+        illicit  n=2001    pos_rate=0.0120  AUC 0.8347
+        licit    n=35068   pos_rate=0.0532  AUC 0.7995
+        unknown  n=79329   pos_rate=0.0677  AUC 0.8394
+        class1/2 subset n=37069  AUC 0.8044130343952351  (E5-fin-comparable)
+  5    110841    5748     0.8397 [0.8353, 0.8447]   0.7098     0.9481     0.7342
+        illicit  n=1924    pos_rate=0.0094  AUC 0.9082
+        licit    n=33186   pos_rate=0.0481  AUC 0.8059
+        unknown  n=75731   pos_rate=0.0546  AUC 0.8614
+        class1/2 subset n=35110  AUC 0.8119953673599452  (E5-fin-comparable)
+
+tgn   [6 epochs, 54435 params, 1003s]
+  features: TGNMemory state at t0 (IdentityMessage + LastAggregator + GRUCell) through a SAGEConv readout on the t0 snapshot graph, concatenated with the arm-2 tabular features
+  best mean val AUC 0.8104
+  TGN memory |.| mean at end: 0.13820 (changed=True)
+  D    n         pos      AUC [95% CI]               acc        degen      within-t0
+  1    121716    9311     0.7963 [0.7917, 0.8009]   0.7449     0.9235     0.7143
+        illicit  n=2097    pos_rate=0.0138  AUC 0.7287
+        licit    n=37021   pos_rate=0.0596  AUC 0.7838
+        unknown  n=82598   pos_rate=0.0857  AUC 0.8106
+        class1/2 subset n=39118  AUC 0.7879527687194667  (E5-fin-comparable)
+  3    116398    7258     0.8140 [0.8090, 0.8184]   0.7792     0.9376     0.7164
+        illicit  n=2001    pos_rate=0.0120  AUC 0.7530
+        licit    n=35068   pos_rate=0.0532  AUC 0.8112
+        unknown  n=79329   pos_rate=0.0677  AUC 0.8240
+        class1/2 subset n=37069  AUC 0.8145846857136535  (E5-fin-comparable)
+  5    110841    5748     0.8328 [0.8280, 0.8378]   0.7770     0.9481     0.7110
+        illicit  n=1924    pos_rate=0.0094  AUC 0.8592
+        licit    n=33186   pos_rate=0.0481  AUC 0.8184
+        unknown  n=75731   pos_rate=0.0546  AUC 0.8450
+        class1/2 subset n=35110  AUC 0.823157127559818  (E5-fin-comparable)
+
+THE PLAN'S MLP BASELINE AS THE PLAN SPECIFIES IT -- AND WHY IT IS NOT USED
+------------------------------------------------------------------------------
+  an MLP on all 55 provided columns (address-level lifetime aggregates),
+  same split, same labels, same architecture as `mlp_feature_only`:
+  D    n         AUC [95% CI]               pos_rate
+  1    121716    1.0000 [1.0000, 1.0000]   0.07650
+  3    116398    1.0000 [1.0000, 1.0000]   0.06236
+  5    110841    1.0000 [1.0000, 1.0000]   0.05186
+  INADMISSIBLE. Not a baseline -- a measurement of the leak. Every one of these columns is computed over the address's whole lifetime, i.e. over steps after t0, so the model is handed the answer. At Delta = 1 the label is literally 1[num_timesteps_appeared_in >= 2] and that column is in this matrix.
+  The plan names an 'MLP 特征基线'. Built the plan's way -- from the provided table -- it is this. The plan's own risk table fires a fallback ('降级为 GraphSAGE + 手工时序特征') when the temporal GNN improves little over the baseline; against this baseline every honest arm would look weak, so the fallback would fire on an artefact of the baseline rather than on a property of the GNN. That is why `mlp_feature_only` above is rebuilt from the edge stream truncated at t0 instead.
+
+LEAKAGE CHECK  (36s)
+------------------------------------------------------------------------------
+  (a) leak control -- MLP on t1-t0, the label's own source:
+        D=1   test AUC 1.0   (must be ~1.0)
+        D=3   test AUC 1.0   (must be ~1.0)
+        D=5   test AUC 1.0   (must be ~1.0)
+  (b) shuffled-label control -- train labels permuted:
+        D=1   test AUC 0.8106673045844783   (must be ~0.5)
+        D=3   test AUC 0.8254282453923566   (must be ~0.5)
+        D=5   test AUC 0.8392686039334707   (must be ~0.5)
+  (c) feature-filter verification, recomputed from the raw CSVs:
+        sampled 300, exact match 294, mismatch 6
+        step<=t0 differs from step>t0 in 294/300 (98.00%) -- a filter that
+        never differed would be inert, and the equality above vacuous
+  (d) wallets_features audit: 55/55 columns constant within address; 0
+        columns used as features (only 'Time step' is read at all)
+      positive control on that instrument: 'Time step' varies for 1.0000 of
+      the 61487 addresses with >= 2 observed steps (overall 0.0747 of all addresses)
+  (e) wf['num_timesteps_appeared_in'] == n_steps_observed: 0 mismatches
+      over 822942 addresses -- at D=1 that column IS the label
+      denied lifetime columns present in model matrices: []
+
+  summary: {"all_features_filtered_on_step_le_t0": true, "feature_filter_verification_exact": false, "feature_filter_verification_not_inert": true, "leak_control_reaches_1": true, "shuffled_control_at_chance": false, "no_lifetime_column_in_model_matrices": true, "variance_instrument_positive_control_is_1": true, "wf_num_timesteps_matches_nsteps": true, "delta1_equals_recurrence": true, "naive_provided_column_baseline_shows_the_leak": true}
+
+CLASS-BLINDNESS: class is never an input. Eligible survival differs
+strongly by class (see the censoring table), so part of any well-fitting
+model's AUC is that class-correlated gap, recovered from behaviour.
+
+runtime 2667.1s   seeds {'split': 20260924, 'torch': 20260925, 'bootstrap': 20260926}

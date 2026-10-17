@@ -1,0 +1,197 @@
+% =====================================================================
+%  Scientific Reports submission -- condensed "fast-read" version
+%  Derived ONLY from the source manuscript (see CHANGELOG.md and
+%  number_check.md).  No new data, numbers, claims, citations or figures.
+%
+%  Title candidates (both contain "validation-first"/"measurement
+%  validity" and "resilience"; darknet/Bitcoin appear only as scenario
+%  words, in the body, never in the title):
+%    T1 (used):   Validation-first measurement of resilience in illicit
+%                 data economies: a controlled study with a negative-result
+%                 ledger on public data
+%    T2 (alt):    Measuring resilience under measurement validity: a
+%                 validation-first protocol and negative-result ledger for
+%                 illicit data-trading ecosystems
+%
+%  Class note: the official Scientific Reports class (wlscirep.cls) was not
+%  available offline, so a self-contained article-based layout with the same
+%  single-column, wide-measure style is used.  It compiles with pdflatex and
+%  the class can be swapped at submission without touching the content.
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.1cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{textcomp}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{12pt}
+\renewcommand{\arraystretch}{1.12}
+
+% Pack floats so they share pages with text instead of forcing float pages.
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.72}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+
+\title{\bfseries Validation-first measurement of resilience in illicit data
+economies: a controlled study with a negative-result ledger on public data}
+
+% Author block carried over unchanged from the source submission (the real
+% names, affiliation and funding are preserved verbatim; Scientific Reports
+% is single-anonymous, so no anonymised variant is used).
+\author{Ziying Xue\textsuperscript{1}, Yongjin Chen\textsuperscript{1},
+Songze Zhu\textsuperscript{1,*}}
+\date{}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\noindent\textsuperscript{1}People's Public Security University of China,
+Muxidi campus, 1 Muxidi Nanli, Xicheng District, Beijing 100038, China.\\
+\noindent\textsuperscript{*}Corresponding author: 704339163@qq.com
+
+\vspace{6pt}
+
+\begin{abstract}
+\noindent\textbf{Background.} Enforcement repeatedly disrupts illicit
+data-trading ecosystems, yet whether they absorb a shock and resume function is
+rarely measured under controls able to reject it.
+
+\noindent\textbf{Methods.} We state a validation-first protocol: every quantity
+must survive a control capable of falsifying it. We apply it to the social,
+financial and infrastructure layers of an illicit data economy, from public
+archives (the AlphaBay archive, the Elliptic++ Bitcoin graph, the Abuse.ch
+URLhaus and ThreatFox feeds). Seven controlled analyses share one rule.
+
+\noindent\textbf{Results.} Infrastructure is churn-dominant: median online
+lifetime is \textbf{1.36} days, yet \textbf{13.88}\% of darkened hosts return
+within one day against a \textbf{2.24}\% matched floor (\textbf{6.2}$\times$).
+Displacement after the November 2019 Cryptonia--Cannazon shutdown is directional
+(\textbf{+10.5} percentage points on Apollon; \textbf{+0.0} on Empire,
+unmeasurable) but bounded, not estimated. The illicit financial subgraph is
+peripheral: removing all \textbf{14,266} illicit-labelled addresses
+(\textbf{1.734}\%) leaves the giant component at \textbf{98.88}\%.
+
+\noindent\textbf{Conclusions.} Of six resilience metrics, none passes all three
+validity gates. A negative-result ledger records that temporal-graph prediction
+fails four independent instrument checks through a feature-side separability
+trap, partially repaired by de-leakage.
+\end{abstract}
+
+\vspace{2pt}
+\noindent\textbf{Keywords:} cybercrime ecosystems; network resilience;
+measurement validity; darknet markets; temporal graph neural networks;
+negative results.
+
+\vspace{4pt}
+\hrule
+\vspace{6pt}
+
+\input{sections/01_intro}
+\input{sections/02_data}
+\input{sections/03_protocol}
+\input{sections/04_analyses}
+\input{sections/05_negative}
+\input{sections/06_governance}
+\input{sections/07_conclusion}
+
+\bigskip
+\section*{Supplementary information}
+\noindent The Supplementary Materials contain the complete audit trail; every
+number in the main text can be traced to a note below. Five notes are supplied
+as a separate file (\texttt{supplementary.tex}).
+\begin{itemize}\itemsep0pt
+\small
+\item \label{sup:S1}\textbf{Supplementary Note S1.} Complete protocol detail:
+the two-list rule, the audit census, and the engineering discipline.
+\item \label{sup:S2}\textbf{Supplementary Note S2.} The seven analyses' full
+controls and rejected estimators, the specification-curve coefficients, the
+exploratory cross-layer association, and the metric-validity matrix.
+\item \label{sup:S3}\textbf{Supplementary Note S3.} Per-configuration anatomy
+of the negative results (L1/L2/L3 de-leakage, the untrained floor, the
+changepoint and infeasibility entries).
+\item \label{sup:S4}\textbf{Supplementary Note S4.} Family-level
+infrastructure profile, including the E0 survival panel (Supplementary
+Fig.~S1), and the scenario-robustness analysis.
+\item \label{sup:S5}\textbf{Supplementary Note S5.} Data, time coverage and
+licence supplement, including the external-context source and the ethics
+details.
+\item \label{sup:A1A2}\textbf{Additional files 1 and 2.} The rule that draws the
+census boundary, and the SHA-256 census of the 302 result artifacts, as two
+plain-text files (\texttt{Additional file 1.txt}, \texttt{Additional file 2.txt}).
+\end{itemize}
+
+% Scientific Reports numbers references in order of first appearance, so the
+% unsorted style is used.  (plainnat orders the list alphabetically by author,
+% which would number the introduction's first citation far down the list.)
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+
+\bigskip
+\begingroup\small
+\section*{Declarations}
+
+\noindent\textbf{Availability of data and materials.} All source datasets are
+public and are listed in Table~\ref{tab:data}. The analysis pipeline and the
+audited result artifacts are available from the corresponding author on
+request. The rule that fixes the census boundary of the result manifest, and
+the SHA-256 manifest of all 302 result artifacts, are supplied with this
+submission as two plain-text supplementary files (Additional file 1 and
+Additional file 2); Supplementary Note S1.3 summarises the census and
+Supplementary Note S5 records the licence detail.
+
+\noindent\textbf{Competing interests.} The authors declare that they have no
+competing interests, financial or non-financial. No author holds any interest
+in, or has received any payment from, any organisation that would benefit from
+or be harmed by the results reported in this manuscript.
+
+\noindent\textbf{Funding.} This work was supported by the research project
+``The Formation Mechanism of `Resilience' in the Illicit Data Economy and
+Governance Countermeasures'', grant number 25CSH113, a public research grant
+held by the authors' institution. The funder had no role in the study design, in
+the collection, analysis or interpretation of data, in the writing of the
+manuscript, or in the decision to publish.
+
+\noindent\textbf{Acknowledgements.} Not applicable.
+
+\noindent\textbf{Author contributions.} Z.X., Y.C. and S.Z. designed the study.
+Z.X. and Y.C. assembled the data and ran the analyses. S.Z. supervised the
+work. All authors wrote and approved the manuscript.
+
+\noindent\textbf{Ethics statement.} The study uses only public metadata and
+public archives; no leaked personal records were accessed; identifiers are
+hashed; no interaction with illicit actors occurred. Two Gwern-curated sources
+carry no explicit licence and are used under research fair use (Supplementary
+Note S5). LLM-based tooling was used in exploratory analysis only, and no
+reported number depends on LLM-generated labels. An early packaging artifact
+contained a default service credential; it was rotated and purged from all
+packaged snapshots.
+
+\noindent\textbf{Additional file 1.} The rule that draws the census boundary
+(which trees are walked, what counts as an artifact, and the per-tree counts that
+sum to 302, so that the census count can be recomputed rather than taken on
+trust). \emph{File format:} plain text. \emph{Supplied as}
+\texttt{Additional file 1.txt}; summarised in Supplementary Note S1.3.
+
+\noindent\textbf{Additional file 2.} The census itself: the SHA-256 digest of
+each of the 302 result artifacts, one per line. \emph{File format:} plain text.
+\emph{Supplied as} \texttt{Additional file 2.txt}.
+
+\endgroup
+
+\end{document}

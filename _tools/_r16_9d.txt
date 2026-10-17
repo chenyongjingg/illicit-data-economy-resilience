@@ -1,0 +1,35 @@
+
+### §9(d) — §9(c)'s predictions, sharpened before the reading (C-170)
+
+§9(c) closed with three predictions. Two of them are not the same kind of claim,
+and the fix recorded in §9(c) is what makes the difference matter: with the
+control's within-t0 column present, the six clearance readings stop being **absent
+from the record** and start being **evaluated**. An evaluated check can fail on
+its own merits, which is a different outcome from a missing reading.
+
+Four outcomes, pre-registered (the ledger entry is C-170, written before the
+artefact exists):
+
+| # | GAP lines | FAIL lines | what it means |
+|---|---|---|---|
+| a | 0 | 0 | the hoped landing |
+| b | 0 | a clearance check (`arm − ctl ≥ 0.05`) fails | **a finding about the experiment** — the arm does not clear its control by the margin. Not a landing defect, and not evidence the fix is broken |
+| c | 0 | the chance check (`abs(ctl − 0.5) < 0.05`) fails | **a finding about the control channel** |
+| d | ≥1 | — | the writer still is not emitting that reading (record incompleteness) |
+
+So `81_`'s exit code 2 — "a genuine finding, GAP set matches" — is, in this
+landing, most likely (b) or (c), **not** "the landing failed". That is the same
+correction we made once already, in the other direction, when codes 4/5/2 were
+being read as scientific failure.
+
+**One scope note on §9(c)'s "arithmetically impossible" line.** It is about the
+**control's own two columns**: pooled ≈ 0.80–0.84 while within-t0 ≈ 0.5. Its whole
+load is the measured calendar ceiling (0.7195 / 0.7539 / 0.7723 at Δ=1/3/5), which
+0.84 exceeds — so t0 alone cannot account for it. The predicate that licenses the
+*arms*, however, is the **margin**, with the control near chance as the ideal
+rather than the requirement: a control returning, say, 0.70 against arms at 0.76 is
+not arithmetically contradictory, and the margin decides. That is a weaker but
+real result, and it must not be reported as a writer defect — a defect is
+established only when the two columns contradict **within one run**. The ceiling
+comes from the **test**-split `per_bin` table, and the artefact carries no
+validation bin table, so any cross-split use of it has to say so.

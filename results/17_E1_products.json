@@ -1,0 +1,67 @@
+{
+  "price_overlap": {
+    "Cryptonia": 0.8074516496018203,
+    "Cannazon": 0.9339027240852288
+  },
+  "entry_profile": {
+    "Cryptonia": {
+      "entrants": 87,
+      "non_entrants": 328,
+      "median_reviews_entrants": 25.0,
+      "median_reviews_non": 20.5
+    },
+    "Cannazon": {
+      "entrants": 10,
+      "non_entrants": 130,
+      "median_reviews_entrants": 52.5,
+      "median_reviews_non": 92.0
+    }
+  },
+  "fate": [
+    {
+      "source": "Cryptonia",
+      "group": "entered Apollon",
+      "n": 87,
+      "pre_reviews": 10389,
+      "post_reviews": 3639,
+      "pre_per_seller": 119.41379310344827,
+      "post_per_seller": 41.827586206896555,
+      "still_active_pct": 100.0,
+      "post_markets": "Apollon:2834, Empire:590, CannaHome:215"
+    },
+    {
+      "source": "Cryptonia",
+      "group": "did NOT enter",
+      "n": 328,
+      "pre_reviews": 28843,
+      "post_reviews": 2670,
+      "pre_per_seller": 87.9359756097561,
+      "post_per_seller": 8.140243902439025,
+      "still_active_pct": 5.7926829268292686,
+      "post_markets": "CannaHome:1926, Empire:741, Cannazon:3"
+    },
+    {
+      "source": "Cannazon",
+      "group": "entered Apollon",
+      "n": 10,
+      "pre_reviews": 3457,
+      "post_reviews": 221,
+      "pre_per_seller": 345.7,
+      "post_per_seller": 22.1,
+      "still_active_pct": 100.0,
+      "post_markets": "Apollon:220, Cannazon:1"
+    },
+    {
+      "source": "Cannazon",
+      "group": "did NOT enter",
+      "n": 130,
+      "pre_reviews": 34148,
+      "post_reviews": 35,
+      "pre_per_seller": 262.67692307692306,
+      "post_per_seller": 0.2692307692307692,
+      "still_active_pct": 10.76923076923077,
+      "post_markets": "Cannazon:35"
+    }
+  ],
+  "untested": "product-category overlap between markets; no category column exists in kilos_reviews"
+}

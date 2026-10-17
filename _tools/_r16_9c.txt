@@ -1,0 +1,36 @@
+
+### §9(c) — the landing had two gaps, both closed before the artefact exists (C-169)
+
+Recorded here because both are about **which object a name refers to**, which is
+this report's recurring failure mode, and both were found and fixed while the
+rerun was still training — before any landing could act on them.
+
+**(i) A stale object sat under the live local name.** The writer writes the text
+report at `:1588` and logs **no** `wrote` line for it, so the landing's
+run-completion gate — which requires `wrote <path>` in the log — cannot reach the
+text report at all. Meanwhile `results/53_E5p_result.txt` locally held the **old**
+run's text, byte-identical to the pod's preserved copy (`1831495aff6b50c2…`). It
+was renamed to `53_E5p_result.oldwriter_55d7d8f8.txt`, sha checked before and
+after. The landing now archives and pulls the `.txt` as well, and binds it to the
+JSON **by content**, not by transport: `runtime` must equal
+`round(seconds_total, 1)`, and the text report's `summary: {...}` block must
+**equal** the JSON's `leakage_check.summary` as a dict. Both relations were
+measured on the old pair, the one pair written by a single process. A stale text
+report fails the second relation.
+
+**(ii) The archive and the driver's evidence check were two different names.**
+`run_pipeline.py:66` gates E5 on `ev=["results/53_E5p_result.json"]` — the
+canonical local name — while the landing pulled only to the writer-derived
+archive name. Archiving alone would leave the driver reading a path that does not
+exist. The landing now also places both objects at the canonical names, under the
+same decide-before-touch rule: identical bytes are a no-op, different bytes
+refuse. Both the archive guard (three branches, inode as the witness that no copy
+happened — `cp -p` preserves mtime, so mtime cannot witness it) and the canonical
+placement (three branches, including the refusal) were exercised, not merely
+asserted.
+
+**Unchanged predictions, restated so the landing is read against them.** On
+landing, `81_e5p_landing_check.py --prediction fixedwriter` is expected to report
+**zero GAP lines** and `feature_filter_verification_exact` is expected to be
+**True**; and (within-t0 ≈ 0.5 with pooled ≈ 0.80–0.84) remains arithmetically
+impossible, so if it appears it is a writer defect and not a finding.

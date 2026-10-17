@@ -1,0 +1,72 @@
+==============================================================================
+DATE / COVERAGE AUDIT   2026-09-23T16:06:09
+==============================================================================
+
+[A] AlphaBay 2017-01-28 scrape
+  header: ['date', 'time', 'comment', 'rating', 'item']
+  feedback rows: 1217387   distinct items: 52495
+  rating values: {'good': 1181049, 'bad': 21561, 'neutral': 14776, 'rating': 1}
+  alphabay feedback dates            2015-01-03 .. 2017-01-28  (25 months, n=1217386) 
+      busiest months: 2016-12=120618, 2016-11=115384, 2016-10=105245, 2016-09=97101, 2016-08=93154
+      quietest months: 2015-01=1, 2015-02=2, 2015-03=1102, 2015-04=4897, 2015-05=7447
+  listings header (18 cols): ['item number', 'sold', 'price', 'heading', 'listed', 'blurb (description)', 'shipsto', 'quantity', 'origin', 'product_class', 'vendor level', 'trust level', 'tags', 'category1']
+  listings row0: ['166605', '1', '417.07', 'INSTAGRAM 200x PILLS 220mg (SUPERMANCREW', 'Jun 13, 2016', 'EVERYTHING WE SELL ARE 100% LAB TESTED.\n', 'Worldwide', '100000', ' Worldwide', 'Physical package', '2', '5', 'XTC,PARTY,MDMA,CRYSTAL,PARTYFLOCK,INSTAG', 'Drugs & Chemicals']
+  listings rows: 114231   distinct vendors: 10   distinct categories: 93
+  top categories: Other(22224), Buds & Flowers(12837), Pills(11553), Cocaine(5564), MDMA(4825), Prescription(4208), Steroids(3806), Concentrates(3261)
+
+[B] Agora 2014-2015
+  header: ['Vendor', ' Category', ' Item', ' Item Description', ' Price', ' Origin', ' Destination', ' Rating', ' Remarks']
+  rows: 109689  distinct vendors: 3192  distinct categories: 109
+  top categories: Drugs/Cannabis/Weed(21272), Drugs/Ecstasy/Pills(7534), Drugs/Ecstasy/MDMA(6116), Drugs/Stimulants/Cocaine(6007), Drugs/Prescription(5561), Drugs/Benzos(5393), Drugs/Cannabis/Concentrates(4257), Drugs/Psychedelics/LSD(3775)
+  NOTE: no date column -> cross-sectional only, cannot support a pre/post window.
+
+[C] Hansa + Valhalla dumps (2016)
+  hansa-marketplace-listings-december-2016.csv         rows_hdr=['2016-12-11 20:13:54.654635085 -0500 EST', ' "18365"', ' "50gr. FUB-AKB"', ' "ALaurizen"', ' "USD 340.00"']
+      row0: ['2016-12-11 15:34:46.900547093 -0500 EST', ' "12228"', ' "Get a FREE iPhone 6s !!!"', ' "smart666tiger"', ' "USD 11.99"', ' "Electronics"']
+     hansa-marketplace-listings-dec  2016-12-11 .. 2016-12-13  (1 months, n=14773) 
+      busiest months: 2016-12=14773
+      quietest months: 2016-12=14773
+  hansa_reviews_december_2016.csv                      rows_hdr=['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"']
+      row0: ['2016-12-13 02:37:18.202573553 -0500 EST', ' "28501"', ' "success"', ' "---"', ' "Not specified"', ' "F***t"', ' "2016-10-19 21:58 UTC"']
+     hansa_reviews_december_2016.cs  2016-12-13 .. 2016-12-13  (1 months, n=51553) 
+      busiest months: 2016-12=51553
+      quietest months: 2016-12=51553
+  valhalla-marketplace-listings-2016-10.csv            rows_hdr=['10086', 'Hacking for Profit: Credit Card Fraud A Beginners Guide', 'junkiepig666', '2.73 EUR', ' Germany']
+      row0: ['10087', 'Introduction to Social Engineering', 'junkiepig666', '2.73 EUR', ' Germany']
+     valhalla-marketplace-listings-  NO DATES PARSED 
+
+[D] Kilos multi-market reviews
+  header: ['Samsara', 'Doubleup', '0', '1', '0.00022', 'I got the order i love this vendors policy of you can give feed back only after two successful deals thanks man i got the second package']
+  rows: 235904  markets: 51  vendors: 1703
+  markets: {'Empire': 83008, 'Cannazon': 55740, 'Apollon': 41456, 'Cryptonia': 35223, 'Samsara': 10237, 'CannaHome': 9987, '\\n1. SwagQuality': 2, '\\n2. Hublot': 2, '\\n3. AlphaKing123': 2, '\\nIf these Vendors are MrMillionaire Shill accounts': 2, '\\nIf not': 2, '\\nAlso': 1, '\\nRolling spliffs is a nightmare': 1, '\\nIf you want a fake cartridge': 1, '\\nbit disappointed': 1, '\\nResent address to vendor': 1, '\\nNoting several other buyers who also had delays': 1, 'fucking love this guy': 1, '\\nDer stealth war 1A wirklich PERFEKT! So Super hab ich das noch nie gesehen. 2 mal Vakuomiert in Luftpolster Luftdicht abgepackt': 1, '\\nWerde evt. nochmal bestellen': 1, '\\nAlles in allem bin ich zufrieden': 1, "\\nIt's a PDF on a site that you can't view": 1, '\\nDer vendor dachte sich wohl': 1, '\\nShipping was fast and I appreciated the extra. I suppose some of these are probably strong': 1, '\\n9/21 UPDATE New msg- "qp of indoor non vac sealed dumped into a priority mail envelope with half oz of china white in a small baggie': 1, '\\nill know i was successful when i dont hear back from u': 1, '\\nLes deux comptes marchent super bien (le premier offre RMC sport+Bein sport': 1, '\\npas encore gout mais bonne quantit': 1, '\\nMy feedback was not lies or an exaggeration': 1, '\\nA customer said this about him and i ordered just to see if it was true. This guy is really terrible. Sent me dead socks for one': 1, '\\nI will change feedback if come to an agreement': 1, '\\n"Ich hatte ne Amph-Psychose': 1, '\\nIN HINDSIGHT the 10 days shipping alone should be a red flag because that means 10 workdays and therefore you have to add +4 weekend days': 1, '\\nSo vendor service very good except that this is not a high quality stuff as it gets sold as': 1, "\\nOther people don't seemed to have had any problems": 1, '\\nHave bought other stuff from this vendor with no problems': 1, '\\nonly sends mega pack': 1, '\\nThis vendor has been BSing me for a month. Same thing w/ the last order': 1, '\\nIf you like good communication with a vendor': 1, 'The upgrade to express blew me away. Everything legit. Absolute fucking legend once again. I will be back mate. Thank you': 1, '\\nConclusion - you cant buy for 25 EUR real cocaine. It is something different': 1, '\\nI love how much care he puts into his customers explaining doses': 1, '\\nGive him a try': 1, '\\nthese guys are telling step by step guidance on what to do to make sure you dont fuck it up. 10/10': 1, '\\nHave Yet to test the Product': 1, '\\nThey Finalized Early': 1, "\\nIf you haven't tried a magic potion cart": 1, '\\nYou have the same sh*it at 0': 1, '\\nIf you see so much positive comments': 1, '\\nStealth is spot on.  Order was so overweight it was unreal.  The gear is lovely.  Had a couple of toots': 1, '\\nGreat to see you back': 1}
+
+[E] Kaggle drug listing dataset (multi-market)
+  header: ['product_title', 'product_description', 'ship_from', 'ship_to', 'seller', 'price', 'source']
+  rows: 194433  distinct source markets: 8  distinct sellers: 6192
+  sources: {'agora': 124842, 'silkroad2': 24062, 'nucleus': 18364, 'evolution': 15772, 'outlaw_market': 5756, 'abraxas': 4087, 'themarketplace': 1378, '1776': 172}
+
+[F] ThreatFox IOC dump (infrastructure layer)
+  file: threatfox_full__full.csv (23795205 bytes)
+  rows: 105999
+  threatfox first_seen               2020-12-14 .. 2026-09-23  (70 months, n=105999) 
+      busiest months: 2026-09=26832, 2026-07=15398, 2026-08=14567, 2026-04=13613, 2026-05=11812
+      quietest months: 2020-12=6, 2021-02=1, 2021-03=2, 2021-04=20, 2021-05=26
+  threatfox last_seen                2026-03-23 .. 2026-09-23  (7 months, n=37366) 
+      busiest months: 2026-09=11145, 2026-04=7691, 2026-06=4304, 2026-05=4275, 2026-03=3817
+      quietest months: 2026-03=3817, 2026-04=7691, 2026-05=4275, 2026-06=4304, 2026-07=2670
+  threat_type: {'"botnet_cc"': 40949, '"payload_delivery"': 40274, '"payload"': 24632, '"cc_skimming"': 138, '"url"': 3, 'https://avscan.info/"': 1, 'https://www.avscan.info/"': 1, 'https://example3.com/"': 1}
+  top malware: {'"js.clearfake"': 25068, '"unknown"': 12274, '"win.asyncrat"': 10864, '"unknown_loader"': 4887, '"win.vidar"': 4751, '"win.cobalt_strike"': 4160, '"win.remcos"': 2438, '"win.vshell"': 2148, '"js.iclickfix"': 2139, '"win.remus"': 1481}
+
+[G] URLhaus URL dump (infrastructure layer)
+  file: urlhaus_full__csv.txt (12142092 bytes)
+  rows: 58310
+  urlhaus date_added                 2018-06-05 .. 2026-09-23  (100 months, n=58310) 
+      busiest months: 2026-08=15663, 2026-07=15644, 2026-09=11007, 2026-06=7293, 2025-10=3691
+      quietest months: 2018-06=2, 2018-08=3, 2018-09=2, 2018-10=8, 2018-11=13
+  urlhaus last_online                2026-06-25 .. 2026-09-23  (4 months, n=49919) 
+      busiest months: 2026-09=25403, 2026-08=12611, 2026-07=10635, 2026-06=1270
+      quietest months: 2026-06=1270, 2026-07=10635, 2026-08=12611, 2026-09=25403
+  url_status: {'offline': 42272, 'online': 16038}
+  threat: {'malware_download': 58310}
+
+[H] Elliptic++ (financial layer)

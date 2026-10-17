@@ -1,0 +1,141 @@
+{
+  "as_used": {
+    "d_tab": 14,
+    "n_params": 12067,
+    "tgn_in_eval_mode": true,
+    "logit_shape_step1": [
+      100,
+      3
+    ],
+    "logit_shape_step2": [
+      100,
+      3
+    ],
+    "logit_shape_step3": [
+      100,
+      3
+    ],
+    "grads": {
+      "step_1": {
+        "gru": 0.05911201355047524,
+        "time_enc": 0.0009316037758253515,
+        "conv": 0.0731597263365984,
+        "trunk": 0.618762843310833,
+        "heads": 0.27681534737348557,
+        "loss": 0.7007690072059631
+      },
+      "step_2": {
+        "gru": 0.10586821334436536,
+        "time_enc": 0.0015735490014776587,
+        "conv": 0.11052977852523327,
+        "trunk": 0.6160763427615166,
+        "heads": 0.25474200025200844,
+        "loss": 0.6981112360954285
+      },
+      "step_3": {
+        "gru": 0.05923935957252979,
+        "time_enc": 0.0008878704684320837,
+        "conv": 0.06755117140710354,
+        "trunk": 0.6217406243085861,
+        "heads": 0.15986203216016293,
+        "loss": 0.6975898146629333
+      }
+    },
+    "grad_all_nonzero": true,
+    "msg_module_n_params": 0,
+    "memory_abs_sum_after_reset": 0.0,
+    "memory_abs_sum_after_update": 81758.6328125,
+    "memory_moved": true,
+    "state_dict_keys": [
+      "conv.lin_l.bias",
+      "conv.lin_l.weight",
+      "conv.lin_r.weight",
+      "heads.bias",
+      "heads.weight",
+      "tgn._assoc",
+      "tgn.gru.bias_hh",
+      "tgn.gru.bias_ih",
+      "tgn.gru.weight_hh",
+      "tgn.gru.weight_ih",
+      "tgn.last_update",
+      "tgn.memory",
+      "tgn.time_enc.lin.bias",
+      "tgn.time_enc.lin.weight",
+      "trunk.0.bias",
+      "trunk.0.weight"
+    ],
+    "state_dict_roundtrip": true,
+    "readout_deterministic": true,
+    "error": null
+  },
+  "narrow_tab": {
+    "d_tab": 6,
+    "n_params": 11939,
+    "tgn_in_eval_mode": true,
+    "logit_shape_step1": [
+      100,
+      3
+    ],
+    "logit_shape_step2": [
+      100,
+      3
+    ],
+    "logit_shape_step3": [
+      100,
+      3
+    ],
+    "grads": {
+      "step_1": {
+        "gru": 0.05037387274205685,
+        "time_enc": 0.0004394643910927698,
+        "conv": 0.05700404942035675,
+        "trunk": 0.27714848704636097,
+        "heads": 0.1326067466288805,
+        "loss": 0.6902141571044922
+      },
+      "step_2": {
+        "gru": 0.0927789444103837,
+        "time_enc": 0.0041512997122481465,
+        "conv": 0.11539706028997898,
+        "trunk": 0.30068156868219376,
+        "heads": 0.16454749926924706,
+        "loss": 0.7017313838005066
+      },
+      "step_3": {
+        "gru": 0.06563558150082827,
+        "time_enc": 0.003819095203652978,
+        "conv": 0.08507577888667583,
+        "trunk": 0.3015437424182892,
+        "heads": 0.17666721530258656,
+        "loss": 0.6984195709228516
+      }
+    },
+    "grad_all_nonzero": true,
+    "msg_module_n_params": 0,
+    "memory_abs_sum_after_reset": 0.0,
+    "memory_abs_sum_after_update": 74997.8359375,
+    "memory_moved": true,
+    "state_dict_keys": [
+      "conv.lin_l.bias",
+      "conv.lin_l.weight",
+      "conv.lin_r.weight",
+      "heads.bias",
+      "heads.weight",
+      "tgn._assoc",
+      "tgn.gru.bias_hh",
+      "tgn.gru.bias_ih",
+      "tgn.gru.weight_hh",
+      "tgn.gru.weight_ih",
+      "tgn.last_update",
+      "tgn.memory",
+      "tgn.time_enc.lin.bias",
+      "tgn.time_enc.lin.weight",
+      "trunk.0.bias",
+      "trunk.0.weight"
+    ],
+    "state_dict_roundtrip": true,
+    "readout_deterministic": true,
+    "error": null
+  },
+  "ok": true
+}

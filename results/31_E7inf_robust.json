@@ -1,0 +1,12 @@
+{
+  "providers": 10793,
+  "ip_url_share": 0.8279106145251397,
+  "host_size": {
+    "median": 2.0,
+    "p99": 23.0,
+    "max": 853
+  },
+  "provider_disp_7d": 19.333289885297184,
+  "provider_placebo": 22.380637382690303,
+  "provider_excess": -3.047347497393119
+}

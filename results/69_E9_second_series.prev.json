@@ -1,0 +1,234 @@
+{
+  "channels": {
+    "ocr59": "results/59_ocr_full_text/ (only 06/07/08/10/11 exist)",
+    "text_layer": "the PDF's own text objects (fitz get_text)"
+  },
+  "fields": {
+    "anon_samples": "sample records downloadable from that channel",
+    "anon_total": "anonymous-social-community intel total",
+    "country_us": "section 一's country breakdown, United States row",
+    "dwm_effective": "the p.6 anchor's first figure (DWM, 'deep and dark web effective intel')",
+    "dwm_high_value": "the p.6 anchor's second figure",
+    "ransom_events": "published ransomware events that month",
+    "ransom_groups": "active commercial ransomware groups that month"
+  },
+  "issues": {
+    "2025-01": {
+      "n_pages_text_layer": 37,
+      "ocr59": null,
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": "51,038,449",
+        "country_us": null,
+        "dwm_effective": "96,082",
+        "dwm_high_value": "4,749",
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": [
+        "96,082",
+        "4,749"
+      ]
+    },
+    "2025-02": {
+      "n_pages_text_layer": 36,
+      "ocr59": null,
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": "35,171,847",
+        "country_us": null,
+        "dwm_effective": "140,800",
+        "dwm_high_value": "4,955",
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": [
+        "140,800",
+        "4,955"
+      ]
+    },
+    "2025-03": {
+      "n_pages_text_layer": 36,
+      "ocr59": null,
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": "50,167,832",
+        "country_us": null,
+        "dwm_effective": "356,323",
+        "dwm_high_value": "5,880",
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": [
+        "356,323",
+        "5,880"
+      ]
+    },
+    "2025-04": {
+      "n_pages_text_layer": 36,
+      "ocr59": null,
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": "45,982,442",
+        "country_us": null,
+        "dwm_effective": "509,880",
+        "dwm_high_value": "3,999",
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": [
+        "509,880",
+        "3,999"
+      ]
+    },
+    "2025-06": {
+      "n_pages_text_layer": 32,
+      "ocr59": {
+        "anon_samples": null,
+        "anon_total": "78,705,352",
+        "country_us": "892",
+        "dwm_effective": "1,140,767",
+        "dwm_high_value": "5,232",
+        "ransom_events": "502",
+        "ransom_groups": "48"
+      },
+      "ocr59_p6_pair": [
+        "1,140,767",
+        "5,232"
+      ],
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": null,
+        "dwm_effective": null,
+        "dwm_high_value": null,
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": []
+    },
+    "2025-07": {
+      "n_pages_text_layer": 34,
+      "ocr59": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": "983",
+        "dwm_effective": "1,140,767",
+        "dwm_high_value": "5,822",
+        "ransom_events": "548",
+        "ransom_groups": "48"
+      },
+      "ocr59_p6_pair": [
+        "1,140,767",
+        "5,822"
+      ],
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": null,
+        "dwm_effective": null,
+        "dwm_high_value": null,
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": []
+    },
+    "2025-08": {
+      "n_pages_text_layer": 32,
+      "ocr59": {
+        "anon_samples": null,
+        "anon_total": "116,744,635",
+        "country_us": "1255",
+        "dwm_effective": "68,904",
+        "dwm_high_value": "6,826",
+        "ransom_events": "530",
+        "ransom_groups": "50"
+      },
+      "ocr59_p6_pair": [
+        "68,904",
+        "6,826"
+      ],
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": null,
+        "dwm_effective": null,
+        "dwm_high_value": null,
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": []
+    },
+    "2025-10": {
+      "n_pages_text_layer": 34,
+      "ocr59": {
+        "anon_samples": null,
+        "anon_total": "104,426,753",
+        "country_us": "1265",
+        "dwm_effective": "336,661",
+        "dwm_high_value": "6,176",
+        "ransom_events": "840",
+        "ransom_groups": "56"
+      },
+      "ocr59_p6_pair": [
+        "336,661",
+        "6,176"
+      ],
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": null,
+        "dwm_effective": null,
+        "dwm_high_value": null,
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": []
+    },
+    "2025-11": {
+      "n_pages_text_layer": 33,
+      "ocr59": {
+        "anon_samples": null,
+        "anon_total": "15,338,162",
+        "country_us": "1489",
+        "dwm_effective": "436,427",
+        "dwm_high_value": "6,889",
+        "ransom_events": "723",
+        "ransom_groups": "55"
+      },
+      "ocr59_p6_pair": [
+        "436,427",
+        "6,889"
+      ],
+      "p6_pair_found": 2,
+      "text_layer": {
+        "anon_samples": null,
+        "anon_total": null,
+        "country_us": null,
+        "dwm_effective": null,
+        "dwm_high_value": null,
+        "ransom_events": null,
+        "ransom_groups": null
+      },
+      "text_layer_has_any_text": true,
+      "text_layer_p6_pair": []
+    }
+  },
+  "what": "the second per-issue aggregate series in the E9 source reports, and the p.6 anchor, extracted from two channels"
+}

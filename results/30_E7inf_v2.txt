@@ -1,0 +1,192 @@
+==============================================================================
+E7-inf v2  Takedown latency and reconstitution (corrected cohort)
+==============================================================================
+
+  rows: 58310 ; distinct hosts: 17400
+
+==============================================================================
+1. Locating the pruning boundary to the day (no filter, every day)
+==============================================================================
+  day                n     off     %off
+  2026-06-10         8       0     0.0%
+  2026-06-11         2       0     0.0%
+  2026-06-13         1       0     0.0%
+  2026-06-14         1       0     0.0%
+  2026-06-15         4       0     0.0%
+  2026-06-16         2       0     0.0%
+  2026-06-17         3       0     0.0%
+  2026-06-18        10       0     0.0%
+  2026-06-19         8       0     0.0%
+  2026-06-21         4       0     0.0%
+  2026-06-22      4757       0     0.0%
+  2026-06-23         3       0     0.0%
+  2026-06-24         1       0     0.0%
+  2026-06-25       120     118    98.3%
+  2026-06-26       584     584   100.0%
+  2026-06-27       400     398    99.5%
+  2026-06-28       378     378   100.0%
+  2026-06-29       526     519    98.7%
+  2026-06-30       428     426    99.5%
+  2026-07-01       357     354    99.2%
+  2026-07-02       894     888    99.3%
+  2026-07-03       419     416    99.3%
+  2026-07-04       737     733    99.5%
+  2026-07-05       294     291    99.0%
+  2026-07-06       339     336    99.1%
+  2026-07-07      1468    1454    99.0%
+  2026-07-08       377     376    99.7%
+  2026-07-09       417     413    99.0%
+  2026-07-10       167     167   100.0%
+  2026-07-11       588     582    99.0%
+  2026-07-12       444     444   100.0%
+  2026-07-13       350     349    99.7%
+  2026-07-14       503     502    99.8%
+  2026-07-15       402     400    99.5%
+  2026-07-16       451     450    99.8%
+  2026-07-17       419     419   100.0%
+  2026-07-18       615     615   100.0%
+  2026-07-19       453     453   100.0%
+  2026-07-20       422     417    98.8%
+  2026-07-21       590     573    97.1%
+  2026-07-22       414     389    94.0%
+  2026-07-23       600     598    99.7%
+  2026-07-24       430     429    99.8%
+  2026-07-25       256     255    99.6%
+  2026-07-26       705     705   100.0%
+  2026-07-27       466     463    99.4%
+  2026-07-28       410     368    89.8%
+  2026-07-29       828     789    95.3%
+  2026-07-30       364     361    99.2%
+  2026-07-31       465     462    99.4%
+  2026-08-01       398     394    99.0%
+  2026-08-02       449     448    99.8%
+  2026-08-03       734     730    99.5%
+  2026-08-04       643     635    98.8%
+  2026-08-05       458     455    99.3%
+  2026-08-06       804     799    99.4%
+  2026-08-07       332     328    98.8%
+  2026-08-08      1296    1295    99.9%
+  2026-08-09       361     359    99.4%
+  2026-08-10       858     854    99.5%
+  2026-08-11      1088     962    88.4%
+  2026-08-12       583     574    98.5%
+  2026-08-13       420     409    97.4%
+  2026-08-14       490     483    98.6%
+  2026-08-15       293     289    98.6%
+  2026-08-16       451     429    95.1%
+  2026-08-17       472     470    99.6%
+  2026-08-18       448     446    99.6%
+  2026-08-19       452     445    98.5%
+  2026-08-20       377     369    97.9%
+  2026-08-21       348     348   100.0%
+  2026-08-22       411     406    98.8%
+  2026-08-23       273     257    94.1%
+  2026-08-24       387     381    98.4%
+  2026-08-25       352     335    95.2%
+  2026-08-26       452     439    97.1%
+  2026-08-27       450     430    95.6%
+  2026-08-28       422     384    91.0%
+  2026-08-29       359     348    96.9%
+  2026-08-30       374     359    96.0%
+  2026-08-31       428     386    90.2%
+  2026-09-01       439     415    94.5%
+  2026-09-02       670     652    97.3%
+  2026-09-03       319     315    98.7%
+  2026-09-04       392     362    92.3%
+  2026-09-05       274     270    98.5%
+  2026-09-06       324     278    85.8%
+  2026-09-07       605     601    99.3%
+  2026-09-08       372     362    97.3%
+  2026-09-09       553     531    96.0%
+  2026-09-10       437     385    88.1%
+  2026-09-11       341     330    96.8%
+  2026-09-12       320     284    88.8%
+  2026-09-13       393     354    90.1%
+  2026-09-14       480     428    89.2%
+  2026-09-15       594     530    89.2%
+  2026-09-16       709     589    83.1%
+  2026-09-17       454     396    87.2%
+  2026-09-18       401     322    80.3%
+  2026-09-19       405     329    81.2%
+  2026-09-20       295     213    72.2%
+  2026-09-21       898     581    64.7%
+  2026-09-22       873     443    50.7%
+  2026-09-23       459     182    39.7%
+
+  ★ Detected boundary: %s -- the first day after which every day with
+  n>=50 has a non-zero removal rate.
+  Before it removal is NEVER recorded, so those rows survive by still
+  resolving. That is selection on the outcome, and it is a property of
+  the DUMP, not of the URLs.
+
+==============================================================================
+2. Corrected cohort
+==============================================================================
+  cohort = added >= 2026-06-25
+  rows: 44750 (76.7% of file)
+  offline: 42272 (94.46%) ; online (censored): 2478
+  offline with a removal time: 33881 ; without: 8391
+  follow-up: 90 days from cohort start to snapshot
+
+  treat           n   events       med       q25       q75    cens%
+  zero        44750    42272     0.472     0.000     2.317     5.5%
+  drop        36359    33881     0.859     0.171     3.559     6.8%
+  censor      44750    33881     1.517     0.273    21.308    24.3%
+
+  ★ The three treatments bracket the answer; no point estimate claimed.
+
+  KM (zero), %% offline by day:
+    10%:0.00  25%:0.00  50%:0.47  75%:2.32  90%:9.98
+
+==============================================================================
+3. ★ Within-host paired test (host is its own control)
+==============================================================================
+  28_ compared first-vs-repeat URLs across hosts. A host can only
+  produce a repeat URL if it SURVIVED to be reused, so that contrast
+  was contaminated. Here the comparison is WITHIN hosts that have >=2
+  URLs, so selection into the multi-URL set cancels.
+  hosts with >=2 URLs: 9411 ; URLs in them: 37831
+  URLs per host: median=2 p90=5 max=853
+  URLs with >= 7 days follow-up: 34609 (91.5% of the multi-host set)
+
+  hosts usable for the paired test: 8552
+  died-within-7d, first URL : 0.8524 (n=8552)
+  died-within-7d, later URLs: 0.8475
+  hosts where later < first: 475 ; later > first: 334 ; tied: 7743
+  sign test p (two-sided) = 8.054e-07   [n discordant = 809]
+  mean within-host difference (later - first) = -0.0049
+
+  ★ A NEGATIVE difference means later URLs on the same host die FASTER
+  than the host's first URL; positive means reused hosts are stickier.
+
+==============================================================================
+4. ★ Reconstitution rate, with the correct denominator (D2 fixed)
+==============================================================================
+  Denominator = EVERY removal on a host with >=2 URLs, not only those
+  followed by an addition. For a window of W days, only removals with
+  at least W days of follow-up can be counted, or a removal near the
+  snapshot would be scored as a non-reconstitution it never had time
+  to contradict.
+  candidate removals (host has >=2 URLs): 29748
+
+     W    n_used       recon         rate   median_gap
+     1     29243        4325       14.79%        0.010
+     3     28417        6016       21.17%        0.088
+     7     27019        6736       24.93%        0.293
+    30     19536        6101       31.23%        0.795
+
+  ★ This is the displacement/resilience measure: a removal is followed
+  by a new URL on the same host within W days at the rate above.
+  It has no immortal-time problem because every host in the
+  denominator has an OBSERVED removal.
+
+==============================================================================
+5. Falsification -- placebo removal times
+==============================================================================
+  real   reconstitution rate (W=7d) = 24.93%
+  placebo (removal times shuffled)  = 15.76% (sd 0.19), p = 0.0000
+  ★ The placebo keeps the same hosts, the same additions and the same
+  number of removals, and only breaks the pairing -- so a real rate
+  far above the placebo is evidence the pairing carries information.
+
+wrote /root/cis/results/figs/E7inf_v2.{png,pdf}

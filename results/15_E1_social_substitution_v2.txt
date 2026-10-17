@@ -1,0 +1,98 @@
+==============================================================================
+E1 v2 -- DOES ACTIVITY MOVE TO A SURVIVING MARKET WHEN OTHERS DIE?
+==============================================================================
+
+==============================================================================
+A. Aggregate: total volume and composition (DESCRIPTIVE ONLY)
+==============================================================================
+
+market      Apollon  CannaHome  Cannazon  Cryptonia  Empire  TOTAL
+week                                                              
+2019-10-07      776        356      2234       1774    4093   9233
+2019-10-14     1083        499      2360       2259    4765  10966
+2019-10-21     1283        569      2234       2531    5449  12066
+2019-10-28     1343        673      2376       2671    6149  13212
+2019-11-04     1590        675      2427       3138    7236  15066
+2019-11-11     1585        717      2407       2880    4036  11625
+2019-11-18     2120        671        20          0    1381   4192
+2019-11-25     3171        514         0          0     975   4660
+2019-12-02     5329        693        20          0    1347   7389
+2019-12-09     6274        795         0          0    1561   8630
+2019-12-16     8854        994         0          0    1586  11434
+2019-12-23     1920        778         0          0     755   3453
+2019-12-30     2456        879         0          0     592   3927
+2020-01-06     1196        691         0          0     206   2093
+
+  weekly mean, pre (2019-06-03..2019-11-11) vs post (2019-11-18..):
+    Empire        2769.2 ->   1050.4  (-62%)
+    Cannazon      1908.8 ->      5.0  (-100%)
+    Apollon        418.1 ->   3915.0  (+836%)
+    Cryptonia     1430.2 ->      0.0  (-100%)
+    CannaHome      164.3 ->    751.9  (+358%)
+    TOTAL         6690.6 ->   5722.2  (-14%)
+
+  TOTAL ecosystem volume: 6691 -> 5722 (-14%)
+  shares of total, pre -> post:
+    Empire       41.4% ->  18.4%
+    Cannazon     28.5% ->   0.1%
+    Apollon       6.2% ->  68.4%
+    Cryptonia    21.4% ->   0.0%
+    CannaHome     2.5% ->  13.1%
+
+  READ THIS AS A DESCRIPTION, NOT AN EFFECT. Two markets stop dead
+  within a day of each other and the total is roughly preserved while the
+  composition turns over. A collector that re-weighted which markets it
+  scraped would produce this exact table with nobody moving. A and B/C
+  are separated precisely because this table cannot do it alone.
+
+==============================================================================
+B. Entry into Apollon, among sellers with NO Apollon history
+==============================================================================
+  cell counts (all Apollon-naive before 2019-11-18):
+    exposed  (>=1 Cryptonia/Cannazon review pre): 539
+    control  (>=1 Empire review pre, no dead-market review): 204
+
+    exposed  entered Apollon post-event:   96 /  539  (17.8%)
+    control  entered Apollon post-event:   16 /  204  (7.8%)
+
+  Fisher exact: odds ratio 2.546, p = 0.0005203
+  chi2 (no correction): 11.5, p = 0.0007015
+
+  PLACEBO, same test with the window shifted into a quiet period:
+    event 2019-07-15: exposed 0/237 (0.0%) vs control 0/154 (0.0%)  OR=nan p=1
+    event 2019-09-15: exposed 0/436 (0.0%) vs control 0/187 (0.0%)  OR=nan p=1
+
+==============================================================================
+C. Intensive DiD, baseline-intensity strata given their own week effects
+==============================================================================
+  candidate sellers Apollon-active pre-event: 174
+  baseline-Apollon stratum x treatment:
+treat    0   1
+stratum       
+s1       3  11
+s2       1  31
+s3       4  40
+s4       8  76
+  panel: 174 sellers x 32 weeks = 5568 rows
+
+  (i) seller + week FE           : beta=-0.0639 se=3.2940 t=-0.02 p=0.9846
+  (ii) + stratum x week FE       : beta=+1.1110 se=3.5213 t=0.32 p=0.7528
+
+  (ii) is the model that matters. It lets each baseline-intensity group
+  follow its own weekly path, so a differential trend that is merely a
+  function of baseline size -- the thing that produced v1's apparent
+  effect -- is absorbed rather than attributed to the shock.
+
+  PLACEBO on model (ii):
+    placebo event 2019-08-05 (pre-period data only, n=4176): beta=+0.3962 p=0.2926
+    placebo event 2019-09-02 (pre-period data only, n=4176): beta=+0.3322 p=0.504
+    placebo event 2019-10-07 (pre-period data only, n=4176): beta=+0.9858 p=0.1575
+
+  If any placebo is comparable in size to the event estimate, model (ii)
+  has not fixed the problem and E1 declines the claim.
+
+==============================================================================
+D. Figure
+==============================================================================
+  wrote /root/cis/results/figs/E1_social_substitution_v2.png
+  wrote /root/cis/results/figs/E1_social_substitution_v2.pdf

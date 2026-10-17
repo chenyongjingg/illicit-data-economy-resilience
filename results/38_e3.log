@@ -1,0 +1,116 @@
+==============================================================================
+38  E3 mechanism attribution -- PSM + DiD, H1/H4 moderators, 500 placebos
+==============================================================================
+
+==============================================================================
+1. Candidate set and pre-event covariates (identical to E1 v3 §C)
+==============================================================================
+/root/cis/_server/38_E3_mechanism.py:171: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  cov["base_ap"] = g.apply(lambda x: int((x["market"] == TARGET).sum()))
+  sellers Apollon-active pre-event: 489  (treated 158 / control 331)
+
+  pre-event covariate means by arm:
+  covariate           control    treated       SMD
+  base_ap             17.1027    27.6772   +0.2537
+  total_rev           27.8912   212.8038   +0.6601
+  n_markets            1.0514     2.2532   +3.3134
+  n_other              0.0514     0.1519   +0.3374
+  pos_share            0.9644     0.9810   +0.2123
+  neg_share            0.0268     0.0100   -0.2534
+  mean_price           0.0116     0.0928   +0.5190
+  n_weeks_active       5.1934    14.6899   +1.5957
+  span_days           42.4280   112.6749   +1.5046
+
+  baseline-Apollon stratum x treatment:
+         control  treated
+stratum                  
+s1            56       11
+s2            50       31
+s3            88       40
+s4           137       76
+
+==============================================================================
+2. PSM: propensity score and 1:1 nearest-neighbour matching
+==============================================================================
+  The first attempt matched ZERO pairs, and the reason is substantive
+  rather than numerical, so it is measured here instead of worked around.
+  `n_markets` has SMD +3.31 because treatment is DEFINED as 'active in
+  the target AND in a dead market', which forces n_markets >= 2 for every
+  treated seller. A covariate implied by the treatment definition makes
+  treatment perfectly predictable and destroys overlap. Four covariate
+  sets are tried and the overlap of each is reported.
+
+  covariate set                     n_cov   max|b|  overlap    pairs worstSMD
+  A full (as pre-registered)            9    20.61    0.000        0    3.313
+  B minus definitional n_markets        8     2.14    0.696       77    1.596
+  C Apollon activity + quality          6     2.17    0.886       74    1.596
+  D baseline size + quality only        4     2.71    0.949      121    0.519
+
+  ★ best set: D baseline size + quality only -> 121 pairs (76.6% of 158 treated)
+
+  balance AFTER matching:
+  covariate           control    treated       SMD SMD_before
+  base_ap             28.1901    24.6942   -0.0820   +0.2537
+  pos_share            0.9692     0.9759   +0.1013   +0.2123
+  neg_share            0.0133     0.0125   -0.0210   -0.2534
+  mean_price           0.0192     0.0269   +0.2073   +0.5190
+
+  worst |SMD|: before 0.5190 -> after 0.2073  (imbalance reduced)
+
+==============================================================================
+3. ★ DiD, unmatched vs PSM-matched (same estimator, same FE)
+==============================================================================
+  sample / model                 beta        se        t       p  95% CI
+  unmatched / seller+week     +3.8819    1.3703     2.83 0.004804  [+1.189, +6.574]
+  unmatched / +stratum x week  +3.6365    1.4396     2.53 0.01185  [+0.808, +6.465]
+  PSM-matched / seller+week   +1.0424    1.1410     0.91  0.3619  [-1.205, +3.290]
+  PSM-matched / +stratum x week  +1.3435    1.1117     1.21  0.2281  [-0.846, +3.533]
+
+  treated pre-period mean: 1.15 reviews/week (units of the CI above)
+
+==============================================================================
+4. ★ H1 and H4 as interactions with the DiD term
+==============================================================================
+  H1: decentralization (markets active pre, excluding dead + target)
+      predicts MORE recovery -> positive interaction.
+  H4: raw centrality (share of the seller's reviews that were in the
+      target market) predicts NO significant positive relation.
+
+  sample         term              beta        se        t        p
+  unmatched      dec_c          +1.4686    2.1275     0.69   0.4903
+  unmatched      cen_c          -4.1798    2.8663    -1.46   0.1454
+  PSM-matched    dec_c          +2.4823    2.1148     1.17   0.2416
+  PSM-matched    cen_c          -0.5804    2.3452    -0.25   0.8047
+
+  H1 decentralization    PSM-matched beta=+2.4823 p=0.2416  -> no significant positive relation
+  H4 centrality          PSM-matched beta=-0.5804 p=0.8047  -> no significant positive relation
+
+==============================================================================
+5. ★ 500 placebo event dates (E1 v3 ran 3)
+==============================================================================
+  Pre-period data only. A fake event is drawn, the same model is
+  re-estimated on a panel re-cut at that date, and the resulting betas
+  form the null. The real post-period beta is then placed in that null.
+
+  placebos estimated : 500
+  null beta: mean +1.0323  sd 0.4913  2.5% +0.0265  median +1.0358  97.5% +2.0594
+  real beta (unmatched, seller+week): +3.8819
+  ★ share of placebos >= real: 0.0000  (p_placebo)
+  ★ real beta sits at percentile 100.0 of the null
+
+==============================================================================
+6. Hypotheses NOT run, and why (recorded, not dropped)
+==============================================================================
+  H2 cross-layer bridging: substrate MEASURED ABSENT (report 08 §1).
+     124 checksum-valid BTC addresses in the social layer; 3 intersect
+     Elliptic++ (822,942); all 3 adjudicated non-transactional (leaked-
+     dump preview, charity donation, one mis-filed cell); none illicit.
+     A positive control recovered an injected address, so the small
+     number is a property of the data, not of the code.
+  H3 functional redundancy: the kilos panel has NO category column and
+     C-45 records that the one available proxy REFUTES the hypothesis.
+     Not run rather than run on a proxy known to point the wrong way.
+
+wrote /root/cis/results/38_E3_mechanism.{txt,json}
+E3_DONE
+RSC_EXIT=0

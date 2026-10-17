@@ -1,0 +1,42 @@
+==============================================================================
+34  Reconstitution after a DARKENING event (host fully offline)
+==============================================================================
+
+==============================================================================
+1. Finding darkening events
+==============================================================================
+  A darkening event at t: a URL goes offline at t AND every URL the
+  host had added before t is already offline by t.
+  removals considered     : 33881
+  darkening events        : 16738 (49.40% of removals)
+  hosts with >=1 darkening: 12795 / 16330
+
+  ★ The other 50.60% of removals happened while the host still had
+  live URLs -- those hosts never went quiet, nothing needs explaining.
+
+==============================================================================
+2. ★ Does the host come back? (darkening events only)
+==============================================================================
+     W    n_used   returns       real%      floor%      excess
+     1     16416      2279      13.88%       2.24%     +11.64   p=0.000
+     3     15861      2785      17.56%       5.92%     +11.64   p=0.000
+     7     15065      3159      20.97%      12.28%      +8.69   p=0.000
+    30     10548      2704      25.64%      42.56%     -16.92   p=1.000
+
+==============================================================================
+3. Same thing, by host size and naming
+==============================================================================
+  size   kind       n_used       real%      floor%      excess
+  1      named         425       0.00%       7.98%      -7.98   p=1.000
+  1      IP           3244       0.00%       8.16%      -8.16   p=1.000
+  2-5    named         249      33.33%      11.85%     +21.48   p=0.000
+  2-5    IP           8394      16.29%       9.30%      +6.99   p=0.000
+  6-20   named         369      67.48%      19.00%     +48.48   p=0.000
+  6-20   IP           1724      57.66%      30.17%     +27.49   p=0.000
+  >20    named         312      80.77%      27.72%     +53.05   p=0.000
+  >20    IP            348      61.49%      36.51%     +24.98   p=0.000
+
+wrote /root/cis/results/34_E7inf_dark.{txt,json}
+DARK_DONE
+RSC_EXIT=0
+RSC_EXIT=0

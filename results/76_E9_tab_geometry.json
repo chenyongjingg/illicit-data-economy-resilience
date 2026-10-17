@@ -1,0 +1,2225 @@
+{
+ "instrument": "rapidocr_onnxruntime on fitz get_pixmap(dpi=200)",
+ "page": "index 5 (p.6)",
+ "what": "binds each p.6 category label to its count by x-interval proximity; emits the raw boxes so the binding is re-derivable without this tool",
+ "tolerances": {
+  "max_dx": 90.0,
+  "max_dy": 120.0
+ },
+ "issues": {
+  "dwcon_2025-01": {
+   "pdf": "dwcon_2025-01.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 36.5,
+   "n_tokens": 34,
+   "n_rows": 16,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 8,
+   "n_values": 6,
+   "labels": [
+    {
+     "text": "Q风险报告",
+     "xc": 305.4,
+     "y0": 781.6
+    },
+    {
+     "text": "昌信息系统",
+     "xc": 440.5,
+     "y0": 778.1
+    },
+    {
+     "text": "移动端应用",
+     "xc": 583.2,
+     "y0": 781.6
+    },
+    {
+     "text": "域名",
+     "xc": 707.2,
+     "y0": 779.3
+    },
+    {
+     "text": "邮箱",
+     "xc": 805.3,
+     "y0": 780.5
+    },
+    {
+     "text": "代码/文档",
+     "xc": 924.5,
+     "y0": 781.6
+    },
+    {
+     "text": "数据泄露情报",
+     "xc": 1080.7,
+     "y0": 775.7
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 1259.3,
+     "y0": 781.6
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 421.7,
+     "y0": 807.6
+    },
+    {
+     "text": "0",
+     "xc": 554.5,
+     "y0": 807.6
+    },
+    {
+     "text": "0",
+     "xc": 708.4,
+     "y0": 806.4
+    },
+    {
+     "text": "0",
+     "xc": 803.5,
+     "y0": 807.6
+    },
+    {
+     "text": "0",
+     "xc": 902.2,
+     "y0": 807.6
+    },
+    {
+     "text": "96082",
+     "xc": 1067.8,
+     "y0": 802.9
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "Q风险报告",
+     "label_xc": 305.4,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    },
+    {
+     "label": "昌信息系统",
+     "label_xc": 440.5,
+     "value": "0",
+     "value_xc": 421.7,
+     "dx": 18.8,
+     "dy": 21.8,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "移动端应用",
+     "label_xc": 583.2,
+     "value": "0",
+     "value_xc": 554.5,
+     "dx": 28.7,
+     "dy": 20.6,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "域名",
+     "label_xc": 707.2,
+     "value": "0",
+     "value_xc": 708.4,
+     "dx": 1.2,
+     "dy": 22.4,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "邮箱",
+     "label_xc": 805.3,
+     "value": "0",
+     "value_xc": 803.5,
+     "dx": 1.8,
+     "dy": 21.8,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 924.5,
+     "value": "0",
+     "value_xc": 902.2,
+     "dx": 22.3,
+     "dy": 20.6,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "数据泄露情报",
+     "label_xc": 1080.7,
+     "value": "96082",
+     "value_xc": 1067.8,
+     "dx": 12.9,
+     "dy": 22.4,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 1259.3,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    }
+   ],
+   "n_labels_without_value": 2,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "96082",
+     "xc": 1067.8
+    }
+   ],
+   "nonzero_bound_to": [
+    "数据泄露情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年1月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年1月共监控到全球DWM（DarkWebMarket）情报："
+     ]
+    },
+    {
+     "y": 508.1,
+     "texts": [
+      "深网和暗网有效情报96,082份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报4，749份。"
+     ]
+    },
+    {
+     "y": 707.9,
+     "texts": [
+      "(msg.release_time>=2025-01-01&&msg.release_time<=2025-02-01)l(timestamp>=2l"
+     ]
+    },
+    {
+     "y": 794.0,
+     "texts": [
+      "Q风险报告",
+      "昌信息系统",
+      "移动端应用",
+      "域名",
+      "邮箱",
+      "代码/文档",
+      "数据泄露情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 815.2,
+     "texts": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "96082"
+     ]
+    },
+    {
+     "y": 893.6,
+     "texts": [
+      "undefined大于等于：2025-01-01",
+      "undefined小于等于：2025-02-01",
+      "X",
+      "或",
+      "录入时间大于等于：2025-01-01"
+     ]
+    },
+    {
+     "y": 965.0,
+     "texts": [
+      "为您找到 96082条匹配结果137 ms"
+     ]
+    },
+    {
+     "y": 1045.7,
+     "texts": [
+      "http://www.pinelandcsb.org",
+      "数据泄露",
+      "详情"
+     ]
+    },
+    {
+     "y": 1325.7,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1446.0,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据838份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1533.2,
+     "texts": [
+      "家还包括：中国、印度、印尼、马来西亚、法国、俄罗斯、俄罗斯、泰国等。详"
+     ]
+    },
+    {
+     "y": 1620.4,
+     "texts": [
+      "情如下图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-02": {
+   "pdf": "dwcon_2025-02.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 8.2,
+   "n_tokens": 36,
+   "n_rows": 15,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 7,
+   "n_values": 7,
+   "labels": [
+    {
+     "text": "目信息系统",
+     "xc": 369.4,
+     "y0": 785.2
+    },
+    {
+     "text": "移动端应用",
+     "xc": 522.2,
+     "y0": 788.7
+    },
+    {
+     "text": "域名",
+     "xc": 655.5,
+     "y0": 788.7
+    },
+    {
+     "text": "邮箱",
+     "xc": 758.3,
+     "y0": 786.3
+    },
+    {
+     "text": "代码/文档",
+     "xc": 885.7,
+     "y0": 787.5
+    },
+    {
+     "text": "数据泄露情报",
+     "xc": 1053.7,
+     "y0": 785.2
+    },
+    {
+     "text": "@Telegram情报",
+     "xc": 1244.0,
+     "y0": 789.9
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 348.3,
+     "y0": 817.0
+    },
+    {
+     "text": "0",
+     "xc": 492.2,
+     "y0": 817.0
+    },
+    {
+     "text": "0",
+     "xc": 653.1,
+     "y0": 817.0
+    },
+    {
+     "text": "0",
+     "xc": 757.7,
+     "y0": 814.6
+    },
+    {
+     "text": "0",
+     "xc": 859.9,
+     "y0": 817.0
+    },
+    {
+     "text": "140800",
+     "xc": 1044.9,
+     "y0": 812.3
+    },
+    {
+     "text": "0",
+     "xc": 1197.6,
+     "y0": 817.0
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "目信息系统",
+     "label_xc": 369.4,
+     "value": "0",
+     "value_xc": 348.3,
+     "dx": 21.1,
+     "dy": 23.6,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "移动端应用",
+     "label_xc": 522.2,
+     "value": "0",
+     "value_xc": 492.2,
+     "dx": 30.0,
+     "dy": 22.9,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "域名",
+     "label_xc": 655.5,
+     "value": "0",
+     "value_xc": 653.1,
+     "dx": 2.4,
+     "dy": 21.9,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "邮箱",
+     "label_xc": 758.3,
+     "value": "0",
+     "value_xc": 757.7,
+     "dx": 0.6,
+     "dy": 23.0,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 885.7,
+     "value": "0",
+     "value_xc": 859.9,
+     "dx": 25.8,
+     "dy": 23.6,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "数据泄露情报",
+     "label_xc": 1053.7,
+     "value": "140800",
+     "value_xc": 1044.9,
+     "dx": 8.8,
+     "dy": 24.1,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "@Telegram情报",
+     "label_xc": 1244.0,
+     "value": "0",
+     "value_xc": 1197.6,
+     "dx": 46.4,
+     "dy": 21.9,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 0,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "140800",
+     "xc": 1044.9
+    }
+   ],
+   "nonzero_bound_to": [
+    "数据泄露情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年2月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年2月共监控到全球DWM（DarkWebMarket）情报："
+     ]
+    },
+    {
+     "y": 506.9,
+     "texts": [
+      "深网和暗网有效情报 140,800 份;"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报4，955份。"
+     ]
+    },
+    {
+     "y": 710.9,
+     "texts": [
+      "(msg.release_time>=2025-02-01&&msg.release_time<=2025-03-01)ll(timestamp>=2l"
+     ]
+    },
+    {
+     "y": 802.9,
+     "texts": [
+      "浩",
+      "目信息系统",
+      "移动端应用",
+      "域名",
+      "邮箱",
+      "代码/文档",
+      "数据泄露情报",
+      "@Telegram情报",
+      "8"
+     ]
+    },
+    {
+     "y": 825.3,
+     "texts": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "140800",
+      "0"
+     ]
+    },
+    {
+     "y": 907.8,
+     "texts": [
+      "fined大于等于：2025-02-01",
+      "X",
+      "目",
+      "undefined小于等于：2025-03-01",
+      "X",
+      "X",
+      "或",
+      "录入时间大于等于：2025-02-01"
+     ]
+    },
+    {
+     "y": 985.0,
+     "texts": [
+      "140800条匹配结果111ms"
+     ]
+    },
+    {
+     "y": 1238.5,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1359.3,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据634份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1446.5,
+     "texts": [
+      "家还包括：中国、印度、印尼、法国、马来西亚、俄罗斯、泰国、巴西等。详情"
+     ]
+    },
+    {
+     "y": 1533.2,
+     "texts": [
+      "如下图所示:"
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-03": {
+   "pdf": "dwcon_2025-03.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 5.7,
+   "n_tokens": 32,
+   "n_rows": 14,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 5,
+   "n_values": 6,
+   "labels": [
+    {
+     "text": "域名",
+     "xc": 374.1,
+     "y0": 791.1
+    },
+    {
+     "text": "邮箱",
+     "xc": 505.1,
+     "y0": 789.9
+    },
+    {
+     "text": "代码/文档",
+     "xc": 667.8,
+     "y0": 789.9
+    },
+    {
+     "text": "数据泄露情报",
+     "xc": 882.8,
+     "y0": 791.1
+    },
+    {
+     "text": "@Telegram情报",
+     "xc": 1124.2,
+     "y0": 792.2
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 372.4,
+     "y0": 824.1
+    },
+    {
+     "text": "0",
+     "xc": 504.5,
+     "y0": 824.1
+    },
+    {
+     "text": "0",
+     "xc": 635.5,
+     "y0": 826.4
+    },
+    {
+     "text": "5880",
+     "xc": 854.0,
+     "y0": 822.9
+    },
+    {
+     "text": "0",
+     "xc": 1062.5,
+     "y0": 828.8
+    },
+    {
+     "text": "0",
+     "xc": 1310.4,
+     "y0": 825.3
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "域名",
+     "label_xc": 374.1,
+     "value": "0",
+     "value_xc": 372.4,
+     "dx": 1.7,
+     "dy": 28.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "邮箱",
+     "label_xc": 505.1,
+     "value": "0",
+     "value_xc": 504.5,
+     "dx": 0.6,
+     "dy": 29.4,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 667.8,
+     "value": "0",
+     "value_xc": 635.5,
+     "dx": 32.3,
+     "dy": 29.5,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "数据泄露情报",
+     "label_xc": 882.8,
+     "value": "5880",
+     "value_xc": 854.0,
+     "dx": 28.8,
+     "dy": 29.5,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "@Telegram情报",
+     "label_xc": 1124.2,
+     "value": "0",
+     "value_xc": 1062.5,
+     "dx": 61.7,
+     "dy": 28.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 0,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "5880",
+     "xc": 854.0
+    }
+   ],
+   "nonzero_bound_to": [
+    "数据泄露情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年3月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年3月共监控到全球DWM（DarkWeb Market）情报："
+     ]
+    },
+    {
+     "y": 506.9,
+     "texts": [
+      "深网和暗网有效情报356,323份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报5,880份。"
+     ]
+    },
+    {
+     "y": 691.4,
+     "texts": [
+      "&&timestamp<=2025-04-01)&&(hot=2)",
+      "Q",
+      "@高"
+     ]
+    },
+    {
+     "y": 809.9,
+     "texts": [
+      "佣",
+      "域名",
+      "邮箱",
+      "代码/文档",
+      "数据泄露情报",
+      "@Telegram情报",
+      "8人员"
+     ]
+    },
+    {
+     "y": 837.6,
+     "texts": [
+      "0",
+      "0",
+      "0",
+      "5880",
+      "0",
+      "0"
+     ]
+    },
+    {
+     "y": 943.7,
+     "texts": [
+      "录入时间小于等于：2025-04-01",
+      "X",
+      "X",
+      "且",
+      "hot等于:2",
+      "X"
+     ]
+    },
+    {
+     "y": 1239.1,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1359.3,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据904份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1446.5,
+     "texts": [
+      "家还包括：中国、印度、印尼、法国、泰国、越南、俄罗斯、巴西等。详情如下"
+     ]
+    },
+    {
+     "y": 1533.8,
+     "texts": [
+      "图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-04": {
+   "pdf": "dwcon_2025-04.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 5.1,
+   "n_tokens": 32,
+   "n_rows": 15,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 5,
+   "n_values": 6,
+   "labels": [
+    {
+     "text": "域名",
+     "xc": 375.9,
+     "y0": 766.3
+    },
+    {
+     "text": "邮箱",
+     "xc": 489.3,
+     "y0": 769.8
+    },
+    {
+     "text": "代码/文档",
+     "xc": 629.1,
+     "y0": 769.8
+    },
+    {
+     "text": "数据泄露情报",
+     "xc": 810.6,
+     "y0": 769.8
+    },
+    {
+     "text": "@Telegram情报",
+     "xc": 1016.1,
+     "y0": 769.8
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 375.9,
+     "y0": 800.5
+    },
+    {
+     "text": "0",
+     "xc": 488.7,
+     "y0": 799.3
+    },
+    {
+     "text": "0",
+     "xc": 601.5,
+     "y0": 800.5
+    },
+    {
+     "text": "3999",
+     "xc": 784.7,
+     "y0": 794.6
+    },
+    {
+     "text": "0",
+     "xc": 963.9,
+     "y0": 799.3
+    },
+    {
+     "text": "0",
+     "xc": 1174.7,
+     "y0": 798.1
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "域名",
+     "label_xc": 375.9,
+     "value": "0",
+     "value_xc": 375.9,
+     "dx": 0.0,
+     "dy": 24.8,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "邮箱",
+     "label_xc": 489.3,
+     "value": "0",
+     "value_xc": 488.7,
+     "dx": 0.6,
+     "dy": 23.0,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 629.1,
+     "value": "0",
+     "value_xc": 601.5,
+     "dx": 27.6,
+     "dy": 24.2,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "数据泄露情报",
+     "label_xc": 810.6,
+     "value": "3999",
+     "value_xc": 784.7,
+     "dx": 25.9,
+     "dy": 25.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "@Telegram情报",
+     "label_xc": 1016.1,
+     "value": "0",
+     "value_xc": 963.9,
+     "dx": 52.2,
+     "dy": 24.7,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 0,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "3999",
+     "xc": 784.7
+    }
+   ],
+   "nonzero_bound_to": [
+    "数据泄露情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年4月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年4月共监控到全球DWM（DarkWeb Market）情报："
+     ]
+    },
+    {
+     "y": 506.9,
+     "texts": [
+      "深网和暗网有效情报509,880份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报3，999份。"
+     ]
+    },
+    {
+     "y": 683.2,
+     "texts": [
+      "&&timestamp<=2025-05-01)&&(hot=2)",
+      "Q",
+      "@高级查询"
+     ]
+    },
+    {
+     "y": 782.8,
+     "texts": [
+      "应用",
+      "域名",
+      "邮箱",
+      "代码/文档",
+      "数据泄露情报",
+      "@Telegram情报",
+      "8人员"
+     ]
+    },
+    {
+     "y": 807.6,
+     "texts": [
+      "0",
+      "0",
+      "0",
+      "3999",
+      "0",
+      "0"
+     ]
+    },
+    {
+     "y": 898.9,
+     "texts": [
+      "录入时间小于等于：2025-05-01",
+      "X",
+      "X",
+      "且",
+      "hot等于:2"
+     ]
+    },
+    {
+     "y": 1077.0,
+     "texts": [
+      "1 50k- [other] - everything else - Exploit.IN Forum"
+     ]
+    },
+    {
+     "y": 1281.5,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1402.9,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据904份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1490.2,
+     "texts": [
+      "家还包括：中国、印度、印尼、俄罗斯、法国、马来西亚、巴西等。详情如下图"
+     ]
+    },
+    {
+     "y": 1577.4,
+     "texts": [
+      "所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-06": {
+   "pdf": "dwcon_2025-06.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 4.2,
+   "n_tokens": 20,
+   "n_rows": 13,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 4,
+   "n_values": 3,
+   "labels": [
+    {
+     "text": "邮箱",
+     "xc": 337.1,
+     "y0": 789.9
+    },
+    {
+     "text": "代码/文档",
+     "xc": 512.8,
+     "y0": 793.4
+    },
+    {
+     "text": "暗网情报",
+     "xc": 725.4,
+     "y0": 792.2
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 959.2,
+     "y0": 792.2
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 335.4,
+     "y0": 827.6
+    },
+    {
+     "text": "5232",
+     "xc": 708.9,
+     "y0": 826.4
+    },
+    {
+     "text": "0",
+     "xc": 879.9,
+     "y0": 830.0
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "邮箱",
+     "label_xc": 337.1,
+     "value": "0",
+     "value_xc": 335.4,
+     "dx": 1.7,
+     "dy": 31.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 512.8,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    },
+    {
+     "label": "暗网情报",
+     "label_xc": 725.4,
+     "value": "5232",
+     "value_xc": 708.9,
+     "dx": 16.5,
+     "dy": 33.0,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 959.2,
+     "value": "0",
+     "value_xc": 879.9,
+     "dx": 79.3,
+     "dy": 30.1,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 1,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "5232",
+     "xc": 708.9
+    }
+   ],
+   "nonzero_bound_to": [
+    "暗网情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年6月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年6月共监控到全球DWM（DarkWeb Market）情报："
+     ]
+    },
+    {
+     "y": 508.1,
+     "texts": [
+      "深网和暗网有效情报1,140,767份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报5,232份。"
+     ]
+    },
+    {
+     "y": 685.0,
+     "texts": [
+      "release_time<=2025-07-01)(timestamp>=2025-0"
+     ]
+    },
+    {
+     "y": 810.5,
+     "texts": [
+      "邮箱",
+      "代码/文档",
+      "暗网情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 841.8,
+     "texts": [
+      "0",
+      "5232",
+      "0"
+     ]
+    },
+    {
+     "y": 956.7,
+     "texts": [
+      "或",
+      "录入时间大于等于：2025-06-01",
+      "录入时间小"
+     ]
+    },
+    {
+     "y": 1194.8,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1315.7,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据892份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1404.1,
+     "texts": [
+      "家还包括中国、印度、印尼、法国、泰国、越南、马来西亚等。详情如下图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-07": {
+   "pdf": "dwcon_2025-07.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 5.2,
+   "n_tokens": 20,
+   "n_rows": 13,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 4,
+   "n_values": 2,
+   "labels": [
+    {
+     "text": "邮箱",
+     "xc": 311.3,
+     "y0": 844.1
+    },
+    {
+     "text": "代码/文档",
+     "xc": 468.7,
+     "y0": 844.1
+    },
+    {
+     "text": "暗网情报",
+     "xc": 684.3,
+     "y0": 845.3
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 918.0,
+     "y0": 841.8
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 293.7,
+     "y0": 880.7
+    },
+    {
+     "text": "5822",
+     "xc": 667.2,
+     "y0": 874.8
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "邮箱",
+     "label_xc": 311.3,
+     "value": "0",
+     "value_xc": 293.7,
+     "dx": 17.6,
+     "dy": 30.7,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 468.7,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    },
+    {
+     "label": "暗网情报",
+     "label_xc": 684.3,
+     "value": "5822",
+     "value_xc": 667.2,
+     "dx": 17.1,
+     "dy": 30.7,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 918.0,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    }
+   ],
+   "n_labels_without_value": 2,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "5822",
+     "xc": 667.2
+    }
+   ],
+   "nonzero_bound_to": [
+    "暗网情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年7月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年7月共监控到全球DWM（DarkWeb Market）情报："
+     ]
+    },
+    {
+     "y": 508.1,
+     "texts": [
+      "深网和暗网有效情报1,140,767份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报5,822份。"
+     ]
+    },
+    {
+     "y": 735.7,
+     "texts": [
+      "elease_time<=2025-08-01)ll(timestamp>=2025-0"
+     ]
+    },
+    {
+     "y": 861.2,
+     "texts": [
+      "邮箱",
+      "代码/文档",
+      "暗网情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 891.9,
+     "texts": [
+      "0",
+      "5822"
+     ]
+    },
+    {
+     "y": 1008.6,
+     "texts": [
+      "或",
+      "录入时间大于等于：2025-07-01",
+      "X",
+      "录入时间小"
+     ]
+    },
+    {
+     "y": 1281.5,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1402.9,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据983份，其他数据泄露较多的国"
+     ]
+    },
+    {
+     "y": 1490.8,
+     "texts": [
+      "家还包括中国、印度、印尼、法国、德国、泰国、马来西亚等。详情如下图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-08": {
+   "pdf": "dwcon_2025-08.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 6.7,
+   "n_tokens": 47,
+   "n_rows": 19,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 7,
+   "n_values": 6,
+   "labels": [
+    {
+     "text": "风险报告",
+     "xc": 348.3,
+     "y0": 728.6
+    },
+    {
+     "text": "目信息系统",
+     "xc": 456.4,
+     "y0": 732.1
+    },
+    {
+     "text": "移动端应用",
+     "xc": 569.1,
+     "y0": 729.8
+    },
+    {
+     "text": "域名",
+     "xc": 669.6,
+     "y0": 733.3
+    },
+    {
+     "text": "邮箱",
+     "xc": 748.3,
+     "y0": 733.3
+    },
+    {
+     "text": "暗网情报",
+     "xc": 954.5,
+     "y0": 726.2
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 1085.4,
+     "y0": 732.1
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 547.4,
+     "y0": 754.5
+    },
+    {
+     "text": "0",
+     "xc": 669.0,
+     "y0": 753.3
+    },
+    {
+     "text": "0",
+     "xc": 747.1,
+     "y0": 753.3
+    },
+    {
+     "text": "0",
+     "xc": 824.1,
+     "y0": 755.7
+    },
+    {
+     "text": "6826",
+     "xc": 952.1,
+     "y0": 751.0
+    },
+    {
+     "text": "0",
+     "xc": 1044.9,
+     "y0": 755.7
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "风险报告",
+     "label_xc": 348.3,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    },
+    {
+     "label": "目信息系统",
+     "label_xc": 456.4,
+     "value": null,
+     "dx": null,
+     "dy": null,
+     "runner_up_dx": null,
+     "ambiguous": null,
+     "why": "no value within tolerance"
+    },
+    {
+     "label": "移动端应用",
+     "label_xc": 569.1,
+     "value": "0",
+     "value_xc": 547.4,
+     "dx": 21.7,
+     "dy": 18.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "域名",
+     "label_xc": 669.6,
+     "value": "0",
+     "value_xc": 669.0,
+     "dx": 0.6,
+     "dy": 17.1,
+     "runner_up_dx": 77.5,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "邮箱",
+     "label_xc": 748.3,
+     "value": "0",
+     "value_xc": 669.0,
+     "dx": 79.3,
+     "dy": 17.1,
+     "runner_up_dx": 1.2,
+     "ambiguous": true,
+     "why": null
+    },
+    {
+     "label": "暗网情报",
+     "label_xc": 954.5,
+     "value": "6826",
+     "value_xc": 952.1,
+     "dx": 2.4,
+     "dy": 19.5,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 1085.4,
+     "value": "0",
+     "value_xc": 1044.9,
+     "dx": 40.5,
+     "dy": 17.1,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 2,
+   "n_ambiguous": 1,
+   "nonzero_values": [
+    {
+     "text": "6826",
+     "xc": 952.1
+    }
+   ],
+   "nonzero_bound_to": [
+    "暗网情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年8月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年8月共监控到全球DWM（DarkWebMarket）情报:"
+     ]
+    },
+    {
+     "y": 508.1,
+     "texts": [
+      "深网和暗网有效情报68,904份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报6,826份。"
+     ]
+    },
+    {
+     "y": 674.3,
+     "texts": [
+      "(msg.release_time>=2025-08-01&&msg.release_time<=2025-09-01)l(timestamp>=2025-0",
+      "Q",
+      "@高级查询"
+     ]
+    },
+    {
+     "y": 742.1,
+     "texts": [
+      "风险报告",
+      "目信息系统",
+      "移动端应用",
+      "域名",
+      "邮箱",
+      "代码/文桂",
+      "暗网情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 761.6,
+     "texts": [
+      "Q",
+      "0",
+      "0",
+      "0",
+      "0",
+      "6826",
+      "0"
+     ]
+    },
+    {
+     "y": 823.5,
+     "texts": [
+      "大于等于：2025-08-01",
+      "三",
+      "小于等于：2025-09-01",
+      "十",
+      "或",
+      "录入时间大于等于：2025-08-01",
+      "X",
+      "且",
+      "录入时间小于等于：2025-09-01"
+     ]
+    },
+    {
+     "y": 881.3,
+     "texts": [
+      "为您找到6826条匹配结果136ms"
+     ]
+    },
+    {
+     "y": 944.3,
+     "texts": [
+      "ACMARK",
+      "数据泄露"
+     ]
+    },
+    {
+     "y": 989.7,
+     "texts": [
+      "妈妈"
+     ]
+    },
+    {
+     "y": 1028.6,
+     "texts": [
+      "作者：Ap0s收录时间：2025-08-1521:33:21更新时间：2025-09-2810:22:25发布时间：2025-09-27"
+     ]
+    },
+    {
+     "y": 1066.9,
+     "texts": [
+      "涉及组织：ACMARK"
+     ]
+    },
+    {
+     "y": 1117.0,
+     "texts": [
+      "Apsa leurity",
+      "行业",
+      "党政军和社会",
+      "地区",
+      "捷克"
+     ]
+    },
+    {
+     "y": 1325.7,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1446.5,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据1255份，其他数据泄露较多的"
+     ]
+    },
+    {
+     "y": 1532.0,
+     "texts": [
+      "国家还包括中国、印度、印尼、法国、英国、德国、泰国等。详情如下图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-10": {
+   "pdf": "dwcon_2025-10.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 4.5,
+   "n_tokens": 26,
+   "n_rows": 14,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 4,
+   "n_values": 4,
+   "labels": [
+    {
+     "text": "邮箱",
+     "xc": 373.6,
+     "y0": 808.7
+    },
+    {
+     "text": "代码/文档",
+     "xc": 547.4,
+     "y0": 811.1
+    },
+    {
+     "text": "暗网情报",
+     "xc": 758.3,
+     "y0": 809.9
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 994.4,
+     "y0": 809.9
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 372.4,
+     "y0": 846.5
+    },
+    {
+     "text": "0",
+     "xc": 513.4,
+     "y0": 846.5
+    },
+    {
+     "text": "4858",
+     "xc": 742.4,
+     "y0": 839.4
+    },
+    {
+     "text": "0",
+     "xc": 915.7,
+     "y0": 847.7
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "邮箱",
+     "label_xc": 373.6,
+     "value": "0",
+     "value_xc": 372.4,
+     "dx": 1.2,
+     "dy": 32.4,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "代码/文档",
+     "label_xc": 547.4,
+     "value": "0",
+     "value_xc": 513.4,
+     "dx": 34.0,
+     "dy": 30.6,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "暗网情报",
+     "label_xc": 758.3,
+     "value": "4858",
+     "value_xc": 742.4,
+     "dx": 15.9,
+     "dy": 31.2,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 994.4,
+     "value": "0",
+     "value_xc": 915.7,
+     "dx": 78.7,
+     "dy": 31.2,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 0,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "4858",
+     "xc": 742.4
+    }
+   ],
+   "nonzero_bound_to": [
+    "暗网情报"
+   ],
+   "all_rows": [
+    {
+     "y": 144.4,
+     "texts": [
+      "·数据泄露态势月度报告（2025年10月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年10月共监控到全球DWM（DarkWebMarket）情报："
+     ]
+    },
+    {
+     "y": 507.5,
+     "texts": [
+      "深网和暗网有效情报336,661份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报6,176份。"
+     ]
+    },
+    {
+     "y": 701.5,
+     "texts": [
+      "release_time<=2025-10-01)ll(timestamp>=2025-0",
+      "Q",
+      "回高"
+     ]
+    },
+    {
+     "y": 827.6,
+     "texts": [
+      "邮箱",
+      "代码/文档",
+      "暗网情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 860.0,
+     "texts": [
+      "0",
+      "0",
+      "4858",
+      "0"
+     ]
+    },
+    {
+     "y": 975.0,
+     "texts": [
+      "X",
+      "X",
+      "或",
+      "录入时间大于等于：2025-09-01",
+      "录入时间小于等"
+     ]
+    },
+    {
+     "y": 1194.8,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1315.7,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据1265份，其他数据泄露较多的"
+     ]
+    },
+    {
+     "y": 1403.5,
+     "texts": [
+      "国家还包括中国、印度、印尼、法国、泰国、俄罗斯、马来西亚等。详情如下图"
+     ]
+    },
+    {
+     "y": 1491.3,
+     "texts": [
+      "所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  },
+  "dwcon_2025-11": {
+   "pdf": "dwcon_2025-11.pdf",
+   "page_size": [
+    1654,
+    2339
+   ],
+   "seconds": 4.9,
+   "n_tokens": 26,
+   "n_rows": 14,
+   "label_row_index": 6,
+   "value_row_index": 7,
+   "n_labels": 3,
+   "n_values": 4,
+   "labels": [
+    {
+     "text": "邮箱",
+     "xc": 425.2,
+     "y0": 831.1
+    },
+    {
+     "text": "暗网情报",
+     "xc": 799.4,
+     "y0": 831.1
+    },
+    {
+     "text": "Telegram情报",
+     "xc": 1027.9,
+     "y0": 831.1
+    }
+   ],
+   "values": [
+    {
+     "text": "0",
+     "xc": 422.9,
+     "y0": 870.1
+    },
+    {
+     "text": "0",
+     "xc": 560.3,
+     "y0": 870.1
+    },
+    {
+     "text": "6889",
+     "xc": 785.3,
+     "y0": 864.2
+    },
+    {
+     "text": "0",
+     "xc": 949.8,
+     "y0": 870.1
+    }
+   ],
+   "tab_row_binding": [
+    {
+     "label": "邮箱",
+     "label_xc": 425.2,
+     "value": "0",
+     "value_xc": 422.9,
+     "dx": 2.3,
+     "dy": 31.3,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "暗网情报",
+     "label_xc": 799.4,
+     "value": "6889",
+     "value_xc": 785.3,
+     "dx": 14.1,
+     "dy": 31.9,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    },
+    {
+     "label": "Telegram情报",
+     "label_xc": 1027.9,
+     "value": "0",
+     "value_xc": 949.8,
+     "dx": 78.1,
+     "dy": 30.1,
+     "runner_up_dx": null,
+     "ambiguous": false,
+     "why": null
+    }
+   ],
+   "n_labels_without_value": 0,
+   "n_ambiguous": 0,
+   "nonzero_values": [
+    {
+     "text": "6889",
+     "xc": 785.3
+    }
+   ],
+   "nonzero_bound_to": [
+    "暗网情报"
+   ],
+   "all_rows": [
+    {
+     "y": 143.8,
+     "texts": [
+      "·全球数据泄露态势月度报告（2025年11月）·"
+     ]
+    },
+    {
+     "y": 268.2,
+     "texts": [
+      "一、数据泄露市场"
+     ]
+    },
+    {
+     "y": 420.9,
+     "texts": [
+      "2025年11月共监控到全球DWM（DarkWebMarket）情报:"
+     ]
+    },
+    {
+     "y": 506.9,
+     "texts": [
+      "深网和暗网有效情报436,427份；"
+     ]
+    },
+    {
+     "y": 594.2,
+     "texts": [
+      "泄露数据的高价值买卖情报6,889份。"
+     ]
+    },
+    {
+     "y": 726.8,
+     "texts": [
+      "2025-12-01)&&（hot=2)",
+      "@高级查询"
+     ]
+    },
+    {
+     "y": 849.4,
+     "texts": [
+      "邮箱",
+      "代码/文栏",
+      "暗网情报",
+      "Telegram情报"
+     ]
+    },
+    {
+     "y": 880.7,
+     "texts": [
+      "0",
+      "0",
+      "6889",
+      "0"
+     ]
+    },
+    {
+     "y": 986.2,
+     "texts": [
+      "于等于：2025-12-01",
+      "X",
+      "X",
+      "目",
+      "hot等于：2",
+      "X"
+     ]
+    },
+    {
+     "y": 1092.3,
+     "texts": [
+      "查看黑客组织"
+     ]
+    },
+    {
+     "y": 1325.7,
+     "texts": [
+      "1、国家分类"
+     ]
+    },
+    {
+     "y": 1446.5,
+     "texts": [
+      "其中美国是数据泄露第一大国，共泄露数据1489份，其他数据泄露较多的"
+     ]
+    },
+    {
+     "y": 1533.2,
+     "texts": [
+      "国家还包括中国、印度、法国、泰国、印尼、马来西亚等。详情如下图所示："
+     ]
+    },
+    {
+     "y": 2156.9,
+     "texts": [
+      "3/30"
+     ]
+    }
+   ]
+  }
+ },
+ "n_issues_bound": 9,
+ "summary": {
+  "issues_with_geometry": 9,
+  "issues_where_nonzero_is_bound": 9,
+  "issues_with_unbound_labels": [
+   "dwcon_2025-01",
+   "dwcon_2025-06",
+   "dwcon_2025-07",
+   "dwcon_2025-08"
+  ],
+  "issues_with_ambiguous_binding": [
+   "dwcon_2025-08"
+  ]
+ }
+}

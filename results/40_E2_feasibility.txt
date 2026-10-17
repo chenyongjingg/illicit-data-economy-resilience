@@ -1,0 +1,106 @@
+==============================================================================
+40  E2 feasibility -- is there a dataset that brackets either event?
+==============================================================================
+  Onymous = 2014-11-06 ; Bayonet = 2017-07-20
+
+==============================================================================
+1. Every date-shaped column, full-file span (union = file coverage)
+==============================================================================
+
+  agora
+      [FULL-POPULATION scan of 109689 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      109689 physical rows, 0 ragged, 9 cols
+      NO date-shaped or epoch-shaped column
+
+  alphabay_items
+      [FULL-POPULATION scan of 114231 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      114231 physical rows, 0 ragged, 18 cols
+      col listed           date  inferred       100.0%  2014-12-21 .. 2017-01-28  (769 d, 738 distinct)
+      UNION  2014-12-21 .. 2017-01-28  (769 d)
+
+  alphabay_feedback
+      [FULL-POPULATION scan of 1217388 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      1217388 physical rows, 1 ragged, 5 cols
+      col date             date  inferred       100.0%  2015-01-03 .. 2017-01-28  (756 d, 687 distinct)
+      UNION  2015-01-03 .. 2017-01-28  (756 d)
+
+  hansa_listings
+      [FULL-POPULATION scan of 14773 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      14773 physical rows, 5518 ragged, 7 cols
+      col c0               date  inferred       100.0%  2016-12-11 .. 2016-12-13  (1 d, 2 distinct)
+      UNION  2016-12-11 .. 2016-12-13  (1 d)
+
+  hansa_reviews
+      [FULL-POPULATION scan of 51553 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      51553 physical rows, 0 ragged, 7 cols
+      col c6               date  inferred       100.0%  2015-09-12 .. 2016-12-13  (458 d, 444 distinct)
+      col c0               date  inferred       100.0%  2016-12-13 .. 2016-12-13  (1 d, 1 distinct)
+      UNION  2015-09-12 .. 2016-12-13  (458 d)
+
+  valhalla_listings
+      [FULL-POPULATION scan of 16511 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      16511 physical rows, 0 ragged, 5 cols
+      NO date-shaped or epoch-shaped column
+
+  kilos_reviews
+      [FULL-POPULATION scan of 235905 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      235905 physical rows, 235904 ragged, 15 cols
+      col c2               epoch unix_seconds    95.6%  2018-02-19 .. 2020-01-12  (692 d, 654 distinct)
+      UNION  2018-02-19 .. 2020-01-12  (692 d)
+
+  druglisting
+      [FULL-POPULATION scan of 194433 rows for detection; v3's head-only 20k sample is what missed kilos' epochs]
+      194433 physical rows, 0 ragged, 7 cols
+      NO date-shaped or epoch-shaped column
+
+==============================================================================
+2. ★ Event coverage matrix (against each file's UNION span)
+==============================================================================
+  A usable event study needs the event INSIDE the span with margin on
+  both sides. 'before'/'after' are days of coverage on each flank.
+
+  dataset            event       inside?  before(d)   after(d) margin(d)
+  agora              (none)            -          -          -         -
+  alphabay_items     Onymous          no        -45        814        -1
+  alphabay_items     Bayonet          no        942       -173        -1
+  alphabay_feedback  Onymous          no        -58        814        -1
+  alphabay_feedback  Bayonet          no        929       -173        -1
+  hansa_listings     Onymous          no       -767        768        -1
+  hansa_listings     Bayonet          no        220       -219        -1
+  hansa_reviews      Onymous          no       -311        768        -1
+  hansa_reviews      Bayonet          no        676       -219        -1
+  valhalla_listings  (none)            -          -          -         -
+  kilos_reviews      Onymous          no      -1202       1893        -1
+  kilos_reviews      Bayonet          no       -215        906        -1
+  druglisting        (none)            -          -          -         -
+
+==============================================================================
+3. E1's own pipeline data -- does it cover either event?
+==============================================================================
+  E1 v3 reads /root/cis/work/kilos_reviews.parquet
+  its span: 2018-02-19 .. 2020-01-12  (225109 dated rows, 654 distinct dates)
+    covers Onymous  (2014-11-06): NO
+    covers Bayonet  (2017-07-20): NO
+
+  ★ E2 says 'E1 管线复用'. E1's pipeline spans 2018-02-19..2020-01-12, so it
+    covers NEITHER event. E2 cannot be run by reuse.
+
+==============================================================================
+4. Elliptic's time axis: calendar or anonymised?
+==============================================================================
+  txs_features.csv cols: txId, Time step, Local_feature_1, Local_feature_2, Local_feature_3, Local_feature_4
+  time column(s) ['Time step']: n=203769 distinct=49  min=1 max=49
+
+  ★ Elliptic's time axis is ORDINAL (integer steps), not calendar
+    dates. It carries no anchor to a real-world event, so no
+    cross-layer TEMPORAL alignment is possible even in principle
+    -- independently of the address-intersection result in 37_.
+
+==============================================================================
+5. Verdict
+==============================================================================
+  pairs with the event INSIDE the span AND >=90 d margin on both sides:
+    NONE
+
+  pairs where the event is inside the span at all (any margin):
+    NONE

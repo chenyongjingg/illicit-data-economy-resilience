@@ -1,0 +1,148 @@
+"""Give the numbers in README.md and NOT_REDISTRIBUTED.md a reader.
+
+Both files state counts.  A count in a file is a claim, and a claim nothing
+reads is a claim that drifts -- the previous README's layout table named five
+directories that did not exist in the repository it was describing.  This
+recomputes every count from disk and fails if either document disagrees.
+
+    python _tools/check_repo_layout.py
+    echo $?        # 0 = every stated number matches the tree
+
+Two independent things are checked:
+
+  1. the layout table in README.md (files per path)
+  2. the census arithmetic in NOT_REDISTRIBUTED.md, which is recovered from the
+     sha256 census itself -- every census entry is either present here with the
+     same digest, or withheld and named as withheld.  A census entry that is
+     neither is an entry the repository dropped without saying so.
+"""
+import hashlib, os, re, sys
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+fail = []
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for b in iter(lambda: f.read(1 << 20), b""):
+            h.update(b)
+    return h.hexdigest()
+
+
+def walk_files():
+    """Every shipped file, as a repo-relative posix path."""
+    for dirpath, dirnames, filenames in os.walk(REPO):
+        dirnames[:] = [d for d in dirnames if d != ".git"]
+        for f in filenames:
+            yield os.path.relpath(os.path.join(dirpath, f), REPO).replace("\\", "/")
+
+
+# ------------------------------------------------------------------ 1. layout
+print("=" * 68)
+print("1. README.md layout table")
+print("=" * 68)
+readme = open(os.path.join(REPO, "README.md"), encoding="utf-8").read()
+row = re.compile(r"^\| `([^`]+)` \| [^|]*\| (\d+) \|$", re.M)
+rows = row.findall(readme)
+if not rows:
+    fail.append("README.md: layout table not found (nothing was checked)")
+checked = 0
+for path, stated in rows:
+    stated = int(stated)
+    target = os.path.join(REPO, path.replace("/", os.sep))
+    if not os.path.exists(target):
+        fail.append("README.md lists %-34s which does not exist" % path)
+        continue
+    actual = sum(1 for _ in walk_files() if _.startswith(path.rstrip("/") + "/")
+                 or _ == path)
+    ok = "ok " if actual == stated else "** FAIL **"
+    if actual != stated:
+        fail.append("README.md says %s has %d files; disk has %d"
+                    % (path, stated, actual))
+    print("  %-36s stated %4d  disk %4d  %s" % (path, stated, actual, ok))
+    checked += 1
+print("  rows checked: %d" % checked)
+
+# --------------------------------------------------------------- 2. census
+print()
+print("=" * 68)
+print("2. NOT_REDISTRIBUTED.md census arithmetic")
+print("=" * 68)
+mani = {}
+mani_path = os.path.join(REPO, "manuscript", "supplementary",
+                         "Additional file 2.txt")
+for line in open(mani_path, encoding="utf-8"):
+    if line.strip():
+        d, _, p = line.rstrip("\n").partition("  ")
+        mani[p.replace("\\", "/")] = d
+
+shipped, mismatch, withheld = [], [], []
+for p, digest in sorted(mani.items()):
+    f = os.path.join(REPO, p.replace("/", os.sep))
+    if not os.path.isfile(f):
+        withheld.append(p)
+    elif sha256(f) == digest:
+        shipped.append(p)
+    else:
+        mismatch.append(p)
+
+note = open(os.path.join(REPO, "NOT_REDISTRIBUTED.md"), encoding="utf-8").read()
+
+
+def doc_number(pattern, label):
+    """Pull a stated count out of NOT_REDISTRIBUTED.md.  A pattern that stops
+    matching must fail loudly -- silently returning None would turn a document
+    that no longer says anything into a document that passes."""
+    m = re.search(pattern, note)
+    if not m:
+        fail.append("NOT_REDISTRIBUTED.md: could not read the '%s' count "
+                    "(pattern %r no longer matches)" % (label, pattern))
+        return -1
+    return int(m.group(1))
+
+
+table = {
+    "manifest entries": (len(mani),
+                         doc_number(r"study tree\*\* -- the (\d+) result artifacts",
+                                    "manifest entries")),
+    "present and byte-identical": (len(shipped),
+                                   doc_number(r"present here and byte-identical\*\* \| \*\*(\d+)\*\*",
+                                              "present and byte-identical")),
+    "hash disagreements": (len(mismatch),
+                           doc_number(r"\| hash disagreements \| \*\*(\d+)\*\*",
+                                      "hash disagreements")),
+}
+for name, (actual, doc) in table.items():
+    ok = "ok " if actual == doc else "** FAIL **"
+    if actual != doc:
+        fail.append("NOT_REDISTRIBUTED.md says %s = %d; recomputed %d"
+                    % (name, doc, actual))
+    print("  %-30s recomputed %4d  document %4d  %s" % (name, actual, doc, ok))
+
+# every census entry must be accounted for: present, or named as withheld
+named_as_withheld = all(("    " + p) in note for p in withheld)
+print("  %-30s %s" % ("withheld entries all named",
+                      "ok " if named_as_withheld else "** FAIL **"))
+if not named_as_withheld:
+    missing = [p for p in withheld if ("    " + p) not in note][:5]
+    fail.append("withheld but not listed in NOT_REDISTRIBUTED.md: %s" % missing)
+
+conserved = len(shipped) + len(withheld) == len(mani)
+print("  %-30s %s  (%d = %d + %d)"
+      % ("census conserved", "ok " if conserved else "** FAIL **",
+         len(mani), len(shipped), len(withheld)))
+if not conserved:
+    fail.append("census not conserved")
+
+# ------------------------------------------------------------------ verdict
+print()
+print("=" * 68)
+if fail:
+    print("FAILURES (%d)" % len(fail))
+    for f in fail:
+        print("  - %s" % f)
+    sys.exit(1)
+print("ALL CHECKS PASS")

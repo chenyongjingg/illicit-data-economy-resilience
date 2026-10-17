@@ -1,0 +1,103 @@
+{
+  "arm": "stochastic",
+  "policy_meta": {
+    "model": "stochastic-uniform",
+    "n_states": 72,
+    "seed": 20260924
+  },
+  "calibration": {
+    "target_beta": 2.442567567567567,
+    "theta": 0.95,
+    "achieved_beta": -1583.3279937322702,
+    "residual": 1585.7705612998377
+  },
+  "network": {
+    "markets": [
+      "Apollon",
+      "CannaHome",
+      "Empire"
+    ],
+    "size": {
+      "Apollon": 489,
+      "CannaHome": 42,
+      "Empire": 279
+    },
+    "bridge": {
+      "Apollon": 0.0,
+      "CannaHome": 0.0,
+      "Empire": 0.0
+    },
+    "n_sellers": 1259
+  },
+  "scenarios": {
+    "S1 large node, single layer": [
+      "Apollon"
+    ],
+    "S2 bridge node, single layer": [
+      "Apollon"
+    ],
+    "S3 large node, multi layer": [
+      "Apollon",
+      "Empire",
+      "CannaHome"
+    ],
+    "S4 bridge node, multi layer": [
+      "Apollon",
+      "CannaHome",
+      "Empire"
+    ]
+  },
+  "ranking": [
+    {
+      "scenario": "S1 large node, single layer",
+      "hits": [
+        "Apollon"
+      ],
+      "halflife_point": null,
+      "boot_n": 0,
+      "boot_median": null,
+      "boot_p2.5": null,
+      "boot_p97.5": null
+    },
+    {
+      "scenario": "S2 bridge node, single layer",
+      "hits": [
+        "Apollon"
+      ],
+      "halflife_point": null,
+      "boot_n": 0,
+      "boot_median": null,
+      "boot_p2.5": null,
+      "boot_p97.5": null
+    },
+    {
+      "scenario": "S3 large node, multi layer",
+      "hits": [
+        "Apollon",
+        "Empire",
+        "CannaHome"
+      ],
+      "halflife_point": null,
+      "boot_n": 0,
+      "boot_median": null,
+      "boot_p2.5": null,
+      "boot_p97.5": null
+    },
+    {
+      "scenario": "S4 bridge node, multi layer",
+      "hits": [
+        "Apollon",
+        "CannaHome",
+        "Empire"
+      ],
+      "halflife_point": null,
+      "boot_n": 0,
+      "boot_median": null,
+      "boot_p2.5": null,
+      "boot_p97.5": null
+    }
+  ],
+  "n_policy_rejections": 0,
+  "units": "half-life in weeks after the shock; larger = more damaging",
+  "caveat": "Agent policy is stochastic. Prompt-driven is the plan's pre-registered degradation path for E8, not QLoRA. The ranking is calibrated against E3 design 'C activity + quality'."
+}

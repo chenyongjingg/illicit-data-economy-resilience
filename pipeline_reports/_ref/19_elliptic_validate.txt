@@ -1,0 +1,81 @@
+==============================================================================
+Elliptic++ actors: validating the shape of wallets_features.csv
+==============================================================================
+  rows read: 1268260
+  columns:   ['address', 'Time step', 'num_txs_as_sender', 'num_txs_as receiver', 'first_block_appeared_in', 'last_block_appeared_in', 'lifetime_in_blocks', 'total_txs', 'num_timesteps_appeared_in']
+
+==============================================================================
+1. Is it long format (address x time step)?
+==============================================================================
+  rows: 1268260 ; distinct addresses: 822942 ; rows/address = 1.5411
+  rows per address: min=1 median=1 mean=1.54 p90=2 max=1471
+  rows-per-address distribution (top 8):
+1    549674
+2    226020
+3     22090
+4     10844
+5      4944
+6      3060
+7      1768
+8      1256
+
+  -> if rows/address > 1 with a wide spread, the file is long format.
+
+==============================================================================
+2. Does `num_timesteps_appeared_in` equal the actual row count?
+==============================================================================
+  addresses where the stated value is not constant within address: 0
+  stated == rows: 588587 / 822942 (71.52%)
+  difference (rows - stated): {'count': np.float64(822942.0), 'mean': np.float64(0.422), 'std': np.float64(5.032), 'min': np.float64(0.0), '50%': np.float64(0.0), '90%': np.float64(1.0), 'max': np.float64(1444.0)}
+
+  This is the decisive check. If the two agree, a row IS one time step
+  of that address and `Time step` is the time index.
+
+==============================================================================
+3. Are first/last block address-level or row-level?
+==============================================================================
+  first_block_appeared_in      distinct-within-address >1 in 0/822942 addresses (0.000%)
+  last_block_appeared_in       distinct-within-address >1 in 0/822942 addresses (0.000%)
+  lifetime_in_blocks           distinct-within-address >1 in 0/822942 addresses (0.000%)
+
+==============================================================================
+4. Time step range
+==============================================================================
+  min=1 max=49 ; distinct=49
+  value counts (head):
+Time step
+1    51108
+2    32269
+3    31106
+4    39948
+5    35140
+6    19003
+  value counts (tail):
+Time step
+44    27383
+45    33300
+46    23068
+47    28088
+48    22854
+49    15204
+  -> README says 49 time steps.
+
+==============================================================================
+5. Join to the labels
+==============================================================================
+  labelled addresses: 822942
+  addresses in features: 822942
+  labelled AND in features: 822942
+  labelled but NOT in features: 0
+  in features but unlabelled: 0
+
+  per-address activity span, by class:
+  class           n  first_med   last_med  steps_med   span_med
+  illicit     14266         28         28          2          0
+  licit      251088         22         23          1          0
+  unknown    557588         24         26          1          0
+
+  READ CAREFULLY: `max` here is the last step the address appears in
+  WITHIN the 49-step window. It is not a death time. An address whose
+  observed last step is 49 is censored, not terminated, and an address
+  can be silent for several steps and return.

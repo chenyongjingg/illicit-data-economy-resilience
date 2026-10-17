@@ -1,0 +1,190 @@
+==============================================================================
+36  E3 hypothesis feasibility -- does the substrate exist?
+==============================================================================
+
+==============================================================================
+1. File inventory
+==============================================================================
+  file                    rows  cols header  cols
+  agora                 109689     9 yes     Vendor,Category,Item,Item Descripti,Price,Origin,Destination,Rating,Remarks
+  alphabay_items        114231    18 yes     item number,sold,price,heading,listed,blurb (descrip,shipsto,quantity,origin
+        ALL COLS: item number | sold | price | heading | listed | blurb (description) | shipsto | quantity | origin | product_class | vendor level | trust level | tags | category1 | category2 | category3 | avg feedback rating (-1 to 1) | number of feedback supplied
+        note: header unknown until read
+  alphabay_feedback    1217387     5 yes     date,time,comment,rating,item
+        note: no seller column in header
+  hansa_listings         14773     7 NO      c0,c1,c2,c3,c4,c5,c6
+        note: no header row; positional
+        row0: 2016-12-11 20:13:54.654635 | 18365 | 50gr. FUB-AKB | ALaurizen | USD 340.00 | Drugs | China
+  hansa_reviews          51553     7 NO      c0,c1,c2,c3,c4,c5,c6
+        note: no header row; positional
+        row0: 2016-12-13 02:37:18.202573 | 28501 | success | --- | Not specified | F***e | 2016-07-28 10:29 UTC
+  valhalla_listings      16511     5 NO      c0,c1,c2,c3,c4
+        note: no header row; positional
+        row0: 10086 | Hacking for Profit: Credit | junkiepig666 | 2.73 EUR | Germany
+  kilos_reviews         235078     6 NO      c0,c1,c2,c3,c4,c5
+        ★ 11891 lines unparseable and SKIPPED
+        note: no header row; positional
+        row0: Samsara | Doubleup | 0 | 1 | 0.00022 | I got the order i love thi
+  druglisting           194433     7 yes     product_title,product_descri,ship_from,ship_to,seller,price,source
+
+==============================================================================
+2. Coverage: which column is a usable timestamp?
+==============================================================================
+  A panel needs time. For each column, the share of a 20k sample
+  that parses as a datetime; >=50%% is reported.
+  agora               (no timestamp-like column)
+  alphabay_items      listed         100.0%  2014-12-22 .. 2017-01-28
+  alphabay_feedback   date           100.0%  2015-03-23 .. 2017-01-28
+  alphabay_feedback   time           100.0%  2026-09-23 .. 2026-09-23
+  hansa_listings      (no timestamp-like column)
+  hansa_reviews       c6             100.0%  2015-09-21 .. 2016-12-13
+  valhalla_listings   (no timestamp-like column)
+  kilos_reviews       (no timestamp-like column)
+  druglisting         (no timestamp-like column)
+
+==============================================================================
+3. H3 substrate: a category / function column?
+==============================================================================
+  H3 (functional redundancy) needs a function label to be redundant in.
+  agora               Category            109 distinct   e.g. Services/Hacking; Services/Other; Drugs/RCs
+  agora               Item             107600 distinct   e.g. 12 Month HuluPlus gift; Pay TV Sky UK  Sky Ger; OFFICIAL Account Creat
+  agora               Item Description  69526 distinct   e.g. 12-Month HuluPlus Code; Hi we offer a World Wi; Tagged Submission Fix 
+  alphabay_items      item number      114231 distinct   e.g. 166605; 90283; 275586
+  alphabay_items      product_class         2 distinct   e.g. Physical package; Digital goods
+  alphabay_items      category1            12 distinct   e.g. Drugs & Chemicals; Carded Items; Jewels & Gold
+  alphabay_items      category2            48 distinct   e.g. Ecstasy; Other; Cannabis & Hashish
+  alphabay_items      category3            92 distinct   e.g. Pills; Other; Buds & Flowers
+  alphabay_feedback   item              52495 distinct   e.g. 166605; 90283; 75118
+  hansa_reviews       NO category-like column
+  valhalla_listings   NO category-like column
+  kilos_reviews       NO category-like column
+  druglisting         product_title    133798 distinct   e.g. 10mg Diazepam Tablette; 10mg Diazepam Tablette; Sonderpreis !!! 10x Di
+  druglisting         product_descript 129209 distinct   e.g. - 10mg Diazepam Tablet; 10 mg Diazepam / Valiu; Diazepam / Valium / Va
+
+==============================================================================
+4. H1/H4 substrate: do vendor handles repeat ACROSS markets?
+==============================================================================
+  H1 (decentralization) needs a vendor present in >1 market;
+  H4 (centrality) needs the seller-market bipartite graph. Both need a
+  handle that can be matched across files. Matching is exact-string
+  only: no normalisation is applied and none is claimed.
+  agora               Vendor      3190 distinct handles
+  hansa_listings      c3           510 distinct handles
+  hansa_reviews       c5          2033 distinct handles
+  valhalla_listings   c2           443 distinct handles
+  kilos_reviews       c0            94 distinct handles
+  druglisting         seller      6180 distinct handles
+
+  pairwise intersection of handle sets:
+    agora              x druglisting          2929 shared   (of 3190 and 6180)
+    agora              x hansa_listings         85 shared   (of 3190 and 510)
+    agora              x hansa_reviews           0 shared   (of 3190 and 2033)
+    agora              x kilos_reviews           0 shared   (of 3190 and 94)
+    agora              x valhalla_listings      97 shared   (of 3190 and 443)
+    druglisting        x hansa_listings        103 shared   (of 6180 and 510)
+    druglisting        x hansa_reviews           0 shared   (of 6180 and 2033)
+    druglisting        x kilos_reviews           1 shared   (of 6180 and 94)
+    druglisting        x valhalla_listings     125 shared   (of 6180 and 443)
+    hansa_listings     x hansa_reviews           0 shared   (of 510 and 2033)
+    hansa_listings     x kilos_reviews           0 shared   (of 510 and 94)
+    hansa_listings     x valhalla_listings      66 shared   (of 510 and 443)
+    hansa_reviews      x kilos_reviews           0 shared   (of 2033 and 94)
+    hansa_reviews      x valhalla_listings       0 shared   (of 2033 and 443)
+    kilos_reviews      x valhalla_listings       0 shared   (of 94 and 443)
+
+  ★ handles appearing in >1 market: 3025 of 9249 (32.71%)
+      InternationalChems       ['agora', 'druglisting']
+      Constellations           ['agora', 'druglisting']
+      zeltasgarden             ['agora', 'druglisting']
+      SatoshiShop              ['agora', 'druglisting']
+      Addies4Days              ['agora', 'druglisting']
+      bestman365               ['agora', 'druglisting']
+      ickysticky               ['agora', 'druglisting']
+      ColumbiaMagic            ['agora', 'druglisting']
+      Saralea                  ['agora', 'druglisting']
+      mycoberg                 ['agora', 'druglisting']
+      pinacle                  ['agora', 'druglisting']
+      Outback11                ['agora', 'druglisting']
+
+==============================================================================
+5. ★ H2 substrate: any PGP key or payment address? (checksum-verified)
+==============================================================================
+  A regex hit is a candidate, not a finding. For BTC legacy addresses
+  the base58check checksum is recomputed; only a valid checksum counts
+  as a REAL address. Noise in free text cannot pass that test.
+
+  file                btc_cand btc_VALID    bech32       eth       xmr       pgp
+  agora                     13         3         0         0         0       161
+  alphabay_items           172       159         0         0         0       951
+  alphabay_feedback          3         2         0         0         0         5
+  hansa_listings             0         0         0         0         0         0
+  hansa_reviews              0         0         0         0         0         2
+  valhalla_listings          0         0         0         0         0         0
+  kilos_reviews              2         2         0         0         0         1
+  druglisting              355         5         0         0         0      7518
+
+  TOTALS  btc_candidates=545  ★btc_checksum_valid=171  bech32=0  eth=0  xmr=0  pgp=8638
+  checksum-valid examples:
+      agora              Item Descripti 1H5HJK9ybryjMPXWaS5fwXGsur5X7Qy27a
+      agora              Item Descripti 1LPXkuvcFViuDQ3oFxMGbA9y5AF44whWiQ
+      agora              Destination    12o7NkLkivenB2v1aej9tSSzkB3SJ7vPXD
+      alphabay_items     blurb (descrip 1565qkBbLcuFP78f7MFKkK8jtHGDwdSgvX
+      alphabay_items     blurb (descrip 19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ
+      alphabay_items     blurb (descrip 19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ
+      alphabay_items     blurb (descrip 19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ
+      alphabay_items     blurb (descrip 19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ
+      alphabay_items     blurb (descrip 158ZonUH7A6z8jMvVakUHmN2MAFheKMwZv
+      alphabay_items     blurb (descrip 158ZonUH7A6z8jMvVakUHmN2MAFheKMwZv
+
+==============================================================================
+6. The other side of the bridge: Elliptic address format
+==============================================================================
+  Actors Dataset/AddrAddr_edgelist.csv                        200631481 B
+  Actors Dataset/AddrTx_edgelist.csv                           21248388 B
+  Actors Dataset/Elliptic++_Actors_ActorInteraction_Graph_Viz.ipynb     435639 B
+  Actors Dataset/Elliptic++_Actors_AddrTx_Graph_Viz.ipynb       5592167 B
+  Actors Dataset/Elliptic++_Actors_Classification.ipynb          536406 B
+  Actors Dataset/Elliptic++_Actors_Dataset_Statistics.ipynb     1741940 B
+  Actors Dataset/Elliptic++_Actors_Feature_Analysis.ipynb        550357 B
+  Actors Dataset/README.md                                         5297 B
+  Actors Dataset/TxAddr_edgelist.csv                           36702878 B
+  Actors Dataset/wallets_classes.csv                           30421134 B
+  Actors Dataset/wallets_features.csv                         606463522 B
+  Actors Dataset/wallets_features_classes_combined.csv        609000048 B
+  README.md                                                        8484 B
+  Transactions Dataset/Elliptic++_Transactions_Case_Analysis.ipynb      94948 B
+  Transactions Dataset/Elliptic++_Transactions_Classification.ipynb     150682 B
+  Transactions Dataset/Elliptic++_Transactions_Dataset_Statistics.ipynb    1034934 B
+  Transactions Dataset/Elliptic++_Transactions_Feature_Analysis.ipynb     185826 B
+  Transactions Dataset/Elliptic++_Transactions_Graph_Visualization.ipynb    1909822 B
+  Transactions Dataset/README.md                                   5048 B
+  Transactions Dataset/txs_classes.csv                          2361914 B
+  Transactions Dataset/txs_edgelist.csv                         4470584 B
+  Transactions Dataset/txs_features.csv                       694789588 B
+  images/actorsfeatureanalysis.jpg                               100815 B
+  images/actorvizaddr.jpg                                       1192206 B
+  images/actorvizaddrtx.jpg                                      265110 B
+  images/addrstats.jpg                                           114985 B
+  images/classification.jpg                                      213150 B
+  images/txscaseanalysis.jpg                                      54702 B
+  images/txsfeatureanalysis.jpg                                  168397 B
+  images/txsstats.jpg                                             91859 B
+  images/txsviz.jpg                                             1269284 B
+
+  Actors Dataset/AddrAddr_edgelist.csv
+      cols: input_address,output_address
+      row0: 14YRXHHof4BY1TVxN5Fq | 1GASxu5nMntiRKdVtTVR
+  Actors Dataset/AddrTx_edgelist.csv
+      cols: input_address,txId
+      row0: 14YRXHHof4BY1TVxN5Fq | 230325127
+  Actors Dataset/TxAddr_edgelist.csv
+      cols: txId,output_address
+      row0: 230325127 | 1GASxu5nMntiRKdVtTVR
+  Actors Dataset/wallets_classes.csv
+      cols: address,class
+      row0: 111112TykSw72ztDN2WJ | 2
+
+==============================================================================
+7. Verdict per hypothesis
+==============================================================================
+  Read off the tables above; no hypothesis is asserted here.

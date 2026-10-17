@@ -1,0 +1,105 @@
+==============================================================================
+E5-fin  Recurrence of participation in the labelled Bitcoin subgraph
+==============================================================================
+
+==============================================================================
+1. Build the address-level frame
+==============================================================================
+  (address, step) cells: 920691 ; total participations: 1268260
+  addresses: 822942 ; with class: 822942
+  overall recurrence rate: 7.4716% (n=61487)
+
+==============================================================================
+2. Recurrence by class, UNCONDITIONAL (shown to be misleading)
+==============================================================================
+  illicit   n=  14266 recur= 1.816%  mean t0=28.74  mean room=20.26
+  licit     n= 251088 recur= 5.796%  mean t0=23.58  mean room=25.42
+  unknown   n= 557588 recur= 8.371%  mean t0=24.83  mean room=24.17
+
+==============================================================================
+3. ★ Recurrence WITHIN entry step -- the ceiling removed
+==============================================================================
+  Comparing classes only among addresses that entered at the SAME step
+  removes the ceiling exactly, with no model.
+
+     t0    n_tot   illicit%     licit%   unknown%  ill-lic(pp)
+      1    34853      6.85%     15.31%     22.22%       -8.46
+      2    24383      1.43%      5.17%     13.08%       -3.74
+      3    19274      6.67%      5.17%     11.53%        1.50
+      4    20197      6.53%      5.06%      7.75%        1.47
+      5    22158      7.69%      2.39%      5.75%        5.30
+      6    11120     11.11%      7.57%      4.52%        3.54
+      7    20066     10.04%      4.01%      7.80%        6.03
+      8    24315      6.45%      8.25%     17.08%       -1.80
+      9    18617      2.54%     21.61%      4.45%      -19.07
+     10    25656     13.33%     19.17%     17.77%       -5.84
+     12     8899      2.08%      9.60%     31.53%       -7.52
+     16     7374      1.69%      3.87%      6.64%       -2.18
+     20    26438      3.57%      9.62%      7.30%       -6.05
+     24    15686      2.74%      3.63%      2.35%       -0.89
+     28     4673      4.90%      5.62%      3.57%       -0.72
+     32    14732      0.65%      2.63%      3.81%       -1.98
+     36    29760      0.17%      1.59%     12.19%       -1.42
+     40    25394      1.36%      2.01%      2.74%       -0.65
+     44    17476      0.72%      1.63%      2.54%       -0.92
+     45    23202     14.81%      1.68%      2.30%       13.13
+     46    14007      0.59%      0.86%      1.65%       -0.27
+     47    19989      1.53%      0.84%      0.71%        0.69
+     48    15877      2.89%      0.06%      0.23%        2.83
+
+  entry steps used: 48
+  within-step difference (illicit - licit), in pp:
+    mean=-2.586  median=-1.689  min=-27.361  max=+13.130
+    steps where illicit < licit: 35 / 48 (72.9%)
+
+  inverse-variance weighted mean difference (fixed effect):
+    pooled diff = -2.735 pp  (se 0.091, z=-30.14, p=1.41e-199)
+
+==============================================================================
+4. Logistic model with entry-step fixed effects
+==============================================================================
+  sample: 811269 addresses (t0 <= 48)
+  converged in 10 iterations; loglik=-199630.3
+
+  term                                     coef         se          p
+  illicit                               -1.4235     0.0636  8.39e-111
+  licit                                 -0.6563     0.0101   0.00e+00
+  log_n_tx_entry                        -1.0147     0.0131   0.00e+00
+  (47 entry-step dummies suppressed)
+
+  NOTE: coefficients are log-odds with unknown as the base category.
+
+==============================================================================
+5. Does entry intensity carry it? add the interaction-free check
+==============================================================================
+  recurrence %% by entry-intensity quartile and class:
+  q        illicit      licit    unknown
+  Q1         3.65%      5.80%      9.87%
+  Q2         4.13%      5.75%      9.78%
+  Q3         3.33%      5.18%      8.70%
+  Q4         0.73%      8.12%      6.27%
+
+==============================================================================
+6. ★ FALSIFICATION -- placebo class on the unknown group
+==============================================================================
+  The unknown class is split at random into two pseudo-classes and the
+  identical within-step comparison is run. A real effect must not
+  appear here; if it does, the estimator is manufacturing differences.
+
+  placebo within-step differences: mean=+0.021 pp median=-0.035 pp
+  tail probability of |placebo mean| >= |observed mean| (2.735 pp):
+    |placebo mean| = 0.021 pp
+    ratio observed/placebo = 130.7 x
+
+==============================================================================
+7. Falsification 2 -- same comparison, licit vs unknown
+==============================================================================
+  If the estimator is sound, a comparison between two classes that are
+  NOT targeted by enforcement should be much smaller.
+  licit - unknown within-step: mean=-2.470 pp median=-2.480 pp
+  illicit - licit within-step: mean=-2.735 pp
+  If |licit-unknown| is comparable to |illicit-licit|, class is not
+  doing specific work and the result should NOT be read as an illicit
+  effect.
+
+wrote /root/cis/results/figs/E5fin_recurrence.{png,pdf}

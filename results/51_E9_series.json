@@ -1,0 +1,365 @@
+{
+  "generated": "2026-09-24T01:09:05",
+  "what": "E9 external anchor -- per-issue series values, re-derived",
+  "n_pdfs": 9,
+  "n_periods_with_values": 4,
+  "note": "values are per-ISSUE headline counts read from the PDF TEXT LAYER, which exists for 4 of 9 issues only (text_chars 11,889-12,967 for 2025-01..04 vs 5,303-5,861 for 2025-06..11); the 2025-06..11 headline numbers are present in results/59_ocr_full_text/. The per-issue declared window is measured in results/71_E9_query_windows.json and was re-checked directly against the page-6 OCR: the UPPER bound is readable on all 9 issues and equals the first day of the month AFTER the issue's own month on 8 of them; 2025-10 is the single exception (lower 2025-09-01, upper 2025-10-01) so its window covers September, not October. The LOWER bound is not recoverable from OCR for 2025-03/04/11, so 'unread' applies to that bound on those three issues, not to their windows. This series is NOT attested as a like-for-like monthly series; read both files before treating it as one.",
+  "series": {
+    "effective_items": {
+      "2025-01": 96082,
+      "2025-02": 140800,
+      "2025-03": 356323,
+      "2025-04": 509880
+    },
+    "high_value_items": {
+      "2025-01": 4749,
+      "2025-02": 4955,
+      "2025-03": 5880,
+      "2025-04": 3999
+    }
+  },
+  "per_report": {
+    "dwcon_2025-01.pdf": {
+      "period": "2025-01",
+      "text_chars": 11889,
+      "sidecar": "/root/cis/results/51_e9_text_2025-01.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": 96082,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": 96082,
+        "high_value_items": 4749
+      },
+      "pattern_found_raw": {
+        "effective_items": true,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": true,
+        "high_value_items": true
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "96,082",
+            "4,749",
+            "838",
+            "302"
+          ],
+          "window": "有效情报\n96,082\n份；\n➢ 泄露数据的高价值买卖情报\n4,749\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n838 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、马来西亚、法国、俄罗斯、俄"
+        },
+        "高价值买卖情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "4,749",
+            "838",
+            "302"
+          ],
+          "window": "高价值买卖情报\n4,749\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n838 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、马来西亚、法国、俄罗斯、俄罗斯、泰国等。详情如下图所示：\n\n 4 / "
+        }
+      }
+    },
+    "dwcon_2025-02.pdf": {
+      "period": "2025-02",
+      "text_chars": 12967,
+      "sidecar": "/root/cis/results/51_e9_text_2025-02.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": 140800,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": 140800,
+        "high_value_items": 4955
+      },
+      "pattern_found_raw": {
+        "effective_items": true,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": true,
+        "high_value_items": true
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "140,800",
+            "4,955",
+            "634",
+            "302"
+          ],
+          "window": "有效情报\n140,800\n份；\n➢ 泄露数据的高价值买卖情报\n4,955\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n634 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、法国、马来西亚、俄罗斯、"
+        },
+        "高价值买卖情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "4,955",
+            "634",
+            "302"
+          ],
+          "window": "高价值买卖情报\n4,955\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n634 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、法国、马来西亚、俄罗斯、泰国、巴西等。详情\n如下图所示：\n\n 4 / "
+        }
+      }
+    },
+    "dwcon_2025-03.pdf": {
+      "period": "2025-03",
+      "text_chars": 11980,
+      "sidecar": "/root/cis/results/51_e9_text_2025-03.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": 356323,
+        "high_value_items": 5880
+      },
+      "despaced": {
+        "effective_items": 356323,
+        "high_value_items": 5880
+      },
+      "pattern_found_raw": {
+        "effective_items": true,
+        "high_value_items": true
+      },
+      "pattern_found_despaced": {
+        "effective_items": true,
+        "high_value_items": true
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "356,323",
+            "5,880",
+            "904",
+            "302"
+          ],
+          "window": "有效情报\n356,323\n份；\n➢ 泄露数据的高价值买卖情报\n5,880\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n904 份，其他数据泄露较多的国\n家还包括：\n中国、印度、印尼、法国、泰国、越南、俄罗"
+        },
+        "高价值买卖情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "5,880",
+            "904",
+            "302"
+          ],
+          "window": "高价值买卖情报\n5,880\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n904 份，其他数据泄露较多的国\n家还包括：\n中国、印度、印尼、法国、泰国、越南、俄罗斯、巴西\n等。详情如下\n图所示：\n\n 4 / "
+        }
+      }
+    },
+    "dwcon_2025-04.pdf": {
+      "period": "2025-04",
+      "text_chars": 12331,
+      "sidecar": "/root/cis/results/51_e9_text_2025-04.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": 509880,
+        "high_value_items": 3999
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": true,
+        "high_value_items": true
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "509,880",
+            "3,999",
+            "904",
+            "302"
+          ],
+          "window": "有效情报\n509,880\n份；\n➢ 泄露数据的高价值买卖情报\n3,999\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n904 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、俄罗斯、法国、马来西亚、"
+        },
+        "高价值买卖情报": {
+          "keyword_present": true,
+          "numbers_near": [
+            "3,999",
+            "904",
+            "302"
+          ],
+          "window": "高价值买卖情报\n3,999\n份。\n1 、国家分类其中美国是数据泄露第一大国，共泄露数据\n904 份，其他数据泄露较多的国\n家还包括：中国、印度、印尼、俄罗斯、法国、马来西亚、巴西等。\n详情如下图\n所示：\n\n 4 / 30"
+        }
+      }
+    },
+    "dwcon_2025-06.pdf": {
+      "period": "2025-06",
+      "text_chars": 5861,
+      "sidecar": "/root/cis/results/51_e9_text_2025-06.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": false
+        },
+        "高价值买卖情报": {
+          "keyword_present": false
+        }
+      }
+    },
+    "dwcon_2025-07.pdf": {
+      "period": "2025-07",
+      "text_chars": 5405,
+      "sidecar": "/root/cis/results/51_e9_text_2025-07.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": false
+        },
+        "高价值买卖情报": {
+          "keyword_present": false
+        }
+      }
+    },
+    "dwcon_2025-08.pdf": {
+      "period": "2025-08",
+      "text_chars": 5303,
+      "sidecar": "/root/cis/results/51_e9_text_2025-08.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": false
+        },
+        "高价值买卖情报": {
+          "keyword_present": false
+        }
+      }
+    },
+    "dwcon_2025-10.pdf": {
+      "period": "2025-10",
+      "text_chars": 5303,
+      "sidecar": "/root/cis/results/51_e9_text_2025-10.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": false
+        },
+        "高价值买卖情报": {
+          "keyword_present": false
+        }
+      }
+    },
+    "dwcon_2025-11.pdf": {
+      "period": "2025-11",
+      "text_chars": 5498,
+      "sidecar": "/root/cis/results/51_e9_text_2025-11.txt",
+      "extract_raw": {
+        "stated_period": null,
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "despaced": {
+        "effective_items": null,
+        "high_value_items": null
+      },
+      "pattern_found_raw": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "pattern_found_despaced": {
+        "effective_items": false,
+        "high_value_items": false
+      },
+      "witness": {
+        "有效情报": {
+          "keyword_present": false
+        },
+        "高价值买卖情报": {
+          "keyword_present": false
+        }
+      }
+    }
+  },
+  "_provenance": {
+    "extractors": {
+      "fitz": [
+        "1.28.2",
+        "1.28.2",
+        null
+      ],
+      "pypdf": "6.19.0"
+    },
+    "produced_on": "pod (cpod-1vn6o9mm47jc)",
+    "note": "fitz_chars/text_chars differ between the runs recorded here, but the MECHANISM IS UNIDENTIFIED. This file's own `extractors.fitz` field records 1.28.2 for BOTH of its non-null entries, so the earlier explanation 'PyMuPDF 1.27.2.3 (local)' is not supported by any field in this record. The observations stand (pod 11853/12932/11945/12296; local 6670/6534/4859/6698); the cause does not. Do NOT compare these across machines; the supported cross-machine field is `despaced`/`series`, which OCR independently reproduces 4/4.",
+    "fields_safe_to_compare_across_machines": [
+      "series",
+      "despaced"
+    ],
+    "fields_NOT_safe_to_compare_across_machines": [
+      "fitz_chars",
+      "text_chars"
+    ]
+  }
+}

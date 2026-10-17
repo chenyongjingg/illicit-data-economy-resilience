@@ -1,0 +1,74 @@
+==============================================================================
+Is a wallets_features row a transaction participation?
+==============================================================================
+
+==============================================================================
+0. Locate the role-split edge lists
+==============================================================================
+  AddrTx_edgelist.csv (sender side):  /root/cis/data/EllipticPlusPlus-main/Actors Dataset/AddrTx_edgelist.csv
+  TxAddr_edgelist.csv (receiver side): /root/cis/data/EllipticPlusPlus-main/Actors Dataset/TxAddr_edgelist.csv
+
+==============================================================================
+1. Read the edge lists
+==============================================================================
+  AddrTx rows: 477117  cols=['input_address', 'txId']
+  TxAddr rows: 837124  cols=['txId', 'output_address']
+  total edges: 1314241
+  README claims AddrTx 477,117 / TxAddr 837,124 / sum 1,314,241
+  distinct txId in AddrTx: 202804 ; in TxAddr: 202804
+
+==============================================================================
+2. Sender counts from the edge list vs `num_txs_as_sender`
+==============================================================================
+  distinct sending addresses in AddrTx: 400212
+  addresses in wallets_features: 822942
+
+  addresses with stated_sender > 0: 400118
+  stated_sender == edge_sender_count: 399960 (99.96%)
+  difference (stated - edges): mean=-0.0014 median=0.0 min=-48 max=2
+  exact-zero difference rows: 399960 / 400118 (99.96%)
+  examples where they disagree (head):
+                                    stated_sender  stated_receiver  stated_total  stated_steps  rows  distinct_steps  edge_sender_count
+address                                                                                                                                
+12C4Ro2dmknW276YcysSeLVRtvZJeMRDpq            3.0              1.0           4.0           1.0     4               1                  4
+12C5SxqPCLdsiyxUaXUFypQdMpcLmZvUhx            3.0              1.0           4.0           1.0     1               1                  1
+12Kdq2AtcPZghxJeLURVoSGekUzZE2b5pL            1.0              2.0           3.0           1.0     3               1                  2
+12ZGdgxwaR1nrvk3dShaZSSDojRTBk2KSQ            1.0              1.0           2.0           1.0     2               1                  2
+12fB1ABmVmSNRpaPyNY3J1rW9gKPkAN6mk            1.0              1.0           2.0           1.0     2               1                  2
+12ucu9bHLe2w2ahjibVtp3xmdcGkgUmX4A          403.0            498.0         901.0          33.0   901              33                422
+
+==============================================================================
+3. The same check on the receiver side
+==============================================================================
+  addresses with stated_receiver > 0: 636624
+  stated_receiver == edge_recv_count: 632470 (99.35%)
+  exact-zero difference rows: 632470 / 636624 (99.35%)
+
+==============================================================================
+4. The decisive one: does stated_sender + stated_receiver == rows?
+==============================================================================
+  addresses where sender+receiver == row count: 822939 / 822942 (100.00%)
+  difference (rows - roles): mean=-0.0000 median=0.0 max=0
+
+  If this holds, every row is one (address, transaction) participation
+  and no row is a write artefact -- the 'duplicates' are distinct
+  transactions that happen to be indistinguishable in this schema.
+
+==============================================================================
+5. Per-time-step check -- the quantity a panel would actually use
+==============================================================================
+  txs_features rows: 203769 ; distinct txId: 203769
+
+  [sender side] cells in wallets_features: 920691 ; unmapped txId: 0
+    cells whose row count equals the edge count: 204746 (22.24%)
+    sum(row_n)=1268260  sum(edge_n)=477117
+    NOTE: row_n counts BOTH roles, edge_n counts one role, so the
+    per-cell equality is expected to fail by the other role's
+    contribution. The informative number is the TOTAL in section 4.
+
+  [receiver side] cells in wallets_features: 920691 ; unmapped txId: 0
+    cells whose row count equals the edge count: 511946 (55.60%)
+    sum(row_n)=1268260  sum(edge_n)=837124
+    NOTE: row_n counts BOTH roles, edge_n counts one role, so the
+    per-cell equality is expected to fail by the other role's
+    contribution. The informative number is the TOTAL in section 4.

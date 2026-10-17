@@ -1,0 +1,64 @@
+{
+  "totals": {
+    "btc_cand": 545,
+    "btc_valid": 171,
+    "bech": 0,
+    "eth": 0,
+    "xmr": 0,
+    "pgp": 8638
+  },
+  "multi_market_handles": 3025,
+  "all_handles": 9249,
+  "valid_btc_examples": [
+    [
+      "agora",
+      "Item Description",
+      "1H5HJK9ybryjMPXWaS5fwXGsur5X7Qy27a"
+    ],
+    [
+      "agora",
+      "Item Description",
+      "1LPXkuvcFViuDQ3oFxMGbA9y5AF44whWiQ"
+    ],
+    [
+      "agora",
+      "Destination",
+      "12o7NkLkivenB2v1aej9tSSzkB3SJ7vPXD"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "1565qkBbLcuFP78f7MFKkK8jtHGDwdSgvX"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "19qgznGSV5uY6fxoBqVmKFSZCtvHKbePyQ"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "158ZonUH7A6z8jMvVakUHmN2MAFheKMwZv"
+    ],
+    [
+      "alphabay_items",
+      "blurb (description)",
+      "158ZonUH7A6z8jMvVakUHmN2MAFheKMwZv"
+    ]
+  ]
+}

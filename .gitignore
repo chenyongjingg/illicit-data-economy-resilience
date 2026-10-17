@@ -1,0 +1,28 @@
+# This tree is curated, so this file documents intent rather than doing the work.
+__pycache__/
+*.pyc
+.rsc_cache.json
+
+# Third-party corpora: pinned by URL and hash in data/README.md, never committed.
+data/raw/*
+data/extracted/
+data/external/
+data/_recon/
+data/EllipticPlusPlus*
+*.parquet
+
+# Third-party reproductions: a report's pages and its full text are the
+# publisher's, not ours. Excluded by class rather than by filename, because a
+# name-by-name table is what let the pod-endpoint dotfile through before
+# (ERRATA.md section 2). See NOT_REDISTRIBUTED.md section 1.
+results/59_ocr_full_text/
+results/_e9_pages/
+results/57_p06/
+results/57_ocr_*_p06.png
+results/57_ocr_*_p06.txt
+
+# Delivery packages and working trees: large, and every copy of a package
+# carried a credential (ledger C-181).
+output/
+_logs/
+_work/

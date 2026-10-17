@@ -1,0 +1,207 @@
+==============================================================================
+E0 ROBUSTNESS -- is the block-size association an artefact?  2026-09-23T16:54:47
+==============================================================================
+  cohort n=36262  events=33786
+
+==============================================================================
+1. Are co-hosted URLs independent observations?
+==============================================================================
+  hosts with >=2 URLs: 8755, covering 31548 URLs (87.0% of cohort)
+
+  within such a host, the share where ALL its URLs share one value:
+    `last_online` : 0.9%
+    `date_added`  : 72.0%
+    `duration`    : 3.5%
+
+  If `last_online` is written once per probe, co-hosted URLs share an
+  event time and are ONE observation, not many.
+
+  EFFECTIVE SAMPLE SIZE:
+    rows (URLs):                        36262
+    distinct blocks:                    9303
+    distinct (block, last_online) pairs:34903
+    -> the honest n for a takedown-time question is nearer the last two
+       numbers than the first. Design effect (URLs per independent unit)
+       ~ 1.0x.
+
+==============================================================================
+2. Is 'large block' just 'particular reporter'?
+==============================================================================
+  reporter x block size (counts):
+block_bin         1     2   3-5  6-20  21-100  100+
+reporter                                           
+BlinkzSec        69    92   133   757    1108  1891
+GAYINT_DOT_ORG  274  1024   878   894      88    35
+NDA0E            57     7    82   238     344   487
+abuse_ch        255   210   203   585     541   495
+adliwahid       173   513   384   363      82    24
+botnetkiller     10    59    53   545     720   702
+cesnet_certs    563  2103  1626  1468     175   149
+geenensp        774  3740  2954  2865     306    83
+other           408   138   200  1080    1108  2147
+
+  reporter 'geenensp' filed 10722 URLs (29.6% of cohort) and 83 of the 6013 URLs
+  in the 100+ block bin (1.4% of it).
+
+  (a) block-size contrast WITHIN the single largest reporter only:
+urls_in_block    n  median_days   S_7d
+            1  774        0.921 0.0486
+            2 3740        1.433 0.0794
+          3-5 2954        1.134 0.0433
+         6-20 2865        1.092 0.0372
+       21-100  306        1.578 0.1175
+         100+   83        5.418 0.0686
+  log-rank (block size within reporter geenensp): chi2=321.8 dof=5 p=2.01e-67
+
+  (b) does block size still span a range inside one reporter? (it must,
+      or the contrast above is degenerate)
+    blocks in that reporter's submissions: n=4862, median URLs/block=3
+
+==============================================================================
+3. Cox with cluster-robust standard errors
+==============================================================================
+
+  --- IID SEs (as E0 first reported) ---
+  n=36262  events=33786  concordance=0.5799
+                  exp(coef)  se(coef)       p
+covariate                                    
+log_block            1.0572    0.0073  0.0000
+n_tags_c             0.8573    0.0115  0.0000
+log_reporter_vol     1.0208    0.0071  0.0038
+has_elf              1.0115    0.0111  0.3033
+has_mozi             1.4506    0.0084  0.0000
+has_mirai            0.9901    0.0069  0.1458
+has_censys           0.9494    0.0060  0.0000
+has_opendir          1.0335    0.0058  0.0000
+has_botnetdomain     1.1673    0.0057  0.0000
+
+  --- clustered by infrastructure block ---
+  n=36262  events=33786  concordance=0.5799
+                  exp(coef)  se(coef)       p
+covariate                                    
+log_block            1.0572    0.1054  0.5978
+n_tags_c             0.8573    0.0541  0.0044
+log_reporter_vol     1.0208    0.0275  0.4544
+has_elf              1.0115    0.0540  0.8317
+has_mozi             1.4506    0.0256  0.0000
+has_mirai            0.9901    0.0235  0.6705
+has_censys           0.9494    0.0334  0.1204
+has_opendir          1.0335    0.0392  0.4007
+has_botnetdomain     1.1673    0.0504  0.0021
+
+  --- clustered by reporter ---
+  n=36262  events=33786  concordance=0.5799
+                  exp(coef)  se(coef)       p
+covariate                                    
+log_block            1.0572    0.0409  0.1736
+n_tags_c             0.8573    0.0675  0.0225
+log_reporter_vol     1.0208    0.0379  0.5880
+has_elf              1.0115    0.0889  0.8972
+has_mozi             1.4506    0.0309  0.0000
+has_mirai            0.9901    0.0441  0.8207
+has_censys           0.9494    0.0098  0.0000
+has_opendir          1.0335    0.0177  0.0625
+has_botnetdomain     1.1673    0.0193  0.0000
+
+  --- stratified by reporter (submitter absorbed) ---
+  n=36262  events=33786  concordance=0.5516
+                  exp(coef)  se(coef)       p
+covariate                                    
+log_block            1.0672    0.0082  0.0000
+n_tags_c             0.9180    0.0173  0.0000
+log_reporter_vol     1.0683    0.0166  0.0001
+has_elf              1.0175    0.0124  0.1604
+has_mozi             1.4074    0.0105  0.0000
+has_mirai            0.9689    0.0075  0.0000
+has_censys           0.9960    0.0107  0.7106
+has_opendir          1.0614    0.0077  0.0000
+has_botnetdomain     1.1401    0.0070  0.0000
+
+  SE inflation from ignoring clustering (block):
+    log_block            iid=0.00730  clustered=0.10539  ratio=14.44x
+    n_tags_c             iid=0.01148  clustered=0.05409  ratio=4.71x
+    log_reporter_vol     iid=0.00709  clustered=0.02745  ratio=3.87x
+    has_elf              iid=0.01115  clustered=0.05400  ratio=4.84x
+    has_mozi             iid=0.00837  clustered=0.02558  ratio=3.06x
+    has_mirai            iid=0.00687  clustered=0.02350  ratio=3.42x
+    has_censys           iid=0.00598  clustered=0.03340  ratio=5.58x
+    has_opendir          iid=0.00581  clustered=0.03921  ratio=6.75x
+    has_botnetdomain     iid=0.00574  clustered=0.05040  ratio=8.79x
+
+==============================================================================
+4. Tags by role -- the vocabulary is not one partition
+==============================================================================
+              tag     n           role
+              elf 19797        payload
+             mozi 15830         family
+            mirai 15022         family
+           32-bit 10683           arch
+          ua-wget  8257      submitter
+             mips  8248           arch
+             none  3696      submitter
+              arm  3197           arch
+     botnetdomain  1981  url_character
+          opendir  1376  url_character
+           censys   893     provenance
+              exe   731        payload
+               sh   524        payload
+        geofenced   435  url_character
+      connectwise   416         family
+              rat   415         family
+        remcosrat   385         family
+              deu   335 (unclassified)
+           gafgyt   332         family
+dropped-by-amadey   303         family
+            ascii   288        payload
+              x86   279           arch
+         guloader   187 (unclassified)
+            stego   173 (unclassified)
+            xworm   154 (unclassified)
+              iot   138 (unclassified)
+       agenttesla   137 (unclassified)
+  c2-monitor-auto   137 (unclassified)
+          encoded   132 (unclassified)
+          tsunami   126         family
+
+  unclassified tags above: ['deu', 'guloader', 'stego', 'xworm', 'iot', 'agenttesla', 'c2-monitor-auto', 'encoded']
+
+==============================================================================
+5. Each top tag as its own binary stratum (no partition asserted)
+==============================================================================
+  log-rank (elf): chi2=1.4 dof=1 p=0.235
+  log-rank (mozi): chi2=2786.6 dof=1 p=0
+  log-rank (mirai): chi2=481.7 dof=1 p=9.08e-107
+  log-rank (32-bit): chi2=1135.6 dof=1 p=5.91e-249
+  log-rank (ua-wget): chi2=1427.4 dof=1 p=0
+  log-rank (mips): chi2=1056.4 dof=1 p=1.01e-231
+  log-rank (none): chi2=48.0 dof=1 p=4.17e-12
+  log-rank (arm): chi2=11.2 dof=1 p=0.000802
+  log-rank (botnetdomain): chi2=152.6 dof=1 p=4.69e-35
+  log-rank (opendir): chi2=77.7 dof=1 p=1.23e-18
+  log-rank (censys): chi2=371.0 dof=1 p=1.14e-82
+  log-rank (exe): chi2=31.5 dof=1 p=2.04e-08
+
+         tag          role  n_with  median_with  median_without  S7_with  S7_without   chi2
+         elf       payload   19797        1.351           1.382   0.1663      0.1461    1.4
+        mozi        family   15830        1.128           1.812   0.0507      0.2420 2786.6
+       mirai        family   15022        1.656           1.257   0.2147      0.1169  481.7
+      32-bit          arch   10683        1.240           1.457   0.0561      0.2015 1135.6
+     ua-wget     submitter    8257        2.352           1.297   0.3240      0.1071 1427.4
+        mips          arch    8248        1.133           1.487   0.0506      0.1901 1056.4
+        none     submitter    3696        2.121           1.326   0.1313      0.1597   48.0
+         arm          arch    3197        1.593           1.345   0.1244      0.1609   11.2
+botnetdomain url_character    1981        0.677           1.391   0.0873      0.1617  152.6
+     opendir url_character    1376        1.795           1.350   0.2976      0.1517   77.7
+      censys    provenance     893        3.839           1.353   0.4524      0.1495  371.0
+         exe       payload     731        1.006           1.366   0.2824      0.1548   31.5
+
+  Read this table by ROLE. A `provenance` tag (censys) contrasting with
+  everything else says who found the URL, not what the malware does.
+
+==============================================================================
+6. VERDICT -- what survives these checks
+==============================================================================
+  Independence: co-hosted URLs share last_online in 0.9% of hosts
+  Effective n (block x time): 34903, vs 36262 rows (design effect 1.0x)
+  Block-size contrast WITHIN the largest reporter: chi2=321.8 p=2.01e-67
+  Detail above; the numbers in the report are the clustered ones.

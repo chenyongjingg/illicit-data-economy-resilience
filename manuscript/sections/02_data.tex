@@ -1,0 +1,39 @@
+\section{Data}
+
+The three layers share no time axis, and none of the datasets was collected for
+the purpose of measuring resilience, so every cross-layer comparison in this
+paper is an ordering rather than a ratio. All sources are public
+(Table~\ref{tab:data}): the social layer is a full AlphaBay archive with Agora,
+Kilos and drug-listing dumps, and the financial layer is the Elliptic++ Bitcoin
+graph whose 49 ordinal steps anchor from outside the data to approximately
+2016-01-01 to 2017-11-03. The infrastructure layer is the Abuse.ch URLhaus
+and ThreatFox feeds, which are rolling-retention and current through
+2026-09-23. Eight sources are public archives used under research terms, two are
+Gwern-curated archives with no explicit licence used under research fair use,
+and one context source is not used as evidence; no raw leaked personal records
+are touched and identifiers are hashed.
+
+\begin{table}[t]
+\caption{Data sources. Sizes count parsed records in the processed archives.
+The three layers share no time axis; per-source time coverage, and the Hansa and
+Valhalla dumps (51,553 reviews and 16,511 listings, from which no reported
+quantity is drawn), are detailed in Supplementary Note S5.\label{tab:data}}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{1.6cm}p{3.6cm}p{5.6cm}p{4.4cm}@{}}
+\toprule
+\textbf{Layer} & \textbf{Source} & \textbf{Size} & \textbf{Licence}\\
+\midrule
+Social & AlphaBay full-site archive & 114,231 active listings; 1,217,388 feedback records & Gwern-curated; no explicit licence\\
+Social & Agora market archive & 109,689 listings & Gwern-curated; no explicit licence\\
+Social & Kilos cross-market review panels & 235,326 reviews & community mirror\\
+Social & Drug-listing corpus & 194,433 listings & Gwern-curated; no explicit licence\\
+Financial & Elliptic++ transactions & 203,769 nodes / 234,355 edges / 183 features & public dataset, research use\\
+Financial & Elliptic++ addresses & 822,942 addresses / 2,868,964 address--address edges / 56 features & public dataset, research use\\
+Infrastructure & Abuse.ch URLhaus & 58,310 takedown records & free for research, attribution requested\\
+Infrastructure & Abuse.ch ThreatFox & 105,999 IOC records & free for research, attribution requested\\
+External context & Monthly global breach-posture reports & 9 issues (2025-01 \ldots{} 2025-11, 05 and 09 absent) & context only; not used as evidence\\
+\bottomrule
+\end{tabular}
+\setlength{\tabcolsep}{6pt}
+\end{table}

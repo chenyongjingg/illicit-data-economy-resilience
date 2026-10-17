@@ -1,0 +1,115 @@
+==============================================================================
+Infrastructure layer: what do the IOC feeds support?
+==============================================================================
+
+  URLhaus: 58310 data rows (skipped 9 comment/header lines)
+  columns: ['id', 'dateadded', 'url', 'url_status', 'last_online', 'threat', 'tags', 'urlhaus_link', 'reporter']
+
+==============================================================================
+URLhaus -- 1. url_status, the removal signal
+==============================================================================
+url_status
+offline    42272
+online     16038
+  offline share: 72.50%
+
+==============================================================================
+URLhaus -- 2. Is `last_online` populated, and for whom?
+==============================================================================
+  last_online populated overall: 49919 / 58310 (85.61%)
+  by url_status:
+    offline    n=  42272  populated=  33881 (80.15%)
+    online     n=  16038  populated=  16038 (100.00%)
+
+  ★ This is the decisive number. If `last_online` is empty for offline
+  URLs, the removal time is unobserved and no duration can be formed.
+
+==============================================================================
+URLhaus -- 3. dateadded range and left-truncation
+==============================================================================
+  dateadded: min=2018-06-05 22:09:14 max=2026-09-23 15:43:18 ; NaT=0
+  per-year counts:
+dateadded
+2018       45
+2019       82
+2020       43
+2021      115
+2022       40
+2023       61
+2024     1102
+2025     6295
+2026    50527
+
+  If the dump retains everything ever added, the earliest years should
+  be present. A dump that starts only recently is a window, not a
+  history, and a duration measured from it is left-truncated.
+
+==============================================================================
+URLhaus -- 4. threat types and reporters
+==============================================================================
+  threat (top 8):
+threat
+malware_download    58310
+
+  distinct reporters: 234 ; distinct urls: 58310 ; distinct ids: 58310
+  duplicate url rows: 0
+
+==============================================================================
+URLhaus -- 5. The usable outcome, if last_online is populated
+==============================================================================
+  offline URLs with a parseable last_online: 33881
+  lifetime (days): min=0.000 p25=0.14 p50=0.73 p75=2.56 p90=7.70 max=82.6
+  negative durations: 0 (would indicate a broken join)
+  duration == 0 (added and last seen the same moment): 6132 (18.1%)
+
+==============================================================================
+  ThreatFox: 106000 data rows (skipped 9 comment/header lines)
+  columns: ['first_seen_utc', 'ioc_id', 'ioc_value', 'ioc_type', 'threat_type', 'fk_malware', 'malware_alias', 'malware_printable', 'last_seen_utc', 'confidence_level', 'is_compromised', 'reference', 'tags', 'anonymous', 'reporter']
+
+==============================================================================
+ThreatFox -- 1. Are the time columns populated?
+==============================================================================
+  first_seen_utc   populated  106000 / 106000 (100.00%)
+  last_seen_utc    populated   44533 / 106000 (42.01%)
+
+  ★ If last_seen_utc is empty throughout, there is NO removal
+  observable and ThreatFox cannot support a persistence analysis.
+
+==============================================================================
+ThreatFox -- 2. composition
+==============================================================================
+  ioc_type (top 8):
+ioc_type
+domain         44545
+ip:port        25049
+sha256_hash    16558
+url            11773
+md5_hash        4552
+sha1_hash       3522
+
+  threat_type (top 8):
+threat_type
+botnet_cc           40955
+payload_delivery    40274
+payload             24632
+cc_skimming           138
+
+  first_seen_utc: min=2020-12-14 08:44:34 max=2026-09-23 14:05:08 ; NaT=1
+  per-year counts:
+first_seen_utc
+2020.0         6
+2021.0       263
+2022.0       869
+2023.0       677
+2024.0       896
+2025.0      2701
+2026.0    100587
+
+  confidence_level distribution:
+confidence_level
+100.0    59428
+75.0     21427
+95.0     10872
+50.0      7825
+90.0      4825
+80.0       941

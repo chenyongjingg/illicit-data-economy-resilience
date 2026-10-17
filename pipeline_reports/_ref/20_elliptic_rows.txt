@@ -1,0 +1,120 @@
+==============================================================================
+Elliptic++ actors: what is a row in wallets_features.csv?
+==============================================================================
+  rows=1268260 cols=57
+  columns: ['address', 'Time step', 'num_txs_as_sender', 'num_txs_as receiver', 'first_block_appeared_in', 'last_block_appeared_in', 'lifetime_in_blocks', 'total_txs', 'first_sent_block', 'first_received_block', 'num_timesteps_appeared_in', 'btc_transacted_total', 'btc_transacted_min', 'btc_transacted_max', 'btc_transacted_mean', 'btc_transacted_median', 'btc_sent_total', 'btc_sent_min', 'btc_sent_max', 'btc_sent_mean', 'btc_sent_median', 'btc_received_total', 'btc_received_min', 'btc_received_max', 'btc_received_mean', 'btc_received_median', 'fees_total', 'fees_min', 'fees_max', 'fees_mean', 'fees_median', 'fees_as_share_total', 'fees_as_share_min', 'fees_as_share_max', 'fees_as_share_mean', 'fees_as_share_median', 'blocks_btwn_txs_total', 'blocks_btwn_txs_min', 'blocks_btwn_txs_max', 'blocks_btwn_txs_mean', 'blocks_btwn_txs_median', 'blocks_btwn_input_txs_total', 'blocks_btwn_input_txs_min', 'blocks_btwn_input_txs_max', 'blocks_btwn_input_txs_mean', 'blocks_btwn_input_txs_median', 'blocks_btwn_output_txs_total', 'blocks_btwn_output_txs_min', 'blocks_btwn_output_txs_max', 'blocks_btwn_output_txs_mean', 'blocks_btwn_output_txs_median', 'num_addr_transacted_multiple', 'transacted_w_address_total', 'transacted_w_address_min', 'transacted_w_address_max', 'transacted_w_address_mean', 'transacted_w_address_median']
+
+==============================================================================
+H3 first -- are there rows that are not observations?
+==============================================================================
+  rows whose address is literally 'address' (leaked header): 0
+  address length: min=7 median=34 max=34
+  address length distribution (head):
+address
+7           1
+10          1
+12          1
+14          1
+18          1
+32          1
+33      42037
+34    1226217
+  rows with address length outside 26..42: 5 (0.0004%)
+  sample of those addresses: ['13u4o8S9dnyH', '16v3siHxKkBxab', '17YCkqFbrp', '1DdNT2n', '1MbT66ggzGitaRnzMW']
+
+==============================================================================
+H2 -- do whole rows repeat exactly?
+==============================================================================
+  exactly duplicated rows (all 57 columns): 347569
+  duplicated (address, Time step) pairs:  347569
+  distinct (address, Time step) pairs:    920691
+  rows:                                   1268260
+
+  If dup_all is large, the file was written more than once and the
+  extra rows are pure duplication. If dup_all is 0 but dup_key is
+  large, the rows differ in some other column -- H1.
+
+==============================================================================
+The extreme addresses
+==============================================================================
+  top 5 by row count:
+address
+13vHWR3iLsHeYwT42RnuKYNBoVPrKKZgRv    1471
+1P9RQEr2XeE3PEb44ZE35sfZRRW1JHU8qx    1277
+19iVyH1qUxgywY8LJSbpV4VavjZmyuEyxV    1046
+1GUkazUBpXWdSJ9HbgTapAH7uybpi3Cs6K    1018
+17BymcHaGRbXGnEzR2m9woUYNf9FBPPJ2P     999
+
+  --- 13vHWR3iLsHeYwT42RnuKYNBoVPrKKZgRv : 1471 rows ---
+      distinct Time step: 27 ; range 12..39
+      num_timesteps_appeared_in (stated): [np.float64(27.0)]
+      total_txs distinct: [np.float64(1471.0)]
+      num_txs_as_sender distinct: [np.float64(1453.0)]
+      Time step value counts (head):
+      Time step
+      12    23
+      14    66
+      15    29
+      16    31
+      17    66
+      18    12
+
+  --- 1P9RQEr2XeE3PEb44ZE35sfZRRW1JHU8qx : 1277 rows ---
+      distinct Time step: 21 ; range 21..49
+      num_timesteps_appeared_in (stated): [np.float64(21.0)]
+      total_txs distinct: [np.float64(1277.0)]
+      num_txs_as_sender distinct: [np.float64(1245.0)]
+      Time step value counts (head):
+      Time step
+      21      2
+      22      3
+      24      6
+      28     56
+      29    121
+      30     59
+
+  --- 19iVyH1qUxgywY8LJSbpV4VavjZmyuEyxV : 1046 rows ---
+      distinct Time step: 34 ; range 1..48
+      num_timesteps_appeared_in (stated): [np.float64(34.0)]
+      total_txs distinct: [np.float64(1046.0)]
+      num_txs_as_sender distinct: [np.float64(498.0)]
+      Time step value counts (head):
+      Time step
+      1     60
+      2     68
+      3     45
+      4     39
+      5    135
+      6     19
+
+==============================================================================
+H1 -- do the counting columns vary within an address?
+==============================================================================
+  total_txs                varies within address in       0 / 822942 addresses (0.00%)
+  num_txs_as_sender        varies within address in       0 / 822942 addresses (0.00%)
+  num_txs_as receiver      varies within address in       0 / 822942 addresses (0.00%)
+  Time step                varies within address in   61487 / 822942 addresses (7.47%)
+
+  If `total_txs` is constant within address, it is an address-level
+  lifetime total repeated on every row. If it varies, each row carries
+  that step's own count -- which is what a per-step panel needs.
+
+==============================================================================
+Is `total_txs` the sum over steps?
+==============================================================================
+  head:
+                                    stated_total  rows  sum_over_rows
+address                                                              
+111112TykSw72ztDN2WJger4cynzWYC5w            1.0     1            1.0
+1111DAYXhoxZx2tsRnzimfozo783x1yC2            8.0     8           64.0
+1111VHuXEzHaRCgXbVwojtaP7Co3QABb             1.0     1            1.0
+111218KKkh1JJFRHbwM16AwCiVCc4m7he1           2.0     2            4.0
+1115LWW3xsD9jT9VRY7viCN9S34RVAAuA            1.0     1            1.0
+1117wASFaYgJJP6MiY8cPD5DMdQda8gDZ            2.0     2            4.0
+111ECNFEjJsQJ6LkAsAESBGTHBvZE66oX            1.0     1            1.0
+111FJppFVhFYWPDagaAxp24U6zb7gAyv4            1.0     1            1.0
+
+  correlation(rows, stated_total) = 1.0000
+  If stated_total = sum over rows, the file is a panel. If
+  stated_total = rows (i.e. each row contributes 1), the 'total_txs'
+  column is actually counting time steps and is mislabelled.

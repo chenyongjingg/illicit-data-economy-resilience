@@ -1,0 +1,86 @@
+==============================================================================
+37  Cross-layer bridge (H2) and multi-homing (H1): the two open questions
+==============================================================================
+
+==============================================================================
+1. Extract every checksum-valid BTC address from the social layer
+==============================================================================
+  agora              candidates=   13  ★checksum-valid DISTINCT=   3
+  alphabay_items     candidates=  172  ★checksum-valid DISTINCT= 114
+  alphabay_feedback  candidates=    3  ★checksum-valid DISTINCT=   2
+  hansa_listings     candidates=    0  ★checksum-valid DISTINCT=   0
+  hansa_reviews      candidates=    0  ★checksum-valid DISTINCT=   0
+  valhalla_listings  candidates=    0  ★checksum-valid DISTINCT=   0
+  kilos_reviews      candidates=    2  ★checksum-valid DISTINCT=   2
+  druglisting        candidates=  355  ★checksum-valid DISTINCT=   4
+
+  TOTAL distinct checksum-valid addresses in the social layer: 124
+  base58check false-positive rate is 2^-32, so each of these is a real
+  base58 address -- unlike the regex hits, which are proposals only.
+
+==============================================================================
+2. Elliptic side: the address set
+==============================================================================
+  Actors Dataset/wallets_classes.csv
+  columns: ['address', 'class']   rows: 822942
+  distinct addresses: 822942
+  class distribution: {'3': 557588, '2': 251088, '1': 14266}
+  address length: min=7 median=34 max=34
+  first 3: 18z8L3jBWiwf7VUXoUsDWkxK5NkMDsztb8, 1HY3jbUovoCti8Vq3GiRYQqZ24p4dRmS2a, 3AXBK2pMLCWJ4VVafJXNBMb9Ma9g3A9uvm
+
+==============================================================================
+3. ★ H2: does the bridge exist? (set intersection, with a control)
+==============================================================================
+  social distinct addresses : 124
+  elliptic addresses        : 822942
+  INTERSECTION              : 3
+      12o7NkLkivenB2v1aej9tSSzkB3SJ7vPXD  <- ['agora/Destination']
+      12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX  <- ['alphabay_items/blurb (description)']
+      38ccq12hPFoiSksxUdr6SQ5VosyjY7s9AU  <- ['alphabay_items/blurb (description)']
+
+  -- POSITIVE CONTROL: a known Elliptic address injected into the
+     social pool. If the machinery works it must be recovered;
+     controlling for the control is what makes a 0 interpretable.
+     injected 111112TykSw72ztDN2WJger4cynzWYC5w
+     intersection after injection: 4 (was 3) -> CONTROL RECOVERED, machinery works
+
+  -- NEGATIVE CONTROL: the same test against a set that shares no
+     member, to show the intersection is not vacuously returning all.
+     intersection with 2 fabricated addresses: 3
+
+==============================================================================
+4. ★ H1: multi-homing measured WITHIN druglisting by its own source
+==============================================================================
+  druglisting rows=194433  sellers=6192  sources=8
+
+  distinct markets per seller:
+  {1: 4839, 2: 935, 3: 313, 4: 84, 5: 20, 6: 1}
+  sellers in >1 market : 1353 / 6192 (21.85%)
+
+  ★ This is the honest H1 substrate: multi-homing is read off the
+    corpus's own market label, not off cross-file handle matches.
+    The earlier cross-file comparison mixed in a DUPLICATE: druglisting
+    contains an `agora` subset that mirrors agora_2014_2015.csv, so
+    'agora x druglisting = 2,929 shared handles' is one market seen
+    twice, not a seller operating in two markets.
+
+==============================================================================
+5. Duplication check: is druglisting[source==agora] the agora file?
+==============================================================================
+  agora file rows          : 109689
+  druglisting agora rows   : 124842
+  vendor sets: agora=3192 druglisting-agora=2922 shared=2906 (91.0% of agora)
+  row counts differ 109689 vs 124842 (ratio 0.879) -- not a row-for-row copy
+  but the seller sets overlap 91.0%, so they are the SAME market
+  observed at different crawl completeness. Handle-level multi-homing
+  across files is therefore NOT evidence of cross-market operation.
+
+==============================================================================
+6. What this settles
+==============================================================================
+  H2 substrate : present
+  H1 substrate : present (1353 multi-market sellers of 6192)
+
+wrote /root/cis/results/37_E3_bridge_probe.{txt,json}
+BRIDGE_DONE
+RSC_EXIT=0

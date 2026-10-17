@@ -1,0 +1,22 @@
+Word counts -- Scientific Reports fast-read version
+============================================================
+Section                                prose
+------------------------------------------------------------
+Abstract                                 175
+01 Introduction                          603
+02 Data                                  137
+03 Protocol                             1012
+04 Controlled analyses                  2741
+05 Negative results                     1107
+06 Governance+Limitations                528
+07 Conclusion                            141
+------------------------------------------------------------
+(A) PROSE ONLY, abstract + body         6444
+(B) BODY TOTAL (prose + floats)         7484
+(C) references + declarations            346
+
+Target: 7000-8000 words for the body.
+(A) counts running text only; (B) counts the whole body as a journal
+word-count tool would (running text + table content + captions +
+headings).  Both are reported so the target is met under either
+reading, not under whichever is convenient.

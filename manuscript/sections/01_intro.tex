@@ -1,0 +1,71 @@
+\section{Introduction}
+
+Measuring how a system absorbs a shock and resumes function is hard wherever
+three conditions hold at once: there is no ground truth, the observations are
+censored, and the events are too few to estimate from. In such settings a
+resilience number is only as trustworthy as the control it is run under, and a
+control that cannot reject anything looks exactly like a control that rejected
+nothing. We therefore treat that measurement problem --- how to construct a
+falsifiable measurement of resilience in a system with no ground truth, censored
+data and rare events --- as the primary object of study, and apply the resulting
+protocol to one concrete domain.
+
+Illicit data-trading ecosystems are one such system, and enforcement against
+them is frequent and visible: in July 2017 Operation Bayonet seized AlphaBay and
+secretly operated its successor Hansa, and the sites went down. The immediate
+disruption was total, but what the surrounding ecosystem did next is far less
+clear, because the archives are right-censored at a single instant, the layers do
+not share a time axis, and no external ground truth certifies which actors are
+illicit. We measure all three layers of this economy --- social, financial and
+infrastructure --- from public data, and we report the null alongside the
+estimate wherever a control was able to reject it.
+
+Existing work reports quantities but rarely pairs them with controls shown to be
+capable of rejecting the naive alternative. Longitudinal measurement established
+the darknet-marketplace field and its displacement dynamics: the first
+longitudinal measurement of the anonymous-marketplace ecosystem
+\citep{soska2015measuring}, the collective recovery of dark-web marketplaces
+after individual closures \citep{elbahrawy2020collective}, and vendor migration
+from AlphaBay and Hansa into Dream Market after Bayonet
+\citep{vanwegberg2018lost}. The same literature records the absence of any
+durable reduction in cryptomarket activity after Operation Onymous
+\citep{decaryhetu2017police}. It also documents the two
+mechanisms a measurement has to disentangle: displacement into successor
+platforms \citep{goonetilleke2023hydra}, and the reputation-transfer problem that
+governs whether a vendor can move at all \citep{norbutas2020reputation}.
+
+Graph learning supplies labelled illicit-transaction benchmarks and
+node-classification baselines --- the Elliptic transaction graph and its GCN
+baseline \citep{weber2019antimoney}, the address-level Elliptic++ with
+heterogeneous-GNN baselines \citep{elmougy2023demystifying}, and purpose-built
+anti-money-laundering datasets \citep{xiang2023babd,schnoering2025bitcoin}. Our
+contribution is ecosystem measurement rather than classification, and our
+negative result shows that even that transfer is unsafe without instrument
+checks.
+
+Network robustness theory explains why targeted removal beats random removal on
+synthetic or reconstructed graphs \citep{albert2000error,ren2019generalized,duxbury2020responsiveness,cavallaro2020disrupting},
+while evaluation-methodology work documents inflated baselines and leaky splits
+\citep{shchur2018pitfalls,kapoor2023leakage,errica2019fair}. \emph{Negative
+control} and \emph{pre-registration} are the classical names for the discipline
+we adopt \citep{lipsitch2010negative,nosek2018preregistration}, and simulations
+of criminal organisations under intervention remain rule-based rather than
+data-driven \citep{manzi2024agentbased}.
+
+\textbf{C1: a validation-first protocol.} Every candidate metric passes a
+validity screen, every instrument is paired with controls required to be capable
+of rejecting it, and every reported number carries the audit trail that lets a
+reviewer reproduce the control applied to it. \textbf{C2: a controlled
+measurement corpus.} Seven analyses span the social, financial and
+infrastructure layers. Three claims survived their controls and four did not: a
+headline ``3.7$\times$ more persistent'' claim was killed by an
+immortal-time-bias control (\textbf{-0.49\,pp}), and a ``+3.64 reviews/week''
+displacement estimate was demoted by its own non-centred placebo null to two
+non-significant point estimates. The magnitude is therefore bounded rather than
+estimated. \textbf{C3: a negative-result ledger.} Temporal-graph prediction of
+recurrence fails four independent instrument checks, traced to a feature-side
+separability trap that inflates shuffled-label controls, which de-leakage only
+partially repairs; the hazard, its diagnosis and its partial repair are kept as
+a result in their own right. The paper is organised as Data (\S2), Protocol
+(\S3), Controlled analyses (\S4), Negative results (\S5), and Governance,
+limitations and conclusion (\S6--\S7).

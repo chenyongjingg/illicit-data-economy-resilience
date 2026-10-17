@@ -1,0 +1,67 @@
+{
+  "band": [
+    0.02,
+    0.32
+  ],
+  "dpi": 400,
+  "element": "the two bulleted headline sentences at the top of p.6",
+  "instrument": "eye, on 66_render_p6_band.py output",
+  "page": 6,
+  "periods": {
+    "2025-01": {
+      "effective_items": 96082,
+      "high_value_items": 4749,
+      "render": "results/66_p6_2025-01_0.02_0.32.png",
+      "render_sha256": "bcac06b624f0022abbfa29a77b51dccc4d5d24d68fcfed0cc42c77a2e8deb31e"
+    },
+    "2025-02": {
+      "effective_items": 140800,
+      "high_value_items": 4955,
+      "render": "results/66_p6_2025-02_0.02_0.32.png",
+      "render_sha256": "edfce9ecc3fe31e0704a704a42fa01d69a8c7898689a87f17cb8bad610530ebe"
+    },
+    "2025-03": {
+      "effective_items": 356323,
+      "high_value_items": 5880,
+      "render": "results/66_p6_2025-03_0.02_0.32.png",
+      "render_sha256": "2a2e3aba6ce25e20677fc46c70cba72ab618f76adaf0a576ca77a580163f351c"
+    },
+    "2025-04": {
+      "effective_items": 509880,
+      "high_value_items": 3999,
+      "render": "results/66_p6_2025-04_0.02_0.32.png",
+      "render_sha256": "2a18b873e87c0d24450c6e5376e331c748c0834ba3d505db181e56e92968e2da"
+    },
+    "2025-06": {
+      "effective_items": 1140767,
+      "high_value_items": 5232,
+      "render": "results/66_p6_2025-06_0.02_0.32.png",
+      "render_sha256": "7d6fd5659389938461973555a3526be2246f5638e6b5c32c1e70262f1b7d04bf"
+    },
+    "2025-07": {
+      "effective_items": 1140767,
+      "high_value_items": 5822,
+      "render": "results/66_p6_2025-07_0.02_0.32.png",
+      "render_sha256": "4a9909f06dfdb6840c8fe62e64087a42a0ce8196d914b0a5167b4c5e2a99c91d"
+    },
+    "2025-08": {
+      "effective_items": 68904,
+      "high_value_items": 6826,
+      "render": "results/66_p6_2025-08_0.02_0.32.png",
+      "render_sha256": "8bc8cdb6a79641fc10d168cc89b4fe7a9723604d4164d43983e26f634b27f793"
+    },
+    "2025-10": {
+      "effective_items": 336661,
+      "high_value_items": 6176,
+      "render": "results/66_p6_2025-10_0.02_0.32.png",
+      "render_sha256": "3232351aa6bd578a38e192421e757a00be00747054089a6e5bc989b860dee792"
+    },
+    "2025-11": {
+      "effective_items": 436427,
+      "high_value_items": 6889,
+      "render": "results/66_p6_2025-11_0.02_0.32.png",
+      "render_sha256": "577ae5b58e82624da24c1bc35ea4e6afac268f091c85a93b29ff9ac62ce76c9a"
+    }
+  },
+  "what": "human readings of the two E9 headline sentences off 400-dpi p.6 renders"
+}

@@ -1,0 +1,75 @@
+==============================================================================
+31  E7-inf robustness and structural features
+==============================================================================
+
+  cohort (added >= 2026-06-25): 44750 rows, 16330 hosts
+
+==============================================================================
+1. Composition -- what kind of infrastructure is this?
+==============================================================================
+  URLs on IP literals : 37049 (82.79%)
+  URLs on named hosts : 7701 (17.21%)
+
+  top 12 providers by distinct HOSTS (a free-subdomain provider shows
+  up here as many hosts under one suffix):
+    94.154.43.0/24               hosts=   92 ( 0.56%) urls=  2335
+    r2.dev                       hosts=   77 ( 0.47%) urls=   138
+    176.65.139.0/24              hosts=   59 ( 0.36%) urls=  1233
+    oast.pro                     hosts=   46 ( 0.28%) urls=    46
+    workers.dev                  hosts=   28 ( 0.17%) urls=   233
+    195.177.94.0/24              hosts=   27 ( 0.17%) urls=    56
+    27.44.147.0/24               hosts=   24 ( 0.15%) urls=    34
+    27.44.145.0/24               hosts=   22 ( 0.13%) urls=    31
+    vercel.app                   hosts=   22 ( 0.13%) urls=    31
+    27.44.146.0/24               hosts=   22 ( 0.13%) urls=    25
+    120.84.214.0/24              hosts=   21 ( 0.13%) urls=    30
+    onjabet1.com                 hosts=   19 ( 0.12%) urls=    19
+  distinct providers: 10793
+
+==============================================================================
+2. ★ Adversarial to my own results -- drop the bulk hosts
+==============================================================================
+  host size distribution: median=2 p90=3 p99=23 max=853
+
+  host-level reconstitution (W=7d) under progressively stricter cuts:
+  restriction                         removals     recon       rate
+  all hosts                              30688      6736     21.95%
+  drop top 0.1pct of hosts               28487      5211     18.29%
+  drop top 1pct of hosts                 24684      3609     14.62%
+  drop top 10pct of hosts                16500      1021      6.19%
+  hosts with <=5 URLs                    18364      1596      8.69%
+  hosts with <=2 URLs                    16481      1013      6.15%
+
+  within-host paired test under the same cuts:
+  restriction                           hosts      first      later       diff
+  all multi-URL hosts                    8552     0.8524     0.8475    -0.0049
+  drop top 1pct of hosts                 8393     0.8600     0.8524    -0.0076
+  hosts with <=5 URLs                    7697     0.8793     0.8698    -0.0095
+  hosts with <=2 URLs                    7008     0.8977     0.8891    -0.0086
+
+==============================================================================
+3. ★ Provider-level displacement -- does the operator come back?
+==============================================================================
+  A takedown removes a HOST. The resilience question is whether the
+  operator reappears as a NEW host under the SAME provider suffix.
+  (Registrable suffix, or /24 for IP literals.)
+
+     W  removals    new-host        rate
+     1     33279        2274       6.83%
+     3     32279        3758      11.64%
+     7     30688        5933      19.33%
+    30     22072        7354      33.32%
+
+  ★ Compare with the host-level table in section 2: if the provider
+  rate is close to the host rate, the 'new URL' is usually a new HOST
+  (displacement); if it is much lower, the same host is being reused.
+  provider-level rate at W=7 uses 30688 removals.
+
+==============================================================================
+4. Placebo for the provider-level measure
+==============================================================================
+  real provider displacement (W=7d) = 19.33%
+  placebo (removal times shuffled)  = 22.38% (sd 0.19), p = 1.0000
+  ★ As with the host measure, the placebo floor is NOT zero -- a
+  provider with many hosts collects a hit by chance. The effect size is
+  the EXCESS over the placebo, -3.05 pp, not the raw rate.

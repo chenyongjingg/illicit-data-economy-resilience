@@ -1,0 +1,89 @@
+
+### §9(b) — three corrections to §9(a). All three verified at source, not transcribed.
+
+§9(a) above carried a number and a mechanism that do not survive checking against
+the files. Both are corrected here; the *direction* of §9(a) is unaffected.
+
+**(i) The number is wrong. I read it out of a comment and recorded it as a
+measurement.** §9(a) says the writer's comment "attributes the old control's
+monotone rise on *true* validation AUC (0.79579 → 0.83927, training on pure
+noise)". The comment is real — `_server/53_E5p_temporal_gnn.py:1044`, within the
+cited range — and it does say `(0.79579 -> 0.83927)`. But **0.83927 is not a
+validation-trajectory endpoint.** The delivered run's own log
+(`_logs/53_full_rc1_20260924.log`) prints the shuffled control's per-epoch val AUC
+as
+
+    0.79579  0.80195  0.80686  0.80921  0.81379
+
+and the *next* line of the same log is
+`shufctl {'1': 0.8106673045844783, '3': 0.8254282453923566, '5': 0.8392686039334707}`.
+0.83927 is the **Δ=5 test AUC**. A test reading was quoted as the endpoint of a
+validation trajectory, in the writer's comment, and I carried it into the record
+without opening the log. The endpoint is **0.81379**; the claim is wrong by
++0.0255. (The direction survives: the five points are strictly increasing. The
+comment's range is 1038–1059, number at 1044; §9(a)'s "1036–1059" was approximate.)
+
+**(ii) The mechanism does not cover the effect.** §9(a) repeated the comment's
+attribution of the rise to checkpoint selection on true validation labels.
+**Selection cannot move that trajectory.** `val_auc_mean` is computed and printed
+every epoch regardless of which checkpoint is later retained (the log shows both
+`leakctl ep1..ep10` and `shufctl ep1..ep5` as per-epoch series). Selection
+determines which checkpoint is kept; it cannot make a noise-trained model's
+progressive ranking of *true* val labels better epoch over epoch. The attribution
+is not evidence and is withdrawn as an explanation.
+
+**(iii) What is left, and it is the more interesting statement.** The control's
+**epoch-1** val AUC is **0.79579** — already the mean over the 3 Δ heads — after
+one epoch trained on nothing but permuted labels. The mean-over-heads calendar
+ceiling is (0.7195 + 0.7539 + 0.7723)/3 = **0.7486**. The control sits **above
+the ceiling at epoch 1**, before label content could plausibly act. So the channel
+that lifts the control above the calendar is the 14 point-in-time features and the
+model class — **not the calendar, and not selection.** The residual cause of
+§9(a)'s +0.067 is therefore not established as selection either; the honest
+position is the feature/model channel, which is legitimate for the arms and does
+not rescue the control.
+
+**Caveat, carried and not closed:** `per_bin` is test-only, so the ceiling cannot
+be computed on the validation split. 0.7486 is a test figure compared against a
+val reading. The splits are the same size order and drawn the same way (val
+123,441 / test 123,442), but this is a cross-split comparison and is flagged as
+one rather than presented as like-for-like.
+
+**(iv) One boundary of §9(a) is retired.** §9(a) hedged that if the control's
+population differed from the arms', the ceiling must be re-derived. **Retired.**
+The writer lineage that produced the artefact
+(`output/cis_sprint_20260924/code/_server/53_E5p_temporal_gnn.py`, sha
+a45ef6880338, 1,470 lines — traceback lines 615 and 1470 match the crashed run
+exactly) scores the control as
+`auc(Y[te_m & OK[:, k], k], sh["scores"][te_m & OK[:, k], k])` — `te_m`, the
+**test** split, true labels. The control and the arms share one population, so the
+ceiling applies unconditionally. (The three **arms** were already verified to
+share one population exactly.)
+
+**(v) A filename I got wrong.** C-162 §⑤ names the tool `_tools/ceiling_check.py`.
+The file is `_tools/_ceiling_check.py` — **leading underscore**; all four siblings
+are underscore-prefixed (`_ceiling_check.py` 3,778 B, `_ceiling_both.py`,
+`_ceiling_debug.py`, `_ceiling_rank_check.py`). This is G-62's shape again: an
+existence claim recorded from an expected name. It was caught by the peer only
+after a **name-based** search returned a false negative on both disk and pod, and
+a **content** search (`*ceiling*`) found it. A name-based search produces false
+negatives as readily as false positives.
+
+**(vi) What this predicts for the rerun, stated before the reading exists.**
+Because pooled ≥ 0.80 with within-t0 = 0.5 is arithmetically impossible (no
+within-bin-constant scorer can exceed 0.7723 at Δ=5), the fixed control's
+within-t0 is expected to land **materially above 0.5, not near it**. Blinding
+selection removes checkpoint-choice bias; it does not touch the epoch-1 floor. So:
+
+  * within-t0 materially above 0.5 with pooled ~0.80–0.84 ⇒ the criterion
+    `shuffled_control_at_chance` **fails again**, and the cause is the feature/model
+    channel — not the calendar, not selection. §9(a)'s "the channel explains it"
+    stays dead.
+  * (within-t0 ≈ 0.5, pooled ≈ 0.80–0.84) from one run ⇒ **writer defect, not a
+    result.** Do not report it as a finding.
+
+**How (i) was caught, and why it is the repeatable part.** Not by re-reading my own
+text — the text was self-consistent. It was caught because someone opened the log
+the numbers came from. §9(a) is a case of the library's 21st face: *I cited a
+number I had read in a comment as though I had measured it.* A comment is a claim
+about a measurement; it is not the measurement. The log is the measurement.

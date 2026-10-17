@@ -1,0 +1,80 @@
+
+---
+
+## C-166 — 2026-09-24 — ★修 `81_e5p_landing_check.py` 两处：
+## ①**退出码不是标尺退出码的函数**（标尺 5、包装器 0，且 0 被注解为 PASS）；
+## ②**驳回语的作用域窄于它驳回的集合**——用「池化被 t0 混杂」一条理由
+## 同时驳掉了两个 `summary.*` FAIL，而它对 `feature_filter_verification_exact` 无效
+
+### ① 复现（不是我读出来的，是**跑出来的**）
+
+| 工具 | 同一产物、同一时刻 | 结果 |
+|---|---|---|
+| `75_E5p_verify.py` | 旧产物 | **EXIT 5**（6 GAP ＋ 2 FAIL） |
+| `81_e5p_landing_check.py` | 旧产物 | **EXIT 0**，而正文打印「**2 FAIL line(s)**」 |
+
+包装器正文写「GAP SET MATCHES THE PREDICTION and no finding outside `summary.*`」，
+退出码 0 在码表里被注解为 `(= PASS)`。
+**★标尺自己的页脚写着**：「Both states are present and neither is subordinate.
+The GAP lines are not evidence about the experiment; the FAIL lines are.
+**Read the lines, not the code: this exit code means BOTH.**」
+**⇒ 包装器把「两者」折成了「通过」。**
+
+**根因**：`ok = (not missing) and (not unexpected)` **只谈 GAP 集合**；
+`summary_fails` **完全不进退出码**。
+
+### ② ★驳回有一个**作用域**，而原文没写出来
+
+原代码在 `summary_fails` 非空时打印一条理由：
+「旧写入器把 `shuffled_control_at_chance` 算在**池化列**上（old :1288-1290），
+被 t0 混杂 ⇒ 可以为 False 而无泄漏。」
+**这条理由够得着 `shuffled_control_at_chance`；够不着
+`feature_filter_verification_exact`** —— 后者是 `bool(ff["n_mismatch"] == 0)`（`:1386`），
+是**存储特征与「从原始 CSV 重算」的一致性**，**与池化无关**。
+
+**失误形态**：理由**只陈述一次**，而它印在一个标题为 `summary.*` 的段落之下
+⇒ **读起来像覆盖了它下面的每一个旗标**。
+**⇒ 驳回语的作用域必须逐个点名**（现为 `POOLED_CONFOUNDED`）。
+
+### ③ 修法
+
+- 新增 `POOLED_CONFOUNDED = ("summary.shuffled_control_at_chance",)` —— **只驳它够得着的**；
+- 分类改为 `record_fails` / `finding_fails`，**按「理由是否够得着」分，不按 `summary.` 前缀分**；
+- **新增退出码 7**：GAP 集合与预测相符 **但标尺自身非 0**
+  ⇒ **「预测成立」≠「产物合格」**（**预测集本身就是六条不在记录里的许可读数**）；
+- **退出码 0 现在要求标尺码也为 0。**
+
+### ④ 七个退出码**逐一实测**
+
+stub 标尺置于 `81_` **副本**之旁（`V75` 按脚本自身位置解析），`--expect-sha` **只**解 pin：
+
+| 码 | 触发条件 | 实测 |
+|---|---|---|
+| 0 | 标尺净 ＋ 无 finding ＋ GAP 相符 | **0** ✓ |
+| 2 | finding ＋ GAP 相符（**真产物即此**：finding = `feature_filter_verification_exact`） | **2** ✓ |
+| 3 | 产物不存在 | **3** ✓ |
+| 4 | 无 finding ＋ GAP 不符 | **4** ✓ |
+| 5 | finding ＋ GAP 不符 | **5** ✓ |
+| 6 | 标尺 sha 与预测所据版本不符 | **6** ✓ |
+| **7** | GAP 相符 ＋ 标尺非 0 | **7** ✓ |
+
+### ⑤ ★控制时我自己踩的坑（值得记）
+
+stub 里我写了 `[FAIL] summary.feature_filter_verification_exact is True   True` ——
+**一个「通过」的旗标不会带 `[FAIL]` 标签**；且它后面没有 `[`，
+于是解析器的**非贪婪捕获把下一行散文也吞进了标签**。
+**⇒ 夹具必须只发出「真实的失败长什么样」。一个「带失败标签的通过行」
+把两个量搅进同一个标签**——同 C-161 / C-165② 一族。
+
+### ⑥ ★同侪的假设：**只登记，不采信**
+
+其指出 `n_where_leq_differs_from_gt = 294` 与 `n_mismatch = 6` 之和 = **300 = `n_sampled`**，
+推测**不匹配集恰是「`leq` 不等于 `gt`」的那 6 行**。
+**★两个计数之和等于 n，不是集合相等**：该产物**只记 `first_mismatches` 的 5 行**
+（6 条中的 5 条，`features_compared[2] = c_self_loops`），且**没有逐行的 `leq`/`gt` 标志**
+⇒ **集合身份在本产物上不可判。登记为假设。**
+
+**另记严重性（不得据此驳回）**：这 6 处是 **C-159 的缺陷**（写入器自己的注释：
+「the stored value equalled the count on this unfiltered join exactly」），
+**预期在重跑中消失**（`i_sl` 修法正是为此）。
+**但「成因已知」≠「可按关联驳回」** —— 它**作为 finding 浮出**，并**附**已知成因。

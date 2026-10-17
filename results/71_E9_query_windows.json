@@ -1,0 +1,268 @@
+{
+  "instrument_version": "v2 -- widened forms; unread bounds reported as unread, unclassifiable bounds kept separate",
+  "issues": {
+    "2025-01": {
+      "channels": {
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-02": {
+      "channels": {
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-03": {
+      "channels": {
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-04": {
+      "channels": {
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-06": {
+      "channels": {
+        "ocr59": {
+          "bounds": [
+            {
+              "date": "2025-07-01",
+              "form": "upper_op",
+              "pos": 1889
+            },
+            {
+              "date": "2025-06-01",
+              "form": "lower_words",
+              "pos": 1964
+            }
+          ],
+          "derivation": "both bounds classified",
+          "lower_aligns_to_issue_month": true,
+          "lower_bound": "2025-06-01",
+          "n_days": 30,
+          "span_equals_lower_month_length": true,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": true,
+          "upper_bound": "2025-07-01"
+        },
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-07": {
+      "channels": {
+        "ocr59": {
+          "bounds": [
+            {
+              "date": "2025-08-01",
+              "form": "upper_op",
+              "pos": 1846
+            },
+            {
+              "date": "2025-07-01",
+              "form": "lower_words",
+              "pos": 1910
+            }
+          ],
+          "derivation": "both bounds classified",
+          "lower_aligns_to_issue_month": true,
+          "lower_bound": "2025-07-01",
+          "n_days": 31,
+          "span_equals_lower_month_length": true,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": true,
+          "upper_bound": "2025-08-01"
+        },
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-08": {
+      "channels": {
+        "ocr59": {
+          "bounds": [
+            {
+              "date": "2025-09-01",
+              "form": "upper_op",
+              "pos": 1856
+            },
+            {
+              "date": "2025-08-01",
+              "form": "lower_words",
+              "pos": 1953
+            },
+            {
+              "date": "2025-09-01",
+              "form": "upper_words",
+              "pos": 1969
+            },
+            {
+              "date": "2025-08-01",
+              "form": "lower_words",
+              "pos": 1990
+            },
+            {
+              "date": "2025-09-01",
+              "form": "upper_words",
+              "pos": 2011
+            }
+          ],
+          "derivation": "both bounds classified",
+          "lower_aligns_to_issue_month": true,
+          "lower_bound": "2025-08-01",
+          "n_days": 31,
+          "span_equals_lower_month_length": true,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": true,
+          "upper_bound": "2025-09-01"
+        },
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-10": {
+      "channels": {
+        "ocr59": {
+          "bounds": [
+            {
+              "date": "2025-10-01",
+              "form": "upper_op",
+              "pos": 1880
+            },
+            {
+              "date": "2025-09-01",
+              "form": "lower_words",
+              "pos": 1963
+            }
+          ],
+          "derivation": "both bounds classified",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": "2025-09-01",
+          "n_days": 30,
+          "span_equals_lower_month_length": true,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": false,
+          "upper_bound": "2025-10-01"
+        },
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    },
+    "2025-11": {
+      "channels": {
+        "ocr59": {
+          "bounds": [
+            {
+              "date": "2025-12-01",
+              "form": "UNCLASSIFIED_等于",
+              "pos": 1892
+            }
+          ],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [
+            {
+              "date": "2025-12-01",
+              "form": "UNCLASSIFIED_等于",
+              "pos": 1892
+            }
+          ],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        },
+        "text_layer": {
+          "bounds": [],
+          "derivation": "no classified bound",
+          "lower_aligns_to_issue_month": false,
+          "lower_bound": null,
+          "n_days": null,
+          "span_equals_lower_month_length": null,
+          "unclassified_bounds": [],
+          "upper_aligns_to_next_month": null,
+          "upper_bound": null
+        }
+      }
+    }
+  },
+  "what": "the declared query window per issue, both channels",
+  "why": "if the issues do not each cover their own month, the E9 series is not a like-for-like monthly series"
+}

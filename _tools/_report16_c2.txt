@@ -1,0 +1,60 @@
+
+### §9(a) CORRECTED — the t0 channel does NOT explain the control. The residual is measurable.
+
+§9(a) above concluded that the control's pooled 0.81–0.84 "is the **expected
+consequence of the t0 channel**, not evidence of leakage". **That conclusion is
+withdrawn.** The direction was right — most of the control's excess over 0.5 is
+entry timing — but it was treated as the whole of it, and it is not.
+
+The ceiling of the t0 channel is computable exactly. A scorer that is constant
+within each t0 bin cannot beat one that returns the bin's own positive rate, and
+that scorer's pooled AUC follows from `per_bin` alone. Computed two independent
+ways (closed form over pairwise counts, and by constructing the implied
+population and ranking it — they agree to 0.00e+00):
+
+| Δ | channel ceiling | control pooled | residual | share of excess |
+|---|---|---|---|---|
+| 1 | 0.7195 | 0.810667 | **+0.0911** | 70.7% |
+| 3 | 0.7539 | 0.825428 | **+0.0716** | 78.0% |
+| 5 | 0.7723 | 0.839269 | **+0.0670** | 80.3% |
+
+**The residual is positive at every Δ.** The channel explains 70–80% of the
+control's excess over chance, but the control scores *above* the ceiling, so its
+scores are **not** constant within bins — hence its within-t0 AUC must be
+measurably above 0.5.
+
+**This yields a consistency check the rerun can be held to.** Since
+pooled ≤ ceiling for any within-bin-constant scorer, the pair
+(pooled ≈ 0.84, within-t0 ≈ 0.5) is **arithmetically impossible from one run**.
+If the fixed writer reports that pair, it is a writer defect, not a finding. If
+its control's within-t0 lands near 0.5, its pooled must come in at or below
+~0.77 — the two readings have to move together.
+
+Note also that §9(a)'s stated mechanism was unsupported on its own terms: a
+global label permutation makes labels independent of t0, so a permuted-label
+model cannot learn `rate(bin)` at all; it can learn only the global rate, which
+scores 0.5 pooled. Whatever produces 0.81–0.84 is therefore not simply the
+channel. Candidate explanations remain unmeasured — the writer's own comment at
+lines 1036–1059 attributes the old control's monotone rise on *true* validation
+AUC (0.79579 → 0.83927, training on pure noise) to checkpoint selection on true
+validation labels, and blinds selection for that reason. That is a second
+channel, distinct from the calendar, and the rerun changed exactly it — so the
+rerun is **not** re-measuring the same quantity.
+
+**How this error was caught.** The ceiling was first computed with a closed form
+that summed the wrong element of a `(nneg, npos)` tuple, making the denominator
+`sum(nneg) − sum(npos)` — 93,597 instead of 105,093 at Δ=5 — which inflated the
+ceiling by +0.045, enough to reverse the sign of the residual. It was found only
+because a second implementation was built from the population rather than from
+the algebra and the two **disagreed**. The lesson is not "check your arithmetic":
+it is that an independent instrument is only worth having if it is allowed to
+disagree, and if its disagreement is treated as locating the error rather than
+as noise to be reconciled away. Ledger: **C-162**.
+
+**Boundary, carried from the peer who computed this:** the old artefact records
+no `n` for the control, so the control's test population cannot be confirmed to
+be the arms' (123,442 addresses; Δ=5 eligible 110,841). The three **arms** were
+verified to share one population exactly (`n` and `n_pos` identical across arms
+at every Δ), so the arm-vs-arm negative result of §5 is untouched by any of
+this. If the control's population differed, the ceiling must be re-derived from
+the rerun, which will carry `n`.

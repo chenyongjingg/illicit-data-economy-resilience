@@ -1,0 +1,403 @@
+{
+  "generated": "2026-09-24T01:58:21",
+  "per_month": {
+    "2025-01": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "风险报告",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": "96082",
+      "bullet_effective": "96,082",
+      "bullet_high_value": "4,749",
+      "sidecar": "/root/cis/results/57_ocr_2025-01_p06.txt",
+      "tab_counts_adjacent_text": {
+        "数据泄露情报": null,
+        "Telegram情报": "0",
+        "风险报告": null,
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "96082"
+      ],
+      "tab_row_n_values": 6,
+      "tab_row_nonzero": [
+        {
+          "index": 5,
+          "value": "96082"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 5,
+          "value": "96082",
+          "equals": "effective"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-02": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "140,800",
+      "bullet_high_value": "4,955",
+      "sidecar": "/root/cis/results/57_ocr_2025-02_p06.txt",
+      "tab_counts_adjacent_text": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "140800",
+        "0"
+      ],
+      "tab_row_n_values": 8,
+      "tab_row_nonzero": [
+        {
+          "index": 0,
+          "value": "8"
+        },
+        {
+          "index": 6,
+          "value": "140800"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 6,
+          "value": "140800",
+          "equals": "effective"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-03": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "356,323",
+      "bullet_high_value": "5，880",
+      "sidecar": "/root/cis/results/57_ocr_2025-03_p06.txt",
+      "tab_counts_adjacent_text": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "0",
+        "5880",
+        "0",
+        "0"
+      ],
+      "tab_row_n_values": 6,
+      "tab_row_nonzero": [
+        {
+          "index": 3,
+          "value": "5880"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 3,
+          "value": "5880",
+          "equals": "high_value"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-04": {
+      "categories_present": [
+        "数据泄露情报",
+        "Telegram情报",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "509,880",
+      "bullet_high_value": "3，999",
+      "sidecar": "/root/cis/results/57_ocr_2025-04_p06.txt",
+      "tab_counts_adjacent_text": {
+        "数据泄露情报": null,
+        "Telegram情报": "8",
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "0",
+        "6663",
+        "0",
+        "0"
+      ],
+      "tab_row_n_values": 6,
+      "tab_row_nonzero": [
+        {
+          "index": 3,
+          "value": "6663"
+        }
+      ],
+      "tab_row_matches": [],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-06": {
+      "categories_present": [
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "1,140,767",
+      "bullet_high_value": "5,232",
+      "sidecar": "/root/cis/results/57_ocr_2025-06_p06.txt",
+      "tab_counts_adjacent_text": {
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "5232",
+        "0"
+      ],
+      "tab_row_n_values": 4,
+      "tab_row_nonzero": [
+        {
+          "index": 2,
+          "value": "5232"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 2,
+          "value": "5232",
+          "equals": "high_value"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-07": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "1,140,767",
+      "bullet_high_value": "5,822",
+      "sidecar": "/root/cis/results/57_ocr_2025-07_p06.txt",
+      "tab_counts_adjacent_text": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "5822"
+      ],
+      "tab_row_n_values": 2,
+      "tab_row_nonzero": [
+        {
+          "index": 1,
+          "value": "5822"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 1,
+          "value": "5822",
+          "equals": "high_value"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-08": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "风险报告",
+        "信息系统",
+        "移动端应用",
+        "域名",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": "6826",
+      "bullet_effective": "68,904",
+      "bullet_high_value": "6,826",
+      "sidecar": "/root/cis/results/57_ocr_2025-08_p06.txt",
+      "tab_counts_adjacent_text": {
+        "暗网情报": null,
+        "Telegram情报": null,
+        "风险报告": null,
+        "信息系统": null,
+        "移动端应用": null,
+        "域名": null,
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 0,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "6826"
+      ],
+      "tab_row_n_values": 5,
+      "tab_row_nonzero": [
+        {
+          "index": 4,
+          "value": "6826"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 4,
+          "value": "6826",
+          "equals": "high_value"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-10": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "336,661",
+      "bullet_high_value": "6,176",
+      "sidecar": "/root/cis/results/57_ocr_2025-10_p06.txt",
+      "tab_counts_adjacent_text": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "4858",
+        "0"
+      ],
+      "tab_row_n_values": 4,
+      "tab_row_nonzero": [
+        {
+          "index": 2,
+          "value": "4858"
+        }
+      ],
+      "tab_row_matches": [],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    },
+    "2025-11": {
+      "categories_present": [
+        "暗网情报",
+        "Telegram情报",
+        "邮箱",
+        "代码/文档"
+      ],
+      "match_result_line": null,
+      "bullet_effective": "436,427",
+      "bullet_high_value": "6,889",
+      "sidecar": "/root/cis/results/57_ocr_2025-11_p06.txt",
+      "tab_counts_adjacent_text": {
+        "暗网情报": null,
+        "Telegram情报": "0",
+        "邮箱": null,
+        "代码/文档": null
+      },
+      "n_categories_with_parsed_adjacent_count": 1,
+      "which_category_matches_bullet_adjacent_text": [],
+      "tab_row_values": [
+        "0",
+        "0",
+        "6889",
+        "0"
+      ],
+      "tab_row_n_values": 4,
+      "tab_row_nonzero": [
+        {
+          "index": 2,
+          "value": "6889"
+        }
+      ],
+      "tab_row_matches": [
+        {
+          "index": 2,
+          "value": "6889",
+          "equals": "high_value"
+        }
+      ],
+      "tab_row_pairing": "NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+    }
+  },
+  "routes": {
+    "adjacent_text": "a number immediately after a category name (the first version's route; cannot fire on these tables -- see module docstring)",
+    "tab_row": "the integer run following the label run, reported by INDEX; the pairing to a category is NOT recoverable from text: the category labels and their counts are separate OCR runs and the runs differ in length (2025-01: 8 labels vs 6 values). Values are reported by index; no category is named for any value."
+  }
+}

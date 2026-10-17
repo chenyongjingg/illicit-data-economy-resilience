@@ -1,0 +1,127 @@
+Additional file 1
+
+Title of data: The rule that draws the census boundary of Supplementary Note S1.3
+
+File format: plain text (.txt)
+
+Description of data: The rule that fixes the census boundary of the result
+artifacts reported in Supplementary Note S1.3, together with the per-tree counts that sum to
+302: which trees are walked, what counts as an artifact, and how the boundary was
+read off the manifest rather than stipulated for it. It accompanies Supplementary
+Additional file 2, which is the census itself.
+
+
+Manuscript title: Validation-first measurement of resilience in illicit data
+economies: a controlled study with a negative-result ledger on public data
+
+Journal: Scientific Reports
+
+Authors: Ziying Xue, Yongjin Chen, Songze Zhu
+
+Affiliation: People's Public Security University of China, Muxidi campus,
+1 Muxidi Nanli, Xicheng District, Beijing 100038, China
+
+Corresponding author: Songze Zhu (704339163@qq.com)
+
+
+--------------------------------------------------------------------------
+0.  Status of this document
+--------------------------------------------------------------------------
+
+Supplementary Note S1.3 reports a census of the result artifacts this study
+produced. This file carries the rule that draws the census boundary, so that the
+number can be recomputed rather than taken on trust. It accompanies Supplementary
+Additional file 2, which is the census itself.
+
+## 1. The rule
+
+A file is **in scope** if and only if both of the following hold.
+
+1. **Path.** It lies under one of the ten directories listed in §3 below. All ten
+   are subdirectories of `results/`, and they are exactly the directories that
+   occur as path prefixes in the manifest — the scope was read off the manifest,
+   not stipulated for it, so the two cannot disagree.
+2. **Content.** It is a *result*: an output of a run of an analysis stage. A run's
+   log is in scope, because the log is what makes that output checkable, and so is
+   a superseded generation of a result. Raw inputs and scratch that no stage wrote
+   as its own output are out of scope even when they live under a walked directory.
+
+The **time point** of the census is the manifest's build. Artifacts produced
+after it are not in it. This matters because the analysis continued after the
+manifest was first written, and an artifact produced later would otherwise be
+silently uncovered.
+
+## 2. What was recomputed, and the result
+
+The manifest was checked in **both** directions on 2026-09-26, and again after the rebuild recorded in section 4. Two directions are
+required: a forward check cannot see an unregistered file, and an unregistered
+file is precisely how a census overstates its own completeness.
+
+| Check | Result |
+|---|---|
+| Manifest entries | **302** |
+| Entries not present on disk | **0** |
+| Entries whose recorded SHA-256 differs from the file on disk | **0** |
+| Duplicate paths in the manifest | **0** |
+| Files under the ten walked trees that are **not** registered | **0** |
+
+## 3. Per-tree counts
+
+Read off the manifest's own path prefixes; the column sums to 302.
+
+| Tree | Files |
+|---|---|
+| `results/` (top level) | 196 |
+| `results/_e5p_landing/` | 40 |
+| `results/figs/` | 25 |
+| `results/_e9_pages/` | 14 |
+| `results/57_p06/` | 9 |
+| `results/59_ocr_full_text/` | 5 |
+| `results/_e5r_landing/` | 5 |
+| `results/_e8rc2_pod/` | 3 |
+| `results/_op1_landing/` | 3 |
+| `results/_e8rc2_local/` | 2 |
+| **Total** | **302** |
+
+## 4. How to recompute
+
+Place the `results/` tree (available from the corresponding author) and this
+file's companion (`Additional file 2.txt`) in one directory, then run from that
+root:
+
+```
+sha256sum -c "Additional file 2.txt"
+wc -l "Additional file 2.txt"   # 302
+```
+
+A tree of the same name is not necessarily the right tree. The manifest's
+paths are relative to the directory that contains `results/`, and the
+`results/` it covers is the one holding exactly 196 files at its top level
+together with the nine subdirectories of §3, 302 files in all. If every line
+reports as missing, the tree is at the wrong depth; if a handful report as
+missing or as mismatched, the tree has drifted and the census of Supplementary Note S1.3 no
+longer describes it. The check was run again in both directions on
+2026-10-07: 302 lines verified, no file present under the ten trees but
+outside the manifest, and no manifest path absent from disk.
+
+The second command is not redundant. `sha256sum -c` reports a mismatch or a
+missing file; it cannot report a file that exists on disk but is absent from the
+manifest. The count and the per-tree table above are what close that direction,
+and they were produced by walking the ten trees and comparing the resulting path
+set against the manifest's.
+
+## 5. Earlier values, and why they changed
+
+An earlier draft of Supplementary Note S1.3 reported **283** manifest entries and flagged six
+de-leakage artifacts carried outside them. That
+gap is closed rather than carried forward: the six de-leakage artifacts, the two
+figures introduced in the protocol and negative-result sections, and the analysis table of the controlled-analyses section are all
+registered, and no artifact in scope is unregistered. The figure of 302 and the
+figure of 196 for the top-level tree are the two numbers Supplementary Note S1.3 now prints.
+
+An earlier build of this file reported **294** entries and **188** files at the top
+level of `results/`. It was rebuilt on 2026-10-07, after the eight outputs of the
+four pre-registered L4 cells were added to the delivery tree: one JSON and one
+plain-text result file per cell, all eight at the top level of `results/`. The nine
+subdirectories of section 3 are unchanged, and the two-directional check of sections
+2 and 4 was re-run on the rebuilt manifest.

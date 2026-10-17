@@ -1,0 +1,76 @@
+{
+  "what": "E9 external anchor -- DWC (数世咨询) x 零零信安 monthly leak-posture reports",
+  "year": 2025,
+  "n_issues_found": 1,
+  "n_verified": 0,
+  "n_series_extracted": 0,
+  "verification": "ok requires: bytes == declared Content-Length AND %%EOF within last 2KiB AND >100000 bytes",
+  "probe_stats_never_sent": {
+    "2025-01": [
+      0,
+      0,
+      124
+    ],
+    "2025-03": [
+      0,
+      0,
+      124
+    ],
+    "2025-04": [
+      0,
+      0,
+      124
+    ],
+    "2025-05": [
+      0,
+      0,
+      124
+    ],
+    "2025-06": [
+      0,
+      0,
+      124
+    ],
+    "2025-07": [
+      0,
+      0,
+      124
+    ],
+    "2025-08": [
+      0,
+      0,
+      124
+    ],
+    "2025-09": [
+      0,
+      0,
+      124
+    ],
+    "2025-10": [
+      0,
+      0,
+      124
+    ],
+    "2025-11": [
+      0,
+      0,
+      124
+    ],
+    "2025-12": [
+      0,
+      0,
+      62
+    ]
+  },
+  "issues": [
+    {
+      "url": "https://www.dwcon.cn/uploads/file/2025/0318【数世咨询】全球数据泄露态势月度报告（2025.2）.pdf",
+      "path": "/root/cis/data/external/dwcon/dwcon_2025-02.pdf",
+      "ok": false,
+      "content_length_declared": null,
+      "head_transmitted": false,
+      "error": "HEAD never sent: UnicodeEncodeError: 'ascii' codec can't encode characters in position 28-46: ordinal not in range(128)",
+      "period": "2025-02"
+    }
+  ]
+}
