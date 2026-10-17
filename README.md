@@ -67,10 +67,14 @@ the inputs can be fetched and checked rather than trusted.
 **Not all of the census.** `manuscript/supplementary/Additional file 2.txt` is a
 302-entry SHA-256 census of the study tree's result artifacts. 163 of those are
 here and byte-identical to their census entry; 139 are not, 46 of them because
-they are reproductions of a third party's report. The census is *not* edited to
-match what ships — a census rewritten to agree with the shipment measures the
-shipment, not the study. [`NOT_REDISTRIBUTED.md`](NOT_REDISTRIBUTED.md) lists
-every withheld entry and why.
+they are reproductions of a third party's report. One of the 139 is a path that
+is absent while its *bytes* are here under a different name — a census entry is
+a path, and this one is duplicated in the released subset — and it is named as
+such rather than counted as withheld, since one `sha256sum` would refute that.
+The census is *not* edited to match what ships — a census rewritten to agree
+with the shipment measures the shipment, not the study.
+[`NOT_REDISTRIBUTED.md`](NOT_REDISTRIBUTED.md) lists every withheld entry and
+why.
 
 ## The audit trail
 

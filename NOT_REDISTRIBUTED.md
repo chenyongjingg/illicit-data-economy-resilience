@@ -182,6 +182,17 @@ digests stay in the census because the census is the study tree's record.
     results/figs/06_shuffled_trajectory.png
     results/op1_gpu_witness.json
 
+### 2.1 Of those, 1 whose bytes are here after all
+
+The census records a path; a path is what is absent. For the 1 entry
+below the *content* is in this repository under a different name, so
+counting it as withheld would be a claim one `sha256sum` refutes. The
+duplicate is listed with the file that carries it:
+
+    results/53_E5p_result_oldwriter_55d7d8f8.json
+        same bytes as  results/53_E5p_result.oldwriter_55d7d8f8.json
+        same bytes as  results/_e5p_landing/53_E5p_result_oldwriter_55d7d8f8.json
+
 ## 3. Corpora
 
 No source corpus is redistributed either. Every input is pinned by URL and

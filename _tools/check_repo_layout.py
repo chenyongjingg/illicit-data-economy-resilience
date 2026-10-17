@@ -8,13 +8,19 @@ recomputes every count from disk and fails if either document disagrees.
     python _tools/check_repo_layout.py
     echo $?        # 0 = every stated number matches the tree
 
-Two independent things are checked:
+Three independent things are checked:
 
   1. the layout table in README.md (files per path)
   2. the census arithmetic in NOT_REDISTRIBUTED.md, which is recovered from the
      sha256 census itself -- every census entry is either present here with the
      same digest, or withheld and named as withheld.  A census entry that is
-     neither is an entry the repository dropped without saying so.
+     neither is an entry the repository dropped without saying so.  A withheld
+     entry whose bytes ship under another name is counted and named separately:
+     the path is absent, but "not redistributed" would be false of the content.
+  3. the upload bundle in manuscript/ against the source tree on disk.  The
+     manuscript ships in two forms produced by different steps, so nothing binds
+     them unless something does -- a zip built from a stale source compiles
+     cleanly and looks right.
 """
 import hashlib, os, re, sys
 
@@ -136,6 +142,36 @@ print("  %-30s %s  (%d = %d + %d)"
          len(mani), len(shipped), len(withheld)))
 if not conserved:
     fail.append("census not conserved")
+
+# A withheld path whose content is here under another name.  The path really is
+# absent, so it is withheld by the census's own criterion -- but calling its
+# bytes withheld is a claim one sha256sum refutes, so the document names the
+# exceptions and this recomputes them.  A count stated and never recomputed is
+# how the previous README's layout table came to name five directories that did
+# not exist.
+shipped_by_digest = {}
+for p in shipped:
+    shipped_by_digest.setdefault(mani[p], []).append(p)
+dupes = sorted(p for p in withheld if mani[p] in shipped_by_digest)
+stated = doc_number(r"### 2\.1 Of those, (\d+) whose bytes are here after all",
+                    "duplicate-with-shipped")
+ok = "ok " if stated == len(dupes) else "** FAIL **"
+if stated != len(dupes):
+    fail.append("NOT_REDISTRIBUTED.md says %d withheld entries ship under another "
+                "name; recomputed %d (%s)" % (stated, len(dupes), dupes or "-"))
+print("  %-30s recomputed %4d  document %4d  %s"
+      % ("bytes shipped elsewhere", len(dupes), stated, ok))
+# and each one must be named with the file that carries it
+for p in dupes:
+    twin = shipped_by_digest[mani[p]][0]
+    bound = ("    " + p) in note and ("        same bytes as  " + twin) in note
+    if not bound:
+        fail.append("duplicate %s is not listed with its twin %s" % (p, twin))
+print("  %-30s %s" % ("each named with its twin",
+                      "ok " if all(("    " + p) in note
+                                   and ("        same bytes as  "
+                                        + shipped_by_digest[mani[p]][0]) in note
+                                   for p in dupes) else "** FAIL **"))
 
 # ------------------------------------------------- 3. upload bundle vs source
 # The manuscript ships in two forms: the LaTeX source here, and the zip that was
