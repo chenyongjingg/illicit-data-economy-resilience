@@ -316,6 +316,8 @@ used in exploratory analysis only, and no reported number depends on
 LLM-generated labels, because that pipeline never reached data acquisition. An
 early packaging artifact contained a default service credential; it was rotated,
 purged from all packaged snapshots, and the incident is disclosed rather than
-left discoverable.
+left discoverable. The rotation and the purge are recorded in the repository's
+\texttt{ERRATA.md} and in the project's append-only ledger (\texttt{C-181}), so
+that the claim can be checked rather than taken on trust.
 
 \end{document}

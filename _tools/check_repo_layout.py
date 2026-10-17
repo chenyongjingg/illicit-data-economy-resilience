@@ -137,6 +137,47 @@ print("  %-30s %s  (%d = %d + %d)"
 if not conserved:
     fail.append("census not conserved")
 
+# ------------------------------------------------- 3. upload bundle vs source
+# The manuscript ships in two forms: the LaTeX source here, and the zip that was
+# handed to the journal.  They are produced separately, so nothing binds them
+# unless something does -- a zip built from a stale source tree compiles fine and
+# looks right.  This asserts every member of the zip is byte-identical to the
+# same-named file on disk.
+print()
+print("=" * 68)
+print("3. manuscript/manuscript_latex.zip vs manuscript/ on disk")
+print("=" * 68)
+import zipfile
+
+zpath = os.path.join(REPO, "manuscript", "manuscript_latex.zip")
+if not os.path.isfile(zpath):
+    fail.append("manuscript/manuscript_latex.zip is missing")
+    print("  ** FAIL **  the upload bundle is not here at all")
+else:
+    with zipfile.ZipFile(zpath) as z:
+        names = [i.filename for i in z.infolist()]
+        bad = []
+        for n in names:
+            p = os.path.join(REPO, "manuscript", n.replace("/", os.sep))
+            if not os.path.isfile(p):
+                bad.append((n, "absent from manuscript/"))
+            elif hashlib.sha256(z.read(n)).hexdigest() != sha256(p):
+                bad.append((n, "differs from manuscript/" + n))
+        print("  members in bundle : %d" % len(names))
+        print("  byte-identical    : %d" % (len(names) - len(bad)))
+        for n, why in bad:
+            print("  ** FAIL **  %s %s" % (n, why))
+            fail.append("upload bundle %s" % why)
+        # and the reverse: a source file the bundle forgot to carry
+        covered = {n for n in names}
+        expected = {"main.tex", "refs.bib", "main.bbl"}
+        expected |= {"sections/" + f for f in
+                     sorted(os.listdir(os.path.join(REPO, "manuscript", "sections")))}
+        missing = sorted(expected - covered)
+        print("  source files not in bundle: %d %s" % (len(missing), missing or ""))
+        if missing:
+            fail.append("upload bundle omits %s" % missing)
+
 # ------------------------------------------------------------------ verdict
 print()
 print("=" * 68)

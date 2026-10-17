@@ -13,8 +13,12 @@ the answers are negative and are kept, with their reasons, rather than dropped.
 
 ## Status
 
-**Private, while the manuscript is under review.** It becomes public on
-acceptance.
+**Public.** The manuscript cites this repository by URL and by the tag `v1.0`.
+It was made public ahead of submission, so that the artifacts can be checked
+during review rather than after publication.
+
+Tag `v1.0` is the revision the manuscript refers to. Later commits are welcome
+to diverge; the tag does not move.
 
 This file does not carry a status report of its own: the authoritative record of
 what ran, what was measured, and what was later refuted is
