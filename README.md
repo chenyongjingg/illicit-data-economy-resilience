@@ -76,6 +76,27 @@ with the shipment measures the shipment, not the study.
 [`NOT_REDISTRIBUTED.md`](NOT_REDISTRIBUTED.md) lists every withheld entry and
 why.
 
+## Licence
+
+Two licences, split by what a thing is rather than by where it sits:
+
+* **Code and derived results** — the pipeline (`_server/`), the harness
+  (`_tools/`) and the derived result artifacts (`results/`) are under the
+  [MIT licence](LICENSE).
+* **The manuscript** — `manuscript/`, meaning the LaTeX source, the compiled
+  PDFs and the supplementary material, and its figures — is under
+  [CC BY 4.0](LICENSE-CC-BY-4.0.txt), the licence *Scientific Reports*
+  publishes under, so the text can be reused with attribution.
+
+The source datasets are neither: they are third-party and keep their own terms,
+which is why only their hashes are here (see *What is not here*).
+
+Both files were added after tag `v1.0` was cut, and a published tag is not
+moved. The licence is a statement about the repository rather than about one
+revision, and it covers the tagged revisions too — but the `v1.0` tarball is a
+tree without these two files in it, so a reader should take the root of the
+default branch as the statement of terms.
+
 ## The audit trail
 
 Three logs, and they do different jobs:
